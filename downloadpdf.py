@@ -81,6 +81,19 @@ def sanitize_segment(value: str) -> str:
     return value or "unknown"
 
 
+def get_base_domain(host: str) -> str:
+    """
+    Very simple "registrable" domain helper: takes last two labels.
+    Example: view.news.eu.nasdaq.com -> nasdaq.com
+    """
+    if not host:
+        return ""
+    parts = host.split(".")
+    if len(parts) >= 2:
+        return ".".join(parts[-2:])
+    return host
+
+
 def extract_pdf_urls(html: str, base_url: str) -> List[str]:
     """
     Find all PDF links in an HTML page and return their absolute URLs.
@@ -134,20 +147,28 @@ def iter_csv_rows(path: Path) -> Iterable[dict]:
             yield row
 
 
-def download_pdf(url: str, dest: Path, timeout: float) -> bool:
+def download_pdf(url: str, dest: Path, timeout: float) -> str:
     dest.parent.mkdir(parents=True, exist_ok=True)
     try:
         with requests.get(url, stream=True, timeout=timeout, headers=BROWSER_HEADERS) as r:
             r.raise_for_status()
+            content_type = (r.headers.get("Content-Type") or "").lower()
+            final_url = (r.url or url).lower()
+            if "pdf" not in content_type and not final_url.endswith(".pdf"):
+                print(
+                    f"Skipping non-PDF URL: {url} "
+                    f"(resolved as {r.url!r}, Content-Type={content_type!r})"
+                )
+                return "skipped"
             with dest.open("wb") as f:
                 for chunk in r.iter_content(chunk_size=1024 * 256):
                     if chunk:
                         f.write(chunk)
         print(f"Downloaded: {dest} (from {url})")
-        return True
+        return "saved"
     except Exception as exc:
         print(f"ERROR downloading {url}: {exc}")
-        return False
+        return "failed"
 
 
 def save_pdf_stream(resp: requests.Response, dest: Path, url: str) -> bool:
@@ -198,6 +219,8 @@ def build_output_name(company: str, category: str, pdf_url: str, content_disposi
 
 def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
     downloaded_any = False
+    saved_count = 0
+    failed_count = 0
 
     for row in iter_csv_rows(input_csv):
         message_url = (row.get("messageUrl") or "").strip()
@@ -208,6 +231,9 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
             continue
 
         print(f"Fetching page: {message_url}")
+        message_host = urlparse(message_url).hostname or ""
+        allowed_domain = get_base_domain(message_host)
+
         try:
             with requests.get(message_url, timeout=timeout, stream=True, headers=BROWSER_HEADERS) as resp:
                 resp.raise_for_status()
@@ -224,6 +250,13 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
                     or (cd_filename and cd_filename.lower().endswith(".pdf"))
                 ):
                     pdf_url = resp.url or message_url
+                    pdf_host = urlparse(pdf_url).hostname or ""
+                    if allowed_domain and get_base_domain(pdf_host) != allowed_domain:
+                        print(
+                            f"Skipping direct PDF on external domain: {pdf_url} "
+                            f"(host {pdf_host!r} not under {allowed_domain!r})"
+                        )
+                        continue
                     out_name = build_output_name(
                         company,
                         category,
@@ -240,6 +273,9 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
                     )
                     if save_pdf_stream(resp, dest, pdf_url):
                         downloaded_any = True
+                        saved_count += 1
+                    else:
+                        failed_count += 1
                     continue
 
                 # Case 2: HTML page with links to PDFs
@@ -249,6 +285,19 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
             continue
 
         pdf_urls = extract_pdf_urls(html, message_url)
+        # Only keep PDFs on same registrable domain as messageUrl
+        filtered_urls: List[str] = []
+        for pdf_url in pdf_urls:
+            pdf_host = urlparse(pdf_url).hostname or ""
+            if allowed_domain and get_base_domain(pdf_host) != allowed_domain:
+                print(
+                    f"Skipping external PDF URL: {pdf_url} "
+                    f"(host {pdf_host!r} not under {allowed_domain!r})"
+                )
+                continue
+            filtered_urls.append(pdf_url)
+        pdf_urls = filtered_urls
+
         if not pdf_urls:
             pdf_count = html.lower().count("pdf")
             print(f"No PDF links found at {message_url}")
@@ -277,13 +326,16 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
             if dest.exists():
                 print(f"Skipping existing file: {dest}")
                 continue
-            if download_pdf(pdf_url, dest, timeout=timeout):
+            result = download_pdf(pdf_url, dest, timeout=timeout)
+            if result == "saved":
                 downloaded_any = True
+                saved_count += 1
+            elif result == "failed":
+                failed_count += 1
 
     if not downloaded_any:
         print("No PDFs downloaded (check messageUrl column and page contents).")
-    else:
-        print(f"Done. PDFs saved under: {output_dir}")
+    print(f"Summary: saved {saved_count} PDF(s), failed {failed_count} download(s).")
 
 
 def main() -> int:
