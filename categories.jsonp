@@ -1,0 +1,106 @@
+getCategoriesCallback({
+  "facts" : [ {
+    "id" : "Aktionæraftaler"
+  }, {
+    "id" : "Andre oplysningsforpligtelser offentliggjort efter børsens regler"
+  }, {
+    "id" : "Antal stemmerettigheder og kapital"
+  }, {
+    "id" : "Corporate Action"
+  }, {
+    "id" : "Delårsrapport/Periodemeddelelse (Q1 og Q3)"
+  }, {
+    "id" : "Endelige obligationsvilkår"
+  }, {
+    "id" : "Erhvervelse eller afhændelse af egne aktier"
+  }, {
+    "id" : "Finanskalender"
+  }, {
+    "id" : "Foreløbig ledelseserklæring"
+  }, {
+    "id" : "Forløb af ekst. generalforsamling"
+  }, {
+    "id" : "Forløb af ekstraordinær generalforsamling"
+  }, {
+    "id" : "Forløb af generalforsamling"
+  }, {
+    "id" : "Halvårsrapport"
+  }, {
+    "id" : "Indberetninger af betalinger til myndigheder"
+  }, {
+    "id" : "Indkald. til ekstr. general forsamling"
+  }, {
+    "id" : "Indkaldelse til ekst. generalforsamling"
+  }, {
+    "id" : "Indkaldelse til generalforsamling"
+  }, {
+    "id" : "Indreværdi"
+  }, {
+    "id" : "Indre værdi"
+  }, {
+    "id" : "Information om storaktionær"
+  }, {
+    "id" : "Intern viden"
+  }, {
+    "id" : "Investor Nyheder"
+  }, {
+    "id" : "Kvartalsrapport"
+  }, {
+    "id" : "Køb af egne aktier"
+  }, {
+    "id" : "Købstilbud"
+  }, {
+    "id" : "Købstilbud af"
+  }, {
+    "id" : "Ledende medarbejderes transaktioner"
+  }, {
+    "id" : "Meddelelse fra First North"
+  }, {
+    "id" : "Offentliggørelse af årsrapport"
+  }, {
+    "id" : "Optagelse til handel på First North"
+  }, {
+    "id" : "Overtagelsestilbud"
+  }, {
+    "id" : "Periodeoplysning"
+  }, {
+    "id" : "Pressemeddelelse fra First North"
+  }, {
+    "id" : "Prospekter"
+  }, {
+    "id" : "Prospekter/prospekt medd."
+  }, {
+    "id" : "Referat fra ekstraordinær generalforsamling"
+  }, {
+    "id" : "Referat fra generalforsamling"
+  }, {
+    "id" : "Selskabsmeddelelse"
+  }, {
+    "id" : "Selskabsmeddelelse (Ansvarsfraskrivelse)"
+  }, {
+    "id" : "Selskabsvedtægter"
+  }, {
+    "id" : "Storaktionærmeddelelser"
+  }, {
+    "id" : "Valg af hjemland"
+  }, {
+    "id" : "Virksomhedsbeskrivelse"
+  }, {
+    "id" : "Virksomhedsbeskrivelse / prospekt"
+  }, {
+    "id" : "Årsrapport"
+  }, {
+    "id" : "Årsregnskabsmeddelelse"
+  }, {
+    "id" : "Ændringer af de rettigheder, der er knyttet til klasserne af aktier eller værdipapirer"
+  }, {
+    "id" : "Ændringer i aktiekapital og stemmer"
+  }, {
+    "id" : "Ændring i ledelse/godkendte rådgivere"
+  }, {
+    "id" : "Ændring i ledelse/revision/godkendte rådgivere/liquidity provider"
+  }, {
+    "id" : "Ændring ledelse/revision"
+  } ],
+  "type" : "cnscategory"
+} )

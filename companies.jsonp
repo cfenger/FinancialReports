@@ -1,0 +1,5462 @@
+getCompaniesCallback({
+  "facts" : [ {
+    "id" : "24Storage AB"
+  }, {
+    "id" : "2cureX AB"
+  }, {
+    "id" : "2M Invest"
+  }, {
+    "id" : "3L System Group AB"
+  }, {
+    "id" : "4C Group AB"
+  }, {
+    "id" : "4finance S.A."
+  }, {
+    "id" : "A/F HEIM slhf."
+  }, {
+    "id" : "A/S Nørresundby Bank"
+  }, {
+    "id" : "A/S Storebælt"
+  }, {
+    "id" : "A/S Øresund"
+  }, {
+    "id" : "A.P. Møller - Mærsk A/S"
+  }, {
+    "id" : "A3 Allmänna IT- och Telekom. AB"
+  }, {
+    "id" : "AAC Clyde Space AB"
+  }, {
+    "id" : "AAK AB"
+  }, {
+    "id" : "Aalborg Boldspilklub A/S"
+  }, {
+    "id" : "Aallon Group Oyj"
+  }, {
+    "id" : "AAM GLEQ"
+  }, {
+    "id" : "AAM GLEQ2"
+  }, {
+    "id" : "AAM GLEQ3"
+  }, {
+    "id" : "Aarhus Lokalbank Aktieselskab"
+  }, {
+    "id" : "Aarhus United"
+  }, {
+    "id" : "Abaris Ejendomme A/S"
+  }, {
+    "id" : "ABB Ltd"
+  }, {
+    "id" : "AB Fastator"
+  }, {
+    "id" : "Abliva AB"
+  }, {
+    "id" : "Absolent Air Care Group AB"
+  }, {
+    "id" : "AB Sveriges Säkerställda Obligationer"
+  }, {
+    "id" : "AcadeMedia AB"
+  }, {
+    "id" : "Acando AB"
+  }, {
+    "id" : "ACAP Invest AB"
+  }, {
+    "id" : "Acarix AB"
+  }, {
+    "id" : "Acast AB"
+  }, {
+    "id" : "Access Stratego A/S"
+  }, {
+    "id" : "Acconeer AB"
+  }, {
+    "id" : "Acenta Group AB"
+  }, {
+    "id" : "ACF III slhf."
+  }, {
+    "id" : "ACF IV slhf."
+  }, {
+    "id" : "A-Com AB"
+  }, {
+    "id" : "AcouSort AB"
+  }, {
+    "id" : "Acrinova AB"
+  }, {
+    "id" : "ACROUD AB"
+  }, {
+    "id" : "Actavis Group hf."
+  }, {
+    "id" : "Actic Group AB"
+  }, {
+    "id" : "Active Biotech AB"
+  }, {
+    "id" : "Acuvi AB"
+  }, {
+    "id" : "Adapta Fastigheter Aktiebolag"
+  }, {
+    "id" : "Adapteo Oyj"
+  }, {
+    "id" : "AdCityMedia AB"
+  }, {
+    "id" : "AdderaCare AB"
+  }, {
+    "id" : "AddLife AB"
+  }, {
+    "id" : "Addnode Group AB"
+  }, {
+    "id" : "Addtech AB"
+  }, {
+    "id" : "ADDvise Group AB (publ)"
+  }, {
+    "id" : "Adform A/S"
+  }, {
+    "id" : "Admicom Oyj"
+  }, {
+    "id" : "Administer Oyj"
+  }, {
+    "id" : "adServing International A/S"
+  }, {
+    "id" : "Adtraction Group AB"
+  }, {
+    "id" : "Advenica AB"
+  }, {
+    "id" : "Adventure Box Technology AB"
+  }, {
+    "id" : "AE4 2017 Sweden AB"
+  }, {
+    "id" : "Aerocrine AB"
+  }, {
+    "id" : "AEROF Sweden Bondco AB (publ)"
+  }, {
+    "id" : "Afarak Group SE"
+  }, {
+    "id" : "Affecto Oyj"
+  }, {
+    "id" : "Affitech A/S"
+  }, {
+    "id" : "Affärsstrategerna AB"
+  }, {
+    "id" : "AFL fjárfestingarfélag hf."
+  }, {
+    "id" : "AFRICA ENERGY CORP."
+  }, {
+    "id" : "AFRY AB"
+  }, {
+    "id" : "Agat Ejendomme A/S"
+  }, {
+    "id" : "Agellis Group AB"
+  }, {
+    "id" : "AGES Industries AB"
+  }, {
+    "id" : "AGF A/S"
+  }, {
+    "id" : "AGILLIC A/S"
+  }, {
+    "id" : "Agrokultura AB"
+  }, {
+    "id" : "Agromino A/S"
+  }, {
+    "id" : "A Group of Retail Assets Sweden AB"
+  }, {
+    "id" : "Agtira AB"
+  }, {
+    "id" : "Ahlsell AB"
+  }, {
+    "id" : "Ahlstrom"
+  }, {
+    "id" : "Ahlstrom-Munksjö Oyj"
+  }, {
+    "id" : "Ahtium Oyj"
+  }, {
+    "id" : "Aiforia Technologies Oyj"
+  }, {
+    "id" : "Ainax"
+  }, {
+    "id" : "Aino Health AB (publ)"
+  }, {
+    "id" : "Akademibokhandeln Holding AB"
+  }, {
+    "id" : "Akelius Residential Property AB"
+  }, {
+    "id" : "Aker Seafoods ASA"
+  }, {
+    "id" : "Akraneskaupstaður"
+  }, {
+    "id" : "Aktia Pankki"
+  }, {
+    "id" : "Aktia Pankki Oyj"
+  }, {
+    "id" : "Aktiebolaget Högkullen"
+  }, {
+    "id" : "Aktieselskabet Arbejdernes Landsbank"
+  }, {
+    "id" : "Aktieselskabet Schouw & Co."
+  }, {
+    "id" : "Akureyrarbær"
+  }, {
+    "id" : "Albani Bryggerierne"
+  }, {
+    "id" : "Alcadon Group AB"
+  }, {
+    "id" : "Alda Credit Fund II slhf."
+  }, {
+    "id" : "Alda Credit Fund slhf."
+  }, {
+    "id" : "Aldata Solution Oyj"
+  }, {
+    "id" : "Alefarm Brewing A/S"
+  }, {
+    "id" : "Alelion Energy Systems AB"
+  }, {
+    "id" : "Alexandria Group Oyj"
+  }, {
+    "id" : "Alfa Laval AB"
+  }, {
+    "id" : "Alfesca hf."
+  }, {
+    "id" : "Alfred Berg Finland Oyj"
+  }, {
+    "id" : "Alfred Berg SE, Helsinki Branch"
+  }, {
+    "id" : "Aligera AB"
+  }, {
+    "id" : "Aligera Holding AB"
+  }, {
+    "id" : "Aligro Planet Acquisition Company AB"
+  }, {
+    "id" : "Alimak Group"
+  }, {
+    "id" : "Alisa Bank Plc"
+  }, {
+    "id" : "ALK-Abelló"
+  }, {
+    "id" : "Allarity Therapeutics A/S"
+  }, {
+    "id" : "All Cards Service Center - ACSC AB"
+  }, {
+    "id" : "Alleima AB"
+  }, {
+    "id" : "Allenex AB"
+  }, {
+    "id" : "ALLGON AB"
+  }, {
+    "id" : "Alliance Oil Company Ltd"
+  }, {
+    "id" : "Alligator Bioscience AB"
+  }, {
+    "id" : "Alligo AB"
+  }, {
+    "id" : "Alm. Brand A/S"
+  }, {
+    "id" : "Alm. Brand Formue A/S"
+  }, {
+    "id" : "Alm. Brand Invest"
+  }, {
+    "id" : "Alm. Brand Pantebreve A/S"
+  }, {
+    "id" : "Alma íbúðafélag hf."
+  }, {
+    "id" : "Alma Media"
+  }, {
+    "id" : "Almenni hlutabréfasjóðurinn hf."
+  }, {
+    "id" : "ALM Equity AB"
+  }, {
+    "id" : "Alpcot Holding AB"
+  }, {
+    "id" : "AL Sydbank A/S"
+  }, {
+    "id" : "Alvotech S.A."
+  }, {
+    "id" : "AlzeCure Pharma AB"
+  }, {
+    "id" : "Alzinova AB"
+  }, {
+    "id" : "Amagerbanken A/S"
+  }, {
+    "id" : "Amagerbanken af 2011 A/S"
+  }, {
+    "id" : "Amago Capital"
+  }, {
+    "id" : "Amaroq Ltd."
+  }, {
+    "id" : "Amasten Fastighets AB"
+  }, {
+    "id" : "Ambea AB"
+  }, {
+    "id" : "Ambu A/S"
+  }, {
+    "id" : "Amer Sports"
+  }, {
+    "id" : "Amniotics AB"
+  }, {
+    "id" : "Ancora Energispar AB"
+  }, {
+    "id" : "Andersen & Martini Holding A/S"
+  }, {
+    "id" : "Annehem Fastigheter AB"
+  }, {
+    "id" : "Annehem Fastigheter AB (publ)"
+  }, {
+    "id" : "Annexin Pharmaceuticals AB"
+  }, {
+    "id" : "Anora Group Oyj"
+  }, {
+    "id" : "Anoto Group AB"
+  }, {
+    "id" : "Aonic AB (publ)"
+  }, {
+    "id" : "Apetit Oyj"
+  }, {
+    "id" : "Apotea AB (publ)"
+  }, {
+    "id" : "Aprendere Skolor AB"
+  }, {
+    "id" : "Aqeri Holding AB"
+  }, {
+    "id" : "AQ Group AB"
+  }, {
+    "id" : "Aqualife A/S"
+  }, {
+    "id" : "Aquaporin A/S"
+  }, {
+    "id" : "Arcam AB"
+  }, {
+    "id" : "ArcAroma AB"
+  }, {
+    "id" : "Arcoma AB"
+  }, {
+    "id" : "Arctic Blue Beverages AB"
+  }, {
+    "id" : "Arctic Falls Aktiebolag"
+  }, {
+    "id" : "Arctic Minerals AB"
+  }, {
+    "id" : "Arctic Paper AB"
+  }, {
+    "id" : "Arenakoncernen Holding AB (publ)"
+  }, {
+    "id" : "Argentum Capital S.A"
+  }, {
+    "id" : "Arion Banki"
+  }, {
+    "id" : "Arion banki hf."
+  }, {
+    "id" : "Arise AB"
+  }, {
+    "id" : "Arjo AB"
+  }, {
+    "id" : "Arkil Holding A/S"
+  }, {
+    "id" : "Arlandastad Group AB"
+  }, {
+    "id" : "Arla Plast AB"
+  }, {
+    "id" : "Artimplant AB"
+  }, {
+    "id" : "Arwidsro Fastighets AB (publ)"
+  }, {
+    "id" : "Arvo Sijoitusosuuskunta"
+  }, {
+    "id" : "Asarina Pharma AB"
+  }, {
+    "id" : "Ascelia Pharma AB"
+  }, {
+    "id" : "Asetek A/S"
+  }, {
+    "id" : "Asgaard Group A/S"
+  }, {
+    "id" : "Askar Capital hf."
+  }, {
+    "id" : "ASK Capital Plc"
+  }, {
+    "id" : "Asker Healthcare Group AB"
+  }, {
+    "id" : "Asmodee Group AB"
+  }, {
+    "id" : "Aspire Global plc"
+  }, {
+    "id" : "Aspiro AB"
+  }, {
+    "id" : "Aspo"
+  }, {
+    "id" : "Aspocomp Group Oyj"
+  }, {
+    "id" : "ASSA ABLOY  AB"
+  }, {
+    "id" : "Astralis A/S"
+  }, {
+    "id" : "AstraZeneca PLC"
+  }, {
+    "id" : "Asuntosalkku Oyj"
+  }, {
+    "id" : "Atari SA"
+  }, {
+    "id" : "Atella Fastigheter AB (publ)"
+  }, {
+    "id" : "Athanase Innovation AB"
+  }, {
+    "id" : "Athena Investments A/S"
+  }, {
+    "id" : "Athena IT-Group"
+  }, {
+    "id" : "Atlantic Airways P/F"
+  }, {
+    "id" : "Atlantic Petroleum P/F"
+  }, {
+    "id" : "Atlas Copco AB"
+  }, {
+    "id" : "Atom"
+  }, {
+    "id" : "Atorka Group hf."
+  }, {
+    "id" : "ATP"
+  }, {
+    "id" : "Atria Oyj"
+  }, {
+    "id" : "Atrium Ljungberg AB"
+  }, {
+    "id" : "Attendo AB"
+  }, {
+    "id" : "Atvexa AB"
+  }, {
+    "id" : "Audientes A/S"
+  }, {
+    "id" : "AudioDev AB"
+  }, {
+    "id" : "Auðlind hf."
+  }, {
+    "id" : "Aurelius Equity Opportunities AB (publ)"
+  }, {
+    "id" : "Auriant Mining AB"
+  }, {
+    "id" : "Auriga Industries A/S"
+  }, {
+    "id" : "Austurbakki hf."
+  }, {
+    "id" : "Autoliv Inc."
+  }, {
+    "id" : "Avant hf."
+  }, {
+    "id" : "Avanza AB"
+  }, {
+    "id" : "Avanza Bank AB"
+  }, {
+    "id" : "Awardit AB"
+  }, {
+    "id" : "Avega AB"
+  }, {
+    "id" : "Avensia AB"
+  }, {
+    "id" : "Aventura Group AB"
+  }, {
+    "id" : "AvestaPolarit Oyj"
+  }, {
+    "id" : "Avida Finans AB"
+  }, {
+    "id" : "Avidly Oyj"
+  }, {
+    "id" : "Avtech Sweden AB"
+  }, {
+    "id" : "Axentia Group AB (publ)"
+  }, {
+    "id" : "Axfood AB"
+  }, {
+    "id" : "aXichem AB"
+  }, {
+    "id" : "Axis AB"
+  }, {
+    "id" : "AX IV EG Holding III Aps"
+  }, {
+    "id" : "Axlon Group AB"
+  }, {
+    "id" : "Axolot Solutions Holding AB"
+  }, {
+    "id" : "AX V Nissens ApS"
+  }, {
+    "id" : "Ayima Group AB"
+  }, {
+    "id" : "Azelio AB"
+  }, {
+    "id" : "B3 Consulting Group AB"
+  }, {
+    "id" : "Bactiguard Holding AB"
+  }, {
+    "id" : "BactiQuant A/S"
+  }, {
+    "id" : "Bahnhof AB"
+  }, {
+    "id" : "Bakkavör Group hf."
+  }, {
+    "id" : "Balco Group AB"
+  }, {
+    "id" : "Ballingslöv International AB"
+  }, {
+    "id" : "Baltic Horizon Fund / Baltic Horizon Capital"
+  }, {
+    "id" : "Bambuser AB"
+  }, {
+    "id" : "Banca di Roma S.p.A. Frankfurt Branch"
+  }, {
+    "id" : "Bang & Olufsen A/S"
+  }, {
+    "id" : "BankInv. Pension Bioteknologi"
+  }, {
+    "id" : "BankInvest"
+  }, {
+    "id" : "BankInvest Almen Bolig, Investeringsforeningen"
+  }, {
+    "id" : "BankInvest II"
+  }, {
+    "id" : "BankInvest Indeksobligationer, Specialforeningen"
+  }, {
+    "id" : "Bankinvest IV"
+  }, {
+    "id" : "BankInvest Virksomhedsobligationer"
+  }, {
+    "id" : "Bank of Scotland"
+  }, {
+    "id" : "bankTrelleborg"
+  }, {
+    "id" : "Barclays Bank Plc"
+  }, {
+    "id" : "Baseload Capital Sweden AB (publ)"
+  }, {
+    "id" : "BasWare"
+  }, {
+    "id" : "Baugur Group hf."
+  }, {
+    "id" : "Bavarian Nordic A/S"
+  }, {
+    "id" : "Bawat Water Technologies AB"
+  }, {
+    "id" : "BAYPORT INTERMEDIATE HOLDCO PLC"
+  }, {
+    "id" : "Bayport Management LTD"
+  }, {
+    "id" : "BBS-Bioactive Bone Substitutes Oyj"
+  }, {
+    "id" : "BeammWave AB"
+  }, {
+    "id" : "BE Group AB"
+  }, {
+    "id" : "Beijer Alma AB"
+  }, {
+    "id" : "Beijer Ref AB"
+  }, {
+    "id" : "Bergkvist-Siljan AB"
+  }, {
+    "id" : "Bergman & Beving"
+  }, {
+    "id" : "Bergman & Beving AB"
+  }, {
+    "id" : "Bergs Timber AB"
+  }, {
+    "id" : "Bergteamet AB"
+  }, {
+    "id" : "Bergteamet Holding AB"
+  }, {
+    "id" : "Berlin IV A/S"
+  }, {
+    "id" : "Berner Industrier AB"
+  }, {
+    "id" : "Besqab AB"
+  }, {
+    "id" : "Besqab AB(publ)"
+  }, {
+    "id" : "Betolar Oyj"
+  }, {
+    "id" : "Betsson AB"
+  }, {
+    "id" : "Better Collective A/S"
+  }, {
+    "id" : "Betting Promotion Sweden AB"
+  }, {
+    "id" : "BEWI ASA"
+  }, {
+    "id" : "BEWiSynbra Group AB (publ)"
+  }, {
+    "id" : "BG Invest"
+  }, {
+    "id" : "BHG Group AB"
+  }, {
+    "id" : "BHJ"
+  }, {
+    "id" : "Biacore"
+  }, {
+    "id" : "BI Boligejendomme A/S"
+  }, {
+    "id" : "BI Bull, Hedgeforening"
+  }, {
+    "id" : "BICO Group AB"
+  }, {
+    "id" : "BI Erhvervsejendomme A/S"
+  }, {
+    "id" : "BIG 1 A/S"
+  }, {
+    "id" : "BIG 2 A/S"
+  }, {
+    "id" : "BIG 3 A/S"
+  }, {
+    "id" : "BIG 4 A/S"
+  }, {
+    "id" : "BIG 5 A/S"
+  }, {
+    "id" : "BIG 6 A/S"
+  }, {
+    "id" : "BI Hedge Stabil"
+  }, {
+    "id" : "BIL Danmark, filial af Banque Internationale à Luxembourg S.A."
+  }, {
+    "id" : "Bilia AB"
+  }, {
+    "id" : "Billerud Aktiebolag"
+  }, {
+    "id" : "Bilot Oyj"
+  }, {
+    "id" : "BIMobject AB"
+  }, {
+    "id" : "Binero Group AB"
+  }, {
+    "id" : "BioArctic AB"
+  }, {
+    "id" : "BioCirc Group Holding ApS"
+  }, {
+    "id" : "Bioextrax AB"
+  }, {
+    "id" : "BioGaia AB"
+  }, {
+    "id" : "Biohit Oyj"
+  }, {
+    "id" : "BioInvent International AB"
+  }, {
+    "id" : "Biokraft International AB "
+  }, {
+    "id" : "Biolin Scientific AB"
+  }, {
+    "id" : "BioMar Holding A/S"
+  }, {
+    "id" : "BioPhausia AB"
+  }, {
+    "id" : "BioPorto  A/S"
+  }, {
+    "id" : "Bioretec Oy"
+  }, {
+    "id" : "Bioscan A/S"
+  }, {
+    "id" : "Biosergen AB"
+  }, {
+    "id" : "Bioservo Technologies AB"
+  }, {
+    "id" : "Biotage AB"
+  }, {
+    "id" : "Biotie Therapies"
+  }, {
+    "id" : "Biovica International AB"
+  }, {
+    "id" : "Bio Vitos Pharma AB"
+  }, {
+    "id" : "Bio-Works Technologies AB"
+  }, {
+    "id" : "Birka Line Abp"
+  }, {
+    "id" : "Bittium Oyj"
+  }, {
+    "id" : "Björn Borg AB"
+  }, {
+    "id" : "Black Earth Farming Ltd."
+  }, {
+    "id" : "BlackPearl Resources Inc."
+  }, {
+    "id" : "BlueStar Securities PLT"
+  }, {
+    "id" : "BMST Intressenter AB (publ)"
+  }, {
+    "id" : "BNP Paribas"
+  }, {
+    "id" : "BoConcept Holding"
+  }, {
+    "id" : "Boho Group AB"
+  }, {
+    "id" : "Bokusgruppen AB"
+  }, {
+    "id" : "Boliden AB"
+  }, {
+    "id" : "Boliga Gruppen A/S"
+  }, {
+    "id" : "BoMill AB"
+  }, {
+    "id" : "Bonava AB"
+  }, {
+    "id" : "Bonesupport Holding AB"
+  }, {
+    "id" : "Bong AB"
+  }, {
+    "id" : "Bonum Pankki Oyj"
+  }, {
+    "id" : "Bonäsudden Holding AB"
+  }, {
+    "id" : "Boozt AB"
+  }, {
+    "id" : "Boreo Oyj"
+  }, {
+    "id" : "Bore Tech AB"
+  }, {
+    "id" : "Borgo AB"
+  }, {
+    "id" : "Borås Wäfveri AB"
+  }, {
+    "id" : "Boss Media AB"
+  }, {
+    "id" : "BoStad A/S"
+  }, {
+    "id" : "Botnia Gold AB"
+  }, {
+    "id" : "Boule Diagnostics AB"
+  }, {
+    "id" : "Brado AB"
+  }, {
+    "id" : "Brain+ A/S"
+  }, {
+    "id" : "Braincool AB"
+  }, {
+    "id" : "Brandts Ventures"
+  }, {
+    "id" : "Bravida Holding AB"
+  }, {
+    "id" : "Brd. Klee A/S"
+  }, {
+    "id" : "Bredband2 i Skandinavien AB"
+  }, {
+    "id" : "BRIC ELN"
+  }, {
+    "id" : "Bricknode Holding AB"
+  }, {
+    "id" : "BrightBid Group AB"
+  }, {
+    "id" : "Brighter AB"
+  }, {
+    "id" : "Brilliant Future AB"
+  }, {
+    "id" : "Brim hf."
+  }, {
+    "id" : "Bringwell International AB"
+  }, {
+    "id" : "Brinova Fastigheter AB"
+  }, {
+    "id" : "BRIO AB"
+  }, {
+    "id" : "Britannia Invest"
+  }, {
+    "id" : "Brock Milton Capital AB"
+  }, {
+    "id" : "Broström AB"
+  }, {
+    "id" : "Brødrene A. & O. Johansen A/S"
+  }, {
+    "id" : "Brødrene Hartmann A/S"
+  }, {
+    "id" : "Brøndbyernes IF Fodbold A/S"
+  }, {
+    "id" : "BS sjóður"
+  }, {
+    "id" : "BTS Group AB"
+  }, {
+    "id" : "Bufab AB"
+  }, {
+    "id" : "BuildData Group AB"
+  }, {
+    "id" : "Bulten AB"
+  }, {
+    "id" : "Búnaðarbanki Íslands hf."
+  }, {
+    "id" : "Burðarás hf."
+  }, {
+    "id" : "Bure Equity  AB"
+  }, {
+    "id" : "Byggðastofnun"
+  }, {
+    "id" : "Byggfakta Group Nordic HoldCo AB"
+  }, {
+    "id" : "Byggmax Group AB"
+  }, {
+    "id" : "Byggmästare Anders J Ahlström Fastighets AB"
+  }, {
+    "id" : "Byggmästare Anders J Ahlström Holding AB"
+  }, {
+    "id" : "ByggPartner Gruppen AB"
+  }, {
+    "id" : "Byr sparisjóður"
+  }, {
+    "id" : "C.I.S.L. Gruppen AB"
+  }, {
+    "id" : "Cabonline Group AB (publ)"
+  }, {
+    "id" : "CA Fastigheter Aktiebolag (publ)"
+  }, {
+    "id" : "CAG Group AB"
+  }, {
+    "id" : "Calliditas Therapeutics AB"
+  }, {
+    "id" : "Calligo (UK) Limited"
+  }, {
+    "id" : "Calviks AB (publ)"
+  }, {
+    "id" : "Camurus AB"
+  }, {
+    "id" : "Canatu Oyj"
+  }, {
+    "id" : "Candles Scandinavia AB"
+  }, {
+    "id" : "Cantargia AB"
+  }, {
+    "id" : "Caperio Holding AB"
+  }, {
+    "id" : "Capilon AB"
+  }, {
+    "id" : "Capio AB"
+  }, {
+    "id" : "Capio AB."
+  }, {
+    "id" : "CapMan"
+  }, {
+    "id" : "Capnor Weasel Bidco Oyj"
+  }, {
+    "id" : "Carasent AB"
+  }, {
+    "id" : "Cardo AB"
+  }, {
+    "id" : "Careium AB"
+  }, {
+    "id" : "Carl Lamm AB"
+  }, {
+    "id" : "Carl Lamm Holding AB"
+  }, {
+    "id" : "Carlsberg A/S"
+  }, {
+    "id" : "Carlsberg Breweries A/S"
+  }, {
+    "id" : "Carlsberg Finans A/S"
+  }, {
+    "id" : "Cary Group Holding AB"
+  }, {
+    "id" : "Case Group AB"
+  }, {
+    "id" : "Cash Guard AB"
+  }, {
+    "id" : "Cassandra Oil AB"
+  }, {
+    "id" : "Castellum AB"
+  }, {
+    "id" : "Catech AB"
+  }, {
+    "id" : "Catella AB"
+  }, {
+    "id" : "Catena AB"
+  }, {
+    "id" : "Catena Media P.L.C"
+  }, {
+    "id" : "Caverion Oyj"
+  }, {
+    "id" : "Cavotec Group AB"
+  }, {
+    "id" : "Cavotec SA"
+  }, {
+    "id" : "cBrain A/S"
+  }, {
+    "id" : "CCP hf."
+  }, {
+    "id" : "CDON AB"
+  }, {
+    "id" : "Cedergrenska AB"
+  }, {
+    "id" : "CellaVision"
+  }, {
+    "id" : "Cell Impact AB"
+  }, {
+    "id" : "Cemat A/S"
+  }, {
+    "id" : "Cembrit Group A/S"
+  }, {
+    "id" : "Century Aluminum Company"
+  }, {
+    "id" : "Ceratiidae II AB"
+  }, {
+    "id" : "Cereno Scientific AB"
+  }, {
+    "id" : "ChargePanel AB"
+  }, {
+    "id" : "Checkin.com Group AB"
+  }, {
+    "id" : "Cheffelo AB"
+  }, {
+    "id" : "ChemoMetec"
+  }, {
+    "id" : "Cherry AB"
+  }, {
+    "id" : "Chips Abp"
+  }, {
+    "id" : "Chordate Medical Holding AB"
+  }, {
+    "id" : "Chr. Hansen Holding"
+  }, {
+    "id" : "Chr.Hansen Holding A/S"
+  }, {
+    "id" : "CHR Bygga Bostäder Holding AB"
+  }, {
+    "id" : "Christiania Bank og Kreditkasse ASA"
+  }, {
+    "id" : "ChromoGenics AB"
+  }, {
+    "id" : "Cibus Nordic Real Estate AB"
+  }, {
+    "id" : "Cidron Delfi Intressenter AB"
+  }, {
+    "id" : "Cielo Mar Finans AB (publ)"
+  }, {
+    "id" : "Cimber Sterling Group"
+  }, {
+    "id" : "Cinclus Pharma Holding AB"
+  }, {
+    "id" : "Cinis Fertilizer AB"
+  }, {
+    "id" : "Cinnober Financial Technology"
+  }, {
+    "id" : "Cint Group AB"
+  }, {
+    "id" : "Cipp Technology Solutions A/S"
+  }, {
+    "id" : "CirChem AB"
+  }, {
+    "id" : "Circle Energy Sweden AB"
+  }, {
+    "id" : "Cision AB"
+  }, {
+    "id" : "Citigroup Funding Inc."
+  }, {
+    "id" : "Citigroup Global Markets Funding Luxembourg S.C.A."
+  }, {
+    "id" : "Citigroup Inc."
+  }, {
+    "id" : "Citira Holding AB (publ)"
+  }, {
+    "id" : "Citycon Oyj"
+  }, {
+    "id" : "City of Vantaa"
+  }, {
+    "id" : "Cityvarasto Oyj"
+  }, {
+    "id" : "Clas Ohlson AB"
+  }, {
+    "id" : "Clavister AB"
+  }, {
+    "id" : "Clean Industry Solutions Hold Europe AB"
+  }, {
+    "id" : "Clean Motion AB"
+  }, {
+    "id" : "Cleantech Building Materials Plc"
+  }, {
+    "id" : "Clearwater Finance Inc."
+  }, {
+    "id" : "Clemondo Group AB"
+  }, {
+    "id" : "Climeon AB"
+  }, {
+    "id" : "Cline Scientific AB"
+  }, {
+    "id" : "Clinical Laserthermia Systems AB"
+  }, {
+    "id" : "Cloetta AB"
+  }, {
+    "id" : "Cloetta Fazer AB"
+  }, {
+    "id" : "CMO II"
+  }, {
+    "id" : "Coala-life Group AB"
+  }, {
+    "id" : "Coastal Contacts Inc"
+  }, {
+    "id" : "Codan A/S"
+  }, {
+    "id" : "CodeMill AB"
+  }, {
+    "id" : "Coffee Stain Group AB"
+  }, {
+    "id" : "COIN Competitive Investments A/S"
+  }, {
+    "id" : "CoinShares International Ltd"
+  }, {
+    "id" : "CoinShares XBT Provider AB"
+  }, {
+    "id" : "Collateralized Mortgage A/S"
+  }, {
+    "id" : "Collaxio AB "
+  }, {
+    "id" : "Collector AB"
+  }, {
+    "id" : "Coloplast A/S"
+  }, {
+    "id" : "Coloplast Finance B.V."
+  }, {
+    "id" : "Color Print"
+  }, {
+    "id" : "Columbus A/S"
+  }, {
+    "id" : "CombinedX AB"
+  }, {
+    "id" : "Com Hem Holding AB"
+  }, {
+    "id" : "Commerzbank"
+  }, {
+    "id" : "COMMERZBANK AG"
+  }, {
+    "id" : "Compactor Fastigheter AB"
+  }, {
+    "id" : "Company"
+  }, {
+    "id" : "Compodium International AB"
+  }, {
+    "id" : "Componenta Oyj"
+  }, {
+    "id" : "Comptel"
+  }, {
+    "id" : "Conapto Holding AB"
+  }, {
+    "id" : "Concejo AB"
+  }, {
+    "id" : "Concentric AB"
+  }, {
+    "id" : "Concordia Maritime AB"
+  }, {
+    "id" : "Connecta AB"
+  }, {
+    "id" : "Consenta Holding"
+  }, {
+    "id" : "Consti Oyj"
+  }, {
+    "id" : "Containerships Oyj"
+  }, {
+    "id" : "Coor Service Management Holding AB"
+  }, {
+    "id" : "Copenhagen Capital A/S"
+  }, {
+    "id" : "Copyright Agent A/S"
+  }, {
+    "id" : "Corem Kelly AB (publ)"
+  }, {
+    "id" : "Corem Property Group AB"
+  }, {
+    "id" : "Corline Biomedical AB"
+  }, {
+    "id" : "Cortus Energy AB"
+  }, {
+    "id" : "C-Rad AB"
+  }, {
+    "id" : "Cramo Oyj"
+  }, {
+    "id" : "Creades AB"
+  }, {
+    "id" : "Creaspac AB"
+  }, {
+    "id" : "Creditas Financial Solutions LTD"
+  }, {
+    "id" : "Crunchfish AB"
+  }, {
+    "id" : "Cryptzone AB"
+  }, {
+    "id" : "CTC_X"
+  }, {
+    "id" : "CTEK AB"
+  }, {
+    "id" : "CTT Systems AB"
+  }, {
+    "id" : "Curalogic A/S"
+  }, {
+    "id" : "Custos, AB"
+  }, {
+    "id" : "CVC á Íslandi ehf."
+  }, {
+    "id" : "C WorldWide"
+  }, {
+    "id" : "CybAero AB"
+  }, {
+    "id" : "Cybercom Group Europe AB"
+  }, {
+    "id" : "Cyber Security 1 AB"
+  }, {
+    "id" : "Cyxone AB"
+  }, {
+    "id" : "D. Carnegie & Co"
+  }, {
+    "id" : "D. Carnegie & Co AB.  OLD"
+  }, {
+    "id" : "Dacke Group Nordic AB"
+  }, {
+    "id" : "Dagon AB"
+  }, {
+    "id" : "DAI Holding"
+  }, {
+    "id" : "Danfold A/S"
+  }, {
+    "id" : "Danisco A/S"
+  }, {
+    "id" : "Danish Aerospace Company A/S"
+  }, {
+    "id" : "Danish Crown A/S"
+  }, {
+    "id" : "Danish European High Yield Fund"
+  }, {
+    "id" : "Danmarks Nationalbank"
+  }, {
+    "id" : "Danmarks Skibskredit A/S"
+  }, {
+    "id" : "Dannemora Mineral AB"
+  }, {
+    "id" : "Danske Andelskassers Bank"
+  }, {
+    "id" : "Danske Bank"
+  }, {
+    "id" : "Danske Bank A/S"
+  }, {
+    "id" : "Danske Bank Plc"
+  }, {
+    "id" : "Danske Hypotek"
+  }, {
+    "id" : "Danske Invest"
+  }, {
+    "id" : "Danske Invest Kina"
+  }, {
+    "id" : "Danske Invest Select"
+  }, {
+    "id" : "Danske Trælast"
+  }, {
+    "id" : "Dansk Industri Invest A/S"
+  }, {
+    "id" : "Dansk Kapitalanlæg"
+  }, {
+    "id" : "Dantax A/S"
+  }, {
+    "id" : "DanTruck A/S"
+  }, {
+    "id" : "Danventures A/S"
+  }, {
+    "id" : "Dataproces Group A/S"
+  }, {
+    "id" : "DBT CAPITAL INV AB"
+  }, {
+    "id" : "DDM Debt AB (publ)"
+  }, {
+    "id" : "DDM Holding AG"
+  }, {
+    "id" : "Deadline Games"
+  }, {
+    "id" : "DecideAct A/S"
+  }, {
+    "id" : "Dedicare Group AB"
+  }, {
+    "id" : "Delarka Holding AB"
+  }, {
+    "id" : "Delete Group Oyj"
+  }, {
+    "id" : "Delta hf."
+  }, {
+    "id" : "Deltaq a/s"
+  }, {
+    "id" : "Demant A/S"
+  }, {
+    "id" : "Den Jyske Sparekasse A/S"
+  }, {
+    "id" : "Dentalum Operations AB"
+  }, {
+    "id" : "DePfa Bank plc"
+  }, {
+    "id" : "Desenio Group AB"
+  }, {
+    "id" : "Destia Group  Oyj"
+  }, {
+    "id" : "Detection Technology Oyj"
+  }, {
+    "id" : "Det Østasiatiske Kompagni A/S"
+  }, {
+    "id" : "Deutsche Bank AG London"
+  }, {
+    "id" : "Deversify Health AB"
+  }, {
+    "id" : "DevPort AB"
+  }, {
+    "id" : "Devyser Diagnostics AB"
+  }, {
+    "id" : "Dexia"
+  }, {
+    "id" : "Dexia Funding Netherlands"
+  }, {
+    "id" : "Dexia Hypothekenbank Berlin AG"
+  }, {
+    "id" : "DFDS A/S"
+  }, {
+    "id" : "DGC One AB"
+  }, {
+    "id" : "Diadrom Holding AB"
+  }, {
+    "id" : "Diagonal Bio AB"
+  }, {
+    "id" : "Diamorph AB"
+  }, {
+    "id" : "Diamyd Medical AB (publ)"
+  }, {
+    "id" : "DiBa Bank"
+  }, {
+    "id" : "DIBS Payment Services AB"
+  }, {
+    "id" : "Dicentia A/S"
+  }, {
+    "id" : "Dicot Pharma AB"
+  }, {
+    "id" : "Digia Oyj"
+  }, {
+    "id" : "Digitalist Group Plc"
+  }, {
+    "id" : "Digital Workforce Services Oyj"
+  }, {
+    "id" : "Digizuite A/S"
+  }, {
+    "id" : "Dignitana AB"
+  }, {
+    "id" : "Din Bostad Sverige AB"
+  }, {
+    "id" : "DistIT AB"
+  }, {
+    "id" : "DIstrict Metals Corp."
+  }, {
+    "id" : "Divio Technologies AB"
+  }, {
+    "id" : "Diös Fastigheter AB"
+  }, {
+    "id" : "Djurslands Bank A/S"
+  }, {
+    "id" : "DK Company A/S"
+  }, {
+    "id" : "DK Syd AB"
+  }, {
+    "id" : "DKTI A/S"
+  }, {
+    "id" : "Dlaboratory Sweden AB"
+  }, {
+    "id" : "DLF Seeds A/S"
+  }, {
+    "id" : "DLG Finance A/S"
+  }, {
+    "id" : "DLR Kredit A/S"
+  }, {
+    "id" : "DNA Oyj"
+  }, {
+    "id" : "Dometic Group AB"
+  }, {
+    "id" : "Done.ai Group AB"
+  }, {
+    "id" : "DonkeyRepublic Holding A/S"
+  }, {
+    "id" : "Dooba Finance AB (publ)"
+  }, {
+    "id" : "Doro AB"
+  }, {
+    "id" : "Dovre Group Oyj"
+  }, {
+    "id" : "Doxa AB"
+  }, {
+    "id" : "Drillcon AB"
+  }, {
+    "id" : "DSB"
+  }, {
+    "id" : "DSV A/S"
+  }, {
+    "id" : "DSV Miljø Group A/S"
+  }, {
+    "id" : "DTG Sweden AB"
+  }, {
+    "id" : "Duearity AB"
+  }, {
+    "id" : "Duell Oyj"
+  }, {
+    "id" : "DUG Foodtech AB"
+  }, {
+    "id" : "DUNI AB"
+  }, {
+    "id" : "Duroc AB"
+  }, {
+    "id" : "Dustin Group AB"
+  }, {
+    "id" : "Dynavox Group AB"
+  }, {
+    "id" : "E.ON Finland Oyj"
+  }, {
+    "id" : "EAB Group Oyj"
+  }, {
+    "id" : "Eagle Filters Group Oyj"
+  }, {
+    "id" : "Eastnine AB"
+  }, {
+    "id" : "ebh bank A/S"
+  }, {
+    "id" : "Ecoclime Group AB"
+  }, {
+    "id" : "eCom Teams Sweden AB"
+  }, {
+    "id" : "Ecoup Oyj"
+  }, {
+    "id" : "Eco Wave Power Global AB"
+  }, {
+    "id" : "EDB Gruppen A/S"
+  }, {
+    "id" : "Edgeware AB"
+  }, {
+    "id" : "eEducation Albert AB"
+  }, {
+    "id" : "Eezy Oyj"
+  }, {
+    "id" : "Efecte Oyj"
+  }, {
+    "id" : "Effnetplattformen Holding AB"
+  }, {
+    "id" : "Efima Oyj"
+  }, {
+    "id" : "Egetis Therapeutics AB"
+  }, {
+    "id" : "Egetæpper A/S"
+  }, {
+    "id" : "Egidaco Investments PLC"
+  }, {
+    "id" : "Egla hf."
+  }, {
+    "id" : "EGNS-INVEST"
+  }, {
+    "id" : "EgnsINVEST Ejd. Tyskland"
+  }, {
+    "id" : "Eignarhaldsfélagið Bolar ehf."
+  }, {
+    "id" : "Eignarhaldsfélagið Smáralind ehf."
+  }, {
+    "id" : "ei invest Berlin I GmbH & Co. KG"
+  }, {
+    "id" : "Eik Banki Føroya P/F"
+  }, {
+    "id" : "Eik Banki P/F"
+  }, {
+    "id" : "Eik fasteignafélag hf."
+  }, {
+    "id" : "Eimo Oyj"
+  }, {
+    "id" : "Eimskipafélag Íslands ehf."
+  }, {
+    "id" : "Eimskipafélag Íslands hf."
+  }, {
+    "id" : "Eirles Four Limited"
+  }, {
+    "id" : "Eirles Two Limited"
+  }, {
+    "id" : "Ejendomsobligation AngeredC A/S"
+  }, {
+    "id" : "Eksportfinans ASA"
+  }, {
+    "id" : "El & Industrimontage Svenska AB"
+  }, {
+    "id" : "Elanders AB"
+  }, {
+    "id" : "Elcoteq"
+  }, {
+    "id" : "Elecster Oyj"
+  }, {
+    "id" : "Electrolux,  AB"
+  }, {
+    "id" : "Electrolux Professional AB"
+  }, {
+    "id" : "Elekta AB"
+  }, {
+    "id" : "ElektronikGruppen BK AB"
+  }, {
+    "id" : "Elematic Oyj"
+  }, {
+    "id" : "Elicera Therapeutics AB"
+  }, {
+    "id" : "Elisa"
+  }, {
+    "id" : "Elon AB"
+  }, {
+    "id" : "Elos Medtech AB"
+  }, {
+    "id" : "Eltel AB"
+  }, {
+    "id" : "Embellence Group AB"
+  }, {
+    "id" : "Embla Medical hf"
+  }, {
+    "id" : "EMB Mission Bound AB"
+  }, {
+    "id" : "Embracer Group AB"
+  }, {
+    "id" : "Emplicure AB"
+  }, {
+    "id" : "Enad Global 7 AB"
+  }, {
+    "id" : "Enalyzer A/S"
+  }, {
+    "id" : "Endero Oyj"
+  }, {
+    "id" : "Endomines AB"
+  }, {
+    "id" : "Endomines Finland Oyj"
+  }, {
+    "id" : "Enea AB"
+  }, {
+    "id" : "Enedo Oyj"
+  }, {
+    "id" : "Enento Group Oyj"
+  }, {
+    "id" : "Energi Danmark A/S"
+  }, {
+    "id" : "EnergyO Solutions Invest AB"
+  }, {
+    "id" : "Energy Solutions International"
+  }, {
+    "id" : "Enersense International Oyj"
+  }, {
+    "id" : "Enersize Oyj"
+  }, {
+    "id" : "engcon AB"
+  }, {
+    "id" : "Eniro Group AB"
+  }, {
+    "id" : "Enity Bank Group AB"
+  }, {
+    "id" : "Enity Holding AB"
+  }, {
+    "id" : "ENLABS AB"
+  }, {
+    "id" : "Ennogie Solar Group A/S"
+  }, {
+    "id" : "Enorama Pharma AB"
+  }, {
+    "id" : "EnQuest PLC"
+  }, {
+    "id" : "Entraction Holding AB"
+  }, {
+    "id" : "Envar Holding AB"
+  }, {
+    "id" : "Enzymatica AB"
+  }, {
+    "id" : "Eolus Aktiebolag"
+  }, {
+    "id" : "Ependion AB"
+  }, {
+    "id" : "Epiroc Aktiebolag"
+  }, {
+    "id" : "Episurf Medical AB"
+  }, {
+    "id" : "EQL Pharma AB"
+  }, {
+    "id" : "eQ Oyj"
+  }, {
+    "id" : "EQT AB"
+  }, {
+    "id" : "Ericsson, Telefonab. L M"
+  }, {
+    "id" : "Erria A/S"
+  }, {
+    "id" : "ESCO Marginalen AB (publ)"
+  }, {
+    "id" : "ES Energy Save Holding AB"
+  }, {
+    "id" : "Eskja hf."
+  }, {
+    "id" : "Esmaeilzadeh Holding AB (publ)"
+  }, {
+    "id" : "esoft systems A/S"
+  }, {
+    "id" : "Essity AB"
+  }, {
+    "id" : "Estancia Logistik AB"
+  }, {
+    "id" : "Estea Logistic Properties 5 AB"
+  }, {
+    "id" : "Estea Omsorgsfastigheter AB"
+  }, {
+    "id" : "Etraveli AB"
+  }, {
+    "id" : "Etrion Corporation"
+  }, {
+    "id" : "Etteplan Oyj"
+  }, {
+    "id" : "EuroCom Industries"
+  }, {
+    "id" : "EuroFlorist Intressenter AB (publ)"
+  }, {
+    "id" : "European Directories BondCo S.C.A"
+  }, {
+    "id" : "European Energy A/S"
+  }, {
+    "id" : "European High Yield Fund"
+  }, {
+    "id" : "European Investment Bank"
+  }, {
+    "id" : "European Lifecare Group A/S"
+  }, {
+    "id" : "European Lingerie Group AB"
+  }, {
+    "id" : "European Wind Investment"
+  }, {
+    "id" : "Europeinvestment A/S"
+  }, {
+    "id" : "Europi Property Group AB (publ)"
+  }, {
+    "id" : "Evia Oyj"
+  }, {
+    "id" : "Evli Bank Abp"
+  }, {
+    "id" : "Evli Oyj"
+  }, {
+    "id" : "Evolution AB"
+  }, {
+    "id" : "Evolution Credit Limited"
+  }, {
+    "id" : "Ework Group AB"
+  }, {
+    "id" : "Evox Rifa Group"
+  }, {
+    "id" : "Exel Composites Oyj"
+  }, {
+    "id" : "EXINI Diagnostics AB"
+  }, {
+    "id" : "Exiqon A/S"
+  }, {
+    "id" : "Exista hf."
+  }, {
+    "id" : "Expedit A/S"
+  }, {
+    "id" : "ExpreS2ion Biotech Holding AB"
+  }, {
+    "id" : "Exsitec Holding AB"
+  }, {
+    "id" : "Eyrir Invest hf."
+  }, {
+    "id" : "F.E. Bording A/S"
+  }, {
+    "id" : "F. Junckers Industrier"
+  }, {
+    "id" : "Fabege AB"
+  }, {
+    "id" : "Fagerhult Group AB"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn CDO 1"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn ÍSH"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB 1M"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 1"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 11"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 2"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 4"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 6"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 7"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 8"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KB ABS 9"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn KLS"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn Landsbréf – BÚS I"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn LFEST1 Borgartún"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn OFAN SVÍV"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn OFAN VÍ"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn ORK"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn REG 1"
+  }, {
+    "id" : "Fagfjárfestasjóðurinn REG 2"
+  }, {
+    "id" : "Falck"
+  }, {
+    "id" : "Fantasma Games AB"
+  }, {
+    "id" : "Farice ehf."
+  }, {
+    "id" : "Faron Pharmaceuticals Oy"
+  }, {
+    "id" : "Fasadgruppen Group AB"
+  }, {
+    "id" : "FAST-1 slhf."
+  }, {
+    "id" : "Fast Ejendom, Dansk Ejendomsportefølje"
+  }, {
+    "id" : "Fast Ejendom Danmark"
+  }, {
+    "id" : "Fastighets AB Balder"
+  }, {
+    "id" : "Fastighets AB Stenvalvet"
+  }, {
+    "id" : "Fastighets AB Trianon"
+  }, {
+    "id" : "Fastighetsbolaget Emilshus AB (publ)"
+  }, {
+    "id" : "Fastilium Property Group AB"
+  }, {
+    "id" : "Fastpartner AB"
+  }, {
+    "id" : "FastPassCorp A/S"
+  }, {
+    "id" : "FCE Bank plc."
+  }, {
+    "id" : "FC Husky HoldCo AB"
+  }, {
+    "id" : "Feelgood Svenska AB"
+  }, {
+    "id" : "Félagsbústaðir hf."
+  }, {
+    "id" : "Fellow Finance Oyj"
+  }, {
+    "id" : "Fenix Outdoor International AG"
+  }, {
+    "id" : "Ferroamp AB"
+  }, {
+    "id" : "Ferronordic AB"
+  }, {
+    "id" : "Festi hf."
+  }, {
+    "id" : "Festing ehf."
+  }, {
+    "id" : "FÍ Fasteignafélag slhf."
+  }, {
+    "id" : "Fifax Abp"
+  }, {
+    "id" : "FIH Erhvervsbank A/S"
+  }, {
+    "id" : "FIH Realkredit A/S"
+  }, {
+    "id" : "Filo Corp."
+  }, {
+    "id" : "FIM Group"
+  }, {
+    "id" : "Financial Supervision Authority (Finl)"
+  }, {
+    "id" : "Finanssivalvonta"
+  }, {
+    "id" : "Fingerprint Cards AB"
+  }, {
+    "id" : "Fingrid Oyj"
+  }, {
+    "id" : "Finnair Oyj"
+  }, {
+    "id" : "Finnlines"
+  }, {
+    "id" : "Finnveden"
+  }, {
+    "id" : "Finnvera Oyj"
+  }, {
+    "id" : "Fionia Holding A/S"
+  }, {
+    "id" : "Fionia Invest Aktier, Investeringsforeningen"
+  }, {
+    "id" : "Fionia Invest Korte Obligationer, Investeringsforeningen"
+  }, {
+    "id" : "Fionia Invest Lange Obligationer, Investeringsforeningen"
+  }, {
+    "id" : "Firefly AB"
+  }, {
+    "id" : "First Camp Group AB"
+  }, {
+    "id" : "FirstFarms"
+  }, {
+    "id" : "First Nordic Metals Corp"
+  }, {
+    "id" : "First Venture Sweden AB"
+  }, {
+    "id" : "Fiskars"
+  }, {
+    "id" : "Fiskeldi Eyjafjarðar hf."
+  }, {
+    "id" : "Fiskiðjusamlag Húsavíkur hf."
+  }, {
+    "id" : "Fiskmarkaður Íslands hf."
+  }, {
+    "id" : "FIT Biotech Oy"
+  }, {
+    "id" : "FIVEN ASAFIVEN ASA"
+  }, {
+    "id" : "Fjarðabyggð"
+  }, {
+    "id" : "Fjármálaráðuneytið"
+  }, {
+    "id" : "Fjordbank Mors A/S"
+  }, {
+    "id" : "Fjordbank Mors af 2011 A/S"
+  }, {
+    "id" : "Flaga Group hf."
+  }, {
+    "id" : "Flat Capital AB"
+  }, {
+    "id" : "Flerie AB"
+  }, {
+    "id" : "Flexion Mobile Plc"
+  }, {
+    "id" : "FlexQube AB"
+  }, {
+    "id" : "FL GROUP hf."
+  }, {
+    "id" : "Flowscape Technology AB"
+  }, {
+    "id" : "FLSmidth & Co. A/S"
+  }, {
+    "id" : "Fluicell AB"
+  }, {
+    "id" : "FluoGuide A/S"
+  }, {
+    "id" : "Flügger group A/S"
+  }, {
+    "id" : "Fly Play hf."
+  }, {
+    "id" : "FME Europe Aktiebolag"
+  }, {
+    "id" : "FM Mattsson AB"
+  }, {
+    "id" : "Foamit Corporation"
+  }, {
+    "id" : "Fodelia Oyj"
+  }, {
+    "id" : "FOM Technologies A/S"
+  }, {
+    "id" : "Fondia Oyj"
+  }, {
+    "id" : "Fondsmæglerselskabet af 2004"
+  }, {
+    "id" : "FORAS Holding"
+  }, {
+    "id" : "Force BidCo A/S"
+  }, {
+    "id" : "Forchem Oyj"
+  }, {
+    "id" : "Foreningen European Retail"
+  }, {
+    "id" : "Foreningen Europæiske Ejendom"
+  }, {
+    "id" : "FOREX Bank Aktiebolag"
+  }, {
+    "id" : "Formpipe Software AB"
+  }, {
+    "id" : "FormueEvolution I A/S"
+  }, {
+    "id" : "FormueEvolution II A/S"
+  }, {
+    "id" : "Formuepleje"
+  }, {
+    "id" : "Formuepleje Epikur A/S"
+  }, {
+    "id" : "Formuepleje LimiTTellus A/S"
+  }, {
+    "id" : "Formuepleje Merkur A/S"
+  }, {
+    "id" : "Formuepleje Optimum A/S"
+  }, {
+    "id" : "Formuepleje Pareto A/S"
+  }, {
+    "id" : "Formuepleje Penta A/S"
+  }, {
+    "id" : "Formuepleje Safe A/S"
+  }, {
+    "id" : "Forstædernes Bank A/S"
+  }, {
+    "id" : "Fortaco Group Holdco Oyj"
+  }, {
+    "id" : "Fortinova Fastigheter AB"
+  }, {
+    "id" : "Fortnox AB"
+  }, {
+    "id" : "Fortum"
+  }, {
+    "id" : "Fossar fjárfestingarbanki hf."
+  }, {
+    "id" : "Foss Fasteignafélag slhf."
+  }, {
+    "id" : "Foxway Holding AB (publ)"
+  }, {
+    "id" : "Fractal Gaming Group AB"
+  }, {
+    "id" : "Fragbite Group AB"
+  }, {
+    "id" : "Framery Group Oyj"
+  }, {
+    "id" : "Fram Skandinavien AB"
+  }, {
+    "id" : "Framtak Fjárfestingarbanki hf."
+  }, {
+    "id" : "Francks Kylindustri Holding AB"
+  }, {
+    "id" : "Freemelt Holding AB"
+  }, {
+    "id" : "Freja eID Group AB"
+  }, {
+    "id" : "Frjálsi fjárfestingarbankinn hf."
+  }, {
+    "id" : "Frontmatec Group ApS"
+  }, {
+    "id" : "Frumherji hf."
+  }, {
+    "id" : "F-Secure Oyj"
+  }, {
+    "id" : "FSport AB"
+  }, {
+    "id" : "Func Food Group Oyj"
+  }, {
+    "id" : "Fundamental Invest"
+  }, {
+    "id" : "Funki"
+  }, {
+    "id" : "FUTOP"
+  }, {
+    "id" : "FUUD AB"
+  }, {
+    "id" : "Fynske Bank A/S"
+  }, {
+    "id" : "Færøernes Landstyre"
+  }, {
+    "id" : "Færøsk Kommune Investering"
+  }, {
+    "id" : "Företagsparken Norden Holding AB (publ)"
+  }, {
+    "id" : "Føroya Banki P/F"
+  }, {
+    "id" : "Føroya Landsstýri"
+  }, {
+    "id" : "Føroya Sparikassi P/F"
+  }, {
+    "id" : "G. Falbe-Hansen"
+  }, {
+    "id" : "G4S plc"
+  }, {
+    "id" : "G5 Entertainment AB"
+  }, {
+    "id" : "Gabather AB"
+  }, {
+    "id" : "Gabriel Holding A/S"
+  }, {
+    "id" : "Galliaden Holding AB (publ)"
+  }, {
+    "id" : "Gambling.com Group Plc"
+  }, {
+    "id" : "Gambro"
+  }, {
+    "id" : "Gamigo AG"
+  }, {
+    "id" : "Gaming Corps AB"
+  }, {
+    "id" : "Gaming Innovation Group plc"
+  }, {
+    "id" : "GAMMA: Méllon"
+  }, {
+    "id" : "Gant Company AB"
+  }, {
+    "id" : "Gapwaves AB"
+  }, {
+    "id" : "Garðabær"
+  }, {
+    "id" : "Garo AB"
+  }, {
+    "id" : "Gasporox AB"
+  }, {
+    "id" : "Gate Ventures Plc"
+  }, {
+    "id" : "Generic AB"
+  }, {
+    "id" : "Genexis Group AB"
+  }, {
+    "id" : "Genmab A/S"
+  }, {
+    "id" : "Genova Property Group AB"
+  }, {
+    "id" : "Genovis AB"
+  }, {
+    "id" : "Gentoo Media Inc."
+  }, {
+    "id" : "Georg Jensen A/S"
+  }, {
+    "id" : "GeoSentric Oyj"
+  }, {
+    "id" : "German High Street Properties A/S"
+  }, {
+    "id" : "Getinge AB"
+  }, {
+    "id" : "Geveko, AB"
+  }, {
+    "id" : "Geysir 2008-I Institutional Investor Fund"
+  }, {
+    "id" : "GG Amager Strandvej Holding ApS"
+  }, {
+    "id" : "GG St. Kongensgade 100 og 106 P/S"
+  }, {
+    "id" : "GHP Specialty Care AB"
+  }, {
+    "id" : "Gigasun AB"
+  }, {
+    "id" : "GiG Software PLC"
+  }, {
+    "id" : "Glaston Oyj Abp"
+  }, {
+    "id" : "Glitnir banki hf."
+  }, {
+    "id" : "GlobalConnect A/S"
+  }, {
+    "id" : "Global Gaming 555 AB"
+  }, {
+    "id" : "Global Scanning A/S"
+  }, {
+    "id" : "GLOCALNET"
+  }, {
+    "id" : "Glunz & Jensen Holding A/S"
+  }, {
+    "id" : "GN Store Nord A/S"
+  }, {
+    "id" : "Godsinlösen Nordic AB"
+  }, {
+    "id" : "Gofore Oyj"
+  }, {
+    "id" : "Golden Heights Aktiebolag publ"
+  }, {
+    "id" : "GomSpace Group AB"
+  }, {
+    "id" : "Go North Group AB"
+  }, {
+    "id" : "Goobit Group AB"
+  }, {
+    "id" : "Goodbye Kansas Group AB"
+  }, {
+    "id" : "Goodvalley A/S"
+  }, {
+    "id" : "Gorthon Lines AB (publ)"
+  }, {
+    "id" : "GourmetBryggeriet"
+  }, {
+    "id" : "GPV Industri A/S"
+  }, {
+    "id" : "GRANGEX AB"
+  }, {
+    "id" : "Greater Than AB"
+  }, {
+    "id" : "Greenfood AB (publ)"
+  }, {
+    "id" : "Green Hydrogen Systems A/S"
+  }, {
+    "id" : "Green Impact Ventures A/S"
+  }, {
+    "id" : "Green Landscaping Group AB"
+  }, {
+    "id" : "GreenMobility A/S"
+  }, {
+    "id" : "Green Wind Energy A/S"
+  }, {
+    "id" : "Greiðslumiðlunin Hringur ehf."
+  }, {
+    "id" : "Grindavíkurbær"
+  }, {
+    "id" : "GRK Infra Oyj"
+  }, {
+    "id" : "Gróska ehf."
+  }, {
+    "id" : "Gruvaktiebolaget Viscaria"
+  }, {
+    "id" : "Gränges"
+  }, {
+    "id" : "Grønlandsbanken A/S"
+  }, {
+    "id" : "Guard Therapeutics International AB"
+  }, {
+    "id" : "Gubra A/S"
+  }, {
+    "id" : "Guðmundur Runólfsson hf."
+  }, {
+    "id" : "Guideline Geo AB"
+  }, {
+    "id" : "Guldbrev Holding AB"
+  }, {
+    "id" : "Gunnebo AB"
+  }, {
+    "id" : "Gunnebo Industrier AB"
+  }, {
+    "id" : "Gunnebo Industrier Holding AB"
+  }, {
+    "id" : "GW Energi A/S"
+  }, {
+    "id" : "Gyldendal A/S"
+  }, {
+    "id" : "Gymgrossisten Nordic AB"
+  }, {
+    "id" : "Götenehus Group AB"
+  }, {
+    "id" : "H. Lundbeck A/S"
+  }, {
+    "id" : "H&D Wireless Sweden Holding AB"
+  }, {
+    "id" : "H+H International A/S"
+  }, {
+    "id" : "Hackman Oyj Abp"
+  }, {
+    "id" : "Hacksaw AB"
+  }, {
+    "id" : "Hafnarfjarðarbær"
+  }, {
+    "id" : "Hafnarfjarðarkaupstaður"
+  }, {
+    "id" : "Hafslund"
+  }, {
+    "id" : "Hagar hf."
+  }, {
+    "id" : "Hagstofa Íslands"
+  }, {
+    "id" : "Hagströmer & Qviberg AB"
+  }, {
+    "id" : "HAKI Safety AB"
+  }, {
+    "id" : "Haldex AB"
+  }, {
+    "id" : "Haldor Topsoe A/S"
+  }, {
+    "id" : "Hampiðjan hf."
+  }, {
+    "id" : "Hancap AB"
+  }, {
+    "id" : "Handelsbanken Fondbolag Ab"
+  }, {
+    "id" : "Handelsbanken Fonder AB"
+  }, {
+    "id" : "Handelsinvest"
+  }, {
+    "id" : "Handicare Group AB"
+  }, {
+    "id" : "Hansa Biopharma AB"
+  }, {
+    "id" : "Hansapank"
+  }, {
+    "id" : "HANZA AB"
+  }, {
+    "id" : "Happy Helper A/S"
+  }, {
+    "id" : "Haraldur Böðvarsson hf."
+  }, {
+    "id" : "Harboes Bryggeri A/S"
+  }, {
+    "id" : "Harvia Oyj"
+  }, {
+    "id" : "Havila Shipping ASA"
+  }, {
+    "id" : "Hawk Debtco Limited"
+  }, {
+    "id" : "Havsfrun Investment AB"
+  }, {
+    "id" : "Haypp Group AB"
+  }, {
+    "id" : "HB Grandi"
+  }, {
+    "id" : "Heba Fastighets AB"
+  }, {
+    "id" : "Hedegaard A/S"
+  }, {
+    "id" : "Hedera Group AB"
+  }, {
+    "id" : "Hedgeforeningen Jyske Invest"
+  }, {
+    "id" : "Hedgeforeningen Sydinvest"
+  }, {
+    "id" : "Hedin Mobility Group AB (publ)"
+  }, {
+    "id" : "Héðinn hf."
+  }, {
+    "id" : "Heeros Oyj"
+  }, {
+    "id" : "Heimar hf."
+  }, {
+    "id" : "Heimstaden AB (publ)"
+  }, {
+    "id" : "Heimstaden hf."
+  }, {
+    "id" : "Hekla fasteignir ehf."
+  }, {
+    "id" : "Heliospectra AB"
+  }, {
+    "id" : "Hellebæk Fabriker"
+  }, {
+    "id" : "Helsinki Stock Exchange"
+  }, {
+    "id" : "Hembla AB"
+  }, {
+    "id" : "Hemfosa Fastigheter AB"
+  }, {
+    "id" : "Hemnet Group AB"
+  }, {
+    "id" : "Hemsö Fastighets AB"
+  }, {
+    "id" : "Hemtex AB"
+  }, {
+    "id" : "Hennes & Mauritz AB, H & M"
+  }, {
+    "id" : "Henton Invest"
+  }, {
+    "id" : "Herantis Pharma Oyj"
+  }, {
+    "id" : "Hernö Gin AB"
+  }, {
+    "id" : "Hexagon AB"
+  }, {
+    "id" : "Hexatronic Group AB"
+  }, {
+    "id" : "Hexicon AB"
+  }, {
+    "id" : "Hexon Property"
+  }, {
+    "id" : "HEXPOL AB"
+  }, {
+    "id" : "Hf. Eimskipafélag Íslands"
+  }, {
+    "id" : "Hiab"
+  }, {
+    "id" : "High Coast Distillery AB"
+  }, {
+    "id" : "Hilbert Group AB"
+  }, {
+    "id" : "HIO Property Invest A/S"
+  }, {
+    "id" : "HiQ International AB"
+  }, {
+    "id" : "Hitaveita Rangæinga"
+  }, {
+    "id" : "HKFoods Oyj"
+  }, {
+    "id" : "HL18 Property Portfolio AB (publ)"
+  }, {
+    "id" : "HL Display AB"
+  }, {
+    "id" : "HLRE Holding Oyj"
+  }, {
+    "id" : "Hlutabréfamarkaðurinn hf."
+  }, {
+    "id" : "Hlutabréfasjóður Búnaðarbankans hf."
+  }, {
+    "id" : "Hlutabréfasjóður Íslands hf."
+  }, {
+    "id" : "Hlutabréfasjóður Vesturlands hf."
+  }, {
+    "id" : "HMN Naturgas I/S"
+  }, {
+    "id" : "HMS Networks AB"
+  }, {
+    "id" : "Hoist Finance AB"
+  }, {
+    "id" : "Hoist Group Holding Intressenter AB"
+  }, {
+    "id" : "HOIST Kredit AB"
+  }, {
+    "id" : "Hoivatilat Oyj"
+  }, {
+    "id" : "Holmen AB"
+  }, {
+    "id" : "Holmström Fastigheter Holding AB"
+  }, {
+    "id" : "Home Capital AB"
+  }, {
+    "id" : "Home Properties AB"
+  }, {
+    "id" : "Hometown A/S"
+  }, {
+    "id" : "Honkarakenne Oyj"
+  }, {
+    "id" : "Host Property AB"
+  }, {
+    "id" : "Hotel Fast SSE AB"
+  }, {
+    "id" : "House of Friends AB"
+  }, {
+    "id" : "Hove A/S"
+  }, {
+    "id" : "Hoylu AB"
+  }, {
+    "id" : "Hraðfrystihúsið Gunnvör hf."
+  }, {
+    "id" : "Hraðfrystistöð Þórshafnar hf."
+  }, {
+    "id" : "HRC World Plc"
+  }, {
+    "id" : "HSH N Finance Guernsey Ltd"
+  }, {
+    "id" : "HSH Nordbank AG"
+  }, {
+    "id" : "HS Orka hf."
+  }, {
+    "id" : "HS Veitur hf."
+  }, {
+    "id" : "hubbr AB"
+  }, {
+    "id" : "Hufvudstaden AB"
+  }, {
+    "id" : "Huhtamäki Oyj"
+  }, {
+    "id" : "Hultström Group AB"
+  }, {
+    "id" : "Humana AB"
+  }, {
+    "id" : "Human Care HC AB"
+  }, {
+    "id" : "Humble Group AB"
+  }, {
+    "id" : "Humlegården Fastigheter AB (publ)"
+  }, {
+    "id" : "Húsasmiðjan"
+  }, {
+    "id" : "Húsasmiðjan hf."
+  }, {
+    "id" : "HusCompagniet A/S"
+  }, {
+    "id" : "Husqvarna AB"
+  }, {
+    "id" : "Hvidbjerg Bank A/S"
+  }, {
+    "id" : "Hydract A/S"
+  }, {
+    "id" : "Hypefactors A/S"
+  }, {
+    "id" : "Hypotekbank"
+  }, {
+    "id" : "Hypo Treuhand Holding AG"
+  }, {
+    "id" : "Höganäs AB"
+  }, {
+    "id" : "HÖVDING SVERIGE AB"
+  }, {
+    "id" : "I.A.R Systems Group AB"
+  }, {
+    "id" : "I. R. E. German Property Holding B. V."
+  }, {
+    "id" : "IAR Systems"
+  }, {
+    "id" : "Iberian Yield Investment AB"
+  }, {
+    "id" : "IBS AB"
+  }, {
+    "id" : "ICA Gruppen AB"
+  }, {
+    "id" : "Icelandair Group hf."
+  }, {
+    "id" : "Iceland generic company"
+  }, {
+    "id" : "Icelandic Group hf."
+  }, {
+    "id" : "Icelandic Salmon AS"
+  }, {
+    "id" : "Iceland Seafood International hf."
+  }, {
+    "id" : "IC Group A/S"
+  }, {
+    "id" : "Iconovo AB"
+  }, {
+    "id" : "i-data international"
+  }, {
+    "id" : "Idavang A/S"
+  }, {
+    "id" : "IDL Diagnostics AB"
+  }, {
+    "id" : "Idogen AB"
+  }, {
+    "id" : "Idun Industrier AB"
+  }, {
+    "id" : "Iittala Group Oyj"
+  }, {
+    "id" : "Ikano Bank AB"
+  }, {
+    "id" : "Ikano Bostad Stockholm Holding AB"
+  }, {
+    "id" : "Ilija Batljan Invest AB"
+  }, {
+    "id" : "Ilkka Oyj"
+  }, {
+    "id" : "ÍL-sjóður"
+  }, {
+    "id" : "Image Systems AB"
+  }, {
+    "id" : "Immune Pharmaceuticals Inc"
+  }, {
+    "id" : "Immunovia AB"
+  }, {
+    "id" : "Impact Coatings AB"
+  }, {
+    "id" : "Impala BondCo PLC"
+  }, {
+    "id" : "Impero A/S"
+  }, {
+    "id" : "Implantica AG"
+  }, {
+    "id" : "Incap Oyj"
+  }, {
+    "id" : "Incentive"
+  }, {
+    "id" : "InCoax Networks AB"
+  }, {
+    "id" : "Inderes Oyj"
+  }, {
+    "id" : "Industrial & Financial Systems, IFS AB"
+  }, {
+    "id" : "Industrivärden, AB"
+  }, {
+    "id" : "Indutrade AB"
+  }, {
+    "id" : "Infant Bacterial Therapeutics"
+  }, {
+    "id" : "Infrea AB"
+  }, {
+    "id" : "Inission AB"
+  }, {
+    "id" : "Initiator Pharma A/S"
+  }, {
+    "id" : "Innofactor Oyj"
+  }, {
+    "id" : "Insplanet AB"
+  }, {
+    "id" : "Insplorion AB"
+  }, {
+    "id" : "Instalco AB"
+  }, {
+    "id" : "Instrumentarium Oyj"
+  }, {
+    "id" : "Intea Fastigheter AB"
+  }, {
+    "id" : "Intea Fastigheter AB (publ)"
+  }, {
+    "id" : "Integrum AB"
+  }, {
+    "id" : "Intellego Technologies AB"
+  }, {
+    "id" : "Intentia "
+  }, {
+    "id" : "InterMail A/S"
+  }, {
+    "id" : "International Personal Finance plc."
+  }, {
+    "id" : "International Petroleum Corporation"
+  }, {
+    "id" : "Internationella Engelska Skolan i Sverige Holdings II AB"
+  }, {
+    "id" : "Intervacc AB"
+  }, {
+    "id" : "Intrum"
+  }, {
+    "id" : "Inwarehouse AB"
+  }, {
+    "id" : "Investea Stockholm Retail A/S"
+  }, {
+    "id" : "Investec Bank PLC"
+  }, {
+    "id" : "Investeringsforeningen Advice Capital"
+  }, {
+    "id" : "Investeringsforeningen Alternativ Invest"
+  }, {
+    "id" : "Investeringsforeningen Amalie Invest"
+  }, {
+    "id" : "Investeringsforeningen BankInvest"
+  }, {
+    "id" : "Investeringsforeningen ​BIL Danmark"
+  }, {
+    "id" : "Investeringsforeningen BPT Invest"
+  }, {
+    "id" : "Investeringsforeningen Carnegie Wealth Management"
+  }, {
+    "id" : "Investeringsforeningen Carnegie WorldWide Emerging Growth"
+  }, {
+    "id" : "Investeringsforeningen Coop Opsparing"
+  }, {
+    "id" : "Investeringsforeningen Etik Invest"
+  }, {
+    "id" : "Investeringsforeningen Falcon Invest"
+  }, {
+    "id" : "Investeringsforeningen Formuepleje"
+  }, {
+    "id" : "Investeringsforeningen Fundamental Invest"
+  }, {
+    "id" : "Investeringsforeningen Great Dane"
+  }, {
+    "id" : "Investeringsforeningen Gudme Raaschou"
+  }, {
+    "id" : "Investeringsforeningen HP Invest"
+  }, {
+    "id" : "Investeringsforeningen IA Invest"
+  }, {
+    "id" : "Investeringsforeningen Investin"
+  }, {
+    "id" : "Investeringsforeningen Lån & Spar Invest"
+  }, {
+    "id" : "Investeringsforeningen Maj Invest"
+  }, {
+    "id" : "Investeringsforeningen MS Invest Afd. Value Aktier"
+  }, {
+    "id" : "Investeringsforeningen Nielsen Global Value"
+  }, {
+    "id" : "Investeringsforeningen Nordea Invest Special"
+  }, {
+    "id" : "Investeringsforeningen Nykredit Invest"
+  }, {
+    "id" : "Investeringsforeningen Nykredit Invest Balance"
+  }, {
+    "id" : "Investeringsforeningen PortfolioManager"
+  }, {
+    "id" : "Investeringsforeningen SmallCap Danmark"
+  }, {
+    "id" : "Investeringsforeningen Sparinvest Euro S"
+  }, {
+    "id" : "Investeringsforeningen StockRate Invest"
+  }, {
+    "id" : "Investeringsforeningen Stonehenge"
+  }, {
+    "id" : "Investeringsforeningen TOBA Investments"
+  }, {
+    "id" : "Investeringsforeningen UCAP Invest"
+  }, {
+    "id" : "Investeringsforeningen Valueinvest Danmark"
+  }, {
+    "id" : "Investeringsforeningen Wealth Invest"
+  }, {
+    "id" : "Investeringsforening SEB Institutionel"
+  }, {
+    "id" : "Investeringsinstitutforeningen Nordea Invest"
+  }, {
+    "id" : "Investeringsselskabet af 30.4.1992"
+  }, {
+    "id" : "Investeringsselskabet Artha Optimum A/S"
+  }, {
+    "id" : "Investeringsselskabet Luxor A/S"
+  }, {
+    "id" : "Investment AB Öresund"
+  }, {
+    "id" : "Investor AB"
+  }, {
+    "id" : "Investors House Oyj"
+  }, {
+    "id" : "Inwido AB"
+  }, {
+    "id" : "Invik & Co. AB"
+  }, {
+    "id" : "INVISIO AB"
+  }, {
+    "id" : "Invisio Communications.."
+  }, {
+    "id" : "Invuo Technologies AB"
+  }, {
+    "id" : "Inzile AB"
+  }, {
+    "id" : "IR Basis A/S"
+  }, {
+    "id" : "IR Erhverv A/S"
+  }, {
+    "id" : "IR Favoritter A/S"
+  }, {
+    "id" : "IR Højrente A/S"
+  }, {
+    "id" : "Irisity AB"
+  }, {
+    "id" : "IRLAB Therapeutics AB"
+  }, {
+    "id" : "IRRAS AB"
+  }, {
+    "id" : "IR Vækstlande A/S"
+  }, {
+    "id" : "Ísafjarðarbær"
+  }, {
+    "id" : "Isconova AB"
+  }, {
+    "id" : "Ísfélag hf."
+  }, {
+    "id" : "IS Fyrirtækjalánasjóður hs."
+  }, {
+    "id" : "IS Kredit SPV 21 hs."
+  }, {
+    "id" : "Íslandsbanki hf."
+  }, {
+    "id" : "Íslandshótel hf."
+  }, {
+    "id" : "Íslandssjóðir hf."
+  }, {
+    "id" : "Íslensk afþreying hf."
+  }, {
+    "id" : "Íslenska járnblendifélagið hf."
+  }, {
+    "id" : "Íslenska útvarpsfélagið hf"
+  }, {
+    "id" : "Íslenski hugbúnaðarsjóðurinn hf."
+  }, {
+    "id" : "Íslenskir aðalverktakar hf."
+  }, {
+    "id" : "Isofol Medical AB"
+  }, {
+    "id" : "ISR Immune System Regulation Holding AB"
+  }, {
+    "id" : "ISS"
+  }, {
+    "id" : "ISS A/S"
+  }, {
+    "id" : "ITAB Shop Concept AB"
+  }, {
+    "id" : "Italeaf S.p.A."
+  }, {
+    "id" : "I-Tech AB"
+  }, {
+    "id" : "Íþaka fasteignir ehf."
+  }, {
+    "id" : "Ivisys AB"
+  }, {
+    "id" : "iZafe Group AB"
+  }, {
+    "id" : "J.P. Morgan International Derivatives Ltd."
+  }, {
+    "id" : "Jaakko Pöyry Group Oyj"
+  }, {
+    "id" : "Janton Oyj"
+  }, {
+    "id" : "Jarðboranir hf."
+  }, {
+    "id" : "JBT Marel Corporation"
+  }, {
+    "id" : "JC"
+  }, {
+    "id" : "Jeeves Information Systems AB"
+  }, {
+    "id" : "Jefast Borrower II AB"
+  }, {
+    "id" : "Jefast Holding AB"
+  }, {
+    "id" : "Jensen & Møller Invest A/S"
+  }, {
+    "id" : "Jeratún ehf."
+  }, {
+    "id" : "Jernhusen AB"
+  }, {
+    "id" : "Jetpak Top Holding AB"
+  }, {
+    "id" : "Jeudan A/S"
+  }, {
+    "id" : "JLT Mobile Computers AB"
+  }, {
+    "id" : "JM AB"
+  }, {
+    "id" : "Jobindex A/S"
+  }, {
+    "id" : "John Mattson Fastighetsföretagen AB"
+  }, {
+    "id" : "Johnson Pump"
+  }, {
+    "id" : "JonDeTech Sensors AB"
+  }, {
+    "id" : "Josemaria Resources Inc."
+  }, {
+    "id" : "Jotul Holdings SA"
+  }, {
+    "id" : "JSM Financial Group AB"
+  }, {
+    "id" : "Julius Koch"
+  }, {
+    "id" : "Julius Tallberg-Kiinteistöt Oyj"
+  }, {
+    "id" : "Jutlander Bank A/S"
+  }, {
+    "id" : "JY Holding AB (publ)"
+  }, {
+    "id" : "Jyske Bank A/S"
+  }, {
+    "id" : "Jyske Invest"
+  }, {
+    "id" : "Jyske Portefølje FX Alpha II KL"
+  }, {
+    "id" : "Jyske Realkredit A/S"
+  }, {
+    "id" : "Jyväskylän kaupunki"
+  }, {
+    "id" : "Järvenpään kaupunki"
+  }, {
+    "id" : "K/S ROs Torv"
+  }, {
+    "id" : "K2A Knaust & Andersson Fastigheter AB"
+  }, {
+    "id" : "K33 AB"
+  }, {
+    "id" : "KABE Group AB"
+  }, {
+    "id" : "Kakel Max AB"
+  }, {
+    "id" : "Kaldalón hf."
+  }, {
+    "id" : "Kaldbakur hf."
+  }, {
+    "id" : "Kaldvik AS"
+  }, {
+    "id" : "Kallebäck Property Invest AB"
+  }, {
+    "id" : "Kalmar Oyj"
+  }, {
+    "id" : "Kalmar Structured Finance A/S"
+  }, {
+    "id" : "Kalvebod Plc"
+  }, {
+    "id" : "Kambi Group Plc"
+  }, {
+    "id" : "Kamux Oyj"
+  }, {
+    "id" : "Kapitalforeningen Accunia Invest"
+  }, {
+    "id" : "Kapitalforeningen BankInvest"
+  }, {
+    "id" : "Kapitalforeningen BankInvest Select"
+  }, {
+    "id" : "Kapitalforeningen BI Private Equity"
+  }, {
+    "id" : "Kapitalforeningen BLS Invest"
+  }, {
+    "id" : "Kapitalforeningen Blue Strait Capital"
+  }, {
+    "id" : "Kapitalforeningen Falcon Invest"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Epikur"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Fokus"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Merkur"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Pareto"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Penta"
+  }, {
+    "id" : "Kapitalforeningen Formuepleje Safe"
+  }, {
+    "id" : "Kapitalforeningen IA Invest"
+  }, {
+    "id" : "Kapitalforeningen Independent Invest"
+  }, {
+    "id" : "Kapitalforeningen Lån & Spar MixInvest"
+  }, {
+    "id" : "Kapitalforeningen SDG Invest"
+  }, {
+    "id" : "Kapitalforeningen Wealth Invest"
+  }, {
+    "id" : "KapitalPleje A/S"
+  }, {
+    "id" : "KappAhl Holding AB"
+  }, {
+    "id" : "Karessa AB"
+  }, {
+    "id" : "Karlbergsvägen 77 Fastighets AB"
+  }, {
+    "id" : "Karlshamns AB"
+  }, {
+    "id" : "Karnell Group AB"
+  }, {
+    "id" : "Karnov Group AB"
+  }, {
+    "id" : "Karolin Machine Tool AB"
+  }, {
+    "id" : "Karolinska Development AB"
+  }, {
+    "id" : "Karo Pharma AB"
+  }, {
+    "id" : "Kaupthing Bank"
+  }, {
+    "id" : "Kaupþing banki hf."
+  }, {
+    "id" : "KB ABS 10"
+  }, {
+    "id" : "KB ABS 12"
+  }, {
+    "id" : "KB Components AB"
+  }, {
+    "id" : "KEA svf."
+  }, {
+    "id" : "KebNi AB"
+  }, {
+    "id" : "Keflavíkurverktakar hf."
+  }, {
+    "id" : "Kefren Properties IX AB"
+  }, {
+    "id" : "Kekkilä Oyj"
+  }, {
+    "id" : "Kemira GrowHow Oyj"
+  }, {
+    "id" : "Kemira Oyj"
+  }, {
+    "id" : "Kempower Oyj"
+  }, {
+    "id" : "Kentima Holding AB"
+  }, {
+    "id" : "Keops A/S"
+  }, {
+    "id" : "Keops EjendomsObligationer III (PBA) A/S"
+  }, {
+    "id" : "Keops EjendomsObligationer IV"
+  }, {
+    "id" : "Keops EjendomsObligationer V (Fatburen)"
+  }, {
+    "id" : "Ker hf. - áður Olíufélagið hf."
+  }, {
+    "id" : "Keskisuomalainen Oyj"
+  }, {
+    "id" : "Kesko Oyj"
+  }, {
+    "id" : "Kesla Oyj"
+  }, {
+    "id" : "Keynote Media Group AB"
+  }, {
+    "id" : "Keystone Academic Solutions AS"
+  }, {
+    "id" : "KEYTO Group AB"
+  }, {
+    "id" : "K-Fast Holding AB"
+  }, {
+    "id" : "KFF Institutional Investor Fund"
+  }, {
+    "id" : "KH Group Plc"
+  }, {
+    "id" : "KIF Håndbold Elite A/S"
+  }, {
+    "id" : "Kiliaro AB"
+  }, {
+    "id" : "Kinda Brave Entertainment Group AB"
+  }, {
+    "id" : "Kindred Group plc"
+  }, {
+    "id" : "Kinnevik, Investment AB"
+  }, {
+    "id" : "Kjell Group AB"
+  }, {
+    "id" : "Klappir Grænar Lausnir hf."
+  }, {
+    "id" : "KlaraBo Sverige AB"
+  }, {
+    "id" : "Klaria Pharma Holding AB"
+  }, {
+    "id" : "Klarna Bank AB (publ)"
+  }, {
+    "id" : "Klarna Holding AB"
+  }, {
+    "id" : "Klimator AB "
+  }, {
+    "id" : "Klippan AB"
+  }, {
+    "id" : "Klövern AB"
+  }, {
+    "id" : "Knowit AB"
+  }, {
+    "id" : "Kojamo Oyj"
+  }, {
+    "id" : "Kokkolan Kaupunki"
+  }, {
+    "id" : "Kommunalbanken AS"
+  }, {
+    "id" : "KommuneKredit"
+  }, {
+    "id" : "Kommuninvest i Sverige AB"
+  }, {
+    "id" : "Kompan"
+  }, {
+    "id" : "Konecranes Oyj"
+  }, {
+    "id" : "KONE Oyj"
+  }, {
+    "id" : "Kongeriget Danmarks Fiskeribank"
+  }, {
+    "id" : "Konsolidator A/S"
+  }, {
+    "id" : "Kontigo Care AB"
+  }, {
+    "id" : "Kópavogsbær"
+  }, {
+    "id" : "Kopy Goldfields"
+  }, {
+    "id" : "KoskiRent Oyj"
+  }, {
+    "id" : "Koskisen Oyj"
+  }, {
+    "id" : "Kotipizza Group Oyj"
+  }, {
+    "id" : "Kotkamills Group Oyj"
+  }, {
+    "id" : "Kotkan kaupunki"
+  }, {
+    "id" : "Kreate Group Oyj"
+  }, {
+    "id" : "Kreditbanken A/S"
+  }, {
+    "id" : "Kristensen Germany AG"
+  }, {
+    "id" : "Kristensen Kiel AG"
+  }, {
+    "id" : "Kristensen Salzgitter AG"
+  }, {
+    "id" : "KRUK S.A."
+  }, {
+    "id" : "Kungsleden AB"
+  }, {
+    "id" : "Kuntarahoitus Oyj."
+  }, {
+    "id" : "Kustom Bidco AB (publ)"
+  }, {
+    "id" : "Kvalitena AB"
+  }, {
+    "id" : "Kvika banki hf"
+  }, {
+    "id" : "Kvika banki hf."
+  }, {
+    "id" : "Kvika - Fjarskiptainnviðir hs."
+  }, {
+    "id" : "Kylpyläkasino Oyj"
+  }, {
+    "id" : "Kährs BondCo AB (publ)"
+  }, {
+    "id" : "Kögun hf."
+  }, {
+    "id" : "Københavns Lufthavne A/S"
+  }, {
+    "id" : "L1 ehf."
+  }, {
+    "id" : "Labs2 Group AB"
+  }, {
+    "id" : "Lagercrantz Group AB"
+  }, {
+    "id" : "Lahden Kaupunki"
+  }, {
+    "id" : "Lammhults Design Group AB"
+  }, {
+    "id" : "Lamor Corporation Oyj"
+  }, {
+    "id" : "Lamor Oyj (publ)"
+  }, {
+    "id" : "Lánamál ríkisins"
+  }, {
+    "id" : "Lánasjóður landbúnaðarins"
+  }, {
+    "id" : "Lánasjóður sveitarfélaga ohf."
+  }, {
+    "id" : "Land & Leisure A/S"
+  }, {
+    "id" : "Landfestar ehf."
+  }, {
+    "id" : "Landic Property Bonds I"
+  }, {
+    "id" : "Landic Property Bonds VI (Sverige) A/S"
+  }, {
+    "id" : "Landic Property Bonds VII (Stockholm) A/S"
+  }, {
+    "id" : "Landic Property hf."
+  }, {
+    "id" : "Landsbanki Íslands hf."
+  }, {
+    "id" : "Landsbankinn hf."
+  }, {
+    "id" : "Landsbanki Private Equity I"
+  }, {
+    "id" : "Landsbréf hf."
+  }, {
+    "id" : "Landshypotek Bank AB"
+  }, {
+    "id" : "Landsnet hf."
+  }, {
+    "id" : "Landsvaki"
+  }, {
+    "id" : "Landsvirkjun"
+  }, {
+    "id" : "Langanesbyggð"
+  }, {
+    "id" : "Lantmännen Ekonomisk Förening"
+  }, {
+    "id" : "Lappeenranta"
+  }, {
+    "id" : "Lappland Goldminers AB"
+  }, {
+    "id" : "LapWall Oyj"
+  }, {
+    "id" : "Larox Oyj"
+  }, {
+    "id" : "Lassila & Tikanoja Oyj"
+  }, {
+    "id" : "Lastas A/S"
+  }, {
+    "id" : "Latour, Investmentab."
+  }, {
+    "id" : "Laukaan kunta"
+  }, {
+    "id" : "Lauritz.com A/S"
+  }, {
+    "id" : "Lauritz.com Group A/S"
+  }, {
+    "id" : "Lawson Software, Inc."
+  }, {
+    "id" : "LB Icon AB"
+  }, {
+    "id" : "LBI International AB"
+  }, {
+    "id" : "LD"
+  }, {
+    "id" : "Lea Bank AB"
+  }, {
+    "id" : "LeadDesk Oyj"
+  }, {
+    "id" : "Leading Edge Materials Corp."
+  }, {
+    "id" : "Learning 2 Sleep L2s AB"
+  }, {
+    "id" : "Leax Group AB"
+  }, {
+    "id" : "LED iBond International A/S"
+  }, {
+    "id" : "Ledstiernan AB"
+  }, {
+    "id" : "Legres AB (publ)"
+  }, {
+    "id" : "Lehman Brothers Treasury Co. B.V"
+  }, {
+    "id" : "Lehto Group Oyj"
+  }, {
+    "id" : "Leipurin Oyj"
+  }, {
+    "id" : "Lemminkäinen"
+  }, {
+    "id" : "Lemonsoft Oyj"
+  }, {
+    "id" : "LeoVegas AB"
+  }, {
+    "id" : "LIDDS AB"
+  }, {
+    "id" : "Lifco AB"
+  }, {
+    "id" : "Lifeclean International AB"
+  }, {
+    "id" : "Líf hf."
+  }, {
+    "id" : "Líftæknisjóðurinn hf."
+  }, {
+    "id" : "LightLab Sweden AB"
+  }, {
+    "id" : "Lime Technologies AB"
+  }, {
+    "id" : "Linc AB"
+  }, {
+    "id" : "Lindab AB"
+  }, {
+    "id" : "Lindex, AB"
+  }, {
+    "id" : "Lindex Group Oyj"
+  }, {
+    "id" : "LINKFIRE A/S"
+  }, {
+    "id" : "Link Prop Investment AB"
+  }, {
+    "id" : "Lipidor AB"
+  }, {
+    "id" : "Lipigon Pharmaceuticals AB"
+  }, {
+    "id" : "Lipum AB"
+  }, {
+    "id" : "Litium AB"
+  }, {
+    "id" : "Liv ihop AB"
+  }, {
+    "id" : "Ljósleiðarinn ehf."
+  }, {
+    "id" : "LKAB Luossavaara-Kiirunavaara AB"
+  }, {
+    "id" : "LM Glasfiber Holding"
+  }, {
+    "id" : "LM Group Holding A/S"
+  }, {
+    "id" : "LN Future Invest AB"
+  }, {
+    "id" : "Loðnuvinnslan hf."
+  }, {
+    "id" : "Logistea AB"
+  }, {
+    "id" : "Logistri Fastighets AB (publ)"
+  }, {
+    "id" : "Lohilo Foods AB"
+  }, {
+    "id" : "Loihde Oyj"
+  }, {
+    "id" : "Lokalbanken i Nordsjælland A/S"
+  }, {
+    "id" : "Lollands Bank A/S"
+  }, {
+    "id" : "Loomis AB"
+  }, {
+    "id" : "Loyal Solutions A/S"
+  }, {
+    "id" : "LR Global Holding GmbH"
+  }, {
+    "id" : "LR Health & Beauty SE"
+  }, {
+    "id" : "LRI Landesbank Rheinland-Pfalz Int. S.A"
+  }, {
+    "id" : "LR Realkredit A/S"
+  }, {
+    "id" : "LSTH Svenska Handelsfastigheter AB"
+  }, {
+    "id" : "Lucara Diamond Corp"
+  }, {
+    "id" : "LumenRadio AB"
+  }, {
+    "id" : "Lundbergföretagen AB, L E"
+  }, {
+    "id" : "Lundin Gold Inc."
+  }, {
+    "id" : "Lundin Mining Corporation"
+  }, {
+    "id" : "Luxbright AB"
+  }, {
+    "id" : "Lübker Golf A/S"
+  }, {
+    "id" : "Lyckegård Group AB"
+  }, {
+    "id" : "Lykill fjármögnun hf."
+  }, {
+    "id" : "Lyko Group AB"
+  }, {
+    "id" : "Lån & Spar Bank A/S"
+  }, {
+    "id" : "Lån&Spar MixInvest Balance 60"
+  }, {
+    "id" : "Lärkberget AB"
+  }, {
+    "id" : "M.O.B.A. Network AB"
+  }, {
+    "id" : "M2 Asset Management AB"
+  }, {
+    "id" : "MacGregor Group AB"
+  }, {
+    "id" : "Mackmyra Svensk Whisky AB"
+  }, {
+    "id" : "Maconomy A/S"
+  }, {
+    "id" : "MAG Interactive AB"
+  }, {
+    "id" : "Magle Chemoswed Holding AB"
+  }, {
+    "id" : "Magnolia Bostad AB"
+  }, {
+    "id" : "Maha Capital AB"
+  }, {
+    "id" : "Maj Invest Aktier"
+  }, {
+    "id" : "Malmbergs Elektriska AB"
+  }, {
+    "id" : "Mandator AB"
+  }, {
+    "id" : "Mandatum Oyj"
+  }, {
+    "id" : "Mangold AB"
+  }, {
+    "id" : "Mantex AB"
+  }, {
+    "id" : "MapsPeople A/S"
+  }, {
+    "id" : "Mare Baltic PCC Limited"
+  }, {
+    "id" : "Marel hf."
+  }, {
+    "id" : "Marginalen Bank Bankaktiebolag"
+  }, {
+    "id" : "Mariefjärd AB (publ)"
+  }, {
+    "id" : "Marimekko Oyj"
+  }, {
+    "id" : "Martela Oyj"
+  }, {
+    "id" : "Mashup Ireland AB"
+  }, {
+    "id" : "Matas A/S"
+  }, {
+    "id" : "Matra Petroleum AB"
+  }, {
+    "id" : "Matse Holding AB"
+  }, {
+    "id" : "Maven Wireless Sweden AB"
+  }, {
+    "id" : "Mavshack AB"
+  }, {
+    "id" : "Max Bank A/S"
+  }, {
+    "id" : "MaxFastigheter i Sverige AB"
+  }, {
+    "id" : "Maximum Entertainment AB"
+  }, {
+    "id" : "M-Brain Oy"
+  }, {
+    "id" : "Mdundo.com"
+  }, {
+    "id" : "Meco Holding"
+  }, {
+    "id" : "Meda AB"
+  }, {
+    "id" : "MedCap AB"
+  }, {
+    "id" : "MedCore AB"
+  }, {
+    "id" : "Medhelp Care AB"
+  }, {
+    "id" : "Medicortex Finland Oyj"
+  }, {
+    "id" : "Medicover AB"
+  }, {
+    "id" : "MEDICOVER Holding S.A."
+  }, {
+    "id" : "Medivir AB"
+  }, {
+    "id" : "Meds Apotek AB"
+  }, {
+    "id" : "MEKO AB"
+  }, {
+    "id" : "Melker Schörling AB"
+  }, {
+    "id" : "Mendus AB"
+  }, {
+    "id" : "Menire Oyj"
+  }, {
+    "id" : "Mentice AB"
+  }, {
+    "id" : "Meren Energy Inc."
+  }, {
+    "id" : "Mermaid A/S"
+  }, {
+    "id" : "Merrill Lynch & Co."
+  }, {
+    "id" : "Merrill Lynch BV"
+  }, {
+    "id" : "Merril Lynch International & Co C.V."
+  }, {
+    "id" : "Mertiva"
+  }, {
+    "id" : "Merus Power Oyj"
+  }, {
+    "id" : "Mestro AB"
+  }, {
+    "id" : "Metabolic Nordic AB"
+  }, {
+    "id" : "Metacon AB"
+  }, {
+    "id" : "Metro International S.A."
+  }, {
+    "id" : "Metso Corporation"
+  }, {
+    "id" : "Metsä Board Oyj"
+  }, {
+    "id" : "Metsäliitto Osuuskunta"
+  }, {
+    "id" : "Metsä Tissue Inactive"
+  }, {
+    "id" : "MFG Partners AB"
+  }, {
+    "id" : "Micro Holding AB"
+  }, {
+    "id" : "Micro Systemation AB"
+  }, {
+    "id" : "MIDAQ AB"
+  }, {
+    "id" : "MidCo Infrastructure Logistics AB (publ)"
+  }, {
+    "id" : "Midsona AB"
+  }, {
+    "id" : "Midstar Hotels AB"
+  }, {
+    "id" : "Midsummer AB"
+  }, {
+    "id" : "Míla Holding hf."
+  }, {
+    "id" : "Mildef Group AB"
+  }, {
+    "id" : "Milestone ehf."
+  }, {
+    "id" : "Millicom International Cellular S.A."
+  }, {
+    "id" : "Minesto AB"
+  }, {
+    "id" : "Ministry of Trade and Industry, Finland"
+  }, {
+    "id" : "Ministry of Transport and Communications"
+  }, {
+    "id" : "Mips AB"
+  }, {
+    "id" : "Misen Energy AB (publ.)"
+  }, {
+    "id" : "Moank Fintech Group AB (publ)"
+  }, {
+    "id" : "Moberg Pharma AB"
+  }, {
+    "id" : "Mobylife Holding A/S"
+  }, {
+    "id" : "Modelon AB"
+  }, {
+    "id" : "Moderna Finance AB"
+  }, {
+    "id" : "Modern Ekonomi Holding AB"
+  }, {
+    "id" : "Modern Ekonomi Sverige Holding AB"
+  }, {
+    "id" : "Modern Times Group MTG AB"
+  }, {
+    "id" : "Modul 1 Data AB"
+  }, {
+    "id" : "Modulight Oyj"
+  }, {
+    "id" : "Modus Therapeutics Holding AB"
+  }, {
+    "id" : "Mols-Linien A/S"
+  }, {
+    "id" : "Moment Group AB"
+  }, {
+    "id" : "Momentum Group AB"
+  }, {
+    "id" : "Momentum Software Group AB"
+  }, {
+    "id" : "Monberg & Thorsen A/S"
+  }, {
+    "id" : "Mondo"
+  }, {
+    "id" : "Monsenso A/S"
+  }, {
+    "id" : "Morgan Stanley & Co. International plc"
+  }, {
+    "id" : "Morgan Stanley B.V"
+  }, {
+    "id" : "Morsø Bank A/S"
+  }, {
+    "id" : "Mosaic Fashions hf."
+  }, {
+    "id" : "Mosfellsbær"
+  }, {
+    "id" : "Move About Group AB"
+  }, {
+    "id" : "Movinn A/S"
+  }, {
+    "id" : "MoxieTech Group AB"
+  }, {
+    "id" : "MQ Holding AB"
+  }, {
+    "id" : "Mr Green & Co AB"
+  }, {
+    "id" : "MT Højgaard Holding A/S"
+  }, {
+    "id" : "MTI Investment AB"
+  }, {
+    "id" : "MTS Denmark"
+  }, {
+    "id" : "Múlaþing"
+  }, {
+    "id" : "Multi Manager Invest"
+  }, {
+    "id" : "MultiQ International AB"
+  }, {
+    "id" : "Multitude Capital Oyj"
+  }, {
+    "id" : "Multi Units Luxembourg"
+  }, {
+    "id" : "Municipality Finance PLC"
+  }, {
+    "id" : "Munters AB"
+  }, {
+    "id" : "Munters Group AB"
+  }, {
+    "id" : "Musti Group Oyj"
+  }, {
+    "id" : "Mycronic AB"
+  }, {
+    "id" : "myFC Holding AB"
+  }, {
+    "id" : "Myllykoski Oyj"
+  }, {
+    "id" : "mySafety Group AB"
+  }, {
+    "id" : "Mäntsälän kunta"
+  }, {
+    "id" : "Møns Bank A/S"
+  }, {
+    "id" : "NAN"
+  }, {
+    "id" : "Nanexa AB"
+  }, {
+    "id" : "NanoCap Group AB"
+  }, {
+    "id" : "NanoCover A/S"
+  }, {
+    "id" : "NanoEcho AB"
+  }, {
+    "id" : "Nanoform Finland Oyj"
+  }, {
+    "id" : "Nanologica AB"
+  }, {
+    "id" : "Nasdaq, Inc."
+  }, {
+    "id" : "Nasdaq Stockholm AB"
+  }, {
+    "id" : "National Bank of Greece SA"
+  }, {
+    "id" : "NATTO PHARMA"
+  }, {
+    "id" : "Naturgas Midt-Nord I/S"
+  }, {
+    "id" : "Navigo Invest AB "
+  }, {
+    "id" : "Navision"
+  }, {
+    "id" : "NAXS AB"
+  }, {
+    "id" : "NCAB Group AB"
+  }, {
+    "id" : "NCC AB"
+  }, {
+    "id" : "Nederman Holding AB"
+  }, {
+    "id" : "Nefab AB"
+  }, {
+    "id" : "Neles Oyj"
+  }, {
+    "id" : "Nelly Group AB"
+  }, {
+    "id" : "Neobo Fastigheter AB"
+  }, {
+    "id" : "NeoDynamics AB"
+  }, {
+    "id" : "Neola Medical AB"
+  }, {
+    "id" : "NeoNet AB"
+  }, {
+    "id" : "Neovici Holding AB"
+  }, {
+    "id" : "Nepa AB"
+  }, {
+    "id" : "Neptunia Invest AB (publ)"
+  }, {
+    "id" : "Nesa"
+  }, {
+    "id" : "Neste Oyj"
+  }, {
+    "id" : "NetBooster Holding A/S"
+  }, {
+    "id" : "Netcompany Group A/S"
+  }, {
+    "id" : "Netel Holding AB"
+  }, {
+    "id" : "NetEnt AB"
+  }, {
+    "id" : "Net Gaming Europe AB (publ)"
+  }, {
+    "id" : "Net Insight AB"
+  }, {
+    "id" : "NetJobs Group AB"
+  }, {
+    "id" : "Netmore Group AB"
+  }, {
+    "id" : "Netonnet  AB"
+  }, {
+    "id" : "Netop Solution A/S"
+  }, {
+    "id" : "Nets A/S"
+  }, {
+    "id" : "Netum Group Oyj"
+  }, {
+    "id" : "Network Capital Group Holding"
+  }, {
+    "id" : "New Bubbleroom Sweden AB"
+  }, {
+    "id" : "Newbury Pharmaceuticals AB"
+  }, {
+    "id" : "Newcap Holding"
+  }, {
+    "id" : "New Equity Venture International AB"
+  }, {
+    "id" : "Newlist AB"
+  }, {
+    "id" : "New Nordic Healthbrands AB"
+  }, {
+    "id" : "Newton Nordic AB"
+  }, {
+    "id" : "New Wave Group AB"
+  }, {
+    "id" : "Nexam Chemical Holding AB"
+  }, {
+    "id" : "Nexcom A/S"
+  }, {
+    "id" : "Nexstim Oyj"
+  }, {
+    "id" : "NextCell Pharma AB"
+  }, {
+    "id" : "Next Games Oyj"
+  }, {
+    "id" : "Ngenic AB"
+  }, {
+    "id" : "NGS Group Aktiebolag (publ)"
+  }, {
+    "id" : "NIB"
+  }, {
+    "id" : "NIBE Industrier AB"
+  }, {
+    "id" : "Nicoccino AB"
+  }, {
+    "id" : "Nightingale Health Oyj"
+  }, {
+    "id" : "Nilar International AB"
+  }, {
+    "id" : "Nilfisk Holding A/S"
+  }, {
+    "id" : "Nilsson Special Vehicles AB"
+  }, {
+    "id" : "Nilörngruppen"
+  }, {
+    "id" : "Nilörngruppen AB"
+  }, {
+    "id" : "Nimbus Group AB"
+  }, {
+    "id" : "Niscayah Group AB"
+  }, {
+    "id" : "Nischer AB"
+  }, {
+    "id" : "Nitro Games Oyj"
+  }, {
+    "id" : "Nivika Fastigheter AB"
+  }, {
+    "id" : "Nivika Fastigheter AB (publ)"
+  }, {
+    "id" : "Nixu Oyj"
+  }, {
+    "id" : "NKT A/S"
+  }, {
+    "id" : "NNIT A/S"
+  }, {
+    "id" : "NOBA Bank Group AB (publ)"
+  }, {
+    "id" : "NOBA Holding AB (publ)"
+  }, {
+    "id" : "Nobel Biocare"
+  }, {
+    "id" : "Nobel Biocare Holding AG"
+  }, {
+    "id" : "Nobia AB"
+  }, {
+    "id" : "Nobina AB"
+  }, {
+    "id" : "Noble Corporation plc"
+  }, {
+    "id" : "NoHo Partners Oyj"
+  }, {
+    "id" : "Nokia"
+  }, {
+    "id" : "Nokian Panimo Oyj"
+  }, {
+    "id" : "Nokian Tyres plc"
+  }, {
+    "id" : "Nolato AB"
+  }, {
+    "id" : "NORD.investments A/S"
+  }, {
+    "id" : "Nordax Group AB"
+  }, {
+    "id" : "Nordea Bank AB"
+  }, {
+    "id" : "Nordea Bank AB (publ.)"
+  }, {
+    "id" : "Nordea Bank AB (publ)"
+  }, {
+    "id" : "Nordea Bank AB  (publ)"
+  }, {
+    "id" : "Nordea Bank  AB (publ)"
+  }, {
+    "id" : "Nordea Bank Abp"
+  }, {
+    "id" : "Nordea Bank Finland Plc."
+  }, {
+    "id" : "Nordea Funds Oy"
+  }, {
+    "id" : "Nordea Hypotek AB - Säkerställda Obl."
+  }, {
+    "id" : "Nordea Invest"
+  }, {
+    "id" : "Nordea Invest Special"
+  }, {
+    "id" : "Nordea Kredit Realkreditaktieselskab"
+  }, {
+    "id" : "Nordea Markets"
+  }, {
+    "id" : "Nordea Markets ETF"
+  }, {
+    "id" : "Nordea Pankki Suomi Oyj"
+  }, {
+    "id" : "Nordec Group Oyj"
+  }, {
+    "id" : "NORDEN"
+  }, {
+    "id" : "Nordfyns Bank A/S"
+  }, {
+    "id" : "Nordic Aluminium"
+  }, {
+    "id" : "Nordic Blue Invest A/S"
+  }, {
+    "id" : "Nordic Factoring Fund AB (publ)"
+  }, {
+    "id" : "Nordic Flanges Group AB"
+  }, {
+    "id" : "Nordic ID Oyj"
+  }, {
+    "id" : "Nordic Investment Bank"
+  }, {
+    "id" : "Nordic Iron Ore AB"
+  }, {
+    "id" : "Nordic LEVEL Group AB"
+  }, {
+    "id" : "Nordic Lights Group Oyj"
+  }, {
+    "id" : "Nordic Mines AB"
+  }, {
+    "id" : "Nordic Paper Holding AB"
+  }, {
+    "id" : "Nordic Service Partners Holding AB"
+  }, {
+    "id" : "Nordic Shipholding A/S"
+  }, {
+    "id" : "Nordic Waterproofing Holding A/S"
+  }, {
+    "id" : "Nordic Waterproofing Holding AB"
+  }, {
+    "id" : "Nord Insuretech Group AB"
+  }, {
+    "id" : "Nordiska kreditmarknadsaktiebolaget (publ)"
+  }, {
+    "id" : "Nordisk Bergteknik AB"
+  }, {
+    "id" : "Nordisk Solar Co."
+  }, {
+    "id" : "Norditek Group AB"
+  }, {
+    "id" : "Nordjyske Bank"
+  }, {
+    "id" : "Nordkalk Oyj Abp"
+  }, {
+    "id" : "Nordlys AB"
+  }, {
+    "id" : "Nordnet  AB"
+  }, {
+    "id" : "Nordnet AB (publ)"
+  }, {
+    "id" : "Nordrest Holding AB"
+  }, {
+    "id" : "Norðurslóð 4 ehf"
+  }, {
+    "id" : "Norðurþing"
+  }, {
+    "id" : "Norion Bank AB"
+  }, {
+    "id" : "Norrhydro Group Oyj"
+  }, {
+    "id" : "Norræni fjárfestingarbankinn"
+  }, {
+    "id" : "Northbaze Group AB"
+  }, {
+    "id" : "Northgold AB"
+  }, {
+    "id" : "North Investment Group AB"
+  }, {
+    "id" : "North Media A/S"
+  }, {
+    "id" : "Northmill Group AB (publ)"
+  }, {
+    "id" : "Norva24 Group AB"
+  }, {
+    "id" : "Norvestia"
+  }, {
+    "id" : "Norvik Banka JSC"
+  }, {
+    "id" : "Nosa Plugs AB"
+  }, {
+    "id" : "NOTE AB"
+  }, {
+    "id" : "NovaCast Technologies AB"
+  }, {
+    "id" : "Nowaco Group"
+  }, {
+    "id" : "Novakand Pharma AB"
+  }, {
+    "id" : "Nova Klúbburinn hf."
+  }, {
+    "id" : "Novedo Holding AB"
+  }, {
+    "id" : "Novo Group Oyj"
+  }, {
+    "id" : "Novonesis (Novozymes A/S)"
+  }, {
+    "id" : "Novo Nordisk A/S"
+  }, {
+    "id" : "NOVOTEK AB"
+  }, {
+    "id" : "NP13 Förvaltning AB"
+  }, {
+    "id" : "NP3 Fastigheter AB"
+  }, {
+    "id" : "NRW II A/S"
+  }, {
+    "id" : "NTG Nordic Transport Group A/S"
+  }, {
+    "id" : "NTR Holding A/S"
+  }, {
+    "id" : "Nuevolution AB"
+  }, {
+    "id" : "NunaMinerals A/S"
+  }, {
+    "id" : "Nurminen Logistics Oyj"
+  }, {
+    "id" : "NYAB AB"
+  }, {
+    "id" : "NYAB Oyj"
+  }, {
+    "id" : "Nya Svensk FastighetsFinansiering AB"
+  }, {
+    "id" : "Nyfosa AB"
+  }, {
+    "id" : "Nykredit Bank A/S"
+  }, {
+    "id" : "Nykredit Invest"
+  }, {
+    "id" : "Nykredit Invest International, Investeringsforeningen"
+  }, {
+    "id" : "Nykredit Realkredit A/S"
+  }, {
+    "id" : "Nýsir hf."
+  }, {
+    "id" : "Nørhaven"
+  }, {
+    "id" : "Objective"
+  }, {
+    "id" : "Oboya Horticulture Industries AB"
+  }, {
+    "id" : "Observit AB"
+  }, {
+    "id" : "Oculis Holding AG"
+  }, {
+    "id" : "Odico A/S"
+  }, {
+    "id" : "OEM International AB"
+  }, {
+    "id" : "Offentliga Hus i Norden AB (publ)"
+  }, {
+    "id" : "Ogunsen AB"
+  }, {
+    "id" : "OKD"
+  }, {
+    "id" : "Okmetic Oyj"
+  }, {
+    "id" : "Old Mutual plc"
+  }, {
+    "id" : "Olicom A/S"
+  }, {
+    "id" : "Olíuverslun Íslands hf."
+  }, {
+    "id" : "Olvi Oyj"
+  }, {
+    "id" : "Oma Säästöpankki Oyj"
+  }, {
+    "id" : "OMX Iceland"
+  }, {
+    "id" : "Oncopeptides AB"
+  }, {
+    "id" : "OncoZenge AB"
+  }, {
+    "id" : "Oneflow AB"
+  }, {
+    "id" : "Online Brands Nordic AB"
+  }, {
+    "id" : "Onxeo SA"
+  }, {
+    "id" : "OODA AI AB"
+  }, {
+    "id" : "Open Infra AB (publ)"
+  }, {
+    "id" : "Opin Kerfi Group hf."
+  }, {
+    "id" : "Opter AB"
+  }, {
+    "id" : "OptiCept Technologies AB"
+  }, {
+    "id" : "OptiMail AB"
+  }, {
+    "id" : "Optima Worldwide Group Plc."
+  }, {
+    "id" : "Optomed Oyj"
+  }, {
+    "id" : "Opus Group AB"
+  }, {
+    "id" : "OP Yrityspankki Oyj"
+  }, {
+    "id" : "Oral Hammaslääkärit"
+  }, {
+    "id" : "OraSolv AB"
+  }, {
+    "id" : "Orc Group AB"
+  }, {
+    "id" : "OrderYOYO A/S"
+  }, {
+    "id" : "Orexo AB"
+  }, {
+    "id" : "OrganoClick AB"
+  }, {
+    "id" : "Oriflame Cosmetics S.A."
+  }, {
+    "id" : "Origo hf."
+  }, {
+    "id" : "Oriola Oyj"
+  }, {
+    "id" : "Orion"
+  }, {
+    "id" : "Orkuveita Reykjavíkur"
+  }, {
+    "id" : "Orrön Energy AB"
+  }, {
+    "id" : "Ortelius International AB"
+  }, {
+    "id" : "Orthex Oyj"
+  }, {
+    "id" : "Ortivus AB"
+  }, {
+    "id" : "Ortoma AB"
+  }, {
+    "id" : "Oscar Properties Holding AB"
+  }, {
+    "id" : "OssDsign AB"
+  }, {
+    "id" : "OTE"
+  }, {
+    "id" : "Outokumpu Oyj"
+  }, {
+    "id" : "Ovaro Kiinteistösijoitus Oyj"
+  }, {
+    "id" : "OW Bunker A/S"
+  }, {
+    "id" : "Ovzon AB"
+  }, {
+    "id" : "OX2 AB"
+  }, {
+    "id" : "OXE Marine AB"
+  }, {
+    "id" : "Oxigene, Inc."
+  }, {
+    "id" : "OYJ Ahola Transport ABP"
+  }, {
+    "id" : "Oyj Hartwall Abp"
+  }, {
+    "id" : "P/F Atlantic Petroleum"
+  }, {
+    "id" : "Pagero Group AB"
+  }, {
+    "id" : "Pallas Air Plc"
+  }, {
+    "id" : "Pallas Group AB"
+  }, {
+    "id" : "Pamica Group AB"
+  }, {
+    "id" : "Pandora A/S"
+  }, {
+    "id" : "Pandox AB"
+  }, {
+    "id" : "Panostaja Oyj"
+  }, {
+    "id" : "Papirfabrikken Invest A/S"
+  }, {
+    "id" : "Paradox Interactive AB (publ)"
+  }, {
+    "id" : "PA Resources"
+  }, {
+    "id" : "PARKEN Sport & Entertainment"
+  }, {
+    "id" : "Park Street A/S"
+  }, {
+    "id" : "PartnerTech AB."
+  }, {
+    "id" : "Patriam Invest AB"
+  }, {
+    "id" : "Paxman AB"
+  }, {
+    "id" : "Peab AB"
+  }, {
+    "id" : "Peab Industri AB"
+  }, {
+    "id" : "Penneo A/S"
+  }, {
+    "id" : "Per Aarsleff Holding A/S"
+  }, {
+    "id" : "Pergo AB"
+  }, {
+    "id" : "Perlos"
+  }, {
+    "id" : "Permascand Top Holding AB"
+  }, {
+    "id" : "Perpetua Medical AB"
+  }, {
+    "id" : "Petrogrand AB_"
+  }, {
+    "id" : "Petrotarg AB"
+  }, {
+    "id" : "PFA Invest"
+  }, {
+    "id" : "Pharma Equity Group A/S"
+  }, {
+    "id" : "Pharmiva AB"
+  }, {
+    "id" : "PhaseOneTrials"
+  }, {
+    "id" : "PHM Group Holding Oyj"
+  }, {
+    "id" : "Phone Family AB"
+  }, {
+    "id" : "Phonera AB"
+  }, {
+    "id" : "Photocat A/S"
+  }, {
+    "id" : "Physitrack PLC"
+  }, {
+    "id" : "Pierce Group AB"
+  }, {
+    "id" : "Pihlajalinna Oyj"
+  }, {
+    "id" : "Piippo Oyj"
+  }, {
+    "id" : "Pila Pharma AB"
+  }, {
+    "id" : "PION Group AB"
+  }, {
+    "id" : "PKC Group Oy"
+  }, {
+    "id" : "Placeringsforeningen Nordea Invest"
+  }, {
+    "id" : "Placeringsforeningen Nykredit Invest (Kapitalforening)"
+  }, {
+    "id" : "Plandent Oyj"
+  }, {
+    "id" : "Plastprent hf."
+  }, {
+    "id" : "Platzer Fastigheter Holding AB"
+  }, {
+    "id" : "Plc Uutechnic Group Oyj"
+  }, {
+    "id" : "Plexian AB"
+  }, {
+    "id" : "PMD Device Solutions AB"
+  }, {
+    "id" : "PMJ automec Oyj"
+  }, {
+    "id" : "Pohjolan Voima Oyj"
+  }, {
+    "id" : "Pohjola-Yhtymä Oyj"
+  }, {
+    "id" : "Point Properties Portfolio 1 AB"
+  }, {
+    "id" : "Polar Kiinteistöt Oyj"
+  }, {
+    "id" : "Polygiene Group AB"
+  }, {
+    "id" : "Polygon AB"
+  }, {
+    "id" : "Polyplank AB"
+  }, {
+    "id" : "Ponsse Oyj"
+  }, {
+    "id" : "POP Asuntoluottopankki Oyj"
+  }, {
+    "id" : "Posti Group Corporation"
+  }, {
+    "id" : "Posti Group Oyj"
+  }, {
+    "id" : "Potagua"
+  }, {
+    "id" : "Potagua FLS"
+  }, {
+    "id" : "Potagua Kapital"
+  }, {
+    "id" : "PowerCell Sweden AB"
+  }, {
+    "id" : "Powerflute Oyj"
+  }, {
+    "id" : "Powerwave Technologies"
+  }, {
+    "id" : "Precio Fishbone AB"
+  }, {
+    "id" : "Precise Biometrics AB"
+  }, {
+    "id" : "Precomp Solutions AB"
+  }, {
+    "id" : "Premium Snacks Nordic AB"
+  }, {
+    "id" : "Prevas AB"
+  }, {
+    "id" : "Pricer AB"
+  }, {
+    "id" : "Prime Office A/S"
+  }, {
+    "id" : "Prisjakt Group AB (publ)"
+  }, {
+    "id" : "Prisma Properties AB"
+  }, {
+    "id" : "ProAct IT Group AB"
+  }, {
+    "id" : "Probi AB"
+  }, {
+    "id" : "Proffice AB"
+  }, {
+    "id" : "ProfilGruppen AB"
+  }, {
+    "id" : "Profil Invest"
+  }, {
+    "id" : "Profoto Holding AB"
+  }, {
+    "id" : "Projektengagemang Sweden AB"
+  }, {
+    "id" : "Pro Kapital Grupp"
+  }, {
+    "id" : "Promimic AB"
+  }, {
+    "id" : "Prosperity Quest II Limited"
+  }, {
+    "id" : "ProstaLund AB"
+  }, {
+    "id" : "Prostatype Genomics AB"
+  }, {
+    "id" : "Protect Data AB"
+  }, {
+    "id" : "PROVINSFASTIGHETER I AB"
+  }, {
+    "id" : "PROVINSFASTIGHETER II AB"
+  }, {
+    "id" : "PSI Group ASA"
+  }, {
+    "id" : "Purmo Group Oyj"
+  }, {
+    "id" : "Puuharyhmä Oyj"
+  }, {
+    "id" : "Puuilo Oyj"
+  }, {
+    "id" : "PV Enterprise Sweden AB"
+  }, {
+    "id" : "PWT HOLDING A/S"
+  }, {
+    "id" : "Pöyry"
+  }, {
+    "id" : "Qben Infra AB"
+  }, {
+    "id" : "QBIM AB"
+  }, {
+    "id" : "Qflow Group AB"
+  }, {
+    "id" : "Qiiwi Games AB"
+  }, {
+    "id" : "Q-Interline A/S"
+  }, {
+    "id" : "QleanAir AB"
+  }, {
+    "id" : "QLife Holding AB"
+  }, {
+    "id" : "Q-Linea AB"
+  }, {
+    "id" : "Qliro AB"
+  }, {
+    "id" : "Qlosr Group AB"
+  }, {
+    "id" : "Qlucore AB"
+  }, {
+    "id" : "Q-Med AB"
+  }, {
+    "id" : "QPR Software"
+  }, {
+    "id" : "Qred Holding AB (publ)"
+  }, {
+    "id" : "Qt Group Oyj"
+  }, {
+    "id" : "Qualisys Holding AB"
+  }, {
+    "id" : "QUIA PHARMA AB"
+  }, {
+    "id" : "Radiometer"
+  }, {
+    "id" : "Radisson Hospitality AB"
+  }, {
+    "id" : "Railcare Group AB"
+  }, {
+    "id" : "Raisio"
+  }, {
+    "id" : "Raketech Group Holding plc"
+  }, {
+    "id" : "Ramirent Oyj"
+  }, {
+    "id" : "Randers Reb"
+  }, {
+    "id" : "Randviken Fastigheter AB"
+  }, {
+    "id" : "Rangárþing ytra"
+  }, {
+    "id" : "RanLOS AB"
+  }, {
+    "id" : "Ranplan Group AB"
+  }, {
+    "id" : "Rapala VMC"
+  }, {
+    "id" : "RARIK ohf."
+  }, {
+    "id" : "Rasta Group AB"
+  }, {
+    "id" : "Ratos AB"
+  }, {
+    "id" : "Rautakirja Oyj"
+  }, {
+    "id" : "Rautaruukki"
+  }, {
+    "id" : "Raute Oyj"
+  }, {
+    "id" : "RayClinic AB"
+  }, {
+    "id" : "RaySearch Laboratories AB"
+  }, {
+    "id" : "Re:NewCell AB"
+  }, {
+    "id" : "Readly International AB"
+  }, {
+    "id" : "ReadSoft AB"
+  }, {
+    "id" : "Realfiction Holding AB"
+  }, {
+    "id" : "Realkredit Danmark A/S"
+  }, {
+    "id" : "Realurin"
+  }, {
+    "id" : "RealXState AB"
+  }, {
+    "id" : "Rebelle AB"
+  }, {
+    "id" : "Rebellion Capital AB (publ)"
+  }, {
+    "id" : "Rebellion Operations AB (publ)"
+  }, {
+    "id" : "Rebl Group Oyj"
+  }, {
+    "id" : "Recipharm AB"
+  }, {
+    "id" : "Rederiaktiebolaget Gotlandsbolaget"
+  }, {
+    "id" : "Redsense Medical AB"
+  }, {
+    "id" : "Redwood Pharma AB"
+  }, {
+    "id" : "Refine Group AB"
+  }, {
+    "id" : "REG3A fjármögnun"
+  }, {
+    "id" : "Regional Invest Fyn"
+  }, {
+    "id" : "Reitir fasteignafélag hf."
+  }, {
+    "id" : "RE IV LIMITED"
+  }, {
+    "id" : "Rejlers AB"
+  }, {
+    "id" : "Reka Industrial Oyj"
+  }, {
+    "id" : "Rekstrarfélag verðbréfasjóða ÍV"
+  }, {
+    "id" : "Relais Group Oyj"
+  }, {
+    "id" : "Relesys A/S"
+  }, {
+    "id" : "Rella Holding A/S"
+  }, {
+    "id" : "Re-Match Holding A/S"
+  }, {
+    "id" : "Remedy Entertainment Oyj"
+  }, {
+    "id" : "Renewagy"
+  }, {
+    "id" : "Resco AB (publ)"
+  }, {
+    "id" : "Resqunit AB"
+  }, {
+    "id" : "Ress Life Investments A/S"
+  }, {
+    "id" : "Resurs Bank Aktiebolag"
+  }, {
+    "id" : "Resurs CNC AB"
+  }, {
+    "id" : "Resurs Holding AB"
+  }, {
+    "id" : "Resurs Holding AB (publ)"
+  }, {
+    "id" : "Revenio Group Oyj"
+  }, {
+    "id" : "Reykjanesbær"
+  }, {
+    "id" : "Reykjaneshöfn"
+  }, {
+    "id" : "Reykjastræti ehf."
+  }, {
+    "id" : "Reykjavíkurborg"
+  }, {
+    "id" : "Rias A/S"
+  }, {
+    "id" : "Riddarhyttan Resources AB"
+  }, {
+    "id" : "RightBridge Ventures Group AB"
+  }, {
+    "id" : "Ríkissjóður Íslands"
+  }, {
+    "id" : "Ríkisútvarpið ohf."
+  }, {
+    "id" : "Rikshem AB"
+  }, {
+    "id" : "Ringkjøbing Bank A/S"
+  }, {
+    "id" : "Ringkjøbing Landbobank A/S"
+  }, {
+    "id" : "RISMA Systems A/S"
+  }, {
+    "id" : "Rizzo Group AB"
+  }, {
+    "id" : "RLS Global AB"
+  }, {
+    "id" : "Robert Friman International AB"
+  }, {
+    "id" : "Robit Oyj"
+  }, {
+    "id" : "Roblon A/S"
+  }, {
+    "id" : "Rockwool A/S"
+  }, {
+    "id" : "Rocla Oyj"
+  }, {
+    "id" : "Rolling Optics Holding AB"
+  }, {
+    "id" : "RopoHold Oyj"
+  }, {
+    "id" : "Rottneros AB"
+  }, {
+    "id" : "Rovio Entertainment Oyj"
+  }, {
+    "id" : "Rovsing A/S"
+  }, {
+    "id" : "Royal Bank of Canada"
+  }, {
+    "id" : "Royal Bank of Scotland"
+  }, {
+    "id" : "Royal Bank of Scotland N.V."
+  }, {
+    "id" : "Royal UNIBREW A/S"
+  }, {
+    "id" : "RPI Investering A/S"
+  }, {
+    "id" : "RTX"
+  }, {
+    "id" : "RugVista Group AB"
+  }, {
+    "id" : "RusForest AB"
+  }, {
+    "id" : "Rush Factory Oyj"
+  }, {
+    "id" : "Russian Real Estate Inv. Company AB"
+  }, {
+    "id" : "Rusta AB"
+  }, {
+    "id" : "RVRC Holding AB"
+  }, {
+    "id" : "Röko AB"
+  }, {
+    "id" : "Rörvik Timber AB"
+  }, {
+    "id" : "S2Medical AB"
+  }, {
+    "id" : "SAAB AB"
+  }, {
+    "id" : "Safello Group AB"
+  }, {
+    "id" : "Safeture AB"
+  }, {
+    "id" : "Saga Furs Oyj"
+  }, {
+    "id" : "Sagax AB"
+  }, {
+    "id" : "Salling Bank A/S"
+  }, {
+    "id" : "SaltX Technology Holding AB"
+  }, {
+    "id" : "Saltängen Property Invest"
+  }, {
+    "id" : "SalusAnsvar AB"
+  }, {
+    "id" : "Samband sveitarfélaga á Suðurnesjum"
+  }, {
+    "id" : "SameSystem A/S"
+  }, {
+    "id" : "Samherji hf."
+  }, {
+    "id" : "Samhällsbyggnadsbolaget i Norden AB"
+  }, {
+    "id" : "Sampo"
+  }, {
+    "id" : "Samson eignarhaldsfélag ehf."
+  }, {
+    "id" : "Samson Group"
+  }, {
+    "id" : "Samvinnuferðir Landsýn hf."
+  }, {
+    "id" : "Sandgerðisbær"
+  }, {
+    "id" : "Sandvik AB"
+  }, {
+    "id" : "Saniona AB"
+  }, {
+    "id" : "Sanistål A/S"
+  }, {
+    "id" : "Sanitec"
+  }, {
+    "id" : "Sanolium AB"
+  }, {
+    "id" : "Sanoma Oyj"
+  }, {
+    "id" : "Sapa  AB"
+  }, {
+    "id" : "Sardus, AB"
+  }, {
+    "id" : "SAS AB"
+  }, {
+    "id" : "SAS Ground Services"
+  }, {
+    "id" : "Satair A/S"
+  }, {
+    "id" : "SATO Oyj"
+  }, {
+    "id" : "Saunalahti Group Oyj"
+  }, {
+    "id" : "SaveLend Group AB"
+  }, {
+    "id" : "SAV-Rahoitus Oyj"
+  }, {
+    "id" : "Saxlund Group AB"
+  }, {
+    "id" : "Saxo Invest"
+  }, {
+    "id" : "SBAB"
+  }, {
+    "id" : "S-Bank Plc"
+  }, {
+    "id" : "SBB i Norden AB"
+  }, {
+    "id" : "SB Holdco PLC"
+  }, {
+    "id" : "ScandBook Holding AB"
+  }, {
+    "id" : "Scandic Hotels Group AB"
+  }, {
+    "id" : "ScandiDos AB"
+  }, {
+    "id" : "Scandinavian Air Ambulance Holding AB"
+  }, {
+    "id" : "Scandinavian Biogas Fuels International AB"
+  }, {
+    "id" : "Scandinavian Brake Systems A/S"
+  }, {
+    "id" : "Scandinavian ChemoTech AB"
+  }, {
+    "id" : "Scandinavian Enviro Systems AB"
+  }, {
+    "id" : "Scandinavian Investment Group A/S"
+  }, {
+    "id" : "Scandinavian Medical Solutions A/S"
+  }, {
+    "id" : "Scandinavian Private Equity"
+  }, {
+    "id" : "Scandinavian Properties A/S"
+  }, {
+    "id" : "Scandinavian Real Heart AB"
+  }, {
+    "id" : "Scandinavian Tobacco Group A/S"
+  }, {
+    "id" : "Scandion Oncology A/S"
+  }, {
+    "id" : "Scandi Standard AB"
+  }, {
+    "id" : "Scandium Absolute Return Fund"
+  }, {
+    "id" : "Scanfil Oyj"
+  }, {
+    "id" : "SCANIA AB"
+  }, {
+    "id" : "ScanMining AB"
+  }, {
+    "id" : "Scape Technologies A/S"
+  }, {
+    "id" : "Schaumann Boligudvikling K/S"
+  }, {
+    "id" : "Schaumann Retail Finland 1 A/S"
+  }, {
+    "id" : "Schaumann Østerfælled A/S"
+  }, {
+    "id" : "Scibase Holding AB"
+  }, {
+    "id" : "Scout Gaming Group AB"
+  }, {
+    "id" : "Sdiptech AB (publ)"
+  }, {
+    "id" : "Seafire AB"
+  }, {
+    "id" : "Seamless Distribution Systems AB"
+  }, {
+    "id" : "SeaNet Maritime Communications AB"
+  }, {
+    "id" : "SeaTwirl AB"
+  }, {
+    "id" : "SEB BoLån AB"
+  }, {
+    "id" : "SEBinvest"
+  }, {
+    "id" : "SECITS Holding AB"
+  }, {
+    "id" : "Secop Group Holding GmbH"
+  }, {
+    "id" : "Seco Tools AB"
+  }, {
+    "id" : "SECTRA AB"
+  }, {
+    "id" : "Securitas AB"
+  }, {
+    "id" : "Securitas Direct AB"
+  }, {
+    "id" : "Sedana Medical AB"
+  }, {
+    "id" : "Seðlabanki Íslands"
+  }, {
+    "id" : "Seinäjoen kaupunki"
+  }, {
+    "id" : "Selena Oil  Gas Holding AB"
+  }, {
+    "id" : "Seligson & Co Rahastoyhtiö Oyj"
+  }, {
+    "id" : "SEL I hs."
+  }, {
+    "id" : "SEL II hs."
+  }, {
+    "id" : "Selskabet af 1. september 2008"
+  }, {
+    "id" : "Seluxit A/S"
+  }, {
+    "id" : "Semafo Inc."
+  }, {
+    "id" : "Semcon AB"
+  }, {
+    "id" : "Senea AB"
+  }, {
+    "id" : "Sensec Holding AB"
+  }, {
+    "id" : "Sensori AB."
+  }, {
+    "id" : "Sensys Gatso Group AB"
+  }, {
+    "id" : "Sentera Oyj"
+  }, {
+    "id" : "Sentiec Oyj"
+  }, {
+    "id" : "SenzaGen AB"
+  }, {
+    "id" : "Senzime AB"
+  }, {
+    "id" : "Serafim Finans AB"
+  }, {
+    "id" : "Serneke Group AB"
+  }, {
+    "id" : "Serstech AB"
+  }, {
+    "id" : "SGA Société Générale Acceptance N.V:"
+  }, {
+    "id" : "SGA Société Générale Acceptance N.V."
+  }, {
+    "id" : "SGL Group ApS"
+  }, {
+    "id" : "SGL International A/S"
+  }, {
+    "id" : "ShaMaran Petroleum Corp"
+  }, {
+    "id" : "Shape Robotics A/S"
+  }, {
+    "id" : "Shelton Petroleum AB"
+  }, {
+    "id" : "SIBEK AB"
+  }, {
+    "id" : "SIBS AB (publ)"
+  }, {
+    "id" : "Sifira A/S"
+  }, {
+    "id" : "Sigma AB"
+  }, {
+    "id" : "Signatur Fastigheter AB"
+  }, {
+    "id" : "SignUp Software AB"
+  }, {
+    "id" : "Siili Solutions Oyj"
+  }, {
+    "id" : "Sijoitusasunnot.com Group Oyj"
+  }, {
+    "id" : "SÍL 2 hs."
+  }, {
+    "id" : "SÍL 3 hs."
+  }, {
+    "id" : "Síldarvinnslan hf"
+  }, {
+    "id" : "Síldarvinnslan hf."
+  }, {
+    "id" : "Sileon AB"
+  }, {
+    "id" : "SÍL hs."
+  }, {
+    "id" : "Silja Line Oy"
+  }, {
+    "id" : "Siljansvik AB"
+  }, {
+    "id" : "Silmäasema Oyj"
+  }, {
+    "id" : "SimCorp A/S"
+  }, {
+    "id" : "Síminn hf."
+  }, {
+    "id" : "Simris Group AB"
+  }, {
+    "id" : "Sinch AB"
+  }, {
+    "id" : "SinterCast AB"
+  }, {
+    "id" : "Sitowise Group Plc"
+  }, {
+    "id" : "SIV Credit Fund slhf."
+  }, {
+    "id" : "Sivers Semiconductors AB"
+  }, {
+    "id" : "SIV Fjármögnun"
+  }, {
+    "id" : "SIX AB"
+  }, {
+    "id" : "SJ Eignarhaldsfélag ehf."
+  }, {
+    "id" : "Sjóvá-Almennar tryggingar hf."
+  }, {
+    "id" : "Sjælsø Gruppen A/S"
+  }, {
+    "id" : "SKAGEN Fondene"
+  }, {
+    "id" : "Skagi hf"
+  }, {
+    "id" : "Skagstrendingur hf."
+  }, {
+    "id" : "SKAKO"
+  }, {
+    "id" : "Skála Kommuna"
+  }, {
+    "id" : "Skandia, Försäkringsab."
+  }, {
+    "id" : "SkandiaBanken AB"
+  }, {
+    "id" : "Skandinaviska Enskilda Banken"
+  }, {
+    "id" : "Skandinaviska Enskilda Banken AB"
+  }, {
+    "id" : "Skanditek Industriförvaltning AB"
+  }, {
+    "id" : "Skanska AB"
+  }, {
+    "id" : "Skanska Financial Services"
+  }, {
+    "id" : "Skel fjárfestingafélag hf."
+  }, {
+    "id" : "SKF, AB"
+  }, {
+    "id" : "Skinnaiðnaður hf."
+  }, {
+    "id" : "SkiStar AB"
+  }, {
+    "id" : "Skjern Bank A/S"
+  }, {
+    "id" : "Skolon AB"
+  }, {
+    "id" : "Skýrr hf."
+  }, {
+    "id" : "Skåne-möllan AB"
+  }, {
+    "id" : "Skånska Energi"
+  }, {
+    "id" : "Skælskør Bank Aktieselskab"
+  }, {
+    "id" : "Sláturfélag Suðurlands svf."
+  }, {
+    "id" : "Sleep Cycle AB"
+  }, {
+    "id" : "Slitevind AB"
+  }, {
+    "id" : "SLR Group GmbH"
+  }, {
+    "id" : "SmallCap Danmark, Investeringsforening"
+  }, {
+    "id" : "Smáragarður ehf"
+  }, {
+    "id" : "Smart Eye AB"
+  }, {
+    "id" : "SMART VALOR AG"
+  }, {
+    "id" : "Smart Wires Technology Ltd"
+  }, {
+    "id" : "Smile Henkilöstöpalvelut Oyj"
+  }, {
+    "id" : "Snæfellsbær"
+  }, {
+    "id" : "Société Générale (Paris)"
+  }, {
+    "id" : "Société Générale S.A."
+  }, {
+    "id" : "Softronic AB"
+  }, {
+    "id" : "Solar A/S"
+  }, {
+    "id" : "Solar Foods Oyj"
+  }, {
+    "id" : "Solid Clouds hf."
+  }, {
+    "id" : "Solid Försäkringsaktiebolag"
+  }, {
+    "id" : "Sollentuna Stinsen JV AB"
+  }, {
+    "id" : "Solnaberg Property AB"
+  }, {
+    "id" : "SolTech Energy Sweden AB"
+  }, {
+    "id" : "Solteq Oyj"
+  }, {
+    "id" : "Solwers Oyj"
+  }, {
+    "id" : "Sonera Oyj"
+  }, {
+    "id" : "Sonetel AB"
+  }, {
+    "id" : "Song Networks Holding"
+  }, {
+    "id" : "Sophus Berendsen"
+  }, {
+    "id" : "Sorpa"
+  }, {
+    "id" : "Sotkamo Silver AB"
+  }, {
+    "id" : "Sozap AB"
+  }, {
+    "id" : "Spago Nanomedical AB"
+  }, {
+    "id" : "SPARBANK A/S"
+  }, {
+    "id" : "Sparbanken Alingsås AB"
+  }, {
+    "id" : "Sparbanken Mälardalen AB"
+  }, {
+    "id" : "Sparbanken Sjuhärad AB"
+  }, {
+    "id" : "Sparbanken Skåne"
+  }, {
+    "id" : "Sparbanken Syd"
+  }, {
+    "id" : "Sparbanken Västra Mälardalen"
+  }, {
+    "id" : "Sparc Group AB (publ)"
+  }, {
+    "id" : "SparDanmark Invest"
+  }, {
+    "id" : "Sparekassen Faaborg A/S"
+  }, {
+    "id" : "Sparekassen Hvetbo A/S"
+  }, {
+    "id" : "Sparekassen Lolland A/S"
+  }, {
+    "id" : "Sparekassen Sjælland-Fyn A/S"
+  }, {
+    "id" : "Sparinvest"
+  }, {
+    "id" : "Sparinvest Assset Allocation"
+  }, {
+    "id" : "Sparinvest Cumulus Value"
+  }, {
+    "id" : "Sparinvest SICAV"
+  }, {
+    "id" : "Sparinvest SICAV - Property Global"
+  }, {
+    "id" : "Sparinvest Value Europe Small Cap"
+  }, {
+    "id" : "Sparisjóðabanki Íslands hf."
+  }, {
+    "id" : "Sparisjóður Bolungarvíkur"
+  }, {
+    "id" : "Sparisjóður Hafnarfjarðar"
+  }, {
+    "id" : "Sparisjóðurinn í Keflavík"
+  }, {
+    "id" : "Sparisjóður Kópavogs"
+  }, {
+    "id" : "Sparisjóður Mýrasýslu"
+  }, {
+    "id" : "Sparisjóður Vestfirðinga"
+  }, {
+    "id" : "Sparisjóður Vestmannaeyja"
+  }, {
+    "id" : "SPARK Technology A/S"
+  }, {
+    "id" : "Spar Nord Bank"
+  }, {
+    "id" : "Spar Nord Bank A/S"
+  }, {
+    "id" : "Spar Nord FormueInvest A/S"
+  }, {
+    "id" : "Spearhavoc Finans A/S"
+  }, {
+    "id" : "Specialfastigheter Sverige AB"
+  }, {
+    "id" : "Specialforeningen BankInvest III"
+  }, {
+    "id" : "Specialforeningen Danske Invest"
+  }, {
+    "id" : "Specialforeningen Dexia Invest"
+  }, {
+    "id" : "SpectraCure AB"
+  }, {
+    "id" : "SpectrumOne AB"
+  }, {
+    "id" : "SP-Fjármögnun hf."
+  }, {
+    "id" : "SP Group A/S"
+  }, {
+    "id" : "Spiffbet AB"
+  }, {
+    "id" : "Spinnova Oyj"
+  }, {
+    "id" : "Spintab"
+  }, {
+    "id" : "Sponda Oyj"
+  }, {
+    "id" : "Sportamore AB"
+  }, {
+    "id" : "Spotr Group AB"
+  }, {
+    "id" : "SPP Livförsäkringar AB"
+  }, {
+    "id" : "Springvest Oyj"
+  }, {
+    "id" : "Sprint Bioscience AB"
+  }, {
+    "id" : "SPRON"
+  }, {
+    "id" : "Spæncom A/S"
+  }, {
+    "id" : "Spölur ehf."
+  }, {
+    "id" : "SRAB Shipping AB"
+  }, {
+    "id" : "SRE fjármögnun 1"
+  }, {
+    "id" : "SRE fjármögnun 2"
+  }, {
+    "id" : "SR-Mjöl hf."
+  }, {
+    "id" : "SRV Yhtiöt Oyj"
+  }, {
+    "id" : "SSAB AB"
+  }, {
+    "id" : "SSCP Lager BidCo AB (publ)"
+  }, {
+    "id" : "SSG BidCo A/S"
+  }, {
+    "id" : "SSH Communications Security Oyj"
+  }, {
+    "id" : "SSM Holding AB"
+  }, {
+    "id" : "St1 Nordic Oy"
+  }, {
+    "id" : "Stadshypotek AB"
+  }, {
+    "id" : "Stáltak hf."
+  }, {
+    "id" : "Starbreeze AB"
+  }, {
+    "id" : "Stayble Therapeutics AB"
+  }, {
+    "id" : "Stefnir hf."
+  }, {
+    "id" : "Stendörren Fastigheter AB"
+  }, {
+    "id" : "Stenhus Fastigheter i Norden AB"
+  }, {
+    "id" : "Stenhus Fastigheter i Norden AB (publ)"
+  }, {
+    "id" : "Stenocare A/S"
+  }, {
+    "id" : "STG Global Finance B.V"
+  }, {
+    "id" : "Stille AB"
+  }, {
+    "id" : "StillFront AB"
+  }, {
+    "id" : "Stockholm Exergi Holding AB (publ)"
+  }, {
+    "id" : "Stockwik Förvaltning AB"
+  }, {
+    "id" : "Stonesoft"
+  }, {
+    "id" : "Stora Enso Oyj"
+  }, {
+    "id" : "Stora Enso Oyj (Obl.)"
+  }, {
+    "id" : "Storebrand Asset Management AS"
+  }, {
+    "id" : "Storebrand Global Multifactor"
+  }, {
+    "id" : "Storebrand Global Solutions"
+  }, {
+    "id" : "Storebrand Indeks - Alle Markeder"
+  }, {
+    "id" : "Storebrand Indeks - Nye Markeder"
+  }, {
+    "id" : "Storskogen Group AB"
+  }, {
+    "id" : "Storytel AB"
+  }, {
+    "id" : "Strand Interconnect AB"
+  }, {
+    "id" : "Strategic Investments A/S"
+  }, {
+    "id" : "Strategic Partners A/S"
+  }, {
+    "id" : "Strategi Invest"
+  }, {
+    "id" : "Straumborg ehf."
+  }, {
+    "id" : "Straumur-Burðarás Fjárfestingabanki hf."
+  }, {
+    "id" : "Strax AB"
+  }, {
+    "id" : "Stromsdal"
+  }, {
+    "id" : "Stronghold Invest AB"
+  }, {
+    "id" : "Strålfors"
+  }, {
+    "id" : "Studentbostäder i Norden"
+  }, {
+    "id" : "Studsvik AB"
+  }, {
+    "id" : "Stykkishólmsbær"
+  }, {
+    "id" : "Stylepit A/S"
+  }, {
+    "id" : "Subgen AI AB"
+  }, {
+    "id" : "Summa Defence Oyj"
+  }, {
+    "id" : "Sunborn (Gibraltar) Limited"
+  }, {
+    "id" : "Sunborn Finance Oyj"
+  }, {
+    "id" : "Sunborn International Plc"
+  }, {
+    "id" : "Sunborn London Oyj"
+  }, {
+    "id" : "Suomen Hypoteekkiyhdistys"
+  }, {
+    "id" : "Suomen Spar Oyj"
+  }, {
+    "id" : "Suominen Oyj"
+  }, {
+    "id" : "Surgical Science Sweden AB"
+  }, {
+    "id" : "Svea Bank AB"
+  }, {
+    "id" : "Svea Ekonomi AB"
+  }, {
+    "id" : "Sveafastigheter AB (publ)"
+  }, {
+    "id" : "SWECO AB"
+  }, {
+    "id" : "Swedavia AB"
+  }, {
+    "id" : "Swedbank AB"
+  }, {
+    "id" : "Swedbank Hypotek AB"
+  }, {
+    "id" : "Svedbergs Group AB"
+  }, {
+    "id" : "Sweden BuyersClub AB"
+  }, {
+    "id" : "Swedencare AB (publ)"
+  }, {
+    "id" : "Swedish Electromagnet Invest AB"
+  }, {
+    "id" : "Swedish Logistic Property AB"
+  }, {
+    "id" : "Swedish Match AB"
+  }, {
+    "id" : "Swedish Orphan Biovitrum AB"
+  }, {
+    "id" : "Swedish Stirling AB"
+  }, {
+    "id" : "Swedol AB"
+  }, {
+    "id" : "Sveitarfélagið Álftanes"
+  }, {
+    "id" : "Sveitarfélagið Árborg"
+  }, {
+    "id" : "Svejsefabrikken Migatronic A/S"
+  }, {
+    "id" : "Svenska Aerogel Holding AB"
+  }, {
+    "id" : "Svenska Cellulosa AB SCA"
+  }, {
+    "id" : "Svenska Handelsbanken"
+  }, {
+    "id" : "Svenska Handelsbanken AB"
+  }, {
+    "id" : "Svenska Handelsbanken AB, Branch Oper"
+  }, {
+    "id" : "Svenska Nyttobostäder AB"
+  }, {
+    "id" : "Svensk Exportkredit, AB"
+  }, {
+    "id" : "Svensk Exportkredit AB"
+  }, {
+    "id" : "Svensk Hypotekspension Fond 4 AB"
+  }, {
+    "id" : "Sveriges Bostadsfinansieringsab., SBAB"
+  }, {
+    "id" : "Sveriges Riksbank"
+  }, {
+    "id" : "Swiss Properties Invest A/S"
+  }, {
+    "id" : "SwitchCore AB"
+  }, {
+    "id" : "Svithoid Tankers AB"
+  }, {
+    "id" : "Svitzer Group A/S"
+  }, {
+    "id" : "Svolder AB"
+  }, {
+    "id" : "Sydinvest"
+  }, {
+    "id" : "SynAct Pharma AB"
+  }, {
+    "id" : "Sýn hf."
+  }, {
+    "id" : "Synsam AB"
+  }, {
+    "id" : "Systemair AB"
+  }, {
+    "id" : "SäkI AB"
+  }, {
+    "id" : "Söder Sportfiske AB"
+  }, {
+    "id" : "Taaleri Oyj"
+  }, {
+    "id" : "Tagehus Holding AB"
+  }, {
+    "id" : "TagMaster AB"
+  }, {
+    "id" : "Takoma Oyj"
+  }, {
+    "id" : "Talenom Oyj"
+  }, {
+    "id" : "Talenta Hátækni"
+  }, {
+    "id" : "Talentum Oyj"
+  }, {
+    "id" : "TalkPool AG"
+  }, {
+    "id" : "Tallink Grupp"
+  }, {
+    "id" : "Tamfelt Oyj Abp"
+  }, {
+    "id" : "Tamro Oyj"
+  }, {
+    "id" : "Tamtron Group Oyj"
+  }, {
+    "id" : "Tangiamo Touch Technology AB"
+  }, {
+    "id" : "Tangi hf."
+  }, {
+    "id" : "TapTravel Nordic AB (publ)"
+  }, {
+    "id" : "TCECUR Sweden AB"
+  }, {
+    "id" : "TCM Group A/S"
+  }, {
+    "id" : "TC TECH Sweden AB"
+  }, {
+    "id" : "TDC A/S"
+  }, {
+    "id" : "Technology Nexus AB"
+  }, {
+    "id" : "Technopolis"
+  }, {
+    "id" : "Tecnotree Oyj"
+  }, {
+    "id" : "Tekla"
+  }, {
+    "id" : "Tekova Oyj"
+  }, {
+    "id" : "Tele2 AB"
+  }, {
+    "id" : "Teleca AB"
+  }, {
+    "id" : "Telelogic AB"
+  }, {
+    "id" : "Teleste Oyj"
+  }, {
+    "id" : "Telia Company AB"
+  }, {
+    "id" : "Teligent AB"
+  }, {
+    "id" : "Tellusgruppen AB"
+  }, {
+    "id" : "Tempcon Group AB"
+  }, {
+    "id" : "Tempest Security AB"
+  }, {
+    "id" : "Teneo AI AB"
+  }, {
+    "id" : "Teqnion AB"
+  }, {
+    "id" : "Terranet AB"
+  }, {
+    "id" : "Terranor Group AB"
+  }, {
+    "id" : "Tervakosken Puuhamaa Oyj"
+  }, {
+    "id" : "Terveystalo Healthcare Oyj"
+  }, {
+    "id" : "Terveystalo Oyj"
+  }, {
+    "id" : "Tessin Nordic Holding AB"
+  }, {
+    "id" : "TEST1"
+  }, {
+    "id" : "Tethys Oil AB"
+  }, {
+    "id" : "Teymi hf."
+  }, {
+    "id" : "TF Bank AB"
+  }, {
+    "id" : "TH1NG AB"
+  }, {
+    "id" : "The Drilling Company of 1972 A/S"
+  }, {
+    "id" : "The Lexington AB"
+  }, {
+    "id" : "The Marketing Group plc"
+  }, {
+    "id" : "The Royal Bank of Scotland N.V."
+  }, {
+    "id" : "The Speedrecruiters Company"
+  }, {
+    "id" : "Þorbjörn Fiskanes hf."
+  }, {
+    "id" : "Þormóður rammi - Sæberg hf."
+  }, {
+    "id" : "Þróunarfélag Íslands hf."
+  }, {
+    "id" : "Thule Group AB"
+  }, {
+    "id" : "Thunderful Group AB"
+  }, {
+    "id" : "Ticket Travel Group AB"
+  }, {
+    "id" : "Tieto Abp"
+  }, {
+    "id" : "TietoEVRY Oyj"
+  }, {
+    "id" : "Tiimari Oyj Abp"
+  }, {
+    "id" : "Tikkurila Oyj"
+  }, {
+    "id" : "Tilgin AB"
+  }, {
+    "id" : "Tingsvalvet Fastighets AB"
+  }, {
+    "id" : "Titania Holding AB"
+  }, {
+    "id" : "Titania Holding AB (publ)"
+  }, {
+    "id" : "Titanium Oyj"
+  }, {
+    "id" : "Tivoli A/S"
+  }, {
+    "id" : "TIVOX"
+  }, {
+    "id" : "TKD Nordeuropa A/S"
+  }, {
+    "id" : "TM hf."
+  }, {
+    "id" : "TOBII AB"
+  }, {
+    "id" : "Tobin Properties AB"
+  }, {
+    "id" : "Toivo Group Oyj"
+  }, {
+    "id" : "Tokmanni Group Oyj"
+  }, {
+    "id" : "Toleranzia AB"
+  }, {
+    "id" : "Topdanmark A/S"
+  }, {
+    "id" : "Topotarget"
+  }, {
+    "id" : "TORM A/S"
+  }, {
+    "id" : "Torm plc"
+  }, {
+    "id" : "Tornator Oyj"
+  }, {
+    "id" : "Torslanda Property Investment AB"
+  }, {
+    "id" : "Totalbanken A/S"
+  }, {
+    "id" : "Totalkredit A/S"
+  }, {
+    "id" : "Tourn International AB"
+  }, {
+    "id" : "Traction, AB"
+  }, {
+    "id" : "TradeDoubler AB"
+  }, {
+    "id" : "Trafik-, Bygge- og Boligstyrelsen"
+  }, {
+    "id" : "Train Alliance AB"
+  }, {
+    "id" : "Trainers' House Oyj"
+  }, {
+    "id" : "Transcendent Group AB"
+  }, {
+    "id" : "Transcom Holiding AB"
+  }, {
+    "id" : "Transcom WorldWide S.A."
+  }, {
+    "id" : "Transmode AB"
+  }, {
+    "id" : "Transtema Group AB"
+  }, {
+    "id" : "TRATON SE"
+  }, {
+    "id" : "Travelmarket.com"
+  }, {
+    "id" : "TravelPartner AB"
+  }, {
+    "id" : "Tre Kronor Property Investment AB"
+  }, {
+    "id" : "Trelleborg AB"
+  }, {
+    "id" : "Trention AB"
+  }, {
+    "id" : "Tresu Investment Holding A/S"
+  }, {
+    "id" : "Tretti AB"
+  }, {
+    "id" : "Tribona AB"
+  }, {
+    "id" : "Tribox Group AB"
+  }, {
+    "id" : "Tricorona AB"
+  }, {
+    "id" : "Trifork A/S"
+  }, {
+    "id" : "Trifork Group AG"
+  }, {
+    "id" : "Trio AB"
+  }, {
+    "id" : "Troax Group AB"
+  }, {
+    "id" : "TROPHY GAMES Development A/S"
+  }, {
+    "id" : "Truecaller AB"
+  }, {
+    "id" : "TrustBuddy AB"
+  }, {
+    "id" : "Tryg A/S"
+  }, {
+    "id" : "Tryg Forsikring A/S"
+  }, {
+    "id" : "Trygga Hem Skandinavien AB"
+  }, {
+    "id" : "Tulikivi Oyj"
+  }, {
+    "id" : "Turun arvokiinteistöt Oyj"
+  }, {
+    "id" : "Turvatiimi"
+  }, {
+    "id" : "TV4 AB"
+  }, {
+    "id" : "Tvoeoyrar Kommuna"
+  }, {
+    "id" : "Työllisyysrahasto"
+  }, {
+    "id" : "Tækifæri hf."
+  }, {
+    "id" : "Tæknival"
+  }, {
+    "id" : "Tønder Bank A/S"
+  }, {
+    "id" : "UBS AG, Jersey Branch"
+  }, {
+    "id" : "UBS AG, London Branch"
+  }, {
+    "id" : "Udviklingsselskabet af 01.08.1975"
+  }, {
+    "id" : "Udviklingsselskabet By og Havn I/S"
+  }, {
+    "id" : "UIE Plc"
+  }, {
+    "id" : "Ultrabulk Shipping as"
+  }, {
+    "id" : "Unibap Space Solutions AB"
+  }, {
+    "id" : "Uniflex AB"
+  }, {
+    "id" : "United Bankers Oyj"
+  }, {
+    "id" : "United Plantations Africa Ltd."
+  }, {
+    "id" : "United Plantations Berhad, Malaysia"
+  }, {
+    "id" : "Unlimited Travel Group AB"
+  }, {
+    "id" : "Unlimit Group A/S"
+  }, {
+    "id" : "UPM-Kymmene Oyj"
+  }, {
+    "id" : "Uponor Oyj"
+  }, {
+    "id" : "Upsales Technology AB"
+  }, {
+    "id" : "Urb-it AB (publ)"
+  }, {
+    "id" : "USWE Sports AB"
+  }, {
+    "id" : "Útgerðarfélag Akureyringa hf."
+  }, {
+    "id" : "Útgerðarfélag Reykjavíkur hf"
+  }, {
+    "id" : "Uudenkaupungin kaupunki"
+  }, {
+    "id" : "W5 Solutions AB"
+  }, {
+    "id" : "Vaasan kaupunki"
+  }, {
+    "id" : "VA Automotive"
+  }, {
+    "id" : "Vacon."
+  }, {
+    "id" : "Vacse AB"
+  }, {
+    "id" : "Vaisala"
+  }, {
+    "id" : "Vaki-DNG hf."
+  }, {
+    "id" : "Wallenstam AB"
+  }, {
+    "id" : "Walls A/S"
+  }, {
+    "id" : "Wall to Wall Group AB"
+  }, {
+    "id" : "Valmet Automotive Oyj"
+  }, {
+    "id" : "Valmet Corporation"
+  }, {
+    "id" : "Valoe Oyj"
+  }, {
+    "id" : "Value Asset Management PLC"
+  }, {
+    "id" : "Valueinvest"
+  }, {
+    "id" : "Valuer Holding A/S"
+  }, {
+    "id" : "Wannakey A/S"
+  }, {
+    "id" : "Varbergs Sparbank AB"
+  }, {
+    "id" : "Vasakronan AB"
+  }, {
+    "id" : "Vattenfall AB"
+  }, {
+    "id" : "WA Wallvision AB"
+  }, {
+    "id" : "Vaxtarsjóðurinn hf."
+  }, {
+    "id" : "Waxy International AB"
+  }, {
+    "id" : "Waystream Group AB"
+  }, {
+    "id" : "VBG GROUP AB"
+  }, {
+    "id" : "VBS Fjárfestingarbanki hf."
+  }, {
+    "id" : "Webrock Ventures AB"
+  }, {
+    "id" : "Veðskuldabréfasjóðurinn Virðing"
+  }, {
+    "id" : "Veðskuldabréfasjóður ÍV"
+  }, {
+    "id" : "Veðskuld III hs."
+  }, {
+    "id" : "Veðskuld slhf."
+  }, {
+    "id" : "VEF AB"
+  }, {
+    "id" : "VEF Ltd"
+  }, {
+    "id" : "Vejen Trælasthandel"
+  }, {
+    "id" : "Velcora Holding AB"
+  }, {
+    "id" : "Velliv, Pension & Livsforsikring A/S"
+  }, {
+    "id" : "Veloxis Pharmaceuticals A/S"
+  }, {
+    "id" : "Veoneer Inc."
+  }, {
+    "id" : "Verðbréfun hf."
+  }, {
+    "id" : "Verisure plc"
+  }, {
+    "id" : "Verkkokauppa.com Oyj"
+  }, {
+    "id" : "Vertiseit AB"
+  }, {
+    "id" : "Verve Group SE"
+  }, {
+    "id" : "Wessel & Vett"
+  }, {
+    "id" : "Vestas Wind Systems A/S"
+  }, {
+    "id" : "West Atlantic AB (publ)"
+  }, {
+    "id" : "Vestfyns Bank A/S"
+  }, {
+    "id" : "Vestjysk Bank A/S"
+  }, {
+    "id" : "Vestmannaeyjabær"
+  }, {
+    "id" : "Westpay AB"
+  }, {
+    "id" : "Vestum AB"
+  }, {
+    "id" : "Vest-Wood"
+  }, {
+    "id" : "Vetrargarðurinn ehf."
+  }, {
+    "id" : "Wetteri Plc"
+  }, {
+    "id" : "Wewers"
+  }, {
+    "id" : "White Pearl Technology Group AB"
+  }, {
+    "id" : "Viacon Group AB (publ)"
+  }, {
+    "id" : "Viafin Service Oyj"
+  }, {
+    "id" : "Viaplay Group AB"
+  }, {
+    "id" : "Vicore Pharma Holding AB"
+  }, {
+    "id" : "Victoria Park i Malmö AB"
+  }, {
+    "id" : "Victor International A/S"
+  }, {
+    "id" : "Widerøe"
+  }, {
+    "id" : "Vigmed Holding AB"
+  }, {
+    "id" : "Wihlborgs Fastigheter AB"
+  }, {
+    "id" : "Viking Line"
+  }, {
+    "id" : "Viking Supply Ships AB"
+  }, {
+    "id" : "Willhem AB"
+  }, {
+    "id" : "Wilson Therapeutics AB"
+  }, {
+    "id" : "Vimab Group AB"
+  }, {
+    "id" : "Vimian Group AB"
+  }, {
+    "id" : "Vincit Oyj"
+  }, {
+    "id" : "Vinderup Bank A/S"
+  }, {
+    "id" : "WindowMaster International A/S"
+  }, {
+    "id" : "Vinnslustöðin hf."
+  }, {
+    "id" : "ViroGates A/S"
+  }, {
+    "id" : "Wirtek A/S"
+  }, {
+    "id" : "Virtune AB"
+  }, {
+    "id" : "Wise Group AB"
+  }, {
+    "id" : "Vitec Software Group AB"
+  }, {
+    "id" : "WithSecure Oyj"
+  }, {
+    "id" : "Vitrolife AB"
+  }, {
+    "id" : "Witted Megacorp Oyj"
+  }, {
+    "id" : "Viva Wine Group AB"
+  }, {
+    "id" : "Vivesto AB"
+  }, {
+    "id" : "Vivoline Medical AB"
+  }, {
+    "id" : "VKO_X"
+  }, {
+    "id" : "VLT AB"
+  }, {
+    "id" : "WM-data AB"
+  }, {
+    "id" : "VNV Global AB (publ)"
+  }, {
+    "id" : "VNV Global Ltd."
+  }, {
+    "id" : "VO2 Cap Holding AB"
+  }, {
+    "id" : "Voi Technology AB"
+  }, {
+    "id" : "Volati AB"
+  }, {
+    "id" : "Volvo, AB"
+  }, {
+    "id" : "Volvo Car AB"
+  }, {
+    "id" : "Volvo GFS"
+  }, {
+    "id" : "Volvo Treasury AB"
+  }, {
+    "id" : "Vopnafjarðarhreppur"
+  }, {
+    "id" : "Vordingborg Bank A/S"
+  }, {
+    "id" : "World Class Seagull International AB"
+  }, {
+    "id" : "Worldwide Brand Management AB"
+  }, {
+    "id" : "Vostok Gas Ltd"
+  }, {
+    "id" : "VR-Yhtymä Oyj"
+  }, {
+    "id" : "Wulff-Yhtiöt Oyj"
+  }, {
+    "id" : "Vuxen Group AB"
+  }, {
+    "id" : "Wyld Networks AB"
+  }, {
+    "id" : "Värmekyl Grossisten Scandinavia AB"
+  }, {
+    "id" : "Wärtsilä"
+  }, {
+    "id" : "Wästbygg Gruppen AB"
+  }, {
+    "id" : "Västra Hamnen Corporate Finance AB"
+  }, {
+    "id" : "Værdipapircentralen"
+  }, {
+    "id" : "Værdipapirfonden BankInvest"
+  }, {
+    "id" : "Værdipapirfonden Independent Invest"
+  }, {
+    "id" : "Værdipapirfonden Independent Invest II"
+  }, {
+    "id" : "Værdipapirfonden Sparindex"
+  }, {
+    "id" : "Værdipapirfonden Sydinvest"
+  }, {
+    "id" : "X_AcadeMedia AB"
+  }, {
+    "id" : "XANO Industri AB"
+  }, {
+    "id" : "Xbrane Biopharma AB"
+  }, {
+    "id" : "XCounter AB"
+  }, {
+    "id" : "Xintela AB"
+  }, {
+    "id" : "XMReality AB"
+  }, {
+    "id" : "XPartners Samhällsbyggnad AB"
+  }, {
+    "id" : "XP Chemistries AB"
+  }, {
+    "id" : "XPonCard Group AB"
+  }, {
+    "id" : "XSpray Pharma AB"
+  }, {
+    "id" : "Xvivo Perfusion AB"
+  }, {
+    "id" : "YA Holding AB"
+  }, {
+    "id" : "YIT"
+  }, {
+    "id" : "YOMI Oyj"
+  }, {
+    "id" : "Ytinrete BidCo AB (publ)"
+  }, {
+    "id" : "Yubico AB"
+  }, {
+    "id" : "Zaplox AB"
+  }, {
+    "id" : "Zealand Pharma A/S"
+  }, {
+    "id" : "Zengun Group AB"
+  }, {
+    "id" : "Zepto Computers"
+  }, {
+    "id" : "ZetaDisplay AB (publ)"
+  }, {
+    "id" : "Ziccum AB"
+  }, {
+    "id" : "ZignSec AB"
+  }, {
+    "id" : "Ziklo Bank AB"
+  }, {
+    "id" : "Zinzino Holding AB"
+  }, {
+    "id" : "ZodiakTelevision AB"
+  }, {
+    "id" : "Zwipe AS"
+  }, {
+    "id" : "Åhléns Group AB"
+  }, {
+    "id" : "Ålandsbanken"
+  }, {
+    "id" : "ÅR Packaging Group AB"
+  }, {
+    "id" : "Ölgerðin Egill Skallagrímsson hf."
+  }, {
+    "id" : "Öresund, Investment AB"
+  }, {
+    "id" : "Øresundsbro Konsortiet"
+  }, {
+    "id" : "Ørsted A/S"
+  }, {
+    "id" : "Østbanen"
+  }, {
+    "id" : "Østjydsk Bank A/S"
+  } ],
+  "type" : "company"
+} )

@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Project output
+FLSmidth_AnnualReports/
+*.csv
+*.json
+*.log
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
