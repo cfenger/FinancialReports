@@ -17,6 +17,9 @@ Støtte for UI dropdowns:
      som du kan gemme i en fil og pege på med CLI-flag.
 
 
+https://github.com/cfenger/FinancialReports
+https://chatgpt.com/g/g-p-693e6f04c1a481918bdcc5ab4d6c8176-flsmidth/c/693edeec-4694-8330-b760-d0d619159fb5
+
 uv run --with requests python nasdaq_news_cli.py --help
 
 
@@ -69,7 +72,7 @@ CANDIDATE_META_PATHS = [
     "/news/companies.action",
 ]
 
-CACHE_DIR = Path.home() / ".nasdaq_news_cli"
+CACHE_DIR = Path(".")
 
 
 @dataclass
