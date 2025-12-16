@@ -229,6 +229,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
     failed_count = 0
     skipped_existing_count = 0
     excluded_count = 0
+    html_saved_count = 0
 
     for row in iter_csv_rows(input_csv):
         message_url = (row.get("messageUrl") or "").strip()
@@ -336,6 +337,29 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                 contexts_shown += 1
                 if contexts_shown >= 3:
                     break
+
+            comp_seg = sanitize_segment(company)
+            cat_seg = sanitize_segment(category)
+            parsed_url = urlparse(message_url)
+            slug_source = Path(parsed_url.path).name or "message"
+            if parsed_url.query:
+                slug_source = f"{slug_source}_{parsed_url.query}"
+            slug = sanitize_segment(slug_source) or "message"
+            html_filename = f"{comp_seg}_{cat_seg}_{slug}"
+            if not html_filename.lower().endswith(".html"):
+                html_filename = f"{html_filename}.html"
+            dest = output_dir / html_filename
+            base_stem = dest.stem
+            ext = dest.suffix
+            suffix = 1
+            while dest.exists():
+                dest = dest.with_name(f"{base_stem}_{suffix}{ext}")
+                suffix += 1
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            with dest.open("w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"Saved HTML (no PDFs): {dest}")
+            html_saved_count += 1
             continue
 
         for pdf_url in pdf_urls:
@@ -361,7 +385,8 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
         f"Summary: saved {saved_count}, "
         f"failed {failed_count}, "
         f"skipped {skipped_existing_count} existing, "
-        f"excluded {excluded_count} PDF(s)."
+        f"excluded {excluded_count} PDF(s). "
+        f"Saved {html_saved_count} HTML file(s)."
     )
 
 
