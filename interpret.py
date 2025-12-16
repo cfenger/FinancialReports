@@ -300,10 +300,121 @@ def parse_args() -> argparse.Namespace:
         default=Path("insider_summary.csv"),
         help="Path to the CSV file to write.",
     )
+    parser.add_argument(
+        "--collect",
+        action="store_true",
+        help=(
+            "If set, aggregate rows with the same date, company and name "
+            "by summing shares and recomputing average price and total value."
+        ),
+    )
     return parser.parse_args()
 
 
-def run_insider_task(input_dir: Path, output_csv: Path) -> int:
+def _collect_rows(rows: List[dict]) -> List[dict]:
+    """Aggregate rows and optionally cancel offsetting buy/sell transactions.
+
+    Step 1: aggregate by (date, company, name, side, reason), so multiple
+    partial rows for the same actor and side are merged.
+    Step 2: for each (date, company, name), if there is exactly one buy row
+    and one sell row with identical share counts, drop both so fully
+    offsetting transactions disappear from the summary.
+    """
+    grouped: dict[tuple, dict] = {}
+    for row in rows:
+        key = (
+            row.get("date", ""),
+            row.get("company", ""),
+            row.get("name", ""),
+            row.get("side", ""),
+            row.get("reason", ""),
+        )
+        group = grouped.get(key)
+        if group is None:
+            group = {
+                "prototype": dict(row),
+                "shares": Decimal("0"),
+                "total_value": Decimal("0"),
+                "prices": [],
+            }
+            grouped[key] = group
+
+        # Parse numeric fields best-effort.
+        shares_str = row.get("shares") or ""
+        price_str = row.get("price") or ""
+        total_str = row.get("total_value") or ""
+
+        try:
+            shares_val = Decimal(shares_str) if shares_str else Decimal("0")
+        except InvalidOperation:
+            shares_val = Decimal("0")
+        try:
+            price_val = Decimal(price_str) if price_str else None
+        except InvalidOperation:
+            price_val = None
+        try:
+            total_val = Decimal(total_str) if total_str else None
+        except InvalidOperation:
+            total_val = None
+
+        if total_val is None and price_val is not None and shares_val:
+            total_val = shares_val * price_val
+
+        group["shares"] += shares_val
+        if total_val is not None:
+            group["total_value"] += total_val
+        if price_val is not None:
+            group["prices"].append(price_val)
+
+    # First pass: build aggregated rows per (date, company, name, side, reason).
+    aggregated: List[dict] = []
+    for group in grouped.values():
+        base = group["prototype"]
+        shares_sum: Decimal = group["shares"]
+        total_sum: Decimal = group["total_value"]
+        prices: List[Decimal] = group["prices"]
+
+        if shares_sum and total_sum:
+            avg_price = total_sum / shares_sum
+        elif shares_sum and prices:
+            # Fallback to simple average of prices.
+            avg_price = sum(prices) / Decimal(len(prices))
+            total_sum = shares_sum * avg_price
+        else:
+            avg_price = None
+
+        base["shares"] = decimal_to_str(shares_sum) if shares_sum else ""
+        base["price"] = decimal_to_str(avg_price) if avg_price is not None else ""
+        base["total_value"] = decimal_to_str(total_sum) if total_sum else ""
+        aggregated.append(base)
+
+    # Second pass: cancel exact offset pairs per (date, company, name).
+    by_actor: dict[tuple, List[dict]] = {}
+    for row in aggregated:
+        actor_key = (row.get("date", ""), row.get("company", ""), row.get("name", ""))
+        by_actor.setdefault(actor_key, []).append(row)
+
+    result: List[dict] = []
+    for actor_rows in by_actor.values():
+        if len(actor_rows) == 2:
+            buy_row = next((r for r in actor_rows if (r.get("side") or "").lower() == "buy"), None)
+            sell_row = next((r for r in actor_rows if (r.get("side") or "").lower() == "sell"), None)
+            if buy_row is not None and sell_row is not None:
+                try:
+                    buy_shares = Decimal(buy_row.get("shares") or "0")
+                    sell_shares = Decimal(sell_row.get("shares") or "0")
+                except InvalidOperation:
+                    buy_shares = sell_shares = Decimal("0")
+                if buy_shares == sell_shares and buy_shares != 0:
+                    # Fully offsetting buy/sell pair -> drop both.
+                    continue
+        # Default: keep all rows for this actor.
+        result.extend(actor_rows)
+
+    return result
+
+
+def run_insider_task(input_dir: Path, output_csv: Path, collect: bool = False) -> int:
     if not input_dir.exists():
         logging.error("Input directory does not exist: %s", input_dir)
         return 1
@@ -319,6 +430,9 @@ def run_insider_task(input_dir: Path, output_csv: Path) -> int:
             logging.warning("Skipping %s: %s", path, exc)
             continue
         rows.extend(parse_insider_file(content, path))
+
+    if collect:
+        rows = _collect_rows(rows)
 
     try:
         output_csv.parent.mkdir(parents=True, exist_ok=True)
@@ -340,7 +454,7 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
     if args.task == "insider":
-        return run_insider_task(args.input_dir, args.output)
+        return run_insider_task(args.input_dir, args.output, collect=args.collect)
     logging.error("Unsupported task: %s", args.task)
     return 1
 
