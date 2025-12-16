@@ -237,22 +237,22 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
         ):
             nature_start = idx
             break
-    if nature_start is None:
-        return ""
-    candidates: List[str] = []
-    for raw, norm in lines[nature_start + 1 :]:
-        # Stop when reaching the separate Price(s) / Volume(s) headings.
-        if ("price(s)" in norm and "volume(s)" not in norm) or ("volume(s)" in norm and "price(s)" not in norm):
-            break
-        text = raw.strip()
-        if not text or text.endswith(":"):
-            continue
-        candidates.append(text)
-    if candidates:
-        # Nature is typically the most descriptive (longest) line before the price/volume block.
-        return max(candidates, key=len)
+    if nature_start is not None:
+        candidates: List[str] = []
+        for raw, norm in lines[nature_start + 1 :]:
+            # Stop when reaching the separate Price(s) / Volume(s) headings.
+            if ("price(s)" in norm and "volume(s)" not in norm) or ("volume(s)" in norm and "price(s)" not in norm):
+                break
+            text = raw.strip()
+            if not text or text.endswith(":"):
+                continue
+            candidates.append(text)
+        if candidates:
+            # Nature is typically the most descriptive (longest) line before the price/volume block.
+            return max(candidates, key=len)
 
-    # Fallback: look for common single-word nature labels in the text.
+    # Fallback: look for common single-word nature labels anywhere in the text
+    # (e.g. Danish "Anskaffelse" in standard forms, or simple "purchased").
     for raw, norm in lines:
         if "anskaffelse" in norm or "purchased" in norm:
             return raw.strip()
