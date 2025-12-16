@@ -513,6 +513,7 @@ def main() -> int:
     ap.add_argument("--import-companies-jsonp", default="", help="Sti til fil med getCompaniesCallback(...) JSONP")
     ap.add_argument("--list-categories", action="store_true")
     ap.add_argument("--list-companies", action="store_true")
+    ap.add_argument("--list-markets", action="store_true")
 
     # Interaktiv mode
     ap.add_argument("--interactive", action="store_true", help="Interaktivt valg af category og company")
@@ -556,6 +557,11 @@ def main() -> int:
             print(c)
         return 0
 
+    if args.list_markets:
+        for m in MARKET_CHOICES:
+            print(m)
+        return 0
+
     chosen_categories = list(args.category)
     chosen_not = list(args.not_category)
     chosen_company = args.company
@@ -570,7 +576,7 @@ def main() -> int:
 
         if not chosen_company:
             if companies:
-                chosen_company = interactive_search_pick(companies, "Search company:", max_show=50)
+                chosen_company = interactive_search_pick(companies, "Vælg company (autocomplete):", max_show=50)
             else:
                 print("Ingen companyliste tilgængelig (cache/import/auto-fetch fejlede).")
 
