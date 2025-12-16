@@ -64,6 +64,11 @@ def parse_args() -> argparse.Namespace:
         default=30.0,
         help="HTTP timeout in seconds for each request (default: 30).",
     )
+    ap.add_argument(
+        "--allow-external",
+        action="store_true",
+        help="Allow downloading PDFs from domains different from the messageUrl base domain.",
+    )
     return ap.parse_args()
 
 
@@ -217,10 +222,12 @@ def build_output_name(company: str, category: str, pdf_url: str, content_disposi
     return f"{comp_seg}_{cat_seg}_{filename}"
 
 
-def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
+def process_csv(input_csv: Path, output_dir: Path, timeout: float,
+                allow_external: bool) -> None:
     downloaded_any = False
     saved_count = 0
     failed_count = 0
+    excluded_count = 0
 
     for row in iter_csv_rows(input_csv):
         message_url = (row.get("messageUrl") or "").strip()
@@ -251,11 +258,16 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
                 ):
                     pdf_url = resp.url or message_url
                     pdf_host = urlparse(pdf_url).hostname or ""
-                    if allowed_domain and get_base_domain(pdf_host) != allowed_domain:
+                    if (
+                        allowed_domain
+                        and get_base_domain(pdf_host) != allowed_domain
+                        and not allow_external
+                    ):
                         print(
                             f"Skipping direct PDF on external domain: {pdf_url} "
                             f"(host {pdf_host!r} not under {allowed_domain!r})"
                         )
+                        excluded_count += 1
                         continue
                     out_name = build_output_name(
                         company,
@@ -285,15 +297,20 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
             continue
 
         pdf_urls = extract_pdf_urls(html, message_url)
-        # Only keep PDFs on same registrable domain as messageUrl
+        # Only keep PDFs on same registrable domain as messageUrl (unless allow_external)
         filtered_urls: List[str] = []
         for pdf_url in pdf_urls:
             pdf_host = urlparse(pdf_url).hostname or ""
-            if allowed_domain and get_base_domain(pdf_host) != allowed_domain:
+            if (
+                allowed_domain
+                and get_base_domain(pdf_host) != allowed_domain
+                and not allow_external
+            ):
                 print(
                     f"Skipping external PDF URL: {pdf_url} "
                     f"(host {pdf_host!r} not under {allowed_domain!r})"
                 )
+                excluded_count += 1
                 continue
             filtered_urls.append(pdf_url)
         pdf_urls = filtered_urls
@@ -332,10 +349,16 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float) -> None:
                 saved_count += 1
             elif result == "failed":
                 failed_count += 1
+            elif result == "skipped":
+                excluded_count += 1
 
     if not downloaded_any:
         print("No PDFs downloaded (check messageUrl column and page contents).")
-    print(f"Summary: saved {saved_count} PDF(s), failed {failed_count} download(s).")
+    print(
+        f"Summary: saved {saved_count} PDF(s), "
+        f"failed {failed_count} download(s), "
+        f"excluded {excluded_count} PDF(s)."
+    )
 
 
 def main() -> int:
@@ -347,7 +370,12 @@ def main() -> int:
 
     # Directory named after CSV stem, e.g. results.csv -> results/
     output_dir = input_csv.with_suffix("")
-    process_csv(input_csv=input_csv, output_dir=output_dir, timeout=args.timeout)
+    process_csv(
+        input_csv=input_csv,
+        output_dir=output_dir,
+        timeout=args.timeout,
+        allow_external=args.allow_external,
+    )
     return 0
 
 

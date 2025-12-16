@@ -42,7 +42,9 @@ uv run --with requests python nasdaq_news_cli.py --free-text "FLSmidth" --catego
 
 #Other output formats: --out-ndjson  --out-json
 
+uv run --with requests python nasdaq_news_cli.py --market "Main Market, Copenhagen" --category "Forløb af generalforsamling" --from-date 2025-12-04 --out-csv results2.csv
 
+uv run --with requests python nasdaq_news_cli.py --market "Main Market, Copenhagen" --category "Forløb af generalforsamling" --from-date 2015-12-04 --out-csv results2.csv --interactive --company "Novo Nordisk A/S"
 """
 
 from __future__ import annotations
@@ -54,6 +56,7 @@ import re
 import sys
 import time
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
@@ -70,6 +73,18 @@ CANDIDATE_META_PATHS = [
     "/news/getCompanies.action",
     "/news/categories.action",
     "/news/companies.action",
+]
+
+MARKET_CHOICES: List[str] = [
+    "All",
+    "Main Market, Copenhagen",
+    "Main Market, Stockholm",
+    "Main Market, Helsinki",
+    "Main Market, Iceland",
+    "First North Sweden",
+    "First North Finland",
+    "First North Denmark",
+    "First North Iceland",
 ]
 
 CACHE_DIR = Path(".")
@@ -367,13 +382,13 @@ def interactive_search_pick(items: List[str], title: str, max_show: int = 50) ->
     """
     Interaktiv "autocomplete" for meget store lister (companies).
     """
-    print(title)
     while True:
-        term = input("Søg (tom for at annullere): ").strip()
+        term = input(f"{title} ").strip()
         if not term:
             return ""
         hits = [x for x in items if term.lower() in x.lower()]
-        hits = hits[:max_show]
+        # show all matches (no truncation)
+        # hits = hits[:max_show]
         if not hits:
             print("Ingen matches. Prøv igen.\n")
             continue
@@ -390,6 +405,30 @@ def interactive_search_pick(items: List[str], title: str, max_show: int = 50) ->
 # ---------------------------
 # Output helpers
 # ---------------------------
+
+
+def interactive_pick_market(default_market: str = "") -> str:
+    """
+    Simpel interaktiv vメlger for market-feltet.
+    Returnerer den valgte market-streng eller "" for "All".
+    """
+    print("Vメlg market (tom for 'All'):\n")
+    for i, m in enumerate(MARKET_CHOICES, 1):
+        print(f"{i:2d}. {m}")
+    if default_market:
+        print(f"\nNuvメrende/forvalgt market: {default_market!r}")
+    raw = input("Market-nummer (Enter = All): ").strip()
+    if not raw:
+        return ""  # All / intet filter
+    if not raw.isdigit():
+        raise SystemExit(f"Ugyldigt input: {raw}")
+    n = int(raw)
+    if n < 1 or n > len(MARKET_CHOICES):
+        raise SystemExit(f"Ugyldigt nummer: {n}")
+    choice = MARKET_CHOICES[n - 1]
+    return "" if choice == "All" else choice
+
+
 def write_csv(items: List[Dict[str, Any]], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fields = [
@@ -413,6 +452,38 @@ def write_csv(items: List[Dict[str, Any]], path: Path) -> None:
             atts = it.get("attachment") or []
             row["attachmentCount"] = len(atts) if isinstance(atts, list) else (1 if atts else 0)
             w.writerow(row)
+
+
+def _parse_cli_date(value: str) -> datetime:
+    """
+    Parse --from-date / --to-date values.
+    Accepts 'YYYY-MM-DD' or 'YYYY-MM-DD HH:MM:SS'.
+    """
+    value = value.strip()
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(value, fmt)
+        except ValueError:
+            continue
+    raise SystemExit(
+        f"Could not parse date '{value}'. Use 'YYYY-MM-DD' or 'YYYY-MM-DD HH:MM:SS'."
+    )
+
+
+def _parse_item_datetime(value: str) -> Optional[datetime]:
+    """
+    Parse 'published' / 'releaseTime' from API payload.
+    Typically 'YYYY-MM-DD HH:MM:SS'.
+    """
+    value = (value or "").strip()
+    if not value:
+        return None
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
+        try:
+            return datetime.strptime(value, fmt)
+        except ValueError:
+            continue
+    return None
 
 
 def main() -> int:
@@ -490,16 +561,18 @@ def main() -> int:
     chosen_company = args.company
 
     if args.interactive:
-        if categories:
-            chosen_categories = interactive_pick_from_list(categories, "Vælg CNS kategori (inkluder):", allow_multi=True)
-            chosen_not = interactive_pick_from_list(categories, "Vælg CNS kategori (ekskluder):", allow_multi=True)
-        else:
-            print("Ingen kategoriliste tilgængelig (cache/import/auto-fetch fejlede).")
+        if not chosen_categories and not chosen_not:
+            if categories:
+                chosen_categories = interactive_pick_from_list(categories, "Vælg CNS kategori (inkluder):", allow_multi=True)
+                chosen_not = interactive_pick_from_list(categories, "Vælg CNS kategori (ekskluder):", allow_multi=True)
+            else:
+                print("Ingen kategoriliste tilgængelig (cache/import/auto-fetch fejlede).")
 
-        if companies:
-            chosen_company = interactive_search_pick(companies, "Vælg company (autocomplete):", max_show=50)
-        else:
-            print("Ingen companyliste tilgængelig (cache/import/auto-fetch fejlede).")
+        if not chosen_company:
+            if companies:
+                chosen_company = interactive_search_pick(companies, "Search company:", max_show=50)
+            else:
+                print("Ingen companyliste tilgængelig (cache/import/auto-fetch fejlede).")
 
     q = NasdaqQuery(
         free_text=args.free_text,
@@ -525,16 +598,35 @@ def main() -> int:
             break
         time.sleep(args.sleep)
 
+    # Client-side strict date filtering, since the backend may
+    # continue beyond fromDate/toDate to fill the page.
+    filtered_items = all_items
+    if args.from_date or args.to_date:
+        from_dt = _parse_cli_date(args.from_date) if args.from_date else None
+        to_dt = _parse_cli_date(args.to_date) if args.to_date else None
+
+        tmp: List[Dict[str, Any]] = []
+        for it in all_items:
+            dt = _parse_item_datetime(it.get("published") or it.get("releaseTime") or "")
+            if dt is None:
+                continue
+            if from_dt and dt < from_dt:
+                continue
+            if to_dt and dt > to_dt:
+                continue
+            tmp.append(it)
+        filtered_items = tmp
+
     if args.out_json:
         p = Path(args.out_json)
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(json.dumps(all_items, ensure_ascii=False, indent=2), encoding="utf-8")
+        p.write_text(json.dumps(filtered_items, ensure_ascii=False, indent=2), encoding="utf-8")
 
     if args.out_csv:
-        write_csv(all_items, Path(args.out_csv))
+        write_csv(filtered_items, Path(args.out_csv))
 
-    print(f"Hits: {len(all_items)}")
-    for it in all_items[:10]:
+    print(f"Hits: {len(filtered_items)}")
+    for it in filtered_items[:10]:
         print(f"- {it.get('published','')}\t{it.get('company','')}\t{it.get('headline','')}\t{it.get('messageUrl','')}")
     return 0
 
