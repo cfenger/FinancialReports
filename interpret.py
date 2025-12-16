@@ -22,8 +22,9 @@ except Exception:  # pragma: no cover - optional dependency
     load_dotenv = None
 
 FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason"]
+REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", "side"]
 
-BUY_KEYWORDS = ("acquisition", "purchase", "buy", "receipt", "subscription", "incentive")
+BUY_KEYWORDS = ("acquisition", "purchase", "buy", "receipt", "subscription", "incentive", "anskaffelse")
 SELL_KEYWORDS = ("disposal", "sale", "sell", "luovutus", "divest")
 NATURE_TRANSLATIONS = {
     # Finnish -> English (style aligned with other rows)
@@ -41,6 +42,26 @@ FALLBACK_TRANSACTION_RE = re.compile(
     r"volume:\s*([\d\s.,]+)\s*(?:unit\s*price|average price|volume weighted average price|keskihinta|price)\s*[: ]\s*([\d\s.,]+)",
     re.IGNORECASE,
 )
+
+NARRATIVE_PURCHASE_RE = re.compile(
+    r"purchased\s+([\d][\d.,]*)\s+shares\s+.*?price\s+of\s+dkk\s+([\d.,]+)",
+    re.IGNORECASE,
+)
+
+MONTH_NAME_TO_NUM = {
+    "january": "01",
+    "february": "02",
+    "march": "03",
+    "april": "04",
+    "may": "05",
+    "june": "06",
+    "july": "07",
+    "august": "08",
+    "september": "09",
+    "october": "10",
+    "november": "11",
+    "december": "12",
+}
 
 DATE_PATTERNS: Sequence[re.Pattern[str]] = [
     re.compile(r"transaction date[:\s]+(\d{4}-\d{2}-\d{2})", re.IGNORECASE),
@@ -104,12 +125,54 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
                 candidate = value  # keep the latest in this section
             elif not candidate:
                 candidate = value
+    if candidate:
+        return candidate
+
+    # Fallback for Nordic-style "Nafn/Navn" heading followed by the name.
+    for idx, (_raw, norm) in enumerate(lines):
+        if "nafn" in norm or "navn" in norm:
+            for raw2, _norm2 in lines[idx + 1 :]:
+                text = raw2.strip()
+                if not text or ":" in text:
+                    continue
+                candidate = text
+                break
+            if candidate:
+                return candidate
+
+    # Fallback for ESMA-style templates without explicit "Name:" lines.
+    person_idx: int | None = None
+    for idx, (_raw, norm) in enumerate(lines):
+        if "person discharging managerial responsibilities" in norm:
+            person_idx = idx
+            break
+    if person_idx is not None:
+        for j in range(max(0, person_idx - 3), person_idx):
+            raw_j, _norm_j = lines[j]
+            text = raw_j.strip()
+            if not text or ":" in text:
+                continue
+            if any(ch.isdigit() for ch in text):
+                continue
+            words = text.split()
+            if len(words) < 2 or len(words) > 4:
+                continue
+            candidate = text
+            break
     return candidate
+
+
+def extract_narrative_name_from_text(text: str) -> str:
+    """Extract a person name from narrative sentences like '..., Lars Kristensen has on 8 December ...'."""
+    m = re.search(r",\s*([^,\n]+?)\s+has on\s+\d", text)
+    if not m:
+        return ""
+    return m.group(1).strip()
 
 
 def normalize_date_token(date_str: str) -> str:
     date_str = date_str.strip()
-    m = re.match(r"(\d{2})[./](\d{2})[./](\d{4})", date_str)
+    m = re.match(r"(\d{2})[./-](\d{2})[./-](\d{4})", date_str)
     if m:
         day, month, year = m.groups()
         return f"{year}-{month}-{day}"
@@ -125,18 +188,74 @@ def extract_date(raw_text: str) -> str:
     fallback_iso = re.search(r"\d{4}-\d{2}-\d{2}", raw_text)
     if fallback_iso:
         return fallback_iso.group(0)
-    fallback_eu = re.search(r"\d{2}[./]\d{2}[./]\d{4}", raw_text)
+    fallback_eu = re.search(r"\d{2}[./-]\d{2}[./-]\d{4}", raw_text)
     if fallback_eu:
         return normalize_date_token(fallback_eu.group(0))
+    # Fallback: textual dates like "8 December 2025" or "8 December".
+    m = re.search(
+        r"\b(\d{1,2})\s+("
+        r"january|february|march|april|may|june|july|august|september|october|november|december"
+        r")\b(?:\s+(\d{4}))?",
+        normalized,
+    )
+    if m:
+        day_str, month_name, year = m.groups()
+        # If the first occurrence has no year, fall back to the first year
+        # mentioned anywhere in the text.
+        if not year:
+            year_match = re.search(r"\b(\d{4})\b", normalized)
+            year = year_match.group(1) if year_match else "0000"
+        try:
+            day = int(day_str)
+        except ValueError:
+            return ""
+        month = MONTH_NAME_TO_NUM.get(month_name.lower())
+        if not month:
+            return ""
+        return f"{year}-{month}-{day:02d}"
     return ""
 
 
 def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
+    # Primary: value on the same line as the label.
     for raw, norm in lines:
-        if "nature of transaction" in norm or "liiketoimen luonne" in norm:
+        if (
+            "nature of transaction" in norm
+            or "nature of the transaction" in norm
+            or "liiketoimen luonne" in norm
+        ):
             value = value_after_colon(raw)
             if value:
                 return value
+    # Fallback for ESMA-style layouts where the description appears on later lines.
+    nature_start: int | None = None
+    for idx, (_raw, norm) in enumerate(lines):
+        if (
+            "nature of transaction" in norm
+            or "nature of the transaction" in norm
+            or "liiketoimen luonne" in norm
+        ):
+            nature_start = idx
+            break
+    if nature_start is None:
+        return ""
+    candidates: List[str] = []
+    for raw, norm in lines[nature_start + 1 :]:
+        # Stop when reaching the separate Price(s) / Volume(s) headings.
+        if ("price(s)" in norm and "volume(s)" not in norm) or ("volume(s)" in norm and "price(s)" not in norm):
+            break
+        text = raw.strip()
+        if not text or text.endswith(":"):
+            continue
+        candidates.append(text)
+    if candidates:
+        # Nature is typically the most descriptive (longest) line before the price/volume block.
+        return max(candidates, key=len)
+
+    # Fallback: look for common single-word nature labels in the text.
+    for raw, norm in lines:
+        if "anskaffelse" in norm or "purchased" in norm:
+            return raw.strip()
     return ""
 
 
@@ -159,8 +278,8 @@ def determine_side(nature: str) -> str:
 
 
 def clean_int(value: str) -> str:
-    cleaned = re.sub(r"[^\d]", "", value)
-    return cleaned
+    digits = re.sub(r"[^\d]", "", value)
+    return digits
 
 
 def clean_decimal(value: str) -> str:
@@ -222,6 +341,120 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
     fallback_matches = FALLBACK_TRANSACTION_RE.findall(filtered_text)
     for volume, price in fallback_matches:
         transactions.append((volume, price))
+    if transactions:
+        return transactions
+
+    # Fallback 2: ESMA-style layouts with separate "Price(s)" and "Volume(s)" headings,
+    # where the numeric values appear on following lines.
+    price_indices: List[int] = []
+    volume_indices: List[int] = []
+    for idx, (_raw, norm) in enumerate(lines):
+        if "price(s)" in norm and "volume(s)" not in norm:
+            price_indices.append(idx)
+        if "volume(s)" in norm and "price(s)" not in norm:
+            volume_indices.append(idx)
+
+    price_raw: str | None = None
+    volume_raw: str | None = None
+    if price_indices:
+        for idx in price_indices:
+            for raw, _norm in lines[idx + 1 :]:
+                if re.search(r"\d", raw):
+                    price_raw = raw
+                    break
+            if price_raw:
+                break
+
+    if volume_indices:
+        for idx in volume_indices:
+            for raw, _norm in lines[idx + 1 :]:
+                if re.search(r"\d", raw):
+                    volume_raw = raw
+                    break
+            if volume_raw:
+                break
+
+    if price_raw and volume_raw:
+        transactions.append((volume_raw, price_raw))
+        return transactions
+
+    # Fallback 3: Icelandic-style layout with "Verð og magn" and separate
+    # "Verð" / "Samanlagt magn" or "Magn" labels.
+    has_ver_og_magn = any("verd og magn" in norm for _raw, norm in lines)
+    if has_ver_og_magn:
+        price_header_idx: int | None = None
+        for idx, (_raw, norm) in enumerate(lines):
+            if norm == "verd":
+                price_header_idx = idx
+                break
+
+        price_raw = None
+        if price_header_idx is not None:
+            for raw, _norm in lines[price_header_idx + 1 :]:
+                if re.search(r"\d", raw):
+                    price_raw = raw
+                    break
+
+        volume_header_idx: int | None = None
+        for idx, (_raw, norm) in enumerate(lines):
+            if "samanlagt magn" in norm:
+                volume_header_idx = idx
+            elif norm == "magn" and volume_header_idx is None:
+                volume_header_idx = idx
+
+        volume_raw = None
+        if volume_header_idx is not None:
+            for raw, _norm in lines[volume_header_idx + 1 :]:
+                if re.search(r"\d", raw):
+                    volume_raw = raw
+                    break
+
+        if price_raw and volume_raw:
+            transactions.append((volume_raw, price_raw))
+
+    # Fallback 4: Danish-style layout with "Pris(er)" and "Mængde(r)" headings.
+    has_pris = any("pris(er)" in norm for _raw, norm in lines)
+    has_maengde = any(("maengde" in norm) or ("mngde" in norm) for _raw, norm in lines)
+    if has_pris and has_maengde:
+        price_header_idx: int | None = None
+        for idx, (_raw, norm) in enumerate(lines):
+            if "pris(er)" in norm:
+                price_header_idx = idx
+                break
+
+        price_raw = None
+        if price_header_idx is not None:
+            for raw, _norm in lines[price_header_idx + 1 :]:
+                if re.search(r"\d", raw):
+                    price_raw = raw
+                    break
+
+        volume_header_idx: int | None = None
+        for idx, (_raw, norm) in enumerate(lines):
+            if "maengde" in norm or "mngde" in norm:
+                volume_header_idx = idx
+                break
+
+        volume_raw = None
+        if volume_header_idx is not None:
+            for raw, _norm in lines[volume_header_idx + 1 :]:
+                if re.search(r"\d", raw):
+                    volume_raw = raw
+                    break
+
+        if price_raw and volume_raw:
+            transactions.append((volume_raw, price_raw))
+
+    if transactions:
+        return transactions
+
+    # Fallback 5: narrative summaries such as
+    # "purchased 2,141,911 shares ... at an average price of DKK 1.60 per share".
+    m = NARRATIVE_PURCHASE_RE.search(normalized_text)
+    if m:
+        volume, price = m.groups()
+        transactions.append((volume, price))
+
     return transactions
 
 
@@ -235,14 +468,32 @@ def build_lines(text: str) -> List[Tuple[str, str]]:
     return lines
 
 
+def determine_side_from_text(nature: str, normalized_text: str) -> str:
+    """Determine buy/sell side from nature field, falling back to full text."""
+    side = determine_side(nature)
+    if side:
+        return side
+    # Fallback: inspect full normalized text for cues.
+    lowered = normalized_text
+    if "purchased" in lowered or "acquisition" in lowered:
+        return "buy"
+    if "disposed" in lowered or "sale" in lowered or "sold" in lowered:
+        return "sell"
+    return ""
+
+
 def parse_insider_file(text: str, path: Path) -> List[dict]:
     lines = build_lines(text)
     normalized_text = normalize_text_for_search(text)
     company = extract_company(lines, path)
     name = extract_name(lines)
+    if not name:
+        # Narrative-style notices may not follow the ESMA tabular layout
+        # and only mention the person in free text.
+        name = extract_narrative_name_from_text(text)
     date = extract_date(text)
     nature = translate_nature(extract_nature(lines))
-    side = determine_side(nature)
+    side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)
 
     rows: List[dict] = []
@@ -277,6 +528,15 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
                 "reason": nature,
             }
         )
+
+    # Warn if any of the required fields could not be determined,
+    # but still keep the rows in the output.
+    for row in rows:
+        missing = [field for field in REQUIRED_FIELDS if not row.get(field)]
+        if missing:
+            logging.warning(
+                "Incomplete row from %s: missing %s", path.name, ", ".join(missing)
+            )
     return rows
 
 
