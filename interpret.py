@@ -291,8 +291,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--input-dir",
         type=Path,
-        required=True,
-        help="Directory containing insider .txt files.",
+        default=Path("."),
+        help="Directory containing insider .txt files (default: current directory).",
     )
     parser.add_argument(
         "--output",
