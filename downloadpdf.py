@@ -227,6 +227,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
     downloaded_any = False
     saved_count = 0
     failed_count = 0
+    skipped_existing_count = 0
     excluded_count = 0
 
     for row in iter_csv_rows(input_csv):
@@ -278,6 +279,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     dest = output_dir / out_name
                     if dest.exists():
                         print(f"Skipping existing file: {dest}")
+                        skipped_existing_count += 1
                         continue
                     print(
                         "Detected direct PDF response: "
@@ -342,6 +344,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
             # Skip if already downloaded
             if dest.exists():
                 print(f"Skipping existing file: {dest}")
+                skipped_existing_count += 1
                 continue
             result = download_pdf(pdf_url, dest, timeout=timeout)
             if result == "saved":
@@ -355,8 +358,9 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
     if not downloaded_any:
         print("No PDFs downloaded (check messageUrl column and page contents).")
     print(
-        f"Summary: saved {saved_count} PDF(s), "
-        f"failed {failed_count} download(s), "
+        f"Summary: saved {saved_count}, "
+        f"failed {failed_count}, "
+        f"skipped {skipped_existing_count} existing, "
         f"excluded {excluded_count} PDF(s)."
     )
 

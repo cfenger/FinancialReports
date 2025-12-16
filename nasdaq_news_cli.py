@@ -45,6 +45,12 @@ uv run --with requests python nasdaq_news_cli.py --free-text "FLSmidth" --catego
 uv run --with requests python nasdaq_news_cli.py --market "Main Market, Copenhagen" --category "Forløb af generalforsamling" --from-date 2025-12-04 --out-csv results2.csv
 
 uv run --with requests python nasdaq_news_cli.py --market "Main Market, Copenhagen" --category "Forløb af generalforsamling" --from-date 2015-12-04 --out-csv results2.csv --interactive --company "Novo Nordisk A/S"
+
+uv run --with requests python nasdaq_news_cli.py --list-markets
+
+
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner"
+
 """
 
 from __future__ import annotations
