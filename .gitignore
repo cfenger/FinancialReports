@@ -26,3 +26,6 @@ FLSmidth_AnnualReports/
 # Tooling
 .pytest_cache/
 .mypy_cache/
+
+# Ignore secret key
+.env
