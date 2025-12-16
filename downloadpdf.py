@@ -21,16 +21,21 @@ Given an input like `results.csv`, this will:
         - <filename>    = the PDF filename from the URL
 
 uv run --with requests python downloadpdf.py --input results.csv
+
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider.csv --to-text
 """
 
 import argparse
 import csv
 import re
+from io import BytesIO
 from pathlib import Path
 from typing import Iterable, List, Optional
 from urllib.parse import urljoin, urlparse
 
 import requests
+from bs4 import BeautifulSoup
+from pdfminer.high_level import extract_text as pdf_extract_text
 
 
 PDF_HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+?\.pdf)["']""", re.IGNORECASE)
@@ -68,6 +73,11 @@ def parse_args() -> argparse.Namespace:
         "--allow-external",
         action="store_true",
         help="Allow downloading PDFs from domains different from the messageUrl base domain.",
+    )
+    ap.add_argument(
+        "--to-text",
+        action="store_true",
+        help="Save extracted text (.txt) instead of PDFs/HTML (uses pdfminer.six for PDFs and BeautifulSoup for HTML).",
     )
     return ap.parse_args()
 
@@ -193,6 +203,40 @@ def save_pdf_stream(resp: requests.Response, dest: Path, url: str) -> bool:
         return False
 
 
+def save_pdf_bytes_as_text(pdf_bytes: bytes, dest: Path) -> bool:
+    """
+    Extract text from PDF bytes and save to a UTF-8 .txt file.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        text = pdf_extract_text(BytesIO(pdf_bytes))
+        if not text or not text.strip():
+            print(f"No text extracted from PDF; skipping save: {dest}")
+            return False
+        with dest.open("w", encoding="utf-8") as f:
+            f.write(text)
+        return True
+    except Exception as exc:
+        print(f"ERROR extracting PDF text to {dest}: {exc}")
+        return False
+
+
+def save_html_as_text(html: str, dest: Path) -> bool:
+    """
+    Extract readable text from HTML and save to a UTF-8 .txt file.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        soup = BeautifulSoup(html, "html.parser")
+        text = soup.get_text(separator="\n", strip=True)
+        with dest.open("w", encoding="utf-8") as f:
+            f.write(text)
+        return True
+    except Exception as exc:
+        print(f"ERROR saving HTML text to {dest}: {exc}")
+        return False
+
+
 def extract_filename_from_cd(cd: str) -> Optional[str]:
     """
     Extract filename from a Content-Disposition header if present.
@@ -223,7 +267,7 @@ def build_output_name(company: str, category: str, pdf_url: str, content_disposi
 
 
 def process_csv(input_csv: Path, output_dir: Path, timeout: float,
-                allow_external: bool) -> None:
+                allow_external: bool, to_text: bool) -> None:
     downloaded_any = False
     saved_count = 0
     failed_count = 0
@@ -277,20 +321,39 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                         pdf_url,
                         content_disposition=cd_header if cd_header else None,
                     )
-                    dest = output_dir / out_name
-                    if dest.exists():
-                        print(f"Skipping existing file: {dest}")
-                        skipped_existing_count += 1
-                        continue
-                    print(
-                        "Detected direct PDF response: "
-                        f"Content-Type={content_type!r}, Content-Disposition={cd_header!r}"
-                    )
-                    if save_pdf_stream(resp, dest, pdf_url):
-                        downloaded_any = True
-                        saved_count += 1
+                    if to_text:
+                        text_name = Path(out_name).with_suffix(".txt").name
+                        dest_txt = output_dir / text_name
+                        if dest_txt.exists():
+                            print(f"Skipping existing file: {dest_txt}")
+                            skipped_existing_count += 1
+                            continue
+                        print(
+                            "Detected direct PDF response: "
+                            f"Content-Type={content_type!r}, Content-Disposition={cd_header!r}"
+                        )
+                        pdf_bytes = resp.content
+                        if save_pdf_bytes_as_text(pdf_bytes, dest_txt):
+                            downloaded_any = True
+                            saved_count += 1
+                            print(f"Downloaded text: {dest_txt} (from direct PDF {pdf_url})")
+                        else:
+                            failed_count += 1
                     else:
-                        failed_count += 1
+                        dest = output_dir / out_name
+                        if dest.exists():
+                            print(f"Skipping existing file: {dest}")
+                            skipped_existing_count += 1
+                            continue
+                        print(
+                            "Detected direct PDF response: "
+                            f"Content-Type={content_type!r}, Content-Disposition={cd_header!r}"
+                        )
+                        if save_pdf_stream(resp, dest, pdf_url):
+                            downloaded_any = True
+                            saved_count += 1
+                        else:
+                            failed_count += 1
                     continue
 
                 # Case 2: HTML page with links to PDFs
@@ -340,53 +403,103 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
 
             comp_seg = sanitize_segment(company)
             cat_seg = sanitize_segment(category)
-            parsed_url = urlparse(message_url)
-            slug_source = Path(parsed_url.path).name or "message"
-            if parsed_url.query:
-                slug_source = f"{slug_source}_{parsed_url.query}"
-            slug = sanitize_segment(slug_source) or "message"
-            html_filename = f"{comp_seg}_{cat_seg}_{slug}"
-            if not html_filename.lower().endswith(".html"):
-                html_filename = f"{html_filename}.html"
-            dest = output_dir / html_filename
-            base_stem = dest.stem
-            ext = dest.suffix
-            suffix = 1
-            while dest.exists():
-                dest = dest.with_name(f"{base_stem}_{suffix}{ext}")
-                suffix += 1
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            with dest.open("w", encoding="utf-8") as f:
-                f.write(html)
-            print(f"Saved HTML (no PDFs): {dest}")
-            html_saved_count += 1
+            if to_text:
+                parsed_url = urlparse(message_url)
+                slug_source = Path(parsed_url.path).name or "message"
+                if parsed_url.query:
+                    slug_source = f"{slug_source}_{parsed_url.query}"
+                slug = sanitize_segment(slug_source) or "message"
+                text_filename = f"{comp_seg}_{cat_seg}_{slug}.txt"
+                dest = output_dir / text_filename
+                if dest.exists():
+                    print(f"Skipping existing file: {dest}")
+                    skipped_existing_count += 1
+                    continue
+                if save_html_as_text(html, dest):
+                    downloaded_any = True
+                    html_saved_count += 1
+                    print(f"Saved HTML text (no PDFs): {dest}")
+                else:
+                    failed_count += 1
+            else:
+                parsed_url = urlparse(message_url)
+                slug_source = Path(parsed_url.path).name or "message"
+                if parsed_url.query:
+                    slug_source = f"{slug_source}_{parsed_url.query}"
+                slug = sanitize_segment(slug_source) or "message"
+                html_filename = f"{comp_seg}_{cat_seg}_{slug}"
+                if not html_filename.lower().endswith(".html"):
+                    html_filename = f"{html_filename}.html"
+                dest = output_dir / html_filename
+                base_stem = dest.stem
+                ext = dest.suffix
+                suffix = 1
+                while dest.exists():
+                    dest = dest.with_name(f"{base_stem}_{suffix}{ext}")
+                    suffix += 1
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                with dest.open("w", encoding="utf-8") as f:
+                    f.write(html)
+                print(f"Saved HTML (no PDFs): {dest}")
+                html_saved_count += 1
             continue
 
         for pdf_url in pdf_urls:
             out_name = build_output_name(company, category, pdf_url)
-            dest = output_dir / out_name
-            # Skip if already downloaded
-            if dest.exists():
-                print(f"Skipping existing file: {dest}")
-                skipped_existing_count += 1
-                continue
-            result = download_pdf(pdf_url, dest, timeout=timeout)
-            if result == "saved":
-                downloaded_any = True
-                saved_count += 1
-            elif result == "failed":
-                failed_count += 1
-            elif result == "skipped":
-                excluded_count += 1
+            if to_text:
+                text_name = Path(out_name).with_suffix(".txt").name
+                dest = output_dir / text_name
+                if dest.exists():
+                    print(f"Skipping existing file: {dest}")
+                    skipped_existing_count += 1
+                    continue
+                try:
+                    with requests.get(pdf_url, stream=True, timeout=timeout, headers=BROWSER_HEADERS) as r:
+                        r.raise_for_status()
+                        ct = (r.headers.get("Content-Type") or "").lower()
+                        final_url = (r.url or pdf_url).lower()
+                        if "pdf" not in ct and not final_url.endswith(".pdf"):
+                            print(
+                                f"Skipping non-PDF URL in text mode: {pdf_url} "
+                                f"(resolved as {r.url!r}, Content-Type={ct!r})"
+                            )
+                            excluded_count += 1
+                            continue
+                        pdf_bytes = r.content
+                except Exception as exc:
+                    print(f"ERROR downloading {pdf_url}: {exc}")
+                    failed_count += 1
+                    continue
+                if save_pdf_bytes_as_text(pdf_bytes, dest):
+                    downloaded_any = True
+                    saved_count += 1
+                    print(f"Downloaded text: {dest} (from {pdf_url})")
+                else:
+                    failed_count += 1
+            else:
+                dest = output_dir / out_name
+                # Skip if already downloaded
+                if dest.exists():
+                    print(f"Skipping existing file: {dest}")
+                    skipped_existing_count += 1
+                    continue
+                result = download_pdf(pdf_url, dest, timeout=timeout)
+                if result == "saved":
+                    downloaded_any = True
+                    saved_count += 1
+                elif result == "failed":
+                    failed_count += 1
+                elif result == "skipped":
+                    excluded_count += 1
 
     if not downloaded_any:
         print("No PDFs downloaded (check messageUrl column and page contents).")
     print(
-        f"Summary: saved {saved_count}, "
+        f"Summary: Download {saved_count}, "
         f"failed {failed_count}, "
         f"skipped {skipped_existing_count} existing, "
         f"excluded {excluded_count} PDF(s). "
-        f"Saved {html_saved_count} HTML file(s)."
+        f"Downloaded {html_saved_count} HTML file(s)."
     )
 
 
@@ -404,6 +517,7 @@ def main() -> int:
         output_dir=output_dir,
         timeout=args.timeout,
         allow_external=args.allow_external,
+        to_text=args.to_text,
     )
     return 0
 
