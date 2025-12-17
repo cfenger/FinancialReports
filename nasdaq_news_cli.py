@@ -617,7 +617,7 @@ def main() -> int:
 
     chosen_categories = list(args.category)
     chosen_not = list(args.not_category)
-    chosen_company = args.company
+    chosen_company = (args.company or "").strip()
 
     if args.interactive:
         if not chosen_categories and not chosen_not:
@@ -632,6 +632,9 @@ def main() -> int:
                 chosen_company = interactive_search_pick(companies, "Vælg company (autocomplete):", max_show=50)
             else:
                 print("Ingen companyliste tilgængelig (cache/import/auto-fetch fejlede).")
+
+    if chosen_company and companies and chosen_company not in companies:
+        print(f"WARNING: {chosen_company} is not a valid company name.", file=sys.stderr)
 
     if args.limit <= 0:
         raise SystemExit("--limit must be > 0")
