@@ -1,0 +1,14 @@
+# Insider trades
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv insider/nasdaq_news_cli.csv
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output insider/insider_summary.csv --collect
+
+
+# Spin-off
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv spinoff/nasdaq_news_cli.csv
+
+
+#Rights
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv rights/nasdaq_news_cli.csv
+
+

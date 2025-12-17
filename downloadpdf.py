@@ -339,6 +339,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                             print(f"Downloaded text: {dest_txt} (from direct PDF {pdf_url})")
                         else:
                             failed_count += 1
+                            print(f"Failed: {pdf_url} -> {dest_txt}")
                     else:
                         dest = output_dir / out_name
                         if dest.exists():
@@ -354,12 +355,15 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                             saved_count += 1
                         else:
                             failed_count += 1
+                            print(f"Failed: {pdf_url} -> {dest}")
                     continue
 
                 # Case 2: HTML page with links to PDFs
                 html = resp.text
         except Exception as exc:
             print(f"ERROR fetching messageUrl {message_url}: {exc}")
+            failed_count += 1
+            print(f"Failed: {message_url} (messageUrl fetch)")
             continue
 
         pdf_urls = extract_pdf_urls(html, message_url)
@@ -421,6 +425,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     print(f"Saved HTML text (no PDFs): {dest}")
                 else:
                     failed_count += 1
+                    print(f"Failed: {message_url} -> {dest}")
             else:
                 parsed_url = urlparse(message_url)
                 slug_source = Path(parsed_url.path).name or "message"
@@ -469,6 +474,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                 except Exception as exc:
                     print(f"ERROR downloading {pdf_url}: {exc}")
                     failed_count += 1
+                    print(f"Failed: {pdf_url} -> {dest}")
                     continue
                 if save_pdf_bytes_as_text(pdf_bytes, dest):
                     downloaded_any = True
@@ -476,6 +482,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     print(f"Downloaded text: {dest} (from {pdf_url})")
                 else:
                     failed_count += 1
+                    print(f"Failed: {pdf_url} -> {dest}")
             else:
                 dest = output_dir / out_name
                 # Skip if already downloaded
@@ -489,6 +496,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     saved_count += 1
                 elif result == "failed":
                     failed_count += 1
+                    print(f"Failed: {pdf_url} -> {dest}")
                 elif result == "skipped":
                     excluded_count += 1
 
