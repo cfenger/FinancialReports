@@ -274,6 +274,19 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
     skipped_existing_count = 0
     excluded_count = 0
     html_saved_count = 0
+    failed_urls: List[str] = []
+    failed_urls_seen = set()
+
+    def record_failed_url(url: str) -> None:
+        if not url:
+            return
+        url_lower = url.lower()
+        if not url_lower.startswith("https://"):
+            return
+        if url_lower in failed_urls_seen:
+            return
+        failed_urls_seen.add(url_lower)
+        failed_urls.append(url)
 
     for row in iter_csv_rows(input_csv):
         message_url = (row.get("messageUrl") or "").strip()
@@ -339,6 +352,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                             print(f"Downloaded text: {dest_txt} (from direct PDF {pdf_url})")
                         else:
                             failed_count += 1
+                            record_failed_url(pdf_url)
                             print(f"Failed: {pdf_url} -> {dest_txt}")
                     else:
                         dest = output_dir / out_name
@@ -355,6 +369,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                             saved_count += 1
                         else:
                             failed_count += 1
+                            record_failed_url(pdf_url)
                             print(f"Failed: {pdf_url} -> {dest}")
                     continue
 
@@ -363,6 +378,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
         except Exception as exc:
             print(f"ERROR fetching messageUrl {message_url}: {exc}")
             failed_count += 1
+            record_failed_url(message_url)
             print(f"Failed: {message_url} (messageUrl fetch)")
             continue
 
@@ -425,6 +441,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     print(f"Saved HTML text (no PDFs): {dest}")
                 else:
                     failed_count += 1
+                    record_failed_url(message_url)
                     print(f"Failed: {message_url} -> {dest}")
             else:
                 parsed_url = urlparse(message_url)
@@ -474,6 +491,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                 except Exception as exc:
                     print(f"ERROR downloading {pdf_url}: {exc}")
                     failed_count += 1
+                    record_failed_url(pdf_url)
                     print(f"Failed: {pdf_url} -> {dest}")
                     continue
                 if save_pdf_bytes_as_text(pdf_bytes, dest):
@@ -482,6 +500,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     print(f"Downloaded text: {dest} (from {pdf_url})")
                 else:
                     failed_count += 1
+                    record_failed_url(pdf_url)
                     print(f"Failed: {pdf_url} -> {dest}")
             else:
                 dest = output_dir / out_name
@@ -496,12 +515,16 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                     saved_count += 1
                 elif result == "failed":
                     failed_count += 1
+                    record_failed_url(pdf_url)
                     print(f"Failed: {pdf_url} -> {dest}")
                 elif result == "skipped":
                     excluded_count += 1
 
     if not downloaded_any:
         print("No PDFs downloaded (check messageUrl column and page contents).")
+    if failed_urls:
+        for failed_url in failed_urls:
+            print(f"Failed: {failed_url}")
     print(
         f"Summary: Download {saved_count}, "
         f"failed {failed_count}, "
