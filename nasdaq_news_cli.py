@@ -61,6 +61,7 @@ import json
 import re
 import sys
 import time
+import fnmatch
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -94,6 +95,39 @@ MARKET_CHOICES: List[str] = [
 ]
 
 CACHE_DIR = Path(".")
+EXCLUDED_COMPANIES_FILE = Path("excludedCompanies.txt")
+
+
+def _load_excluded_company_patterns(path: Path) -> List[re.Pattern[str]]:
+    """
+    Load shell-style patterns (e.g. 'Nykredit*') from a text file and
+    compile them to regular expressions for matching company names.
+
+    - Empty lines and lines starting with '#' are ignored.
+    - Matching is case-insensitive.
+    """
+    if not path.exists():
+        return []
+    patterns: List[re.Pattern[str]] = []
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        regex = fnmatch.translate(stripped)
+        patterns.append(re.compile(regex, re.IGNORECASE))
+    return patterns
+
+
+def _filter_excluded_companies(companies: List[str], patterns: List[re.Pattern[str]]) -> List[str]:
+    """Filter out companies that match any of the exclusion patterns."""
+    if not patterns:
+        return companies
+
+    def is_excluded(name: str) -> bool:
+        return any(pat.match(name) for pat in patterns)
+
+    return [c for c in companies if not is_excluded(c)]
 
 
 @dataclass
@@ -552,6 +586,8 @@ def main() -> int:
         refresh=args.refresh_lists,
         import_jsonp_path=comp_import if comp_import and comp_import.exists() else None,
     )
+    excluded_patterns = _load_excluded_company_patterns(EXCLUDED_COMPANIES_FILE)
+    companies = _filter_excluded_companies(companies, excluded_patterns)
 
     if args.list_categories:
         for c in categories:
