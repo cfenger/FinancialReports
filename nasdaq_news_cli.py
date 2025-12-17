@@ -38,7 +38,7 @@ uv run --with requests python nasdaq_news_cli.py --import-companies-jsonp compan
 uv run --with requests python nasdaq_news_cli.py --interactive --out-csv results.csv
 
 # Non-interactive
-uv run --with requests python nasdaq_news_cli.py --free-text "FLSmidth" --category "Ledende medarbejderes transaktioner" --company "FLSmidth & Co. A/S" --pages 3 --out-csv fls_transactions.csv
+uv run --with requests python nasdaq_news_cli.py --free-text "FLSmidth" --category "Ledende medarbejderes transaktioner" --company "FLSmidth & Co. A/S" --limit 150 --out-csv fls_transactions.csv
 
 #Other output formats: --out-ndjson  --out-json
 
@@ -555,8 +555,7 @@ def main() -> int:
     # Query parametre
     ap.add_argument("--language", default="da", help="displayLanguage (da/en/sv/fi/...)")
     ap.add_argument("--dir", default="DESC", choices=["DESC", "ASC"])
-    ap.add_argument("--limit", type=int, default=50)
-    ap.add_argument("--pages", type=int, default=1, help="Antal sider (start = page*limit)")
+    ap.add_argument("--limit", type=int, default=50, help="Maks antal hits at hente (total)")
     ap.add_argument("--sleep", type=float, default=0.2)
 
     # Dropdown data: cache + import
@@ -634,6 +633,12 @@ def main() -> int:
             else:
                 print("Ingen companyliste tilgængelig (cache/import/auto-fetch fejlede).")
 
+    if args.limit <= 0:
+        raise SystemExit("--limit must be > 0")
+
+    max_results = args.limit
+    page_size = min(200, max_results)
+
     q = NasdaqQuery(
         free_text=args.free_text,
         cns_category=chosen_categories,
@@ -644,41 +649,60 @@ def main() -> int:
         to_date=args.to_date,
         display_language=args.language,
         dir=args.dir,
-        limit=args.limit,
+        limit=page_size,
         start=0,
     )
 
-    all_items: List[Dict[str, Any]] = []
-    for page in range(args.pages):
-        q.start = page * q.limit
+    from_dt = _parse_cli_date(args.from_date) if args.from_date else None
+    to_dt = _parse_cli_date(args.to_date) if args.to_date else None
+
+    filtered_items: List[Dict[str, Any]] = []
+    seen_keys: set[str] = set()
+
+    start = 0
+    while len(filtered_items) < max_results:
+        remaining = max_results - len(filtered_items)
+        q.limit = min(page_size, remaining)
+        q.start = start
+
         payload = client.query(q)
         items = client.iter_items(payload)
-        all_items.extend(items)
-        if len(items) < q.limit:
+        if not items:
             break
-        time.sleep(args.sleep)
 
-    # Client-side strict date filtering, since the backend may
-    # continue beyond fromDate/toDate to fill the page.
-    filtered_items = all_items
-    if args.from_date or args.to_date:
-        from_dt = _parse_cli_date(args.from_date) if args.from_date else None
-        to_dt = _parse_cli_date(args.to_date) if args.to_date else None
+        new_in_page = 0
+        for it in items:
+            key = str(it.get("disclosureId") or it.get("messageUrl") or "")
+            if not key:
+                key = f"{it.get('published','')}|{it.get('company','')}|{it.get('headline','')}"
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+            new_in_page += 1
 
-        tmp: List[Dict[str, Any]] = []
-        for it in all_items:
-            dt = _parse_item_datetime(it.get("published") or it.get("releaseTime") or "")
-            if dt is None:
-                continue
-            if from_dt and dt < from_dt:
-                continue
-            if to_dt and dt > to_dt:
-                continue
-            tmp.append(it)
-        filtered_items = tmp
+            if from_dt or to_dt:
+                dt = _parse_item_datetime(it.get("published") or it.get("releaseTime") or "")
+                if dt is None:
+                    continue
+                if from_dt and dt < from_dt:
+                    continue
+                if to_dt and dt > to_dt:
+                    continue
 
-    # Always apply excluded-companies filter to the final result set.
-    filtered_items = _filter_excluded_items(filtered_items, excluded_patterns)
+            if excluded_patterns:
+                name = (it.get("company") or "").strip()
+                if any(pat.match(name) for pat in excluded_patterns):
+                    continue
+
+            filtered_items.append(it)
+            if len(filtered_items) >= max_results:
+                break
+
+        start += len(items)
+        if new_in_page == 0:
+            break
+        if len(filtered_items) < max_results:
+            time.sleep(args.sleep)
 
     if args.out_json:
         p = Path(args.out_json)
