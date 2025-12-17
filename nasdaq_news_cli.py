@@ -689,7 +689,7 @@ def main() -> int:
         write_csv(filtered_items, Path(args.out_csv))
 
     print(f"Hits: {len(filtered_items)}")
-    for it in filtered_items[:10]:
+    for it in filtered_items:
         print(f"- {it.get('published','')}\t{it.get('company','')}\t{it.get('headline','')}\t{it.get('messageUrl','')}")
     return 0
 
