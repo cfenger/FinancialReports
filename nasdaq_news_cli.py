@@ -130,6 +130,18 @@ def _filter_excluded_companies(companies: List[str], patterns: List[re.Pattern[s
     return [c for c in companies if not is_excluded(c)]
 
 
+def _filter_excluded_items(items: List[Dict[str, Any]], patterns: List[re.Pattern[str]]) -> List[Dict[str, Any]]:
+    """Filter out result items whose company matches any exclusion pattern."""
+    if not patterns:
+        return items
+
+    def is_excluded_item(it: Dict[str, Any]) -> bool:
+        name = (it.get("company") or "").strip()
+        return any(pat.match(name) for pat in patterns)
+
+    return [it for it in items if not is_excluded_item(it)]
+
+
 @dataclass
 class NasdaqQuery:
     free_text: str = ""
@@ -664,6 +676,9 @@ def main() -> int:
                 continue
             tmp.append(it)
         filtered_items = tmp
+
+    # Always apply excluded-companies filter to the final result set.
+    filtered_items = _filter_excluded_items(filtered_items, excluded_patterns)
 
     if args.out_json:
         p = Path(args.out_json)
