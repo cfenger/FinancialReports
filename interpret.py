@@ -427,6 +427,42 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
                     return raw
             return None
 
+        def split_price_volume_from_line(line: str) -> Tuple[str, str] | None:
+            number_re = r"-?(?:\d{1,3}(?:[.,]\d{3}|\s+\d{3})+|\d+)(?:[.,]\d+)?"
+            date_stripped = re.sub(
+                r"\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b|\b\d{4}-\d{2}-\d{2}\b",
+                " ",
+                line,
+            )
+            # Strip date-like tokens; if extra numbers remain, take the last two.
+            tokens = re.findall(number_re, date_stripped)
+            if len(tokens) < 2:
+                return None
+            if len(tokens) > 2:
+                tokens = tokens[-2:]
+
+            def has_fractional(token: str) -> bool:
+                compact = token.replace(" ", "")
+                sep_pos = max(compact.rfind("."), compact.rfind(","))
+                if sep_pos == -1:
+                    return False
+                frac = compact[sep_pos + 1 :]
+                if not frac.isdigit():
+                    return False
+                # Treat 3-digit tails as thousands separators, not decimals.
+                if len(frac) == 3:
+                    return False
+                return len(frac) > 0
+
+            first, second = tokens[0], tokens[1]
+            first_frac = has_fractional(first)
+            second_frac = has_fractional(second)
+            if first_frac and not second_frac:
+                return first, second
+            if second_frac and not first_frac:
+                return second, first
+            return first, second
+
         combined_idx: int | None = None
         price_header_idx: int | None = None
         volume_header_idx: int | None = None
@@ -464,6 +500,12 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
                 volume_raw = numeric_lines[1]
                 transactions.append((volume_raw, price_raw))
                 return transactions
+            if len(numeric_lines) == 1:
+                split = split_price_volume_from_line(numeric_lines[0])
+                if split:
+                    price_raw, volume_raw = split
+                    transactions.append((volume_raw, price_raw))
+                    return transactions
 
     if transactions:
         return transactions
