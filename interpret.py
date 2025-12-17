@@ -24,8 +24,8 @@ except Exception:  # pragma: no cover - optional dependency
 FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason"]
 REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", "side"]
 
-BUY_KEYWORDS = ("acquisition", "purchase", "buy", "receipt", "subscription", "incentive", "anskaffelse")
-SELL_KEYWORDS = ("disposal", "sale", "sell", "luovutus", "divest")
+BUY_KEYWORDS = ("acquisition", "purchase", "buy", "receipt", "subscription", "incentive", "anskaffelse", "køb")
+SELL_KEYWORDS = ("disposal", "sale", "sell", "luovutus", "divest", "salg")
 NATURE_TRANSLATIONS = {
     # Finnish -> English (style aligned with other rows)
     "luovutus": "DISPOSAL",
@@ -223,6 +223,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             "nature of transaction" in norm
             or "nature of the transaction" in norm
             or "liiketoimen luonne" in norm
+            or "transaktionens art" in norm
         ):
             value = value_after_colon(raw)
             if value:
@@ -234,6 +235,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             "nature of transaction" in norm
             or "nature of the transaction" in norm
             or "liiketoimen luonne" in norm
+            or "transaktionens art" in norm
         ):
             nature_start = idx
             break
@@ -242,6 +244,9 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
         for raw, norm in lines[nature_start + 1 :]:
             # Stop when reaching the separate Price(s) / Volume(s) headings.
             if ("price(s)" in norm and "volume(s)" not in norm) or ("volume(s)" in norm and "price(s)" not in norm):
+                break
+            # Stop when reaching Danish-style price/quantity headings.
+            if ("pris" in norm and ("maengde" in norm or "mngde" in norm)) or norm.startswith("mngde") or norm.startswith("pris") or norm.startswith("prise"):
                 break
             text = raw.strip()
             if not text or text.endswith(":"):
@@ -413,37 +418,52 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
             transactions.append((volume_raw, price_raw))
 
     # Fallback 4: Danish-style layout with "Pris(er)" and "Mængde(r)" headings.
-    has_pris = any("pris(er)" in norm for _raw, norm in lines)
+    has_pris = any("pris" in norm for _raw, norm in lines)
     has_maengde = any(("maengde" in norm) or ("mngde" in norm) for _raw, norm in lines)
     if has_pris and has_maengde:
-        price_header_idx: int | None = None
-        for idx, (_raw, norm) in enumerate(lines):
-            if "pris(er)" in norm:
-                price_header_idx = idx
-                break
-
-        price_raw = None
-        if price_header_idx is not None:
-            for raw, _norm in lines[price_header_idx + 1 :]:
+        def first_numeric_after(idx: int) -> str | None:
+            for raw, _norm in lines[idx + 1 :]:
                 if re.search(r"\d", raw):
-                    price_raw = raw
-                    break
+                    return raw
+            return None
 
+        combined_idx: int | None = None
+        price_header_idx: int | None = None
         volume_header_idx: int | None = None
         for idx, (_raw, norm) in enumerate(lines):
-            if "maengde" in norm or "mngde" in norm:
+            has_price = ("pris" in norm) or ("prise" in norm)
+            has_volume = ("maengde" in norm) or ("mngde" in norm)
+            if combined_idx is None and has_price and has_volume:
+                combined_idx = idx
+            if price_header_idx is None and (norm.startswith("pris") or norm.startswith("prise")) and not has_volume:
+                price_header_idx = idx
+            if volume_header_idx is None and (norm.startswith("maengde") or norm.startswith("mngde")) and not has_price:
                 volume_header_idx = idx
-                break
 
-        volume_raw = None
-        if volume_header_idx is not None:
-            for raw, _norm in lines[volume_header_idx + 1 :]:
-                if re.search(r"\d", raw):
-                    volume_raw = raw
-                    break
+        price_raw = first_numeric_after(price_header_idx) if price_header_idx is not None else None
+        volume_raw = first_numeric_after(volume_header_idx) if volume_header_idx is not None else None
 
         if price_raw and volume_raw:
             transactions.append((volume_raw, price_raw))
+            return transactions
+
+        # Some Danish templates only have a combined "Pris(er) og mængde(r)" heading.
+        if combined_idx is not None:
+            numeric_lines: List[str] = []
+            for raw, norm in lines[combined_idx + 1 :]:
+                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
+                    break
+                if "transaktionsdato" in norm or "transaction date" in norm:
+                    break
+                if re.search(r"\d", raw):
+                    numeric_lines.append(raw)
+                if len(numeric_lines) >= 2:
+                    break
+            if len(numeric_lines) >= 2:
+                price_raw = numeric_lines[0]
+                volume_raw = numeric_lines[1]
+                transactions.append((volume_raw, price_raw))
+                return transactions
 
     if transactions:
         return transactions
@@ -550,6 +570,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--input-dir",
+        "--input",
+        dest="input_dir",
         type=Path,
         default=Path("."),
         help="Directory containing insider .txt files (default: current directory).",
