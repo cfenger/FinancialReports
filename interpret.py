@@ -3,6 +3,9 @@
 Example usage:
     uv run python interpret.py --task insider --input-dir insider
     uv run python interpret.py --task insider --input-dir insider --output insider_summary.csv
+
+Run the regression test with:
+    python -m unittest -q test_interpret_insider_regression.py.
 """
 
 from __future__ import annotations
@@ -21,7 +24,7 @@ try:
 except Exception:  # pragma: no cover - optional dependency
     load_dotenv = None
 
-FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason"]
+FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason", "filename"]
 REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", "side"]
 
 BUY_KEYWORDS = (
@@ -31,20 +34,37 @@ BUY_KEYWORDS = (
     "receipt",
     "subscription",
     "incentive",
+    "acceptance",
     "anskaffelse",
-    "køb",
+    "kob",
     "erhvervelse",
+    "merkinta",
 )
-SELL_KEYWORDS = ("disposal", "sale", "sell", "luovutus", "divest", "salg")
+SELL_KEYWORDS = (
+    "disposal",
+    "disposed",
+    "sale",
+    "sell",
+    "sold",
+    "luovutus",
+    "divest",
+    "salg",
+    "myynti",
+)
 NATURE_TRANSLATIONS = {
     # Finnish -> English (style aligned with other rows)
     "luovutus": "DISPOSAL",
     "hankinta": "ACQUISITION",
+    "merkinta": "SUBSCRIPTION",
+    "osakepalkkion vastaanottaminen": "RECEIPT",
+    "osakeoption hyvaksyminen": "ACCEPTANCE OF A STOCK OPTION",
+    # Swedish -> English
+    "teckning": "SUBSCRIPTION",
 }
 
 TRANSACTION_LINE_RE = re.compile(
     r"\(\d+\)\s*:\s*(?:vol(?:ume|yymi|ym)\b[^:]*:\s*([\d\s.,]+)).*?"
-    r"(?:unit\s*price|pris per aktie|pris|yksikk\w*hinta|hinta)\s*:\s*([\d\s.,]+)",
+    r"(?:unit\s*price|pris per aktie|pris|yksikk\w*hinta|keskihinta|average price|volume weighted average price|hinta|price)\s*:\s*([\d\s.,]+)",
     re.IGNORECASE,
 )
 
@@ -79,6 +99,11 @@ DATE_PATTERNS: Sequence[re.Pattern[str]] = [
     re.compile(r"liiketoimen[^:]{0,30}:\s*(\d{4}-\d{2}-\d{2})", re.IGNORECASE),
     re.compile(r"liiketoimen[^:]{0,30}:\s*(\d{2}[./]\d{2}[./]\d{4})", re.IGNORECASE),
 ]
+
+REFERENCE_NUMBER_RE = re.compile(
+    r"(?:reference number|viitenumero|referensnummer|referencenummer|referansenummer)\s*:\s*([A-Za-z0-9][A-Za-z0-9_.-]*)",
+    re.IGNORECASE,
+)
 
 
 def normalize_line(line: str) -> str:
@@ -272,6 +297,11 @@ def extract_date(raw_text: str) -> str:
     return ""
 
 
+def extract_reference_number(raw_text: str) -> str:
+    match = REFERENCE_NUMBER_RE.search(raw_text)
+    return match.group(1).strip() if match else ""
+
+
 def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
     # Primary: value on the same line as the label.
     for raw, norm in lines:
@@ -280,6 +310,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             or "nature of the transaction" in norm
             or "liiketoimen luonne" in norm
             or "transaktionens art" in norm
+            or "transaktionens karaktar" in norm
         ):
             value = value_after_colon(raw)
             if value:
@@ -292,6 +323,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             or "nature of the transaction" in norm
             or "liiketoimen luonne" in norm
             or "transaktionens art" in norm
+            or "transaktionens karaktar" in norm
         ):
             nature_start = idx
             break
@@ -357,7 +389,7 @@ def translate_nature(nature: str) -> str:
 
 
 def determine_side(nature: str) -> str:
-    lowered = nature.lower()
+    lowered = normalize_line(nature)
     if any(keyword in lowered for keyword in SELL_KEYWORDS):
         return "sell"
     if any(keyword in lowered for keyword in BUY_KEYWORDS):
@@ -407,18 +439,24 @@ def compute_total_value(shares: str, price: str) -> str:
 
 def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str) -> List[Tuple[str, str]]:
     transactions: List[Tuple[str, str]] = []
-    for raw, norm in lines:
-        if "aggregated transactions" in norm or "yhdistetyt" in norm:
+    aggregated_transactions: List[Tuple[str, str]] = []
+    in_aggregated = False
+    for _raw, norm in lines:
+        if "yhdistetyt" in norm or "aggregated" in norm or "aggreger" in norm:
+            in_aggregated = True
             continue
         match = TRANSACTION_LINE_RE.search(norm)
         if match:
-            transactions.append((match.group(1), match.group(2)))
+            target = aggregated_transactions if in_aggregated else transactions
+            target.append((match.group(1), match.group(2)))
     if transactions:
         return transactions
+    if aggregated_transactions:
+        return aggregated_transactions
     filtered_lines: List[str] = []
     skip_next = 0
     for _, norm in lines:
-        if "aggregated transactions" in norm or "yhdistetyt" in norm:
+        if "yhdistetyt" in norm or "aggregated" in norm or "aggreger" in norm:
             skip_next = 1  # skip this and the following line containing aggregated totals
             continue
         if skip_next > 0:
@@ -651,11 +689,11 @@ def determine_side_from_text(nature: str, normalized_text: str) -> str:
         return side
     # Fallback: inspect full normalized text for cues.
     lowered = normalized_text
-    if "purchased" in lowered or "acquisition" in lowered:
+    if "purchased" in lowered:
         return "buy"
-    if "disposed" in lowered or "sale" in lowered or "sold" in lowered:
+    if "disposed" in lowered or "sold" in lowered:
         return "sell"
-    return ""
+    return determine_side(lowered)
 
 
 def parse_insider_file(text: str, path: Path) -> List[dict]:
@@ -668,6 +706,7 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
         # and only mention the person in free text.
         name = extract_narrative_name_from_text(text)
     date = extract_date(text)
+    reference_number = extract_reference_number(text)
     nature = translate_nature(extract_nature(lines))
     side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)
@@ -692,6 +731,8 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
                 "total_value": "",
                 "side": side,
                 "reason": nature,
+                "filename": path.name,
+                "_reference_number": reference_number,
             }
         )
         return rows
@@ -709,6 +750,8 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
                 "total_value": compute_total_value(shares_clean, price_clean),
                 "side": side,
                 "reason": nature,
+                "filename": path.name,
+                "_reference_number": reference_number,
             }
         )
 
@@ -754,6 +797,97 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     return parser.parse_args()
+
+
+def _merge_sparse_dict(base: dict, other: dict) -> dict:
+    merged = dict(base)
+    for key, value in other.items():
+        if value and not merged.get(key):
+            merged[key] = value
+    return merged
+
+
+def _dedupe_rows(rows: List[dict]) -> List[dict]:
+    """Deduplicate multi-language versions of the same notice.
+
+    Nasdaq notices often exist in multiple languages in the input directory.
+    Use the reference number (when available) to collapse duplicates so the
+    summary doesn't double-count the same transaction.
+    """
+
+    def signature(row: dict) -> tuple[str, str, str] | None:
+        shares = (row.get("shares") or "").strip()
+        price = (row.get("price") or "").strip()
+        total = (row.get("total_value") or "").strip()
+        if not any((shares, price, total)):
+            return None
+        return (shares, price, total)
+
+    deduped: List[dict | None] = []
+    key_to_index: dict[tuple, int] = {}
+    placeholder_indices_by_ref: dict[str, List[int]] = {}
+    refs_with_transactions: set[str] = set()
+    ref_to_tx_index: dict[str, int] = {}
+
+    for row in rows:
+        ref = (row.get("_reference_number") or "").strip()
+        sig = signature(row)
+
+        if ref:
+            if sig is None:
+                existing_tx_idx = ref_to_tx_index.get(ref)
+                if existing_tx_idx is not None:
+                    existing_tx = deduped[existing_tx_idx]
+                    deduped[existing_tx_idx] = _merge_sparse_dict(existing_tx or {}, row)
+                    continue
+                existing_idxs = placeholder_indices_by_ref.get(ref, [])
+                if existing_idxs:
+                    idx = existing_idxs[0]
+                    existing = deduped[idx]
+                    deduped[idx] = _merge_sparse_dict(existing or {}, row)
+                    continue
+                idx = len(deduped)
+                deduped.append(dict(row))
+                placeholder_indices_by_ref.setdefault(ref, []).append(idx)
+                continue
+            placeholders = placeholder_indices_by_ref.get(ref, [])
+            if placeholders:
+                merged_row = dict(row)
+                for idx in placeholders:
+                    placeholder = deduped[idx]
+                    if placeholder is not None:
+                        merged_row = _merge_sparse_dict(merged_row, placeholder)
+                row = merged_row
+            key = ("ref", ref, *sig)
+        else:
+            key = (
+                "content",
+                row.get("date", ""),
+                row.get("company", ""),
+                row.get("name", ""),
+                row.get("shares", ""),
+                row.get("price", ""),
+                row.get("total_value", ""),
+            )
+
+        existing_idx = key_to_index.get(key)
+        if existing_idx is None:
+            idx = len(deduped)
+            deduped.append(dict(row))
+            key_to_index[key] = idx
+        else:
+            existing = deduped[existing_idx]
+            if existing is not None:
+                deduped[existing_idx] = _merge_sparse_dict(existing, row)
+
+        if ref and sig is not None:
+            refs_with_transactions.add(ref)
+            ref_to_tx_index[ref] = key_to_index.get(key, len(deduped) - 1)
+            for idx in placeholder_indices_by_ref.get(ref, []):
+                deduped[idx] = None
+            placeholder_indices_by_ref[ref] = []
+
+    return [row for row in deduped if row is not None]
 
 
 def _collect_rows(rows: List[dict]) -> List[dict]:
@@ -876,13 +1010,15 @@ def run_insider_task(input_dir: Path, output_csv: Path, collect: bool = False) -
             continue
         rows.extend(parse_insider_file(content, path))
 
+    rows = _dedupe_rows(rows)
+
     if collect:
         rows = _collect_rows(rows)
 
     try:
         output_csv.parent.mkdir(parents=True, exist_ok=True)
         with output_csv.open("w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+            writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
             writer.writeheader()
             writer.writerows(rows)
     except OSError as exc:

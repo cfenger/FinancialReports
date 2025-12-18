@@ -7,6 +7,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from interpret import (
+    _dedupe_rows,
+    determine_side_from_text,
+    normalize_text_for_search,
+)
+
 REPO_ROOT = Path(__file__).resolve().parent
 
 
@@ -17,9 +23,121 @@ def _read_csv(path: Path):
 
 
 class InterpretInsiderRegressionTest(unittest.TestCase):
+    def test_merge_placeholder_into_transactional_ref(self):
+        rows = [
+            {
+                "_reference_number": "REF2",
+                "date": "2025-01-02",
+                "company": "Beta Oyj",
+                "name": "Person B",
+                "shares": "",
+                "price": "",
+                "total_value": "",
+                "side": "",
+                "reason": "",
+            },
+            {
+                "_reference_number": "REF2",
+                "date": "2025-01-02",
+                "company": "",
+                "name": "",
+                "shares": "1500",
+                "price": "10.5",
+                "total_value": "15750",
+                "side": "buy",
+                "reason": "ACQUISITION",
+            },
+        ]
+        deduped = _dedupe_rows(rows)
+        self.assertEqual(len(deduped), 1, "Reference dedupe should keep a single merged row")
+        merged = deduped[0]
+        self.assertEqual(merged["company"], "Beta Oyj")
+        self.assertEqual(merged["name"], "Person B")
+        self.assertEqual(merged["shares"], "1500")
+        self.assertEqual(merged["price"], "10.5")
+        self.assertEqual(merged["total_value"], "15750")
+        self.assertEqual(merged["side"], "buy")
+        self.assertEqual(merged["reason"], "ACQUISITION")
+
+    def test_merge_placeholder_after_transactional_ref(self):
+        rows = [
+            {
+                "_reference_number": "REF3",
+                "date": "2025-01-03",
+                "company": "",
+                "name": "",
+                "shares": "500",
+                "price": "12.5",
+                "total_value": "6250",
+                "side": "sell",
+                "reason": "DISPOSAL",
+            },
+            {
+                "_reference_number": "REF3",
+                "date": "2025-01-03",
+                "company": "Gamma",
+                "name": "Person C",
+                "shares": "",
+                "price": "",
+                "total_value": "",
+                "side": "",
+                "reason": "",
+            },
+        ]
+        deduped = _dedupe_rows(rows)
+        self.assertEqual(len(deduped), 1, "Reference dedupe should merge placeholders arriving later")
+        merged = deduped[0]
+        self.assertEqual(merged["company"], "Gamma")
+        self.assertEqual(merged["name"], "Person C")
+        self.assertEqual(merged["shares"], "500")
+        self.assertEqual(merged["price"], "12.5")
+        self.assertEqual(merged["total_value"], "6250")
+        self.assertEqual(merged["side"], "sell")
+        self.assertEqual(merged["reason"], "DISPOSAL")
+
+    def test_dedupe_reference_only_rows(self):
+        rows = [
+            {
+                "_reference_number": "REF1",
+                "date": "2025-01-01",
+                "company": "Alpha",
+                "name": "Person A",
+                "shares": "",
+                "price": "",
+                "total_value": "",
+                "side": "",
+                "reason": "",
+            },
+            {
+                "_reference_number": "REF1",
+                "date": "",
+                "company": "Alpha Oy",
+                "name": "",
+                "shares": "",
+                "price": "",
+                "total_value": "",
+                "side": "",
+                "reason": "",
+            },
+        ]
+        deduped = _dedupe_rows(rows)
+        self.assertEqual(len(deduped), 1, "Reference-only duplicates should collapse to one row")
+        self.assertEqual(deduped[0]["date"], "2025-01-01")
+        self.assertEqual(deduped[0]["company"], "Alpha")
+        self.assertEqual(deduped[0]["name"], "Person A")
+
+    def test_past_tense_sell_detection(self):
+        text = "The person sold 1,000 shares on 2025-12-01 at price 10.50."
+        normalized = normalize_text_for_search(text)
+        self.assertEqual(
+            determine_side_from_text("", normalized),
+            "sell",
+            "Should classify past-tense 'sold' narrative as a sell",
+        )
+
     def test_insider_cli_matches_snapshot(self):
         input_dir = REPO_ROOT / "test" / "insider" / "nasdaq_news_cli"
-        expected_csv = REPO_ROOT / "test" / "insider" / "insider_summary.csv"
+        expected_csv = REPO_ROOT / "test" / "insider" / "insider_summary_base.csv"
 
         self.assertTrue(input_dir.exists(), "Fixture input directory is missing")
         self.assertTrue(expected_csv.exists(), "Expected snapshot CSV is missing")

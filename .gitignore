@@ -18,8 +18,10 @@ Thumbs.db
 *.swo
 
 # Project output
-FLSmidth_AnnualReports/
 *.csv
+!test/
+!test/insider/
+!test/insider/insider_summary_base.csv
 *.json
 *.log
 
