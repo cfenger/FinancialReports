@@ -24,7 +24,17 @@ except Exception:  # pragma: no cover - optional dependency
 FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason"]
 REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", "side"]
 
-BUY_KEYWORDS = ("acquisition", "purchase", "buy", "receipt", "subscription", "incentive", "anskaffelse", "køb")
+BUY_KEYWORDS = (
+    "acquisition",
+    "purchase",
+    "buy",
+    "receipt",
+    "subscription",
+    "incentive",
+    "anskaffelse",
+    "køb",
+    "erhvervelse",
+)
 SELL_KEYWORDS = ("disposal", "sale", "sell", "luovutus", "divest", "salg")
 NATURE_TRANSLATIONS = {
     # Finnish -> English (style aligned with other rows)
@@ -128,12 +138,58 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
     if candidate:
         return candidate
 
+    # Fallback for Danish/Scandinavian templates where the person name appears
+    # right after a "Nærmere oplysninger om personen ..." heading.
+    for idx, (_raw, norm) in enumerate(lines):
+        if "oplysninger om personen" not in norm:
+            continue
+        for raw2, norm2 in lines[idx + 1 : idx + 8]:
+            text = raw2.strip()
+            if not text or ":" in text:
+                continue
+            if any(ch.isdigit() for ch in text):
+                continue
+            if any(
+                token in norm2
+                for token in (
+                    "navn",
+                    "arsag",
+                    "stilling",
+                    "forste indberetning",
+                    "indberetning",
+                    "lei",
+                )
+            ):
+                continue
+            words = text.split()
+            if len(words) < 2 or len(words) > 6:
+                continue
+            return text
+
     # Fallback for Nordic-style "Nafn/Navn" heading followed by the name.
     for idx, (_raw, norm) in enumerate(lines):
         if "nafn" in norm or "navn" in norm:
             for raw2, _norm2 in lines[idx + 1 :]:
                 text = raw2.strip()
                 if not text or ":" in text:
+                    continue
+                if any(ch.isdigit() for ch in text):
+                    continue
+                if any(
+                    token in _norm2
+                    for token in (
+                        "arsag",
+                        "stilling",
+                        "forste indberetning",
+                        "indberetning",
+                        "lei",
+                        "identifikationskode",
+                        "transaktionens art",
+                        "pris",
+                        "maengde",
+                        "mngde",
+                    )
+                ):
                     continue
                 candidate = text
                 break
@@ -255,6 +311,33 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
         if candidates:
             # Nature is typically the most descriptive (longest) line before the price/volume block.
             return max(candidates, key=len)
+        # Some Danish templates list field labels first and values later. In that case,
+        # look ahead for the first descriptive line after "Transaktionens art".
+        if "transaktionens art" in lines[nature_start][1]:
+            for raw, norm in lines[nature_start + 1 : nature_start + 25]:
+                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
+                    break
+                if any(
+                    token in norm
+                    for token in (
+                        "identifikationskode",
+                        "isin",
+                        "pris",
+                        "maengde",
+                        "mngde",
+                        "dato for transaktionen",
+                        "sted for transaktionen",
+                    )
+                ):
+                    continue
+                text = raw.strip()
+                if not text or text.endswith(":"):
+                    continue
+                if not re.search(r"[A-Za-z]", text):
+                    continue
+                if re.search(r"\b[A-Z]{2}\d{6,}\b", text):
+                    continue
+                return text
 
     # Fallback: look for common single-word nature labels anywhere in the text
     # (e.g. Danish "Anskaffelse" in standard forms, or simple "purchased").
@@ -476,6 +559,37 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
             if volume_header_idx is None and (norm.startswith("maengde") or norm.startswith("mngde")) and not has_price:
                 volume_header_idx = idx
 
+        # Common layout: "Pris(er)" and "Mængde(r)" headings followed by the
+        # numeric values on subsequent lines (price first, then volume).
+        if price_header_idx is not None and volume_header_idx is not None:
+            numeric_lines: List[str] = []
+            scan_start = max(price_header_idx, volume_header_idx) + 1
+            for raw, norm in lines[scan_start:]:
+                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
+                    break
+                if "transaktionsdato" in norm or "transaction date" in norm:
+                    break
+                if re.search(r"\d", raw):
+                    split = split_price_volume_from_line(raw)
+                    if split:
+                        price_raw, volume_raw = split
+                        transactions.append((volume_raw, price_raw))
+                        return transactions
+                    numeric_lines.append(raw)
+                if len(numeric_lines) >= 2:
+                    break
+            if len(numeric_lines) >= 2:
+                price_raw = numeric_lines[0]
+                volume_raw = numeric_lines[1]
+                transactions.append((volume_raw, price_raw))
+                return transactions
+            if len(numeric_lines) == 1:
+                split = split_price_volume_from_line(numeric_lines[0])
+                if split:
+                    price_raw, volume_raw = split
+                    transactions.append((volume_raw, price_raw))
+                    return transactions
+
         price_raw = first_numeric_after(price_header_idx) if price_header_idx is not None else None
         volume_raw = first_numeric_after(volume_header_idx) if volume_header_idx is not None else None
 
@@ -560,6 +674,13 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
 
     rows: List[dict] = []
     if not transactions:
+        if (
+            ("henvises til vedh" in normalized_text and "skema" in normalized_text)
+            or "see attached form" in normalized_text
+            or "see attached schedule" in normalized_text
+        ):
+            logging.warning("Skipping %s: no transaction details (attached form).", path.name)
+            return []
         logging.warning("No transactions parsed from %s", path.name)
         rows.append(
             {
