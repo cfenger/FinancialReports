@@ -16,7 +16,7 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv rights/nasdaq_news_cli.csv
 
 # Make test
-uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 1000 --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-11-01 --to-date 2025-12-17
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 1000 --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-11-01 --to-date 2025-12-18
 uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input test/insider/nasdaq_news_cli.csv --to-text
 uv run python interpret.py --task insider --output test/insider/insider_summary.csv --collect --input test/insider/nasdaq_news_cli/
 
@@ -51,24 +51,8 @@ G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect
 
 
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv insider/nasdaq_news_cli.csv --from-date 2025-12-01 --company "Asetek A/S"
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
 uv run python interpret.py --task insider --output insider/insider_summary.csv --collect --input insider/nasdaq_news_cli/
 
 
-I only see two normal pdf files linked directly on this page:
-https://view.news.eu.nasdaq.com/view?id=b8bb598011cb81ea9e9ac58056d2b5e9f&lang=en&src=listed
 
-But when I download like below I get a pdf file with the text "For the best experience, open this PDF portfolio in 
-Acrobat X or Adobe Reader X, or later."
-
-G:\My Drive\FinancialReports>uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv
-Fetching page: https://view.news.eu.nasdaq.com/view?id=b8bb598011cb81ea9e9ac58056d2b5e9f&lang=en&src=listed
-Downloaded: insider\nasdaq_news_cli\Asetek_AS_Ledende_medarbejderes_transaktioner_a2086849940c5a27f051efd1ea6161ce3.pdf (from https://attachment.news.eu.nasdaq.com/a2086849940c5a27f051efd1ea6161ce3)
-Downloaded: insider\nasdaq_news_cli\Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0.pdf (from https://attachment.news.eu.nasdaq.com/abc543fd3e78e7b72be2998ed02aea5e0)
-Summary: Download 2, failed 0, skipped 0 existing, excluded 0 PDF(s). Downloaded 0 HTML file(s).
-
-
-# Future task
-In some cases it seems to make a difference wheater or not pymupdf is included in the command below: 
-uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
-Could I please get a warning if I forget to include pymupdf, and why it is needed.

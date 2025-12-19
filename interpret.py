@@ -179,6 +179,11 @@ def looks_like_person_name(text: str) -> bool:
     return capitalized >= 2
 
 
+def should_skip_numeric_line(raw: str) -> bool:
+    """Filter out alphanumeric codes/dates that shouldn't be treated as prices or volumes."""
+    return looks_like_alphanumeric_code(raw) or is_date_like(raw)
+
+
 def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
     """Prefer the name inside the person-subject section; fall back to the last seen name."""
     in_subject_block = False
@@ -286,7 +291,21 @@ def extract_narrative_name_from_text(text: str) -> str:
     """Extract a person name from narrative sentences like '..., Lars Kristensen has on 8 December ...'."""
     m = re.search(r",\s*([^,\n]+?)\s+has on\s+\d", text)
     if not m:
-        return ""
+        owned_match = re.search(r"owned by\s+([^\n,.]+)", text, flags=re.IGNORECASE)
+        if not owned_match:
+            return ""
+        owned_value = owned_match.group(1).strip()
+        tokens = owned_value.replace("\r", " ").split()
+        name_tokens: List[str] = []
+        saw_capitalized = False
+        for token in tokens:
+            if not saw_capitalized and not token[:1].isupper():
+                continue
+            saw_capitalized = True
+            name_tokens.append(token)
+            if len(name_tokens) >= 5:
+                break
+        return " ".join(name_tokens).strip(",.; ")
     return m.group(1).strip()
 
 
@@ -549,23 +568,60 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
 
     price_raw: str | None = None
     volume_raw: str | None = None
-    if price_indices:
+    if price_indices and volume_indices:
+        start_idx = min(price_indices[0], volume_indices[0])
+        numeric_lines: List[str] = []
+        for raw, _norm in lines[start_idx + 1 :]:
+            if not re.search(r"\d", raw):
+                continue
+            if should_skip_numeric_line(raw):
+                continue
+            numeric_lines.append(raw)
+            if len(numeric_lines) >= 3:
+                break
+        if numeric_lines:
+            price_raw = numeric_lines[0]
+            if len(numeric_lines) >= 2:
+                volume_raw = numeric_lines[1]
+
+    if price_raw is None and price_indices:
         for idx in price_indices:
             for raw, _norm in lines[idx + 1 :]:
-                if re.search(r"\d", raw):
-                    price_raw = raw
-                    break
+                if not re.search(r"\d", raw):
+                    continue
+                if should_skip_numeric_line(raw):
+                    continue
+                price_raw = raw
+                break
             if price_raw:
                 break
 
-    if volume_indices:
+    if volume_raw is None and volume_indices:
         for idx in volume_indices:
             for raw, _norm in lines[idx + 1 :]:
-                if re.search(r"\d", raw):
-                    volume_raw = raw
-                    break
+                if not re.search(r"\d", raw):
+                    continue
+                if should_skip_numeric_line(raw):
+                    continue
+                volume_raw = raw
+                break
             if volume_raw:
                 break
+
+    if price_raw and volume_raw and price_raw == volume_raw:
+        started = False
+        for raw, _norm in lines:
+            if raw == price_raw and not started:
+                started = True
+                continue
+            if not started:
+                continue
+            if not re.search(r"\d", raw):
+                continue
+            if should_skip_numeric_line(raw):
+                continue
+            volume_raw = raw
+            break
 
     if price_raw and volume_raw:
         transactions.append((volume_raw, price_raw))
@@ -609,9 +665,6 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
     has_pris = any("pris" in norm for _raw, norm in lines)
     has_maengde = any(("maengde" in norm) or ("mngde" in norm) for _raw, norm in lines)
     if has_pris and has_maengde:
-        def should_skip_numeric_line(raw: str) -> bool:
-            return looks_like_alphanumeric_code(raw) or is_date_like(raw)
-
         def first_numeric_after(idx: int | None) -> str | None:
             if idx is None:
                 return None
@@ -767,8 +820,13 @@ def determine_side_from_text(nature: str, normalized_text: str) -> str:
 
 
 def parse_insider_file(text: str, path: Path) -> List[dict]:
-    lines = build_lines(text)
     normalized_text = normalize_text_for_search(text)
+    if path.stem.endswith("_portfolio") or (
+        "pdf portfolio" in normalized_text and "best experience" in normalized_text
+    ):
+        logging.info("Skipping portfolio placeholder %s", path.name)
+        return []
+    lines = build_lines(text)
     company = extract_company(lines, path)
     name = extract_name(lines)
     if not name:
