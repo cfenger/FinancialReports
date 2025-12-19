@@ -1,12 +1,12 @@
 # Insider trades
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv insider/nasdaq_news_cli.csv
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
-uv run python interpret.py --task insider --output insider/insider_summary.csv --collect
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output insider/insider_summary.csv --collect --input insider/
 
 #Create test insider
-uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-12-01 --limit 500
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input test/insider/nasdaq_news_cli.csv --to-text
-uv run python interpret.py --task insider --output test/insider/insider_summary.csv --collect
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-12-01 --from-date 2025-12-18 --limit 500
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input test/insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output test/insider/insider_summary.csv --collect --input-dir ./test/insider/nasdaq_news_cli
 
 # Spin-off
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv spinoff/nasdaq_news_cli.csv
@@ -17,13 +17,58 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 # Make test
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 1000 --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-11-01 --to-date 2025-12-17
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input test/insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output test/insider/insider_summary.csv --collect --input test/insider/nasdaq_news_cli/
+
+
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 10 --out-csv insider/nasdaq_news_cli.csv
 uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
-
-
-uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
-
-uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 10 --out-csv insider/nasdaq_news_cli.csv --company "AL Sydbank A/S"
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
 uv run python interpret.py --task insider --output insider/insider_summary.csv --collect
 
 
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv insider/nasdaq_news_cli.csv --from-date 2025-12-01 --company "AL Sydbank A/S"
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv 
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+
+Regarding this command:
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+
+Why does this file not contain any numbers?
+insider/nasdaq_news_cli/AL_Sydbank_AS_Ledende_medarbejderes_transaktioner_a84ccd28f36945890697427b1445dc986.txt
+
+I thought something extra was installed such that numbers could also be extracted from the pdf file:
+insider/nasdaq_news_cli/AL_Sydbank_AS_Ledende_medarbejderes_transaktioner_a84ccd28f36945890697427b1445dc986.pdf
+
+
+I want downloadpdf.py changed such that in the very end of the text files (using --to-text) then the link given in messageUrl is written
+
+
+
+This text file should not result in a lineseems correct but the numbers which interpret.py extract seem incorrect
+
+G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0.txt
+
+
+
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv insider/nasdaq_news_cli.csv --from-date 2025-12-01 --company "Asetek A/S"
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output insider/insider_summary.csv --collect --input insider/nasdaq_news_cli/
+
+
+I only see two normal pdf files linked directly on this page:
+https://view.news.eu.nasdaq.com/view?id=b8bb598011cb81ea9e9ac58056d2b5e9f&lang=en&src=listed
+
+But when I download like below I get a pdf file with the text "For the best experience, open this PDF portfolio in 
+Acrobat X or Adobe Reader X, or later."
+
+G:\My Drive\FinancialReports>uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv
+Fetching page: https://view.news.eu.nasdaq.com/view?id=b8bb598011cb81ea9e9ac58056d2b5e9f&lang=en&src=listed
+Downloaded: insider\nasdaq_news_cli\Asetek_AS_Ledende_medarbejderes_transaktioner_a2086849940c5a27f051efd1ea6161ce3.pdf (from https://attachment.news.eu.nasdaq.com/a2086849940c5a27f051efd1ea6161ce3)
+Downloaded: insider\nasdaq_news_cli\Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0.pdf (from https://attachment.news.eu.nasdaq.com/abc543fd3e78e7b72be2998ed02aea5e0)
+Summary: Download 2, failed 0, skipped 0 existing, excluded 0 PDF(s). Downloaded 0 HTML file(s).
+
+
+# Future task
+In some cases it seems to make a difference wheater or not pymupdf is included in the command below: 
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+Could I please get a warning if I forget to include pymupdf, and why it is needed.
