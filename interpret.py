@@ -38,6 +38,7 @@ BUY_KEYWORDS = (
     "acceptance",
     "anskaffelse",
     "kob",
+    "kb",
     "erhvervelse",
     "merkinta",
 )
@@ -128,6 +129,25 @@ def value_after_colon(line: str) -> str:
     return line.split(":", 1)[1].strip()
 
 
+def looks_like_alphanumeric_code(value: str) -> bool:
+    """Heuristic for LEI/ISIN/reference-like tokens (letters+digits, no separators)."""
+    compact = re.sub(r"\s+", "", value)
+    if len(compact) < 8:
+        return False
+    has_letters = re.search(r"[A-Za-z]", compact) is not None
+    has_digits = re.search(r"\d", compact) is not None
+    if not (has_letters and has_digits):
+        return False
+    return re.search(r"[.,]", compact) is None
+
+
+def is_date_like(value: str) -> bool:
+    return bool(
+        re.search(r"\b\d{4}-\d{2}-\d{2}\b", value)
+        or re.search(r"\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b", value)
+    )
+
+
 def parse_company_from_filename(name: str) -> str:
     """Best-effort company inference from the filename."""
     stem = Path(name).stem
@@ -146,6 +166,17 @@ def extract_company(lines: Sequence[Tuple[str, str]], filename: Path) -> str:
             if candidate:
                 return candidate
     return parse_company_from_filename(filename.name)
+
+
+def looks_like_person_name(text: str) -> bool:
+    words = [w for w in text.replace(",", " ").split() if w]
+    if len(words) < 2 or len(words) > 6:
+        return False
+    alpha_words = [w for w in words if re.search(r"[A-Za-z]", w)]
+    if len(alpha_words) < 2:
+        return False
+    capitalized = sum(1 for w in alpha_words if w[0].isupper())
+    return capitalized >= 2
 
 
 def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
@@ -190,11 +221,15 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
             words = text.split()
             if len(words) < 2 or len(words) > 6:
                 continue
-            return text
+            if looks_like_person_name(text):
+                return text
+            if not candidate:
+                candidate = text
 
     # Fallback for Nordic-style "Nafn/Navn" heading followed by the name.
     for idx, (_raw, norm) in enumerate(lines):
         if "nafn" in norm or "navn" in norm:
+            best_candidate = ""
             for raw2, _norm2 in lines[idx + 1 :]:
                 text = raw2.strip()
                 if not text or ":" in text:
@@ -217,10 +252,13 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
                     )
                 ):
                     continue
-                candidate = text
-                break
-            if candidate:
-                return candidate
+                if looks_like_person_name(text):
+                    best_candidate = text
+                    break
+                if not best_candidate:
+                    best_candidate = text
+            if best_candidate:
+                return best_candidate
 
     # Fallback for ESMA-style templates without explicit "Name:" lines.
     person_idx: int | None = None
@@ -304,6 +342,27 @@ def extract_reference_number(raw_text: str) -> str:
 
 
 def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
+    def is_section_label(text: str) -> bool:
+        return bool(re.fullmatch(r"[a-z]\)", normalize_line(text)))
+
+    def is_label_line(norm: str) -> bool:
+        return (
+            ("price(s)" in norm and "volume(s)" not in norm)
+            or ("volume(s)" in norm and "price(s)" not in norm)
+            or ("pris" in norm and ("maengde" in norm or "mngde" in norm))
+            or norm.startswith("mngde")
+            or norm.startswith("pris")
+            or norm.startswith("prise")
+            or "aggregerede oplysninger" in norm
+            or "aggregated information" in norm
+            or "aggregeret maengde" in norm
+            or "aggregeret mngde" in norm
+            or "dato for transaktionen" in norm
+            or "transaction date" in norm
+            or "sted for transaktionen" in norm
+            or "place of transaction" in norm
+        )
+
     # Primary: value on the same line as the label.
     for raw, norm in lines:
         if (
@@ -331,25 +390,30 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
     if nature_start is not None:
         candidates: List[str] = []
         for raw, norm in lines[nature_start + 1 :]:
-            # Stop when reaching the separate Price(s) / Volume(s) headings.
-            if ("price(s)" in norm and "volume(s)" not in norm) or ("volume(s)" in norm and "price(s)" not in norm):
-                break
-            # Stop when reaching Danish-style price/quantity headings.
-            if ("pris" in norm and ("maengde" in norm or "mngde" in norm)) or norm.startswith("mngde") or norm.startswith("pris") or norm.startswith("prise"):
-                break
             text = raw.strip()
             if not text or text.endswith(":"):
                 continue
+            if is_section_label(text):
+                continue
+            if is_label_line(norm):
+                continue
+            if looks_like_alphanumeric_code(text):
+                continue
+            if not re.search(r"[A-Za-z]", text):
+                # If we've already seen a descriptive line, stop when hitting the numeric block.
+                if candidates and re.search(r"\d", text):
+                    break
+                continue
             candidates.append(text)
         if candidates:
-            # Nature is typically the most descriptive (longest) line before the price/volume block.
-            return max(candidates, key=len)
+            # Prefer the last descriptive line before the numeric block.
+            return candidates[-1]
         # Some Danish templates list field labels first and values later. In that case,
         # look ahead for the first descriptive line after "Transaktionens art".
         if "transaktionens art" in lines[nature_start][1]:
             for raw, norm in lines[nature_start + 1 : nature_start + 25]:
-                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
-                    break
+                if is_label_line(norm):
+                    continue
                 if any(
                     token in norm
                     for token in (
@@ -366,9 +430,11 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
                 text = raw.strip()
                 if not text or text.endswith(":"):
                     continue
+                if is_section_label(text):
+                    continue
                 if not re.search(r"[A-Za-z]", text):
                     continue
-                if re.search(r"\b[A-Z]{2}\d{6,}\b", text):
+                if re.search(r"\b[A-Z]{2}\d{6,}\b", text) or looks_like_alphanumeric_code(text):
                     continue
                 return text
 
@@ -543,9 +609,16 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
     has_pris = any("pris" in norm for _raw, norm in lines)
     has_maengde = any(("maengde" in norm) or ("mngde" in norm) for _raw, norm in lines)
     if has_pris and has_maengde:
-        def first_numeric_after(idx: int) -> str | None:
+        def should_skip_numeric_line(raw: str) -> bool:
+            return looks_like_alphanumeric_code(raw) or is_date_like(raw)
+
+        def first_numeric_after(idx: int | None) -> str | None:
+            if idx is None:
+                return None
             for raw, _norm in lines[idx + 1 :]:
                 if re.search(r"\d", raw):
+                    if should_skip_numeric_line(raw):
+                        continue
                     return raw
             return None
 
@@ -604,11 +677,9 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
             numeric_lines: List[str] = []
             scan_start = max(price_header_idx, volume_header_idx) + 1
             for raw, norm in lines[scan_start:]:
-                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
-                    break
-                if "transaktionsdato" in norm or "transaction date" in norm:
-                    break
                 if re.search(r"\d", raw):
+                    if should_skip_numeric_line(raw):
+                        continue
                     split = split_price_volume_from_line(raw)
                     if split:
                         price_raw, volume_raw = split
@@ -640,11 +711,9 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
         if combined_idx is not None:
             numeric_lines: List[str] = []
             for raw, norm in lines[combined_idx + 1 :]:
-                if "aggregerede oplysninger" in norm or "aggregated information" in norm:
-                    break
-                if "transaktionsdato" in norm or "transaction date" in norm:
-                    break
                 if re.search(r"\d", raw):
+                    if should_skip_numeric_line(raw):
+                        continue
                     numeric_lines.append(raw)
                 if len(numeric_lines) >= 2:
                     break
