@@ -664,6 +664,7 @@ def main() -> int:
 
     start = 0
     while len(filtered_items) < max_results:
+        before_len = len(filtered_items)
         remaining = max_results - len(filtered_items)
         q.limit = min(page_size, remaining)
         q.start = start
@@ -673,7 +674,8 @@ def main() -> int:
         if not items:
             break
 
-        new_in_page = 0
+        unique_in_page = 0
+        min_dt_in_page = None
         for it in items:
             key = str(it.get("disclosureId") or it.get("messageUrl") or "")
             if not key:
@@ -681,15 +683,19 @@ def main() -> int:
             if key in seen_keys:
                 continue
             seen_keys.add(key)
-            new_in_page += 1
 
+            unique_in_page += 1
+
+            parsed_dt = None
             if from_dt or to_dt:
-                dt = _parse_item_datetime(it.get("published") or it.get("releaseTime") or "")
-                if dt is None:
+                parsed_dt = _parse_item_datetime(it.get("published") or it.get("releaseTime") or "")
+                if parsed_dt is None:
                     continue
-                if from_dt and dt < from_dt:
+                if min_dt_in_page is None or parsed_dt < min_dt_in_page:
+                    min_dt_in_page = parsed_dt
+                if from_dt and parsed_dt < from_dt:
                     continue
-                if to_dt and dt > to_dt:
+                if to_dt and parsed_dt > to_dt:
                     continue
 
             if excluded_patterns:
@@ -702,7 +708,16 @@ def main() -> int:
                 break
 
         start += len(items)
-        if new_in_page == 0:
+        if unique_in_page == 0:
+            break
+        if (
+            from_dt
+            and args.dir.upper() == "DESC"
+            and min_dt_in_page is not None
+            and min_dt_in_page < from_dt
+            and len(filtered_items) == before_len
+        ):
+            # Items are strictly older than from-date; descending order means we are past the window.
             break
         if len(filtered_items) < max_results:
             time.sleep(args.sleep)

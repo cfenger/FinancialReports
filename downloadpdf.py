@@ -22,7 +22,7 @@ Given an input like `results.csv`, this will:
 
 uv run --with requests python downloadpdf.py --input results.csv
 
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider.csv --to-text
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider.csv --to-text
 """
 
 import argparse
@@ -77,7 +77,7 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument(
         "--to-text",
         action="store_true",
-        help="Save extracted text (.txt) instead of PDFs/HTML (uses pdfminer.six for PDFs and BeautifulSoup for HTML).",
+        help="Save extracted text (.txt) instead of PDFs/HTML (uses PyMuPDF when available, otherwise pdfminer.six; BeautifulSoup for HTML).",
     )
     return ap.parse_args()
 
@@ -209,12 +209,81 @@ def save_pdf_bytes_as_text(pdf_bytes: bytes, dest: Path) -> bool:
     """
     dest.parent.mkdir(parents=True, exist_ok=True)
     try:
-        text = pdf_extract_text(BytesIO(pdf_bytes))
+        text: Optional[str] = None
+
+        def _extract_with_pymupdf() -> str:
+            import fitz  # PyMuPDF
+
+            doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+            try:
+                page_texts: List[str] = []
+                form_values: List[str] = []
+
+                for page in doc:
+                    page_text = page.get_text("text") or ""
+                    if page_text:
+                        page_texts.append(page_text)
+
+                    try:
+                        widgets = page.widgets() or []
+                    except Exception:
+                        widgets = []
+
+                    for widget in widgets:
+                        value = getattr(widget, "field_value", None)
+                        if value is None:
+                            continue
+                        if isinstance(value, bytes):
+                            try:
+                                value = value.decode("utf-8", errors="ignore")
+                            except Exception:
+                                value = value.decode(errors="ignore")
+                        else:
+                            value = str(value)
+                        value = value.strip()
+                        if not value:
+                            continue
+                        form_values.append(value)
+
+                combined = "\n\n".join(page_texts).strip()
+                normalized = combined.replace("\r\n", "\n").replace("\r", "\n")
+                if form_values:
+                    deduped: List[str] = []
+                    seen_values = set()
+                    for val in form_values:
+                        if val in seen_values:
+                            continue
+                        seen_values.add(val)
+                        if normalized and val in normalized:
+                            continue
+                        deduped.append(val)
+                    if deduped:
+                        form_section = "FORM_FIELDS:\n" + "\n".join(deduped)
+                        if normalized:
+                            normalized = f"{normalized}\n\n{form_section}"
+                        else:
+                            normalized = form_section
+                return normalized
+            finally:
+                doc.close()
+
+        try:
+            text = _extract_with_pymupdf()
+        except ImportError:
+            text = None
+        except Exception as exc:
+            print(f"PyMuPDF text extraction failed, falling back to pdfminer: {exc}")
+            text = None
+
+        if not text:
+            text = pdf_extract_text(BytesIO(pdf_bytes))
         if not text or not text.strip():
             print(f"No text extracted from PDF; skipping save: {dest}")
             return False
+
+        normalized_text = text.replace("\r\n", "\n").replace("\r", "\n")
         with dest.open("w", encoding="utf-8") as f:
-            f.write(text)
+            f.write(normalized_text)
         return True
     except Exception as exc:
         print(f"ERROR extracting PDF text to {dest}: {exc}")

@@ -3,6 +3,10 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
 uv run python interpret.py --task insider --output insider/insider_summary.csv --collect
 
+#Create test insider
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-12-01 --limit 500
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input test/insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output test/insider/insider_summary.csv --collect
 
 # Spin-off
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv spinoff/nasdaq_news_cli.csv
@@ -10,5 +14,16 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 #Rights
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv rights/nasdaq_news_cli.csv
+
+# Make test
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 1000 --out-csv test/insider/nasdaq_news_cli.csv --from-date 2025-11-01 --to-date 2025-12-17
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+
+
+uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+
+uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 10 --out-csv insider/nasdaq_news_cli.csv --company "AL Sydbank A/S"
+uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
+uv run python interpret.py --task insider --output insider/insider_summary.csv --collect
 
 
