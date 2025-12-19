@@ -14,6 +14,7 @@ import argparse
 import csv
 import logging
 import re
+import sys
 import unicodedata
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -785,8 +786,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("insider_summary.csv"),
-        help="Path to the CSV file to write.",
+        default=None,
+        help="Path to the CSV file to write (omit to print to stdout).",
     )
     parser.add_argument(
         "--collect",
@@ -993,11 +994,17 @@ def _collect_rows(rows: List[dict]) -> List[dict]:
     return result
 
 
-def run_insider_task(input_dir: Path, output_csv: Path, collect: bool = False) -> int:
+def _resolve_input_files(input_path: Path) -> List[Path]:
+    if input_path.is_file():
+        return [input_path]
+    return sorted(input_path.rglob("*.txt"))
+
+
+def run_insider_task(input_dir: Path, output_csv: Path | None, collect: bool = False) -> int:
     if not input_dir.exists():
         logging.error("Input directory does not exist: %s", input_dir)
         return 1
-    txt_files = sorted(input_dir.rglob("*.txt"))
+    txt_files = _resolve_input_files(input_dir)
     if not txt_files:
         logging.warning("No .txt files found in %s", input_dir)
 
@@ -1015,15 +1022,20 @@ def run_insider_task(input_dir: Path, output_csv: Path, collect: bool = False) -
     if collect:
         rows = _collect_rows(rows)
 
-    try:
-        output_csv.parent.mkdir(parents=True, exist_ok=True)
-        with output_csv.open("w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
-            writer.writeheader()
-            writer.writerows(rows)
-    except OSError as exc:
-        logging.error("Failed to write CSV %s: %s", output_csv, exc)
-        return 1
+    if output_csv is None:
+        writer = csv.DictWriter(sys.stdout, fieldnames=FIELDNAMES, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+    else:
+        try:
+            output_csv.parent.mkdir(parents=True, exist_ok=True)
+            with output_csv.open("w", encoding="utf-8", newline="") as f:
+                writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
+                writer.writeheader()
+                writer.writerows(rows)
+        except OSError as exc:
+            logging.error("Failed to write CSV %s: %s", output_csv, exc)
+            return 1
     return 0
 
 
