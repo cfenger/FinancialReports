@@ -32,6 +32,8 @@ BUY_KEYWORDS = (
     "acquisition",
     "purchase",
     "buy",
+    "tildeling",
+    "grant",
     "receipt",
     "subscription",
     "incentive",
@@ -362,7 +364,11 @@ def extract_reference_number(raw_text: str) -> str:
 
 def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
     def is_section_label(text: str) -> bool:
-        return bool(re.fullmatch(r"[a-z]\)", normalize_line(text)))
+        norm = normalize_line(text)
+        return bool(
+            re.fullmatch(r"[a-z][).]?", norm)
+            or re.fullmatch(r"[ivxlcdm]+\.", norm)
+        )
 
     def is_label_line(norm: str) -> bool:
         return (
@@ -412,7 +418,10 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             text = raw.strip()
             if not text or text.endswith(":"):
                 continue
-            if is_section_label(text):
+            section_label = is_section_label(text)
+            if section_label and candidates:
+                break
+            if section_label:
                 continue
             if is_label_line(norm):
                 continue

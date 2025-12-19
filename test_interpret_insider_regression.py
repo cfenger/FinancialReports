@@ -12,6 +12,7 @@ from interpret import (
     build_lines,
     determine_side_from_text,
     extract_narrative_name_from_text,
+    extract_nature,
     extract_transactions,
     normalize_text_for_search,
     parse_insider_file,
@@ -146,6 +147,25 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
             "Lars Kristensen",
             "Should pick the natural person even when the notice names an owning entity",
         )
+
+    def test_nature_skips_section_labels_and_sets_side(self):
+        sample = "\n".join(
+            [
+                "b.",
+                "Transaktionens art",
+                "Tildeling af aktier som aktieløn",
+                "c.",
+                "Pris(er)",
+                "Mængde(r)",
+                "DKK 18,37",
+                "7.846 aktier",
+            ]
+        )
+        lines = build_lines(sample)
+        nature = extract_nature(lines)
+        self.assertEqual(nature, "Tildeling af aktier som aktieløn")
+        side = determine_side_from_text(nature, normalize_text_for_search(sample))
+        self.assertEqual(side, "buy")
 
     def test_price_volume_after_headers_skip_lei(self):
         sample = "\n".join(
