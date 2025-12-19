@@ -475,6 +475,27 @@ def handle_pdf_bytes(pdf_bytes: bytes, dest: Path, to_text: bool,
     return saved
 
 
+def warn_if_pymupdf_missing(to_text: bool) -> None:
+    """
+    Print a one-time reminder that PyMuPDF is needed for embedded PDFs and form fields.
+    """
+    if not to_text:
+        return
+    if getattr(warn_if_pymupdf_missing, "_shown", False):
+        return
+    warn_if_pymupdf_missing._shown = True  # type: ignore[attr-defined]
+    try:
+        import fitz  # type: ignore  # noqa: F401
+        return
+    except Exception:
+        pass
+    print(
+        "PyMuPDF is not installed; embedded PDFs (PDF portfolios) and AcroForm field values "
+        "cannot be extracted. Rerun with: uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf "
+        "python downloadpdf.py --input <file> --to-text"
+    )
+
+
 def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                 allow_external: bool, to_text: bool) -> None:
     downloaded_any = False
@@ -716,6 +737,8 @@ def main() -> int:
     if not input_csv.is_file():
         print(f"Input CSV not found: {input_csv}")
         return 1
+
+    warn_if_pymupdf_missing(args.to_text)
 
     # Directory named after CSV stem, e.g. results.csv -> results/
     output_dir = input_csv.with_suffix("")
