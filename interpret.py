@@ -839,6 +839,39 @@ def determine_side_from_text(nature: str, normalized_text: str) -> str:
     return ""
 
 
+def _mentions_attached_transaction_details(normalized_text: str) -> bool:
+    """Return True when a notice clearly points to an attached PDF/form for details."""
+    if not normalized_text:
+        return False
+
+    # English phrasing commonly used on Nasdaq announcements.
+    if (
+        "attached document discloses the data of the transactions" in normalized_text
+        or "see attachment" in normalized_text
+        or "see attached" in normalized_text
+        or "attached transaction" in normalized_text
+        or "attached transactions" in normalized_text
+        or "enclosed table" in normalized_text
+        or "enclosed form" in normalized_text
+        or "enclosed schedule" in normalized_text
+    ):
+        return True
+
+    # Danish/Norwegian phrasing ("vedhæftet"/"vedlagt"), often with a hint about what is attached.
+    if "se vedh" in normalized_text:
+        return True
+    if "vedlagt" in normalized_text or "vedlagte" in normalized_text:
+        return True
+    if "vedh" in normalized_text and any(token in normalized_text for token in ("skema", "bilag", "pdf", "dokument", "document", "fil")):
+        return True
+
+    # Swedish phrasing ("see appendix").
+    if "se bilaga" in normalized_text:
+        return True
+
+    return False
+
+
 def parse_insider_file(text: str, path: Path) -> List[dict]:
     normalized_text = normalize_text_for_search(text)
     if path.stem.endswith("_portfolio") or (
@@ -861,18 +894,11 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
 
     rows: List[dict] = []
     if not transactions:
-        attachment_only = "attached document discloses the data of the transactions" in normalized_text
-        if attachment_only:
+        if _mentions_attached_transaction_details(normalized_text):
             logging.warning(
-                "Skipping %s: transaction details live only in the attached PDF.", path.name
+                "Skipping %s: transaction details live only in an attached PDF/form.",
+                path.name,
             )
-            return []
-        if (
-            ("henvises til vedh" in normalized_text and "skema" in normalized_text)
-            or "see attached form" in normalized_text
-            or "see attached schedule" in normalized_text
-        ):
-            logging.warning("Skipping %s: no transaction details (attached form).", path.name)
             return []
         logging.warning("No transactions parsed from %s", path.name)
         rows.append(

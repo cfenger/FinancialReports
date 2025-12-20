@@ -15,23 +15,21 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-03,Alisa Pankki Oyj,Sampsa Laine,453365,0.1988966241328730713663383808,90172.768,buy,ACQUISITION,Alisa_Bank_Plc_Ledende_medarbejderes_transaktioner_view_idb6c96c865b7dd91e85585ef9e82b32cd3langensrclisted.txt
 2025-11-04,Alisa Pankki Oyj,Karri Haaparinne,262433,0.1889284255409952254480191134,49581.0535,buy,ACQUISITION,Alisa_Bank_Plc_Ledende_medarbejderes_transaktioner_view_idb88d2247a99c777c31df775959019a6cblangensrclisted.txt
 2025-11-03,Alisa Pankki Oyj,Joonas Heinonen,400000,0.2,80000,buy,ACQUISITION,Alisa_Bank_Plc_Ledende_medarbejderes_transaktioner_view_idbfbefc10bb3d102bf6f50c9201c2ba974langensrclisted.txt
-2025-11-04,Alm Brand AS,Andreas Ruben Madsen,7846,18.37,144131.02,,e.,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a5568d0d278852104fabe696f0157a8d0.txt
-2025-11-04,Alm Brand AS,Rasmus Werner Nielsen,16849,18.37,309516.13,,e.,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a56f0fccbc5bbcd9a278b5d8faa815eb2.txt
-2025-12-02,Alm Brand AS,Rasmus Werner Nielsen,33879,17.9,606434.1,,e.,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a884538e1f892675f643a4c5c94d154af.txt
-2025-12-02,Alm Brand AS,Andreas Ruben Madsen,20704,17.9,370601.6,,e.,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a97e359871bca74dde03d864473a48369.txt
+2025-11-04,Alm Brand AS,Andreas Ruben Madsen,7846,18.37,144131.02,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a5568d0d278852104fabe696f0157a8d0.txt
+2025-11-04,Alm Brand AS,Rasmus Werner Nielsen,16849,18.37,309516.13,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a56f0fccbc5bbcd9a278b5d8faa815eb2.txt
+2025-12-02,Alm Brand AS,Rasmus Werner Nielsen,33879,17.9,606434.1,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a884538e1f892675f643a4c5c94d154af.txt
+2025-12-02,Alm Brand AS,Andreas Ruben Madsen,20704,17.9,370601.6,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a97e359871bca74dde03d864473a48369.txt
 2025-12-16,Alma Media Oyj,Elina Kukkonen,3500,12.95,45325,sell,DISPOSAL,Alma_Media_Ledende_medarbejderes_transaktioner_view_idb008a8250776d09675e18ba951b72a017langensrclisted.txt
-2025-11-07,Ambu AS,,,,,buy,,Ambu_AS_Ledende_medarbejderes_transaktioner_a072c1bd8fdc8d51318df641dca02ee65.txt
-2025-11-10,Ambu AS,,,,,buy,,Ambu_AS_Ledende_medarbejderes_transaktioner_a3d7a69929b101ff656b57d489ca4ed34.txt
 2025-12-08,Asetek AS,Lars Kristensen,2141911,1.6,3427057.6,buy,"purchased 2,141,911 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a19be710169f568a4450c9a1e551a6b7d.txt
 2025-12-03,Asetek AS,Lars Kristensen,2483586,1.6,3973737.6,buy,"purchased 2,483,586 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a2086849940c5a27f051efd1ea6161ce3.txt
-2025-12-03,Asetek AS,Lars Kristensen,56999,1.59999972,91198.38404028,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_03122025.txt
-2025-11-25,Asetek AS,,51966,1.59,82625.94,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
-2025-11-25,Asetek AS,Lars Kristensen,5780328,1.59769405,9235195.6526484,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_25112025.txt
-2025-11-26,Asetek AS,Lars Kristensen,4554822,1.59756928,7276643.70306816,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_26112025.txt
-2025-11-27,Asetek AS,Lars Kristensen,5445000,1.59990829,8711500.63905,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_27112025.txt
-2025-11-28,Asetek AS,Lars Kristensen,2704024,1.59987909,4326111.45645816,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_a9c69fce7f770ede280d6423b2a379193.txt
-2025-12-04,Asetek AS,Lars Kristensen,26587,1.6,42539.2,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_04122025.txt
-2025-12-05,Asetek AS,Lars Kristensen,2400000,1.6,3840000,buy,Purchase,Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_05122025.txt
+2025-12-03,Asetek AS,Lars Kristensen,56999,1.59999972,91198.38404028,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_03122025.txt
+2025-11-25,Asetek AS,,51966,1.59,82625.94,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+2025-11-25,Asetek AS,Lars Kristensen,5780328,1.59769405,9235195.6526484,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_25112025.txt
+2025-11-26,Asetek AS,Lars Kristensen,4554822,1.59756928,7276643.70306816,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_26112025.txt
+2025-11-27,Asetek AS,Lars Kristensen,5445000,1.59990829,8711500.63905,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_27112025.txt
+2025-11-28,Asetek AS,Lars Kristensen,2704024,1.59987909,4326111.45645816,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a9c69fce7f770ede280d6423b2a379193.txt
+2025-12-04,Asetek AS,Lars Kristensen,26587,1.6,42539.2,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_04122025.txt
+2025-12-05,Asetek AS,Lars Kristensen,2400000,1.6,3840000,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_05122025.txt
 2025-11-28,Asetek AS,Board of Directors of Asetek,2704024,1.6,4326438.4,buy,"Lars Kristensen has 28 November 2025 purchased 2,704,024 shares in the open market at an",Asetek_AS_Ledende_medarbejderes_transaktioner_adad63c5b542261dcb316fe83731d3a32.txt
 2025-11-25,Asetek AS,Jakob Alsted Have,303734,1.58,479899.72,buy,"November 2025 purchased 303,734 shares in the open market at an average price of DKK 1.58",Asetek_AS_Ledende_medarbejderes_transaktioner_af23455689b0554d415ee8a5d90e05688.txt
 2025-11-06,Aspo Oyj,Rolf Jansson,10275,6.812107055961070559610705596,69994.4,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb1cc3242abff439874ab6918629642d31langensrclisted.txt
@@ -49,14 +47,12 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Aspocomp Group Oyj,Mitri Mattila,2,5.2,10.4,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbcad878190ec9fb1b444e1a905bf67d85langensrclisted.txt
 2025-12-08,Aspocomp Group Oyj,Terhi Launis,1000,5.14936,5149.36,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbd089d2f0e88bc3102a2dc8e182c0a492langensrclisted.txt
 2025-11-18,Aspocomp Group Oyj,Terhi Launis,3008,5.2544,15805.2352,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe887ebd3fee001e03f0d74aa821099d6langensrclisted.txt
-2025-11-10,AstraZeneca PLC,,136537,0,,sell,Price(s) and volume(s),AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a15113af1a69c629443a8da1616677a4f.txt
-2025-11-14,AstraZeneca PLC,,15000,88.6345,1329517.5,sell,Price(s) and volume(s),AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a7e78c5694d5aa112e0c1ed306c0b054a.txt
-2025-11-20,BactiQuant AS,,,,,,,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a24a85b8255dadb1e16cab1af5caadba2.txt
+2025-11-10,AstraZeneca PLC,,136537,0,,sell,Gift of shares to family members for nil consideration,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a15113af1a69c629443a8da1616677a4f.txt
+2025-11-14,AstraZeneca PLC,,15000,88.6345,1329517.5,sell,Sale of AstraZeneca PLC American Depositary Shares,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a7e78c5694d5aa112e0c1ed306c0b054a.txt
 ,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
 ,BactiQuant AS,HSK Management og Rådgivning ApS,250000,2,500000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5f26a22079eb70b2cc240b59a82d3caf.txt
 ,BactiQuant AS,MVA og CO Aps,3000000,2,6000000,,Rettet emission tegning af nye aktier,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
-2025-12-16,Better Collective AS,,,,,buy,,Better_Collective_AS_Ledende_medarbejderes_transaktioner_a8922cd0b11e0b4441b524e687c6a7f35.txt
-2025-12-16,Better Collective AS,c) Volumne(s),,,,,DKK 0,Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt
+2025-12-16,Better Collective AS,c) Volumne(s),,,,buy,DKK 0,Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt
 2025-11-12,BEWI ASA,RESPONSIBILITIES AND RELATED PARTIES,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
 2025-11-17,BEWI ASA,,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_view_idb737b794c6fa41dd288577819788a516flangensrclisted.txt
 2025-12-03,Biohit Oyj,Liu Feng,200000,3,600000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb39b6b1eb5fc3b1fbb93077bc0bf034edlangensrclisted.txt
@@ -65,9 +61,9 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-03,Biohit Oyj,Osmo Suovaniemi,200000,3,600000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb9007e82d453b5ec53df12fbf8cdfa298langensrclisted.txt
 2025-11-05,Biohit Oyj,Liu Feng,500000,2.77,1385000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idbcd4c5b12df3395e446cd73e306be29b6langensrclisted.txt
 2025-11-28,Biohit Oyj,Liu Feng,800000,3,2400000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idbce2863f8de1ea3057ba9af7becb05553langensrclisted.txt
-2025-11-24,BioPorto AS,Jens Due Olsen,1072,1072,1149184,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b57faf9b3f5e85f00c05d873d61326b82&lang=da&src=listed,BioPorto_AS_Ledende_medarbejderes_transaktioner_a9b6544bbcfcc70be3f802f9e099f0458.txt
+2025-11-24,BioPorto AS,Jens Due Olsen,1072,1072,1149184,buy,emission,BioPorto_AS_Ledende_medarbejderes_transaktioner_a9b6544bbcfcc70be3f802f9e099f0458.txt
 2025-11-07,ChemoMetec,Martin Helbo Behrens,1467,684,1003428,buy,Køb,ChemoMetec_Ledende_medarbejderes_transaktioner_a762cf23bd4ec58f1c2bf7b42e31b3525.txt
-2025-11-07,ChemoMetec,,350,704,246400,buy,Purchase,ChemoMetec_Ledende_medarbejderes_transaktioner_aabd100f076cea8552812722db2d37585.txt
+2025-11-07,ChemoMetec,,350,704,246400,buy,Price(s) and volume(s),ChemoMetec_Ledende_medarbejderes_transaktioner_aabd100f076cea8552812722db2d37585.txt
 2025-12-04,Citycon Oyj,Chaim Katzman,4326,3.985556403143781784558483588,17241.517,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb019acfeff5bc82a5a2e836f77d7a9d12langfisrclisted.txt
 2025-11-03,Citycon Oyj,Chaim Katzman,14202103,3.999858816683698181881936781,56806406.9,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb15f303ea43fa4e032fb3b1a1ed1372dflangensrclisted.txt
 2025-11-11,Citycon Oyj,Chaim Katzman,96,3.99,383.04,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb16ab159fe8245bfc57698c169cc7e385langensrclisted.txt
@@ -79,11 +75,11 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Citycon Oyj,Chaim Katzman,1941,3.987120556414219474497681607,7739.001,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb8cf0949f205c09256de0080f26079c6blangensrclisted.txt
 2025-12-03,Citycon Oyj,Chaim Katzman,531,3.98,2113.38,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idbb98f0af325a2fbd1c0c6af09abdcb515langensrclisted.txt
 2025-11-21,Citycon Oyj,Hilik Attias,149154,0,,buy,ACCEPTANCE OF A STOCK OPTION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idbcb476c3331d4e15b8e0c0291d4109966langensrclisted.txt
-2025-10-31,Cityvarasto Oyj,Ville Stenroos,224151,0,,sell,OTHER,Cityvarasto_Oyj_Ledende_medarbejderes_transaktioner_view_idb9c578d23c6ee36fd7a315790b186d315langensrclisted.txt
+2025-10-31,Cityvarasto Oyj,Ville Stenroos,224151,0,,buy,OTHER,Cityvarasto_Oyj_Ledende_medarbejderes_transaktioner_view_idb9c578d23c6ee36fd7a315790b186d315langensrclisted.txt
 2025-12-01,Collaxio AB,,,,,buy,,Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
-2025-11-26,Columbus AS,,1000000,10.1,10100000,buy,DKK 10.10,Columbus_AS_Ledende_medarbejderes_transaktioner_a45cf06fde5699a66f3b64e749a94a57c.txt
-2025-11-27,Columbus AS,,1000000,10.05,10050000,buy,DKK 10.05,Columbus_AS_Ledende_medarbejderes_transaktioner_a5d9c09bb52964c2ad4a2aae0ffe54407.txt
-2025-11-07,Columbus AS,,601522,9.63,5792656.86,buy,DKK 9.63,Columbus_AS_Ledende_medarbejderes_transaktioner_acf72fc4b96364c023524f6a8e0dcb189.txt
+2025-11-26,Columbus AS,,1000000,10.1,10100000,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_a45cf06fde5699a66f3b64e749a94a57c.txt
+2025-11-27,Columbus AS,,1000000,10.05,10050000,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_a5d9c09bb52964c2ad4a2aae0ffe54407.txt
+2025-11-07,Columbus AS,,601522,9.63,5792656.86,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_acf72fc4b96364c023524f6a8e0dcb189.txt
 2025-11-27,Componenta Oyj,Pasi Mäkinen,3000,1.8916,5674.8,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb03568cc156ce0ad41f725ecda9398870langensrclisted.txt
 2025-11-25,Componenta Oyj,Harri Suutari,40000,0,,buy,LENDING,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb913e5865d2737b75a83e9b73ee935908langensrclisted.txt
 2025-11-26,Componenta Oyj,Sami Sivuranta,6677,1.8059,12057.9943,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb9c6cd851be76ecae2315b2bfbece1482langensrclisted.txt
@@ -93,22 +89,20 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-26,Componenta Oyj,Hanna Seppänen,6438,1.8228,11735.1864,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbbd52550f7b7485711d98d0c3c4fa9562langensrclisted.txt
 2025-11-26,Componenta Oyj,Hanna Seppänen,2208,3.025,6679.2,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbdae10d4c802833146f42750220d162felangensrclisted.txt
 2025-11-27,Componenta Oyj,Sami Sivuranta,1726,3.025,5221.15,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbec6cc11d4f13fa2465ea01bccc992bcclangensrclisted.txt
-2025-11-10,Danske Bank AS,Lieve Mostrey,1000,293.3,293300,buy,"DKK 293,30",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a0b8559199335c34be7d143a9a8009c8b.txt
-2025-11-25,Danske Bank AS,APMH Invest A/S,125862,292.52,36817152.24,sell,"DKK 292,52",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a14d74264ac0ca88b16fce7077354ac51.txt
-2025-12-02,Danske Bank AS,APMH Invest A/S,65045,301.71,19624726.95,sell,"DKK 301,71",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a6263d4afb215a8799088332f8a8b2824.txt
-2025-12-10,Danske Bank AS,APMH Invest A/S,68666,306.17,21023469.22,sell,DKK,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a62fef948348d91278388194f397abd26.txt
-2025-11-12,Danske Bank AS,APMH Invest A/S,42258,301.47,12739519.26,sell,"DKK 301,47",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a676f97d8255e67e15a5a49a27a88f295.txt
-2025-12-15,Danske Bank AS,APMH Invest A/S,84241,307.76,25926010.16,sell,"DKK 307,76",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a7904191b0df0685c5e5fe6d53ef30a19.txt
-2025-11-04,Danske Bank AS,APMH Invest A/S,46585,291.3,13570210.5,sell,"DKK 291,30",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a84eb45f8e06919316b47daffd052f42c.txt
-2025-11-21,Danske Bank AS,APMH Invest A/S,44851,286.04,12829180.04,sell,"DKK 286,04",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a8a3e1ea698da96ba3f2f3b1550d18e4f.txt
-2025-11-07,Danske Bank AS,Cecile Hillary,21470,293.9,6310033,sell,"DKK 293,90",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_aac292bd865219549e4848fdc43caa871.txt
-2025-12-08,Danske Bank AS,APMH Invest A/S,16869,304.11,5130031.59,sell,"DKK 304,11",Danske_Bank_AS_Ledende_medarbejderes_transaktioner_afb8707dbe1084682f13177e8aec7314b.txt
-,Dantax AS,Peter Bøgh Jensen,33,324.273,10701.009,sell,336.254 kr.,Dantax_AS_Ledende_medarbejderes_transaktioner_a29cf6b20cb25f54da457d75889e9cf72.txt
-2025-11-13,Dataproces Group AS,,,,,buy,Transaktionens art i vedhæftet skema er ændret fra erhvervelse af aktier via kapitaludvidelse ved gælds,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a1550fe5f494d11e234e77b61fc4e57a3.txt
+2025-11-10,Danske Bank AS,Lieve Mostrey,1000,293.3,293300,buy,Køb,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a0b8559199335c34be7d143a9a8009c8b.txt
+2025-11-25,Danske Bank AS,APMH Invest A/S,125862,292.52,36817152.24,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a14d74264ac0ca88b16fce7077354ac51.txt
+2025-12-02,Danske Bank AS,APMH Invest A/S,65045,301.71,19624726.95,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a6263d4afb215a8799088332f8a8b2824.txt
+2025-12-10,Danske Bank AS,APMH Invest A/S,68666,306.17,21023469.22,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a62fef948348d91278388194f397abd26.txt
+2025-11-12,Danske Bank AS,APMH Invest A/S,42258,301.47,12739519.26,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a676f97d8255e67e15a5a49a27a88f295.txt
+2025-12-15,Danske Bank AS,APMH Invest A/S,84241,307.76,25926010.16,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a7904191b0df0685c5e5fe6d53ef30a19.txt
+2025-11-04,Danske Bank AS,APMH Invest A/S,46585,291.3,13570210.5,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a84eb45f8e06919316b47daffd052f42c.txt
+2025-11-21,Danske Bank AS,APMH Invest A/S,44851,286.04,12829180.04,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a8a3e1ea698da96ba3f2f3b1550d18e4f.txt
+2025-11-07,Danske Bank AS,Cecile Hillary,21470,293.9,6310033,sell,Salg,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_aac292bd865219549e4848fdc43caa871.txt
+2025-12-08,Danske Bank AS,APMH Invest A/S,16869,304.11,5130031.59,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_afb8707dbe1084682f13177e8aec7314b.txt
+,Dantax AS,Peter Bøgh Jensen,33,324.273,10701.009,sell,Salg,Dantax_AS_Ledende_medarbejderes_transaktioner_a29cf6b20cb25f54da457d75889e9cf72.txt
 ,Dataproces Group AS,a),7,8,56,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb8fbd92418ed552ff419cf8540f8bff7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
 ,Dataproces Group AS,a),7,34,238,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb823f0cb527b2a979a3c30045e0034b7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a8fc135de8507d7408632ed97e0f524fa.txt
 ,Dataproces Group AS,a),79,835,65965,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0f7d83dbb88818a28f339743b835a79b&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a9376c66ef67ca32bcf547b60db95c5ff.txt
-2025-11-20,Dataproces Group AS,,,,,buy,,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a62d73c3ef763c59784a0301e375b24b8.txt
 2025-11-21,Detection Technology Plc,Sari Holopainen,2000,10.4913,20982.6,buy,ACQUISITION,Detection_Technology_Oyj_Ledende_medarbejderes_transaktioner_view_idb2f929564b75fdeaf2363d4dd120baba3langensrclisted.txt
 2025-11-21,Detection Technology Plc,Hannu Martola,2000,10.475,20950,buy,ACQUISITION,Detection_Technology_Oyj_Ledende_medarbejderes_transaktioner_view_idb5efa7c7967c90f8bf85edd712025f236langensrclisted.txt
 2025-11-06,DFDS AS,Kristian Valdemar Mørch,4437,90,399330,buy,Køb af aktier,DFDS_AS_Ledende_medarbejderes_transaktioner_a4bc7ef4ce51fdc450d98cedada1e55de.txt
@@ -125,8 +119,8 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-24,Digitalist Group Oy,Wilhelm Rosenlew,1000,3.21,3210,sell,DISPOSAL,Digitalist_Group_Plc_Ledende_medarbejderes_transaktioner_view_idbebcfd96331e435a3fe7e503d77766fc6langensrclisted.txt
 2025-11-07,Digitalist Group Oy,Wilhelm Rosenlew,547,3.34,1826.98,sell,DISPOSAL,Digitalist_Group_Plc_Ledende_medarbejderes_transaktioner_view_idbf1e8df8a44790c3c756028434d10b664langensrclisted.txt
 2025-11-28,Djurslands Bank AS,Sigurd Bohlbro Simmelsgaard,177,856,151512,buy,Erhvervelse af aktier i forbindelse med bruttolønsordning,Djurslands_Bank_AS_Ledende_medarbejderes_transaktioner_af24c18eabf80565a70a647612264b8d9.txt
-2025-11-18,DonkeyRepublic Holding AS,DonkeyRepublic Holding,,,,buy,Date of the transaction,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
-2025-11-14,DSV AS,,1200000,1325,1590000000,buy,"1,325.00 DKK (purchase)",DSV_AS_Ledende_medarbejderes_transaktioner_a82e9a0cd05ec4db7d786fcac437a1ea9.txt
+2025-11-18,DonkeyRepublic Holding AS,DonkeyRepublic Holding,,,,buy,Subscription of new shares,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
+2025-11-14,DSV AS,,1200000,1325,1590000000,sell,Sale of shares – as a result of exercise of share option program,DSV_AS_Ledende_medarbejderes_transaktioner_a82e9a0cd05ec4db7d786fcac437a1ea9.txt
 2025-11-18,Duell Oyj,Jukka Smolander,1355,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb30351be2adacb0d2cba07dadfd9dfc47langensrclisted.txt
 2025-11-18,Duell Oyj,Jarkko Ämmälä,8000,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb627012ff9bff8ee9758b4fa7bec463d8langensrclisted.txt
 2025-11-18,Duell Oyj,Karl Magnus Miemois,3941,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb803bf1e82de83b492bdbfc6cecf347f5langensrclisted.txt
@@ -141,13 +135,13 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-17,Endomines Finland Oyj,Kyösti Kakkonen,250556,3.36359222165903031657593512,842768.21269,buy,SUBSCRIPTION,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idb106ff35721d4f3d9659d7a259dcf39d5langensrclisted.txt
 2025-11-21,Endomines Finland Oyj,Kyösti Kakkonen,70000,26.4,1848000,sell,DISPOSAL,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idbc025e4c939e6d2392ea686002b48f7d7langensrclisted.txt
 2025-11-21,Endomines Finland Oyj,Jukka-Pekka Joensuu,1100,25.5,28050,sell,DISPOSAL,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idbfb0699ba7d3a5f8492c5c3cc0d13c84alangensrclisted.txt
-2025-12-02,Faron Pharmaceuticals Oy,,180000,2.26,406800,,Price(s) and volume(s),Faron_Pharmaceuticals_Oy_Ledende_medarbejderes_transaktioner_view_idb13bc93f28a76a48aac83482ba6f80dfdlangensrclisted.txt
+2025-12-02,Faron Pharmaceuticals Oy,,180000,2.26,406800,buy,Price(s) and volume(s),Faron_Pharmaceuticals_Oy_Ledende_medarbejderes_transaktioner_view_idb13bc93f28a76a48aac83482ba6f80dfdlangensrclisted.txt
 2025-12-03,FastPassCorp AS,Nicolai Platzer,,,,buy,,FastPassCorp_AS_Ledende_medarbejderes_transaktioner_view_idb65f683bab97b3090d7a3c7728494566dlangdasrclisted.txt
 2025-12-03,FastPassCorp AS,Finn Jensen,,,,buy,,FastPassCorp_AS_Ledende_medarbejderes_transaktioner_view_idb6fc2ebc982dd357206a0b940186cdf88langdasrclisted.txt
 2025-12-01,FirstFarms,Wefri A/S,10830000,150,1624500000,,"DKK 72,20",FirstFarms_Ledende_medarbejderes_transaktioner_a6c37809f03a0602e0b0c51bf48735d16.txt
 2025-12-01,FirstFarms,AIC A/S,10830000,150,1624500000,buy,"DKK 72,20",FirstFarms_Ledende_medarbejderes_transaktioner_a9e3d370b983ade8a8a4a1c59b78fb9eb.txt
 2025-12-10,Fiskars,Albert Ehrnrooth,4700,12.2,57340,buy,ACQUISITION,Fiskars_Ledende_medarbejderes_transaktioner_view_idb456ac78c071dd2af60e0987c185b06b5langensrclisted.txt
-2025-11-18,FLSmidth  Co AS,,20884,408.53,8531740.52,sell,DKK 408.53,FLSmidth__Co_AS_Ledende_medarbejderes_transaktioner_adaf31d8828c97f5ecb31eb7d4b79ec9b.txt
+2025-11-18,FLSmidth  Co AS,,20884,408.53,8531740.52,sell,Sale of shares,FLSmidth__Co_AS_Ledende_medarbejderes_transaktioner_adaf31d8828c97f5ecb31eb7d4b79ec9b.txt
 2025-12-01,FODELIA,Riikka Wulff,515,5.34,2750.1,buy,ACQUISITION,Fodelia_Oyj_Ledende_medarbejderes_transaktioner_view_idb15b66a1dcd297874c018e4a53c6bf862langfisrclisted.txt
 2025-12-03,FODELIA,Riikka Wulff,785,5.34,4191.9,buy,ACQUISITION,Fodelia_Oyj_Ledende_medarbejderes_transaktioner_view_idb942f6914e8fc01433ecb93e303d03981langfisrclisted.txt
 2025-12-02,Fodelia,Riikka Wulff,1,5.34,5.34,buy,ACQUISITION,Fodelia_Oyj_Ledende_medarbejderes_transaktioner_view_idbd822abd2a27e6734692a7a441a358452langfisrclisted.txt
@@ -161,21 +155,20 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-02,Framery Group Plc,Mika Sutinen,60810,8,486480,sell,DISPOSAL,Framery_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbcf54a851f801b72f93ba1f42bc147e90langensrclisted.txt
 2025-12-02,Framery Group Plc,Gregory Bylsma,38185,8,305480,sell,DISPOSAL,Framery_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe6653c6235c9a28875153d1ed9bac37elangensrclisted.txt
 2025-12-02,Framery Group Plc,Lauri Isotalo,100657,8,805256,sell,DISPOSAL,Framery_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbf75273d2bb46c3b7f929e76b5ebec99blangensrclisted.txt
-2025-12-05,Gabriel Holding AS,GAB Invest ApS,125,262,32750,buy,"262,00 DKK",Gabriel_Holding_AS_Ledende_medarbejderes_transaktioner_ad56b37796207e07b5be44d0d906710f0.txt
-2025-11-19,Genmab AS,,42,1960.5,82341,sell,"DKK 1,960.50",Genmab_AS_Ledende_medarbejderes_transaktioner_a13b05ae86596021a9e36dd6017c8befd.txt
-2025-12-01,Genmab AS,,378,2.043,772.254,buy,"DKK 2,043",Genmab_AS_Ledende_medarbejderes_transaktioner_a50bc17429cc098497f3a346878b44b61.txt
+2025-12-05,Gabriel Holding AS,GAB Invest ApS,125,262,32750,buy,Køb af aktier,Gabriel_Holding_AS_Ledende_medarbejderes_transaktioner_ad56b37796207e07b5be44d0d906710f0.txt
+2025-11-19,Genmab AS,,42,1960.5,82341,sell,Sale of shares,Genmab_AS_Ledende_medarbejderes_transaktioner_a13b05ae86596021a9e36dd6017c8befd.txt
+2025-12-01,Genmab AS,,378,2.043,772.254,buy,Acquisition due to vesting of restricted stock units,Genmab_AS_Ledende_medarbejderes_transaktioner_a50bc17429cc098497f3a346878b44b61.txt
 2025-11-28,Glaston Oyj Abp,Veli-Matti Reinikkala,8000,1.12847275,9027.782,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb2209c534dd4cae5c5efe2ed27e9eb417langfisrclisted.txt
 2025-11-19,Glaston Oyj Abp,Veli-Matti Reinikkala,10787,1.13449541114304255121905998,12237.802,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb3fcd32ba4983bd1cb1103e4944838433langfisrclisted.txt
 2025-11-10,Glaston Oyj Abp,Veli-Matti Reinikkala,15679,1.12779860960520441354678232,17682.7544,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb8b7670bc1bb056863dd62eb5b0507db9langfisrclisted.txt
-2025-11-11,Glunz  Jensen Holding AS,,97,69.5,6741.5,buy,DKK,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_a13b237a8855ce98649860eed60e24b84.txt
-2025-11-28,Glunz  Jensen Holding AS,,35,74,2590,buy,DKK,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_a5ed025df3c67760a927c5e96410e329f.txt
-2025-11-10,Glunz  Jensen Holding AS,,3,69.5,208.5,buy,DKK,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_acd0d3fc9396b6718691d5a45c1214032.txt
-2025-11-04,GreenMobility AS,,340,73.6,25024,buy,Purchase of shares in free trade during open trading window,GreenMobility_AS_Ledende_medarbejderes_transaktioner_a61073d6ad8797ba9927f51064c58de2c.txt
-2025-11-07,Gubra AS,,4300,373.61,1606523,buy,DKK 373.61,Gubra_AS_Ledende_medarbejderes_transaktioner_a1aa9f7962c86f4bd89e41d11902ba9ff.txt
-2025-12-17,Gubra AS,,10000,487.9977,4879977,buy,DKK 487.9977,Gubra_AS_Ledende_medarbejderes_transaktioner_a7717140e36da943d7c6c21d2f227d3c3.txt
-2025-11-10,Gubra AS,,379,392.62,148802.98,buy,DKK 392.62,Gubra_AS_Ledende_medarbejderes_transaktioner_ab44ac35567e136f88f3077bccfbd1761.txt
-2025-11-10,Gubra AS,,38500,387.82,14931070,buy,DKK 389.98,Gubra_AS_Ledende_medarbejderes_transaktioner_ae9002480d6b7f0b6e1556038629cfeb4.txt
-2025-12-05,H Lundbeck AS,,53000,44.82,2375460,sell,DKK 44.82,H_Lundbeck_AS_Ledende_medarbejderes_transaktioner_a523b239c48430883410157045d34f53c.txt
+2025-11-11,Glunz  Jensen Holding AS,,97,69.5,6741.5,buy,Purchase of shares,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_a13b237a8855ce98649860eed60e24b84.txt
+2025-11-28,Glunz  Jensen Holding AS,,35,74,2590,buy,Purchase of shares,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_a5ed025df3c67760a927c5e96410e329f.txt
+2025-11-10,Glunz  Jensen Holding AS,,3,69.5,208.5,buy,Purchase of shares,Glunz__Jensen_Holding_AS_Ledende_medarbejderes_transaktioner_acd0d3fc9396b6718691d5a45c1214032.txt
+2025-11-04,GreenMobility AS,,340,73.6,25024,buy,Price(s) and volume(s),GreenMobility_AS_Ledende_medarbejderes_transaktioner_a61073d6ad8797ba9927f51064c58de2c.txt
+2025-11-07,Gubra AS,,4300,373.61,1606523,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_a1aa9f7962c86f4bd89e41d11902ba9ff.txt
+2025-12-17,Gubra AS,,10000,487.9977,4879977,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_a7717140e36da943d7c6c21d2f227d3c3.txt
+2025-11-10,Gubra AS,,38879,387.8667913269374212299699066,15079872.98,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_ab44ac35567e136f88f3077bccfbd1761.txt
+2025-12-05,H Lundbeck AS,,53000,44.82,2375460,sell,Sale of shares,H_Lundbeck_AS_Ledende_medarbejderes_transaktioner_a523b239c48430883410157045d34f53c.txt
 2025-11-11,HKFoods Oyj,"Henriksson, Outi",6916,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb001acc90c6d2dbe0f2b27bdc4c169704langfisrclisted.txt
 2025-11-13,HKFoods Oyj,Petri Toivola,9000,1.63,14670,buy,ACQUISITION,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb0adf49bd535a9eaeb8a53587be0c9ccclangfisrclisted.txt
 2025-11-11,HKFoods Oyj,"Diesen, Niclas",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb144a30de202c21b782ef7bbd1740021blangfisrclisted.txt
@@ -187,7 +180,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-11,HKFoods Plc,"Sipponen, Lauri",4610,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb5de76b244aaf7d23fd205f57c3eddce9langensrclisted.txt
 2025-11-14,HKFoods Oyj,Petri Toivola,3000,1.62,4860,buy,ACQUISITION,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb7164b774fde81fd041ebaa698963425dlangfisrclisted.txt
 2025-11-11,HKFoods Oyj,"Yski, Sami",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idbb413dc78f455ea477a9f9c53fc7a188alangfisrclisted.txt
-2025-11-18,Hove AS,,,,,,,Hove_AS_Ledende_medarbejderes_transaktioner_a5ef1426b6eafca4cc45ef81f1ffe661b.txt
 2025-11-17,Hove AS,Thomas Cramer,100000,5.53,553000,sell,Salg,Hove_AS_Ledende_medarbejderes_transaktioner_ac48f07067cad3ea0551432d380c027f9.txt
 2025-12-03,Ilkka Oyj,Satu Otala,2511,4.439681401831939466348068499,11148.04,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idb2340a2f873a93ac4d404ed345e1e58b2langfisrclisted.txt
 2025-12-12,Ilkka Oyj,Satu Otala,984,4.48,4408.32,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idb35dee2898451e5b66d583cc7faae0860langfisrclisted.txt
@@ -197,8 +189,8 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-01,Ilkka Oyj,Satu Otala,13543,3.832936572399025326737059736,51909.46,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idb67f67f82393ed85bb52b62098c4f7b39langfisrclisted.txt
 2025-12-02,Ilkka Oyj,Satu Otala,10225,4.472033251833740831295843521,45726.54,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idbef42bc97eb292dd1590d7a159d848a37langfisrclisted.txt
 2025-12-16,Impero AS,,,,,buy,"1111 Copenhagen, Denmark",Impero_AS_Ledende_medarbejderes_transaktioner_a4641a62e9e2ca5f851f37efad68249a3.txt
-2025-12-01,JBT Marel Corporation,,,,,sell,Volume,JBT_Marel_Corporation_Ledende_medarbejderes_transaktioner_a9fff74a58fc6cbc096070f1840dba21e.txt
-2025-12-12,JBT Marel Corporation,,,,,sell,Volume,JBT_Marel_Corporation_Ledende_medarbejderes_transaktioner_af97341116c8d06c8553ac526ca9ab70a.txt
+2025-12-01,JBT Marel Corporation,,,,,buy,Volume,JBT_Marel_Corporation_Ledende_medarbejderes_transaktioner_a9fff74a58fc6cbc096070f1840dba21e.txt
+2025-12-12,JBT Marel Corporation,,,,,buy,Volume,JBT_Marel_Corporation_Ledende_medarbejderes_transaktioner_af97341116c8d06c8553ac526ca9ab70a.txt
 2025-11-18,Jyske Bank AS,Rina Asmussen,390,767,299130,sell,Salg,Jyske_Bank_AS_Ledende_medarbejderes_transaktioner_a194798aeace3b881101c77426d0e45ec.txt
 2025-12-16,Jyske Bank AS,Lars Stensgaard Mørch,164306289450938421575810,204,33518483047991438001465240,buy,Køb,Jyske_Bank_AS_Ledende_medarbejderes_transaktioner_a1c9eb400093f58d0a98f1d59bc605742.txt
 2025-12-16,Jyske Bank AS,Michael C. Mariegaard,164306289450938421575810,12,1971675473411261058909720,buy,Køb,Jyske_Bank_AS_Ledende_medarbejderes_transaktioner_a253a82e644e0dc931f311f6ba0547a42.txt
@@ -218,8 +210,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Konecranes Plc,"George, Christine",17,84.488,1436.296,buy,ACQUISITION,Konecranes_Oyj_Ledende_medarbejderes_transaktioner_view_idb136e437ae363b78b1c219ee97534319dlangensrclisted.txt
 2025-11-06,Konecranes Plc,"Aila, Minna",26,84.488,2196.688,buy,ACQUISITION,Konecranes_Oyj_Ledende_medarbejderes_transaktioner_view_idb245f7b854aedc6d712d1d809b7d5944dlangensrclisted.txt
 2025-11-06,Konecranes Oyj,"Piittisjärvi, Sami",3,84.488,253.464,buy,ACQUISITION,Konecranes_Oyj_Ledende_medarbejderes_transaktioner_view_idb32c381c5ea433f8713693d80229eb49elangfisrclisted.txt
-2018-03-05,Konsolidator AS,,733273,352207.693790213194812845966,258264392248.631,buy,Purchase of shares,Konsolidator_AS_Ledende_medarbejderes_transaktioner_a9179e458e156dfff34011a6892390bb0.txt
-2025-11-20,Konsolidator AS,,,,,,,Konsolidator_AS_Ledende_medarbejderes_transaktioner_aef4bded55e375b30ad137cf628dd63bb.txt
+2018-03-05,Konsolidator AS,,733273,352207.693790213194812845966,258264392248.631,buy,Price(s) and volume(s),Konsolidator_AS_Ledende_medarbejderes_transaktioner_a9179e458e156dfff34011a6892390bb0.txt
 2025-12-10,Lemonsoft Oyj,Michael Richter,3942703,0,,sell,PLEDGING,Lemonsoft_Oyj_Ledende_medarbejderes_transaktioner_view_idb552fc0a50d09e32462d961ae3769c6b7langensrclisted.txt
 2025-12-11,Loihde Oyj,Juha Meronen,99,12.0737,1195.2963,buy,SUBSCRIPTION,Loihde_Oyj_Ledende_medarbejderes_transaktioner_a006bb1ce27a7e8a4b26121035b1a2669.txt
 2025-12-11,Loihde Oyj,Marko Järvinen,495,12.0737,5976.4815,buy,SUBSCRIPTION,Loihde_Oyj_Ledende_medarbejderes_transaktioner_a608a93316b8937848f23632d20349af7.txt
@@ -233,104 +224,95 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-12,Mandatum Oyj,Markus Aho,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb925dbb93d52f313419c75abb4a3420aflangensrclisted.txt
 2025-11-12,Mandatum Oyj,Johanna Lamminen,3907,6.4496,25198.5872,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbae38e0612a208a231b756b07ebb21a5blangensrclisted.txt
 2025-11-12,Mandatum Oyj,Kimmo Laaksonen,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbcad043bbd53739ae210c69d218ce06eblangensrclisted.txt
-,MT Hjgaard Holding AS,Rasmus Untidt,600,427,256200,sell,"DKK 427,00",MT_Hjgaard_Holding_AS_Ledende_medarbejderes_transaktioner_a6efe4c3bb66c45d2c808ede5cf035acc.txt
+,MT Hjgaard Holding AS,Rasmus Untidt,600,427,256200,sell,Salg,MT_Hjgaard_Holding_AS_Ledende_medarbejderes_transaktioner_a6efe4c3bb66c45d2c808ede5cf035acc.txt
 2025-12-03,Netum Group Oyj,Olavi Köngäs,4300,1.21,5203,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb5568a6f95bd2e11abb800b2a8e2b6819langensrclisted.txt
 2025-11-05,Netum Group Oyj,Mikko Koistinen,7428,1.165325794291868605277329025,8656.04,sell,DISPOSAL,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbbe2a043222438cf60812b97dbbf88569langensrclisted.txt
 2025-11-19,Netum Group Oyj,Olavi Köngäs,1500,1.2457,1868.55,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbdc3543e3226b9fd5f734d779e6b7740blangensrclisted.txt
 2025-11-04,Netum Group Oyj,Olavi Köngäs,9995,1.174683341670835417708854427,11740.96,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe275601167a89a65ab935140d0260e27langensrclisted.txt
 ,Newcap Holding,Nærtstående til bestyrelsesformand Mogens de Linde,2001,28,56028,buy,Køb,Newcap_Holding_Ledende_medarbejderes_transaktioner_a799b468e0e0ec5181aca263ec28c8873.txt
-,Newcap Holding,,,,,buy,,Newcap_Holding_Ledende_medarbejderes_transaktioner_a8d70758833941b3fd6dbc63b2895ae53.txt
 2025-12-02,NoHo Partners Oyj,Mika Niemi,3191,7.8497,25048.3927,sell,DISPOSAL,NoHo_Partners_Oyj_Ledende_medarbejderes_transaktioner_view_idb27161c149cd1a6dd0b343174e7940521langensrclisted.txt
 2025-10-07,Nokia Corporation,"Heard, David",65122,,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Nokia_Ledende_medarbejderes_transaktioner_view_idb605aae50cdc3de7270eee75500fd0123langensrclisted.txt
 2025-11-13,Nokia Corporation,"Fisk, Louise",135,6.0601,818.1135,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idb9c7347d34166d37e575078a931707946langensrclisted.txt
 2025-11-13,Nokia Corporation,"Sahgal, Raghav",2192,6.0601,13283.7392,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idbaad0a7a8e573313b98e4582be73cf670langensrclisted.txt
 2025-11-13,Nokia Corporation,"Uitto, Tommi",5,6.0572,30.286,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idbd57f9966f47de210d33746526d8400a4langensrclisted.txt
-2025-11-10,NORDEN,,1204,243.24,292860.96,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a020127e9faefbfd9e4a16df40f77b6a9.txt
-2025-11-17,NORDEN,A/S Motortramp,1204,247.91,298483.64,sell,"DKK 247,91",NORDEN_Ledende_medarbejderes_transaktioner_a0302493389a238ebb734cdf6a488737b.txt
-,NORDEN,A/S Motortramp,602,260.22,156652.44,sell,"DKK 260,22",NORDEN_Ledende_medarbejderes_transaktioner_a053b80e88c3aab4edd7bc08c7b54ed7d.txt
-,NORDEN,A/S Motortramp,602,266.14,160216.28,sell,"DKK 266,14",NORDEN_Ledende_medarbejderes_transaktioner_a494d25cf2df0d0f4d0b759a6f02ee4e6.txt
-,NORDEN,A/S Motortramp,903,263.36,237814.08,sell,"DKK 263,36",NORDEN_Ledende_medarbejderes_transaktioner_a4a2b00970af103b60bd6d3aac6729286.txt
-,NORDEN,A/S Motortramp,602,263.29,158500.58,sell,"DKK 263,29",NORDEN_Ledende_medarbejderes_transaktioner_a583abe31dee297f83e9cc411c3822efe.txt
-,NORDEN,A/S Motortramp,602,268.15,161426.3,sell,"DKK 268,15",NORDEN_Ledende_medarbejderes_transaktioner_a662e5e4035ca8eae8af014a8378c09ff.txt
-,NORDEN,A/S Motortramp,903,258.39,233326.17,sell,"DKK 258,39",NORDEN_Ledende_medarbejderes_transaktioner_a6726ca73b9d372bd1eeb496bcc722c25.txt
-,NORDEN,A/S Motortramp,903,264.11,238491.33,sell,"DKK 264,11",NORDEN_Ledende_medarbejderes_transaktioner_a9b8a7ec8fabc6aa883a7bd04cc939091.txt
-,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a0769f63c08f1c59d2b08092bd89f2749.txt
-,NORDEN,,5117,263.1282352941176470588235294,1346427.18,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a090e460821953f0ca1b3ea2e5d122eb6.txt
-2025-11-11,NORDEN,A/S Motortramp,1204,246.11,296316.44,sell,"DKK 246,11",NORDEN_Ledende_medarbejderes_transaktioner_a137a39ab38df993d0c11c440edff438a.txt
-2025-11-20,NORDEN,A/S Motortramp,903,252.88,228350.64,sell,"DKK 252,88",NORDEN_Ledende_medarbejderes_transaktioner_a174662c840e53c4f6f8115baadf00a3b.txt
-2025-11-18,NORDEN,,1505,248.88,374564.4,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a23281f34da8d750f7a652272fc3c57a6.txt
-2025-11-28,NORDEN,A/S Motortramp,903,251.31,226932.93,sell,"DKK 251,31",NORDEN_Ledende_medarbejderes_transaktioner_a300cce5cb4cd2d4aa632d67e91b1e2fd.txt
-2025-12-01,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a311da4d30a462d573cb2d87f41fb9209.txt
-2025-11-21,NORDEN,,1505,246.4,370832,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a322109ab4e777544f56e664b31c20484.txt
-2025-11-27,NORDEN,A/S Motortramp,903,251.47,227077.41,sell,"DKK 251,47",NORDEN_Ledende_medarbejderes_transaktioner_a34d5f22238955dbb3b21e0be7148e4a9.txt
-2025-12-02,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a3557c6659f75c6cfa428077b0d6f2c54.txt
-2025-12-15,NORDEN,,1355,254.73,345159.15,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a355eb988243296a74be913984bfecc39.txt
-2025-11-21,NORDEN,A/S Motortramp,1505,246.4,370832,sell,"DKK 246,40",NORDEN_Ledende_medarbejderes_transaktioner_a35e5493bc2bb8411c3942da492e11741.txt
-2025-11-05,NORDEN,A/S Motortramp,1204,247.66,298182.64,sell,"DKK 247,66",NORDEN_Ledende_medarbejderes_transaktioner_a3859985fdd0dc03be157a8ea913c0e57.txt
-2025-11-14,NORDEN,,1505,241.4,363307,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a40d462a731d797f429282995a9221c3e.txt
-2025-12-17,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a41a5c64f3e5981447d9ed743a79b07d6.txt
-2025-11-27,NORDEN,,903,251.47,227077.41,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a46354864fe7297313a5173f64ea85a3b.txt
-2025-12-10,NORDEN,,903,263.46,237904.38,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a4687258109f66f35fdf6a960d8a81009.txt
-2025-11-06,NORDEN,,1204,246.67,296990.68,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a46efbb6fdc04c845e31bc60b7a826631.txt
-2025-12-05,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a4adec558dc88ee86261ffed6d965e236.txt
-2025-11-13,NORDEN,,1505,241.06,362795.3,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a4e05676cdceddef81284a917c770ddc9.txt
-2025-11-25,NORDEN,,1505,244.82,368454.1,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a4fa1e39f23cc69bc1b46459bac582a0a.txt
-2025-11-17,NORDEN,,1204,247.91,298483.64,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a5ab32fb2e456111ca6e53ca242c044bb.txt
-2025-11-24,NORDEN,A/S Motortramp,1505,246.1,370380.5,sell,"DKK 246,10",NORDEN_Ledende_medarbejderes_transaktioner_a5e48f1a692fd9ecd0074578dc7aa5fc9.txt
-2025-11-05,NORDEN,,1204,247.66,298182.64,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a627e1dc4919bf935deb2d395190af65c.txt
-2025-11-04,NORDEN,,1204,246.63,296942.52,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a62d3eaee3605d12369a539b8bd2fd44e.txt
-2025-11-24,NORDEN,,1505,246.1,370380.5,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a6573a26ea8f18402f70b63b8078fee98.txt
-2025-11-12,NORDEN,A/S Motortramp,1204,246.1,296304.4,sell,"DKK 246,10",NORDEN_Ledende_medarbejderes_transaktioner_a672859c51f40200320ba9799228021e0.txt
-2025-11-26,NORDEN,,1505,249.99,376234.95,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a6b3844e7715b3b3a1dbcb3f2ab2b4c6d.txt
-2025-11-11,NORDEN,,1204,246.11,296316.44,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a6d437cfeb183153ec92a720c6a417766.txt
-2025-12-11,NORDEN,,903,264.6,238933.8,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a6f10acb1676203a59b5c7b0459140afe.txt
-2025-12-16,NORDEN,A/S Motortramp,1505,252.26,379651.3,sell,"DKK 252,26",NORDEN_Ledende_medarbejderes_transaktioner_a8347bff05b768fd46208794d61d177ec.txt
-2025-11-07,NORDEN,,1204,242.74,292258.96,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a8cfec3253bf5e7aac04c54a3eacec5ef.txt
-2025-12-04,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a8de3d23b152001be464edaa7a8c5d5d1.txt
-2025-11-19,NORDEN,,903,251.64,227230.92,sell,,NORDEN_Ledende_medarbejderes_transaktioner_a96c0d2642398d31e11385d8270cd3a22.txt
-2025-12-16,NORDEN,,1505,252.26,379651.3,sell,,NORDEN_Ledende_medarbejderes_transaktioner_aa27403ca8e45de7a1fd7bbb368443255.txt
-2025-11-03,NORDEN,,903,253.62,229018.86,sell,,NORDEN_Ledende_medarbejderes_transaktioner_aa4aa0b18768e46c563865a69e9e1ae05.txt
-2025-11-20,NORDEN,,903,252.88,228350.64,sell,,NORDEN_Ledende_medarbejderes_transaktioner_aa5bb1d53c641cd12a8aff973e1b12c7e.txt
-2025-11-04,NORDEN,A/S Motortramp,1204,246.63,296942.52,sell,"DKK 246,63",NORDEN_Ledende_medarbejderes_transaktioner_aa84627f7d2bfdbf6b281463057c686d6.txt
-2025-12-11,NORDEN,A/S Motortramp,903,264.6,238933.8,sell,"DKK 264,60",NORDEN_Ledende_medarbejderes_transaktioner_aaba4831d075f94e42dc1ed5c4d56c783.txt
-2025-12-12,NORDEN,,903,260.18,234942.54,sell,,NORDEN_Ledende_medarbejderes_transaktioner_aac24329c76208a0336a3752617649e1b.txt
-2025-10-31,NORDEN,A/S Motortramp,903,256.28,231420.84,sell,"DKK 256,28",NORDEN_Ledende_medarbejderes_transaktioner_aad858369ade3c827df6502b48a4b3ac6.txt
-2025-12-10,NORDEN,A/S Motortramp,903,263.46,237904.38,sell,"DKK 263,46",NORDEN_Ledende_medarbejderes_transaktioner_aae00dea66a9130b1172d4606c7820948.txt
-2025-11-07,NORDEN,A/S Motortramp,1204,242.74,292258.96,sell,"DKK 242,74",NORDEN_Ledende_medarbejderes_transaktioner_ab19a09a7888799a780d6fc0645b48fdd.txt
-2025-10-31,NORDEN,,903,256.28,231420.84,sell,,NORDEN_Ledende_medarbejderes_transaktioner_ab26c2c4724eb255974a6bafea0aa47ce.txt
-2025-11-13,NORDEN,A/S Motortramp,1505,241.06,362795.3,sell,"DKK 241,06",NORDEN_Ledende_medarbejderes_transaktioner_ab5ebe87031a501ad5530c0346be03317.txt
-2025-12-09,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_ab71a93d0f1486864dc641c1892e07f50.txt
-2025-12-15,NORDEN,A/S Motortramp,1355,254.73,345159.15,sell,"DKK 254,73",NORDEN_Ledende_medarbejderes_transaktioner_abaac8e0ebad51fd6c54e78887e4c8be8.txt
-2025-11-12,NORDEN,,1204,246.1,296304.4,sell,,NORDEN_Ledende_medarbejderes_transaktioner_ad0332949ef6556cab0f78f4de505d292.txt
-2025-11-28,NORDEN,,903,251.31,226932.93,sell,,NORDEN_Ledende_medarbejderes_transaktioner_ad1cfe24e0f3b188ee53c389f6babf018.txt
-2025-11-18,NORDEN,A/S Motortramp,1505,248.88,374564.4,sell,"DKK 248,88",NORDEN_Ledende_medarbejderes_transaktioner_ad7f68ff7c5295f5137855e7b2916d1dd.txt
-2025-11-19,NORDEN,A/S Motortramp,903,251.64,227230.92,sell,"DKK 251,64",NORDEN_Ledende_medarbejderes_transaktioner_ae2faadacbdbf900d53ec0f73d9d10d1c.txt
-2025-11-26,NORDEN,A/S Motortramp,1505,249.99,376234.95,sell,"DKK 249,99",NORDEN_Ledende_medarbejderes_transaktioner_aeac731926149cf39f28c7d33f0be70d5.txt
-2025-12-12,NORDEN,A/S Motortramp,903,260.18,234942.54,sell,"DKK 260,18",NORDEN_Ledende_medarbejderes_transaktioner_af071cf3d71fcf9ebd7e50256f91cb255.txt
-2025-11-14,NORDEN,A/S Motortramp,1505,241.4,363307,sell,"DKK 241,40",NORDEN_Ledende_medarbejderes_transaktioner_af518a8cfe9987973546b553a3a3bd650.txt
-2025-11-06,NORDEN,A/S Motortramp,1204,246.67,296990.68,sell,"DKK 246,67",NORDEN_Ledende_medarbejderes_transaktioner_af66272220028ac827f2062e116cc9441.txt
-2025-12-08,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_afc073abfb075c4ac77d09afa1c210f61.txt
-2025-12-03,NORDEN,,,,,sell,,NORDEN_Ledende_medarbejderes_transaktioner_afc76a69658f96891aba88909bc0df3c7.txt
-2025-11-03,NORDEN,A/S Motortramp,903,253.62,229018.86,sell,"DKK 253,62",NORDEN_Ledende_medarbejderes_transaktioner_afc98d3780423faa9ebb7efda4b7ad61e.txt
-2025-11-25,NORDEN,A/S Motortramp,1505,244.82,368454.1,sell,"DKK 244,82",NORDEN_Ledende_medarbejderes_transaktioner_afdbba3ead36e6723177d3500bd924a2b.txt
+2025-11-10,NORDEN,,1204,243.24,292860.96,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a020127e9faefbfd9e4a16df40f77b6a9.txt
+2025-11-17,NORDEN,A/S Motortramp,1204,247.91,298483.64,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a0302493389a238ebb734cdf6a488737b.txt
+,NORDEN,A/S Motortramp,5117,263.1282352941176470588235294,1346427.18,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a053b80e88c3aab4edd7bc08c7b54ed7d.txt
+,NORDEN,,5117,263.1282352941176470588235294,1346427.18,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a090e460821953f0ca1b3ea2e5d122eb6.txt
+2025-11-11,NORDEN,A/S Motortramp,1204,246.11,296316.44,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a137a39ab38df993d0c11c440edff438a.txt
+2025-11-20,NORDEN,A/S Motortramp,903,252.88,228350.64,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a174662c840e53c4f6f8115baadf00a3b.txt
+2025-11-18,NORDEN,,1505,248.88,374564.4,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a23281f34da8d750f7a652272fc3c57a6.txt
+2025-11-28,NORDEN,A/S Motortramp,903,251.31,226932.93,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a300cce5cb4cd2d4aa632d67e91b1e2fd.txt
+2025-12-01,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a311da4d30a462d573cb2d87f41fb9209.txt
+2025-11-21,NORDEN,,1505,246.4,370832,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a322109ab4e777544f56e664b31c20484.txt
+2025-11-27,NORDEN,A/S Motortramp,903,251.47,227077.41,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a34d5f22238955dbb3b21e0be7148e4a9.txt
+2025-12-02,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a3557c6659f75c6cfa428077b0d6f2c54.txt
+2025-12-15,NORDEN,,1355,254.73,345159.15,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a355eb988243296a74be913984bfecc39.txt
+2025-11-21,NORDEN,A/S Motortramp,1505,246.4,370832,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a35e5493bc2bb8411c3942da492e11741.txt
+2025-11-05,NORDEN,A/S Motortramp,1204,247.66,298182.64,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a3859985fdd0dc03be157a8ea913c0e57.txt
+2025-11-14,NORDEN,,1505,241.4,363307,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a40d462a731d797f429282995a9221c3e.txt
+2025-12-17,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a41a5c64f3e5981447d9ed743a79b07d6.txt
+2025-11-27,NORDEN,,903,251.47,227077.41,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a46354864fe7297313a5173f64ea85a3b.txt
+2025-12-10,NORDEN,,903,263.46,237904.38,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a4687258109f66f35fdf6a960d8a81009.txt
+2025-11-06,NORDEN,,1204,246.67,296990.68,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a46efbb6fdc04c845e31bc60b7a826631.txt
+2025-12-05,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a4adec558dc88ee86261ffed6d965e236.txt
+2025-11-13,NORDEN,,1505,241.06,362795.3,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a4e05676cdceddef81284a917c770ddc9.txt
+2025-11-25,NORDEN,,1505,244.82,368454.1,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a4fa1e39f23cc69bc1b46459bac582a0a.txt
+2025-11-17,NORDEN,,1204,247.91,298483.64,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a5ab32fb2e456111ca6e53ca242c044bb.txt
+2025-11-24,NORDEN,A/S Motortramp,1505,246.1,370380.5,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a5e48f1a692fd9ecd0074578dc7aa5fc9.txt
+2025-11-05,NORDEN,,1204,247.66,298182.64,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a627e1dc4919bf935deb2d395190af65c.txt
+2025-11-04,NORDEN,,1204,246.63,296942.52,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a62d3eaee3605d12369a539b8bd2fd44e.txt
+2025-11-24,NORDEN,,1505,246.1,370380.5,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a6573a26ea8f18402f70b63b8078fee98.txt
+2025-11-12,NORDEN,A/S Motortramp,1204,246.1,296304.4,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a672859c51f40200320ba9799228021e0.txt
+2025-11-26,NORDEN,,1505,249.99,376234.95,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a6b3844e7715b3b3a1dbcb3f2ab2b4c6d.txt
+2025-11-11,NORDEN,,1204,246.11,296316.44,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a6d437cfeb183153ec92a720c6a417766.txt
+2025-12-11,NORDEN,,903,264.6,238933.8,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a6f10acb1676203a59b5c7b0459140afe.txt
+2025-12-16,NORDEN,A/S Motortramp,1505,252.26,379651.3,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_a8347bff05b768fd46208794d61d177ec.txt
+2025-11-07,NORDEN,,1204,242.74,292258.96,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a8cfec3253bf5e7aac04c54a3eacec5ef.txt
+2025-12-04,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a8de3d23b152001be464edaa7a8c5d5d1.txt
+2025-11-19,NORDEN,,903,251.64,227230.92,buy,,NORDEN_Ledende_medarbejderes_transaktioner_a96c0d2642398d31e11385d8270cd3a22.txt
+2025-12-16,NORDEN,,1505,252.26,379651.3,buy,,NORDEN_Ledende_medarbejderes_transaktioner_aa27403ca8e45de7a1fd7bbb368443255.txt
+2025-11-03,NORDEN,,903,253.62,229018.86,buy,,NORDEN_Ledende_medarbejderes_transaktioner_aa4aa0b18768e46c563865a69e9e1ae05.txt
+2025-11-20,NORDEN,,903,252.88,228350.64,buy,,NORDEN_Ledende_medarbejderes_transaktioner_aa5bb1d53c641cd12a8aff973e1b12c7e.txt
+2025-11-04,NORDEN,A/S Motortramp,1204,246.63,296942.52,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_aa84627f7d2bfdbf6b281463057c686d6.txt
+2025-12-11,NORDEN,A/S Motortramp,903,264.6,238933.8,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_aaba4831d075f94e42dc1ed5c4d56c783.txt
+2025-12-12,NORDEN,,903,260.18,234942.54,buy,,NORDEN_Ledende_medarbejderes_transaktioner_aac24329c76208a0336a3752617649e1b.txt
+2025-10-31,NORDEN,A/S Motortramp,903,256.28,231420.84,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_aad858369ade3c827df6502b48a4b3ac6.txt
+2025-12-10,NORDEN,A/S Motortramp,903,263.46,237904.38,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_aae00dea66a9130b1172d4606c7820948.txt
+2025-11-07,NORDEN,A/S Motortramp,1204,242.74,292258.96,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_ab19a09a7888799a780d6fc0645b48fdd.txt
+2025-10-31,NORDEN,,903,256.28,231420.84,buy,,NORDEN_Ledende_medarbejderes_transaktioner_ab26c2c4724eb255974a6bafea0aa47ce.txt
+2025-11-13,NORDEN,A/S Motortramp,1505,241.06,362795.3,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_ab5ebe87031a501ad5530c0346be03317.txt
+2025-12-09,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_ab71a93d0f1486864dc641c1892e07f50.txt
+2025-12-15,NORDEN,A/S Motortramp,1355,254.73,345159.15,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_abaac8e0ebad51fd6c54e78887e4c8be8.txt
+2025-11-12,NORDEN,,1204,246.1,296304.4,buy,,NORDEN_Ledende_medarbejderes_transaktioner_ad0332949ef6556cab0f78f4de505d292.txt
+2025-11-28,NORDEN,,903,251.31,226932.93,buy,,NORDEN_Ledende_medarbejderes_transaktioner_ad1cfe24e0f3b188ee53c389f6babf018.txt
+2025-11-18,NORDEN,A/S Motortramp,1505,248.88,374564.4,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_ad7f68ff7c5295f5137855e7b2916d1dd.txt
+2025-11-19,NORDEN,A/S Motortramp,903,251.64,227230.92,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_ae2faadacbdbf900d53ec0f73d9d10d1c.txt
+2025-11-26,NORDEN,A/S Motortramp,1505,249.99,376234.95,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_aeac731926149cf39f28c7d33f0be70d5.txt
+2025-12-12,NORDEN,A/S Motortramp,903,260.18,234942.54,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_af071cf3d71fcf9ebd7e50256f91cb255.txt
+2025-11-14,NORDEN,A/S Motortramp,1505,241.4,363307,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_af518a8cfe9987973546b553a3a3bd650.txt
+2025-11-06,NORDEN,A/S Motortramp,1204,246.67,296990.68,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_af66272220028ac827f2062e116cc9441.txt
+2025-12-08,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_afc073abfb075c4ac77d09afa1c210f61.txt
+2025-12-03,NORDEN,,,,,buy,,NORDEN_Ledende_medarbejderes_transaktioner_afc76a69658f96891aba88909bc0df3c7.txt
+2025-11-03,NORDEN,A/S Motortramp,903,253.62,229018.86,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_afc98d3780423faa9ebb7efda4b7ad61e.txt
+2025-11-25,NORDEN,A/S Motortramp,1505,244.82,368454.1,sell,Salg,NORDEN_Ledende_medarbejderes_transaktioner_afdbba3ead36e6723177d3500bd924a2b.txt
 2025-11-03,Norrhydro Group Oyj,"Trög, Yrjö",26249,1.276414339593889291020610309,33504.6,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb27f27895a5772906a876465f5fb313dblangensrclisted.txt
 2025-12-11,Norrhydro Group Oyj,"Trög, Yrjö",122878,1.211362001334657139601881541,148849.74,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb29bc31ae84963103e9942f3cf34dc8cflangensrclisted.txt
 2025-11-07,Norrhydro Group Oyj,"Trög, Yrjö",4000,1.3,5200,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb40d1578e97963ae1088a2a1829c66033langensrclisted.txt
 2025-11-14,Norrhydro Group Oyj,"Trög, Yrjö",43247,1.200230536222165699354868546,51906.37,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb4297d15f5cedbbb8dbeedceea7813fd7langensrclisted.txt
 2025-10-27,Norrhydro Group Oyj,"Trög, Yrjö",21606,1.386523650837730260112931593,29957.23,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb94c83387e6855de6ab1d296b407dc3b9langensrclisted.txt
-2025-12-02,North Media AS,Lasse Ingemann Brodt,10000,44.46,444600,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=bee7a6aa7647656fe07f3c154c7811466&lang=da&src=listed,North_Media_AS_Ledende_medarbejderes_transaktioner_ab3ade69bae370190b0a0dbbecb08022b.txt
+2025-12-02,North Media AS,Lasse Ingemann Brodt,10000,44.46,444600,buy,aktieoptionsprogram.,North_Media_AS_Ledende_medarbejderes_transaktioner_ab3ade69bae370190b0a0dbbecb08022b.txt
 2025-11-06,Nova Klbburinn hf,Sylvía Kristín Ólafsdóttir,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a5bd2306360d0ebf7431948266e738b44.txt
 ,Nova Klbburinn hf,,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a90daabc3044f7d8b3668b38df02dd686.txt
 2025-11-06,Nova Klbburinn hf,Ólafur Magnússon,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aad7993ce343318cae7c98b7655aec117.txt
 2025-11-06,Nova Klbburinn hf,Renata Blöndal,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_ad7ae6612abbdb98d77b5b67400132799.txt
 2025-11-06,Nova Klbburinn hf,Þórhallur Jóhannsson,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aebb78de430c748a6fec2fd5bd22b80c4.txt
-2025-11-10,Novo Nordisk AS,,18634,0,,sell,DKK 0.00,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a15735507e77f60ee0cbe7cb94577b2f6.txt
-2025-11-17,Novo Nordisk AS,,6450,312.5,2015625,buy,DKK 312.50,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a717e973ab6feae857ba5dcff7578e9ca.txt
-2014-04-16,Novonesis Novozymes AS,(RSU) program.,,,,buy,"9,565 shares",Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
-2014-04-16,Novonesis Novozymes AS,,3970716,397.0716,1576658555.2656,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=be94a43c760239839e63d25fcf38efb52&lang=en&src=listed,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
-2014-04-16,Novonesis Novozymes AS,,41810,418.1,17480761,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b1e786ee007288a129347b849301dfd0f&lang=en&src=listed,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_aff0235959e2296e98bc832b8c8495dc0.txt
+2025-11-10,Novo Nordisk AS,,18634,0,,buy,accordance with the recruitment package),Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a15735507e77f60ee0cbe7cb94577b2f6.txt
+2025-11-17,Novo Nordisk AS,,6450,312.5,2015625,buy,Purchase of shares,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a717e973ab6feae857ba5dcff7578e9ca.txt
+2014-04-16,Novonesis Novozymes AS,(RSU) program.,,,,buy,programs,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
+2014-04-16,Novonesis Novozymes AS,,4012526,397.2907131980203991201552339,1594139316.2656,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
 ,NTR Holding AS,Copenhagen Capital A/S,9678,4.995918578218640214920438107,48350.5,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_a04fbe148ca041b412fc454c4c08e19c2.txt
-,Oculis Holding AG,,,,,sell,Vesting of restricted stock unit (RSU) and subsequent settlement of the transaction.,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_a1cbc10dfe3ee1f0da9aa97d0b5474f12.txt
+,Oculis Holding AG,,,,,buy,Vesting of restricted stock unit (RSU) and subsequent settlement of the transaction.,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_a1cbc10dfe3ee1f0da9aa97d0b5474f12.txt
 ,Oculis Holding AG,,19261928,26,500810128,buy,Purchase of ordinary shares on the open market,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_abaa604497ffe8bf27a7ea59aeb1f136c.txt
 2025-11-27,Oma Savings Bank Plc,"Alameri, Karri",1755,10.2537,17995.2435,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb69f1fb3e0f76eb399e644e430bd417a2langensrclisted.txt
 2025-11-27,Oma Savings Bank Plc,"Liiri, Sarianna",322,10.2537,3301.6914,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb7fab7593ba59a58831ba9e64bf73f761langensrclisted.txt
@@ -341,14 +323,13 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-25,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,1829,3.2,5852.8,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idb5bf2a91579fea12b6bd85abf8b30514flangfisrclisted.txt
 2025-11-24,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,1000,3.2,3200,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idb673c90c893b141c69d1de6656e6a9160langfisrclisted.txt
 2025-11-28,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,468,3.21,1502.28,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idbae3350f51327e782f8dcb8f08fe926fclangfisrclisted.txt
-2025-11-05,Pandora AS,,425,,,sell,messageUrl: https://view.news.eu.nasdaq.com/view?id=be1216c4e03e529cd3bb42c8d8eeb740b&lang=en&src=listed,Pandora_AS_Ledende_medarbejderes_transaktioner_a39886b732170666acc0b867e861822eb.txt
-2025-12-03,Pandora AS,,25000,,,sell,messageUrl: https://view.news.eu.nasdaq.com/view?id=b6c8b362ca02cee4c64f9d56fce73b312&lang=en&src=listed,Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt
+2025-11-05,Pandora AS,,425,,,buy,Purchase of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_a39886b732170666acc0b867e861822eb.txt
+2025-12-03,Pandora AS,,25000,,,sell,Selling of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt
 2025-12-15,Panostaja Oyj,Saga Forss,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_a9aa322a5377504ade44b51d46a74c339.txt
 2025-12-15,Panostaja Oyj,Tarja Pääkkönen,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_acb52cb05780f514b459c88e739076d3e.txt
 2025-12-15,Panostaja Oyj,Tommi Juusela,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_acbe9e950b72f1754b8703b974a46de14.txt
 2025-11-03,Pihlajalinna Oyj,Mika Anders Videman,333,14.95,4978.35,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a5c46321ac77e8f0ee8280dd853d548c7.txt
 2025-11-05,Pihlajalinna Oyj,Seppo Kariniemi,1000,14.7625,14762.5,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a7c550dc7ae2c3a548278f1c1325a7c59.txt
-,Q-Interline AS,,,,,buy,,Q-Interline_AS_Ledende_medarbejderes_transaktioner_a2da77b744d8f64cb5c23ab027b516712.txt
 ,Q-Interline AS,Stengård Invest ApS,200000,3,600000,buy,Køb,Q-Interline_AS_Ledende_medarbejderes_transaktioner_aa0c0193ce0ad377f4e8789ebd082c329.txt
 2025-11-06,Qt Group Oyj,Erik Rehn,591,33.58,19845.78,buy,ACQUISITION,Qt_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb2aaf09ae06ffdf9912cc3e3b4115b48blangensrclisted.txt
 2025-11-06,Qt Group Plc,Tuukka Turunen,1000,33.35618,33356.18,buy,ACQUISITION,Qt_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb8e2220261870ae618a6682e545412220langfisrclisted.txt
@@ -368,8 +349,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-21,rsted AS,Ørsted A/S,12555,4,50220,buy,Transaktionens art (pkt. 4.b) var ikke inkluderet i den,rsted_AS_Ledende_medarbejderes_transaktioner_a109cf6d8595c798c199bbe7cf5b5b6a2.txt
 2025-11-21,rsted AS,Ørsted A/S,3373,125.55,423480.15,,"DKK 125,55",rsted_AS_Ledende_medarbejderes_transaktioner_a2e024b271226ad656a570b94c68f76f7.txt
 ,rsted AS,,,,,,,rsted_AS_Ledende_medarbejderes_transaktioner_a515b18659d5622541f282bcbf1da9a09.txt
-2025-12-01,RTX,Henrik Mørck Mogensen,673,104,69992,buy,"DKK 93.669,50",RTX_Ledende_medarbejderes_transaktioner_a00b10491bdbe4e4c426d841a4f8e4add.txt
-,RTX,,,,,,,RTX_Ledende_medarbejderes_transaktioner_a23b7c2b1373d2e36fee3ef4d2683da60.txt
+2025-12-01,RTX,Henrik Mørck Mogensen,673,104,69992,buy,Køb af aktier,RTX_Ledende_medarbejderes_transaktioner_a00b10491bdbe4e4c426d841a4f8e4add.txt
 2025-11-06,Sampo plc,Antti Mäkinen,5914,9.84,58193.76,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb353783729a519e521fb00136061b20e7langensrclisted.txt
 2025-11-06,Sampo plc,Annica Witschard,3493,9.84,34371.12,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb52bc5e2e552294b3724704158cf6a34flangensrclisted.txt
 2025-11-06,Sampo plc,Markus Rauramo,3779,9.84,37185.36,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb83c016f65eb64ae680233fa8e994b7a6langensrclisted.txt
@@ -378,7 +358,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Sampo plc,Risto Murto,3833,9.84,37716.72,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idbec46831effb98aa0b21f37302635c19blangensrclisted.txt
 2025-11-06,Sampo plc,Sara Mella,6287,9.84,61864.08,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idbf558d9412b19764aa19d8706f8ec5d19langensrclisted.txt
 ,Scandinavian Investment Group AS,a),4907,3772,18509204,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0ff4389c8618400ed653f6c3772b4907&lang=da&src=listed,Scandinavian_Investment_Group_AS_Ledende_medarbejderes_transaktioner_a5bf9a317d0f70b98fb9c96b24c037575.txt
-2025-11-04,Scandinavian Investment Group AS,,,,,,,Scandinavian_Investment_Group_AS_Ledende_medarbejderes_transaktioner_a932c2be0e39d98ac003e9bb5b4f42574.txt
 2025-12-08,Scanfil Oyj,Markku Kosunen,3772,9.734475079533404029692470838,36718.44,sell,DISPOSAL,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_a5efd63c0585b80d72b05ceb854279119.txt
 2025-11-26,Scanfil Plc,"Kosunen, Markku",10000,7.37,73700,buy,SUBSCRIPTION,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_aae4a5a18142188691e9cabb209cb35d7.txt
 2024-12-04,Shape Robotics A/S,"Aurel Nețin, Chairman of the Board of Directors",,,,buy,,Shape_Robotics_AS_Ledende_medarbejderes_transaktioner_a53e20c12c2a8bbd1596aa09cd4808d84.txt
@@ -435,13 +414,13 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-25,Tokmanni Group Oyj,Janne Pihkala,1467,7.124318336741649625085207907,10451.375,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idba4d1df2579225d2e163043c9bfb36cbdlangfisrclisted.txt
 2025-11-12,Torm plc,,1402,0.07,98.14,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0a7d952b7b860a0a9e4955e6974b99d3&lang=en&src=listed,Torm_plc_Ledende_medarbejderes_transaktioner_ad26fc4a3957af0d4aecb8b1d3a381b49.txt
 2025-11-10,Trifork Group AG,associated with them.,140000,81.6,11424000,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a195d9c7ae12a210ca5729e88af0670c7.txt
-2025-11-03,Trifork Group AG,,,,,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
-2025-11-25,Trifork Group AG,,1363,0,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt
+2025-11-03,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
+2025-11-25,Trifork Group AG,,1363,0,,,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt
 2025-11-05,Trifork Group AG,associated with them.,1424,82.2496,117123.4304,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a935616b7079a3c496ccd9eda1f96ef1d.txt
-2025-11-07,Trifork Group AG,associated with them.,35960,82.6578,2972374.488,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
+2025-11-07,Trifork Group AG,associated with them.,35960,82.6578,2972374.488,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
 2025-11-04,Trifork Group AG,associated with them.,3000,83.7,251100,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_aac31d919b21fa3315c780b1857bcb903.txt
-2025-11-06,Trifork Group AG,,,,,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_afd79bf51341d23ecc7c058ac10842677.txt
-,UIE Plc,Ulrik Juul Østergaard,2021,1,2021,,"DKK 363,00",UIE_Plc_Ledende_medarbejderes_transaktioner_a0ad4f20e45137b3cf5d24835dd4e5cb4.txt
+2025-11-06,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_afd79bf51341d23ecc7c058ac10842677.txt
+,UIE Plc,Ulrik Juul Østergaard,2021,1,2021,buy,"DKK 363,00",UIE_Plc_Ledende_medarbejderes_transaktioner_a0ad4f20e45137b3cf5d24835dd4e5cb4.txt
 2025-11-26,UIE Plc,,1831,363,664653,,DKK 363.00,UIE_Plc_Ledende_medarbejderes_transaktioner_a3beba4cc87142341360e7c2a17355067.txt
 2025-11-05,Verkkokauppa.com Oyj,Samuli Seppälä,1254,4,5016,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idb183c55290c62d1808caeb0e691d1f39blangensrclisted.txt
 2025-11-03,Verkkokauppa.com Oyj,Samuli Seppälä,18120,4.000934878587196467991169978,72496.94,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idba5a94249cc07eb25ce4180c1405362felangensrclisted.txt
@@ -454,4 +433,4 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-16,Vincit Plc,"Siivonen, Veera",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idbc62b9b3fb87280326b8a882f0c4e1713langensrclisted.txt
 2025-12-16,Vincit Plc,"Copeland, Matti",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idbce479d2919b80eb3df2cfc2165cef467langensrclisted.txt
 2025-10-24,Wetteri Oyj,Aarne Simula,23471,0.1907403178390354053938903328,4476.866,sell,DISPOSAL,Wetteri_Plc_Ledende_medarbejderes_transaktioner_view_idb6742729f841029250141ae95e12bafd1langensrclisted.txt
-2025-12-02,Zealand Pharma AS,,15442,487.6,7529519.2,buy,DKK  487.60,Zealand_Pharma_AS_Ledende_medarbejderes_transaktioner_ad8e338f821b5e8762287861700a32c11.txt
+2025-12-02,Zealand Pharma AS,,15442,487.6,7529519.2,buy,context.,Zealand_Pharma_AS_Ledende_medarbejderes_transaktioner_ad8e338f821b5e8762287861700a32c11.txt

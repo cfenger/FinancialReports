@@ -211,6 +211,24 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
             "Notices that only point to attached PDFs should be skipped until the attachment is parsed.",
         )
 
+    def test_skip_attachment_notice_bactiquant(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "BactiQuant_AS_Ledende_medarbejderes_transaktioner_a24a85b8255dadb1e16cab1af5caadba2.txt"
+        )
+        if not stub.exists():
+            self.skipTest("BactiQuant attachment-only fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(
+            rows,
+            [],
+            "Notices that only point to attached forms (without transaction data) should be skipped.",
+        )
+
     def test_insider_cli_matches_snapshot(self):
         input_dir = REPO_ROOT / "test" / "insider" / "nasdaq_news_cli"
         expected_csv = REPO_ROOT / "test" / "insider" / "insider_summary_base.csv"

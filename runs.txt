@@ -21,7 +21,8 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
-Running this command gives problem:
-uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Ambu_AS_Ledende_medarbejderes_transaktioner_a072c1bd8fdc8d51318df641dca02ee65.txt
+Running this command should not gives any rows in the csv file:
+I want stock options to be ignored in a general way
+uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt
 
-
+Can you generalized such that this message is ignored?
