@@ -17,11 +17,17 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --limit 100 --out-csv rights/nasdaq_news_cli.csv
 
 
-
+Side missing. Always make general solutions.
+>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
+WARNING: Incomplete row from Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt: missing side
+date,company,name,shares,price,total_value,side,reason,filename
+2018-03-05,Dataproces Group AS,a),7,8,56,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb8fbd92418ed552ff419cf8540f8bff7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
 
 
 Number of shares can be extracted. Always make general solutions.
->uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
-WARNING: No transactions parsed from Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
-date,company,name,shares,price,total_value,side,reason,filename
-2025-12-01,Collaxio AB,,,,,buy,,Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
+>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
+
+
+I think this message is also part of a share-based incentive?
+If so, it should be ignored in interpret.py --task insider.
+./test/insider/nasdaq_news_cli/Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb8f69b244069bbbe187f2bdb846c547b7langensrclisted.txt

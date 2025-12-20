@@ -333,6 +333,20 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
         rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
         self.assertEqual(rows, [], "RSU vesting transactions should be ignored.")
 
+    def test_skip_restricted_share_unit_plan_treasury_transfer_notice(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb8f69b244069bbbe187f2bdb846c547b7langensrclisted.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Duell RSU plan fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(rows, [], "RSU plan treasury share transfers should be ignored.")
+
     def test_keep_sale_motivated_by_incentive_plan_taxes(self):
         stub = (
             REPO_ROOT

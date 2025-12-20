@@ -112,7 +112,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Digitalist Group Oy,Wilhelm Rosenlew,547,3.34,1826.98,sell,DISPOSAL,Digitalist_Group_Plc_Ledende_medarbejderes_transaktioner_view_idbf1e8df8a44790c3c756028434d10b664langensrclisted.txt
 2025-11-28,Djurslands Bank AS,Sigurd Bohlbro Simmelsgaard,177,856,151512,buy,Erhvervelse af aktier i forbindelse med bruttolønsordning,Djurslands_Bank_AS_Ledende_medarbejderes_transaktioner_af24c18eabf80565a70a647612264b8d9.txt
 2025-11-18,DonkeyRepublic Holding AS,Bladt Invest ApS,1225490,,,buy,Subscription of new shares,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
-2025-11-18,Duell Oyj,,,,,sell,,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb8f69b244069bbbe187f2bdb846c547b7langensrclisted.txt
 2025-11-11,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,165,66000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0072f35779688b8b3fd7488df13098e6.txt
 2025-11-25,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,50,167,8350,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0eb83ce4519d34e9c4f396ff57cffd1a.txt
 2025-11-19,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,167,66800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a15a89658947366417c2e18bb001c3808.txt
@@ -405,7 +404,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-17,Tokmanni Group Oyj,Tapio Arimo,10000,7.0575,70575,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb61da95e9a94ead63bc94de7dd323bd31langfisrclisted.txt
 2025-12-02,Tokmanni Group Oyj,Mika Rautiainen,11015,7.463617793917385383567862006,82211.75,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idba0ee07a06194d45635ad544d14ac6384langfisrclisted.txt
 2025-11-25,Tokmanni Group Oyj,Janne Pihkala,1467,7.124318336741649625085207907,10451.375,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idba4d1df2579225d2e163043c9bfb36cbdlangfisrclisted.txt
-2025-11-14,Torm plc,,1402,0.07,98.14,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0a7d952b7b860a0a9e4955e6974b99d3&lang=en&src=listed,Torm_plc_Ledende_medarbejderes_transaktioner_ad26fc4a3957af0d4aecb8b1d3a381b49.txt
 2025-11-07,Trifork Group AG,Ferd AS,140000,81.6,11424000,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a195d9c7ae12a210ca5729e88af0670c7.txt
 2025-11-05,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
 2025-11-25,Trifork Group AG,Jørn Larsen,1363,0,,,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt

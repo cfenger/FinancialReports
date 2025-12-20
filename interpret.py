@@ -1122,6 +1122,8 @@ STOCK_OPTION_HINTS = (
 SHARE_BASED_INCENTIVE_HINTS = (
     "share-based incentive",
     "share based incentive",
+    "restricted share unit",
+    "restricted share units",
     "restricted stock unit",
     "restricted stock units",
     "rsu",
@@ -1129,17 +1131,59 @@ SHARE_BASED_INCENTIVE_HINTS = (
     "matching shares",
 )
 
+def _should_skip_share_based_incentive_notice(
+    *,
+    nature: str,
+    normalized_text: str,
+    side: str,
+    has_transactions: bool,
+) -> bool:
+    nature_norm = normalize_line(nature)
+    if nature_norm:
+        if any(token in nature_norm for token in SHARE_BASED_INCENTIVE_HINTS):
+            return True
+        if "incentive" in nature_norm and ("share" in nature_norm or "shares" in nature_norm) and (
+            "receipt" in nature_norm or "receive" in nature_norm or "received" in nature_norm
+        ):
+            return True
 
-def _should_skip_share_based_incentive_notice(nature: str) -> bool:
-    norm = normalize_line(nature)
-    if not norm:
+    # Narrative notices sometimes omit the ESMA "nature" field. In those cases,
+    # skip only when the notice clearly describes non-cash plan transfers rather
+    # than an on-market trade.
+    if not normalized_text:
         return False
-    if any(token in norm for token in SHARE_BASED_INCENTIVE_HINTS):
+
+    if not any(token in normalized_text for token in SHARE_BASED_INCENTIVE_HINTS):
+        return False
+
+    if side == "sell" and has_transactions:
+        # Keep actual sells even if motivated by incentive/tax reasons.
+        return False
+
+    if re.search(r"\bexercise of restricted (?:share|stock) units?\b", normalized_text):
         return True
-    if "incentive" in norm and ("share" in norm or "shares" in norm) and (
-        "receipt" in norm or "receive" in norm or "received" in norm
+
+    if any(
+        token in normalized_text
+        for token in (
+            "without consideration",
+            "without compensation",
+            "free of charge",
+            "at no cost",
+            "no consideration",
+        )
     ):
         return True
+
+    if "treasury shares" in normalized_text and "transferred" in normalized_text:
+        return True
+
+    if "transferred to key employees" in normalized_text:
+        return True
+
+    if "directed share issue" in normalized_text:
+        return True
+
     return False
 
 
@@ -1235,17 +1279,22 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
     date = extract_date(text)
     reference_number = extract_reference_number(text)
     nature = translate_nature(extract_nature(lines))
+    side = determine_side_from_text(nature, normalized_text)
+    transactions = extract_transactions(lines, normalized_text)
     if _should_skip_stock_option_notice(lines=lines, normalized_text=normalized_text, nature=nature):
         logging.info("Skipping %s: stock option instruments are ignored.", path.name)
         return []
-    if _should_skip_share_based_incentive_notice(nature):
+    if _should_skip_share_based_incentive_notice(
+        nature=nature,
+        normalized_text=normalized_text,
+        side=side,
+        has_transactions=bool(transactions),
+    ):
         logging.info(
             "Skipping %s: share-based incentive / RSU-related transactions are ignored.",
             path.name,
         )
         return []
-    side = determine_side_from_text(nature, normalized_text)
-    transactions = extract_transactions(lines, normalized_text)
 
     rows: List[dict] = []
     if not transactions:
