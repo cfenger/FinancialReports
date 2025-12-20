@@ -19,12 +19,9 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
-Good to line 51
-	BactiQuant AS	Ulstrup Invest ApS	500000	2	1000000	buy	KÅ‚b af Nye aktier ved rettet emission	BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
 
-
-Date is missing here. Always make general solutions.
-G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
-WARNING: Incomplete row from BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt: missing date
+Number of shares can be extracted. Always make general solutions.
+>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
+WARNING: No transactions parsed from Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
 date,company,name,shares,price,total_value,side,reason,filename
-,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
+2025-12-01,Collaxio AB,,,,,buy,,Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt

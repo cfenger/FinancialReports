@@ -43,6 +43,8 @@ BUY_KEYWORDS = (
     "kb",
     "erhvervelse",
     "merkinta",
+    "forvarv",
+    "forvarvar",
 )
 SELL_KEYWORDS = (
     "disposal",
@@ -85,6 +87,49 @@ NARRATIVE_PURCHASE_RE = re.compile(
 SHARES_AT_PRICE_RE = re.compile(
     r"(\d[\d\s.,]*)\s+shares?\s+at(?:\s+(?:an\s+)?(?:average\s+)?price\s+of)?\s+(?:[a-z]{2,6}\s*)?([\d][\d\s.,]*)",
     re.IGNORECASE,
+)
+
+SHARE_COUNT_ONLY_RE = re.compile(
+    r"(\d[\d\s.,]*)\s+(?:shares?|aktier|aksjer|osaketta|osakkeita|akcje|acciones)\b",
+    re.IGNORECASE,
+)
+
+SHARE_COUNT_CONTEXT_HINTS = (
+    "acquired",
+    "acquisition",
+    "purchased",
+    "purchase",
+    "bought",
+    "subscribed",
+    "subscribes",
+    "subscription",
+    "allocated",
+    "allotted",
+    "awarded",
+    "received",
+    "invested",
+    "converted",
+    "conversion",
+    "sold",
+    "sell",
+    "disposed",
+    "divested",
+    "traded",
+    "transacted",
+    "transfer",
+    "forvarv",
+    "forvarvar",
+    "kopt",
+    "kobt",
+    "kjopt",
+    "tecknat",
+    "tegnet",
+    "sammanlagt",
+    "totalt",
+    "total",
+    "aggregate",
+    "aggregated",
+    "combined",
 )
 
 MONTH_NAME_TO_NUM = {
@@ -943,7 +988,21 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
     if m:
         volume, price = m.groups()
         transactions.append((volume, price))
+        return transactions
 
+    # Fallback 7: narrative "N shares" with a nearby action keyword but no price.
+    for match in SHARE_COUNT_ONLY_RE.finditer(normalized_text):
+        volume = match.group(1)
+        if not volume:
+            continue
+        window = normalized_text[max(0, match.start() - 80) : match.end() + 40]
+        if not any(hint in window for hint in SHARE_COUNT_CONTEXT_HINTS):
+            continue
+        vol_clean = volume.strip(" ,.;")
+        if vol_clean:
+            transactions.append((vol_clean, ""))
+    if transactions:
+        return transactions
     return transactions
 
 
