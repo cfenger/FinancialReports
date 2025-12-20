@@ -202,6 +202,49 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
     if candidate:
         return candidate
 
+    # ESMA templates often have "Name" on its own line, followed by the value
+    # (without a colon). Prefer the first name within the person-details section,
+    # before the issuer-details section begins.
+    in_person_details = False
+    for idx, (_raw, norm) in enumerate(lines):
+        if "details of the person discharging managerial responsibilities" in norm:
+            in_person_details = True
+            continue
+        if in_person_details and ("reason for the notification" in norm or "details of the issuer" in norm):
+            in_person_details = False
+        if not in_person_details:
+            continue
+        if norm not in ("name", "a) name", "a ) name"):
+            continue
+        best_candidate = ""
+        for raw2, norm2 in lines[idx + 1 : idx + 12]:
+            text = raw2.strip()
+            if not text or ":" in text:
+                continue
+            if re.fullmatch(r"[a-z][).]?", norm2) or re.fullmatch(r"[ivxlcdm]+\.", norm2):
+                continue
+            if any(
+                token in norm2
+                for token in (
+                    "reason for the notification",
+                    "details of the issuer",
+                    "details of the transaction",
+                    "position/status",
+                    "initial notification",
+                    "amendment",
+                    "lei",
+                )
+            ):
+                break
+            if any(ch.isdigit() for ch in text) or looks_like_alphanumeric_code(text):
+                continue
+            if not best_candidate:
+                best_candidate = text
+            if looks_like_person_name(text):
+                return text
+        if best_candidate:
+            return best_candidate
+
     # Fallback for Danish/Scandinavian templates where the person name appears
     # right after a "Nærmere oplysninger om personen ..." heading.
     for idx, (_raw, norm) in enumerate(lines):
@@ -266,6 +309,31 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
                     best_candidate = text
             if best_candidate:
                 return best_candidate
+
+    # Some PDF extractions emit the template headings first and then append the
+    # filled-in values afterwards (often right after the "Place of the transaction"
+    # heading). When that happens, pick the first value that is followed by an
+    # "Initial notification" marker, which indicates we're in the appended value block.
+    place_heading_idx: int | None = None
+    for idx, (_raw, norm) in enumerate(lines):
+        if "place of the transaction" in norm:
+            place_heading_idx = idx
+    if place_heading_idx is not None:
+        for j in range(place_heading_idx + 1, min(len(lines), place_heading_idx + 20)):
+            raw_j, norm_j = lines[j]
+            text = raw_j.strip()
+            if not text or ":" in text:
+                continue
+            if any(ch.isdigit() for ch in text) or looks_like_alphanumeric_code(text):
+                continue
+            if not re.search(r"[A-Za-z]", text):
+                continue
+            has_initial_notification = any(
+                "initial notification" in norm2 or "amendment" in norm2
+                for _raw2, norm2 in lines[j : j + 12]
+            )
+            if has_initial_notification:
+                return text
 
     # Fallback for ESMA-style templates without explicit "Name:" lines.
     person_idx: int | None = None

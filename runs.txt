@@ -28,8 +28,12 @@ Good to line 26
 
 Running this command should not gives any rows in the csv file:
 I want SHARE-BASED INCENTIVE and the like to be ignored in a general way:
+
+
 uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
 
-
-
-Can you generalized such that this message is ignored?
+This can be improved. Eg name is missing. Always make general solutions.
+>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+WARNING: Incomplete row from Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt: missing name
+date,company,name,shares,price,total_value,side,reason,filename
+2025-11-25,Asetek AS,,51966,1.59,82625.94,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt

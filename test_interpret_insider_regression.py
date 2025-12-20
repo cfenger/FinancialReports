@@ -194,6 +194,36 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
         )
         self.assertEqual(rows, [], "Portfolio placeholder files should be skipped")
 
+    def test_extract_name_from_appended_value_block(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Asetek appended-value name fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertTrue(rows, "Expected at least one parsed row for Asetek fixture")
+        self.assertTrue(all(row.get("name") == "Jakob Alsted Have" for row in rows))
+
+    def test_extract_name_prefers_person_section_over_issuer(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a15113af1a69c629443a8da1616677a4f.txt"
+        )
+        if not stub.exists():
+            self.skipTest("AstraZeneca name fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertTrue(rows, "Expected at least one parsed row for AstraZeneca fixture")
+        self.assertTrue(all(row.get("name") == "Pascal Soriot" for row in rows))
+
     def test_skip_attachment_notice_without_data(self):
         stub = (
             REPO_ROOT
