@@ -19,9 +19,23 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
+Please correct here. Always make general solutions.
+>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
+WARNING: No transactions parsed from Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
+date,company,name,shares,price,total_value,side,reason,messageUrl,filename
+2025-11-05,Eik fasteignaflag hf,Gunnar Þór Gíslason,,,,,,https://view.news.eu.nasdaq.com/view?id=b242310598cc8be00095e50ec881cbb4d&lang=is&src=listed,Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
 
-Number of shares can be extracted. Always make general solutions.
->uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
 
+
+
+When you look here you see a link to a pdf file with all info:
+https://view.news.eu.nasdaq.com/view?id=b242310598cc8be00095e50ec881cbb4d&lang=is&src=listed
+
+Side (buy or sell) is missing.  Always make general solutions.
+G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
+WARNING: Incomplete row from Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt: missing side
+WARNING: Incomplete row from Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt: missing side
+date,company,name,shares,price,total_value,side,reason,messageUrl,filename
+2025-11-05,Eik fasteignaflag hf,Gunnar Þór Gíslason,16184400,13.74268184177355972417883888,222417060,,,https://view.news.eu.nasdaq.com/view?id=b242310598cc8be00095e50ec881cbb4d&lang=is&src=listed,Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
 
 

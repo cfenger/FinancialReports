@@ -56,6 +56,7 @@ BUY_KEYWORDS = (
     "merkinta",
     "forvarv",
     "forvarvar",
+    "kaup",
 )
 SELL_KEYWORDS = (
     "disposal",
@@ -77,6 +78,8 @@ NATURE_TRANSLATIONS = {
     "osakeoption hyvaksyminen": "ACCEPTANCE OF A STOCK OPTION",
     # Swedish -> English
     "teckning": "SUBSCRIPTION",
+    # Icelandic -> English
+    "kaup": "ACQUISITION",
 }
 
 TRANSACTION_LINE_RE = re.compile(
@@ -581,6 +584,9 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             or norm.startswith("mngde")
             or norm.startswith("pris")
             or norm.startswith("prise")
+            or "ver og magn" in norm
+            or norm == "ver"
+            or norm == "magn"
             or "aggregerede oplysninger" in norm
             or "aggregated information" in norm
             or "aggregeret maengde" in norm
@@ -599,6 +605,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             or "liiketoimen luonne" in norm
             or "transaktionens art" in norm
             or "transaktionens karaktar" in norm
+            or "eli viskiptanna" in norm
         ):
             value = value_after_colon(raw)
             if value:
@@ -612,6 +619,7 @@ def extract_nature(lines: Sequence[Tuple[str, str]]) -> str:
             or "liiketoimen luonne" in norm
             or "transaktionens art" in norm
             or "transaktionens karaktar" in norm
+            or "eli viskiptanna" in norm
         ):
             nature_start = idx
             break
@@ -696,6 +704,15 @@ def determine_side(nature: str) -> str:
 
 
 def clean_int(value: str) -> str:
+    compact = value.replace(" ", "")
+    if re.search(r"[.,]", compact):
+        cleaned = clean_decimal(value)
+        if cleaned:
+            try:
+                dec = Decimal(cleaned)
+                return decimal_to_str(dec.quantize(Decimal("1")))
+            except (InvalidOperation, ValueError):
+                pass
     digits = re.sub(r"[^\d]", "", value)
     return digits
 
@@ -840,12 +857,47 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
         return transactions
 
     # Fallback 3: Icelandic-style layout with "Verð og magn" and separate
-    # "Verð" / "Samanlagt magn" or "Magn" labels.
-    has_ver_og_magn = any("verd og magn" in norm for _raw, norm in lines)
+    # "Verð" / "Samanlagt magn" or "Magn" labels. These notices often list
+    # multiple price/volume pairs one per line.
+    heading_idx: int | None = None
+    for idx, (_raw, norm) in enumerate(lines):
+        if "ver og magn" in norm or "verd og magn" in norm:
+            heading_idx = idx
+            break
+    if heading_idx is not None:
+        numeric_block: List[str] = []
+        for raw, norm in lines[heading_idx + 1 :]:
+            # Stop when reaching the aggregated summary or the next section.
+            if any(
+                stop in norm
+                for stop in (
+                    "ver - samanteknar",
+                    "samanlagt magn",
+                    "viskiptadagur",
+                    "transaction date",
+                    "sta er viskiptanna",
+                )
+            ):
+                break
+            if re.search(r"\d", raw):
+                if should_skip_numeric_line(raw):
+                    continue
+                numeric_block.append(raw)
+        if len(numeric_block) >= 2:
+            for i in range(0, len(numeric_block) - 1, 2):
+                price_raw = numeric_block[i]
+                volume_raw = numeric_block[i + 1]
+                transactions.append((volume_raw, price_raw))
+        if transactions:
+            return transactions
+
+    has_ver_og_magn = heading_idx is not None or any(
+        ("ver og magn" in norm) or ("verd og magn" in norm) for _raw, norm in lines
+    )
     if has_ver_og_magn:
         price_header_idx: int | None = None
         for idx, (_raw, norm) in enumerate(lines):
-            if norm == "verd":
+            if norm in ("verd", "ver"):
                 price_header_idx = idx
                 break
 
