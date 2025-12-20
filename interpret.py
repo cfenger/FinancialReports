@@ -41,6 +41,9 @@ REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", 
 
 BUY_KEYWORDS = (
     "acquisition",
+    "acquire",
+    "acquires",
+    "acquired",
     "purchase",
     "buy",
     "tildeling",
@@ -104,6 +107,12 @@ NARRATIVE_PURCHASE_RE = re.compile(
     re.IGNORECASE,
 )
 
+NARRATIVE_ROLE_NAME_RE = re.compile(
+    r"(?:board member|board chair|chair(?:man)?|director|chief [^,]{0,20}?officer|ceo|cfo|coo|cio|president|vice president|managing director|executive chair|founder|partner|owner)"
+    r"\s+([A-Z][A-Za-zÀ-ÖØ-öø-ÿ'`.-]+(?:\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿ'`.-]+){0,3})(?=\s+(?:has\s+)?(?:acquired|purchased|bought|sold|disposed|divested|subscribed))",
+    re.IGNORECASE,
+)
+
 SHARES_AT_PRICE_RE = re.compile(
     r"(\d[\d\s.,]*)\s+shares?\s+at(?:\s+(?:an\s+)?(?:average\s+)?price\s+of)?\s+(?:[a-z]{2,6}\s*)?([\d][\d\s.,]*)",
     re.IGNORECASE,
@@ -150,6 +159,26 @@ SHARE_COUNT_CONTEXT_HINTS = (
     "aggregate",
     "aggregated",
     "combined",
+)
+
+TOTAL_VALUE_PATTERNS: Sequence[re.Pattern[str]] = (
+    re.compile(
+        r"total (?:transaction )?value(?: of)?(?: approximately)?\s+(?:[a-z]{2,6}\s*)?([\d][\d\s.,]*)",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"total consideration\D{0,12}([\d][\d\s.,]*)",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"aggregate(?:d)? (?:transaction )?(?:consideration|amount|value)\D{0,16}([\d][\d\s.,]*)",
+        re.IGNORECASE,
+    ),
+)
+
+PRICE_DECIMAL_HINT_RE = re.compile(
+    r"price\D{0,120}?([\d]+[.,][\d]+)",
+    re.IGNORECASE,
 )
 
 MONTH_NAME_TO_NUM = {
@@ -488,6 +517,24 @@ def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
 
 def extract_narrative_name_from_text(text: str) -> str:
     """Extract a person name from narrative sentences like '..., Lars Kristensen has on 8 December ...'."""
+
+    def _strip_trailing_action_words(candidate: str) -> str:
+        words = candidate.strip().strip(",.; ").split()
+        while words and words[-1].lower() in {"has", "har", "ha"}:
+            words.pop()
+        return " ".join(words).strip(",.; ")
+
+    role_match = NARRATIVE_ROLE_NAME_RE.search(text)
+    if role_match:
+        return _strip_trailing_action_words(role_match.group(1))
+
+    action_match = re.search(
+        r"\b([A-Z][A-Za-zÀ-ÖØ-öø-ÿ'`.-]+(?:\s+[A-Z][A-Za-zÀ-ÖØ-öø-ÿ'`.-]+){0,4})(?=\s+(?:has\s+)?(?:acquired|purchased|bought|sold|disposed|divested|subscribed)\s+\d)",
+        text,
+    )
+    if action_match:
+        return _strip_trailing_action_words(action_match.group(1))
+
     m = re.search(r",\s*([^,\n]+?)\s+has on\s+\d", text)
     if not m:
         owned_match = re.search(r"owned by\s+([^\n,.]+)", text, flags=re.IGNORECASE)
@@ -759,6 +806,43 @@ def compute_total_value(shares: str, price: str) -> str:
     except (InvalidOperation, ValueError):
         return ""
     return decimal_to_str(total)
+
+
+def derive_price_from_total(shares: str, total_value: str) -> str:
+    """Compute a per-share price when only total value is known."""
+    if not shares or not total_value:
+        return ""
+    try:
+        shares_dec = Decimal(shares)
+        total_dec = Decimal(total_value)
+    except (InvalidOperation, ValueError):
+        return ""
+    if shares_dec == 0:
+        return ""
+    return decimal_to_str(total_dec / shares_dec)
+
+
+def extract_total_value_from_text(normalized_text: str) -> str:
+    """Pull a total transaction value from narrative text."""
+    for pattern in TOTAL_VALUE_PATTERNS:
+        match = pattern.search(normalized_text)
+        if match:
+            return match.group(1).strip(" ,.;")
+    return ""
+
+
+def extract_price_hint_from_text(normalized_text: str) -> str:
+    """Pull a standalone decimal price figure that follows a price phrase."""
+    for price_match in re.finditer(r"price", normalized_text):
+        window = normalized_text[price_match.end() : price_match.end() + 200]
+        for num_match in re.finditer(r"\d[\d.,]*[.,]\d+", window):
+            candidate = num_match.group(0).strip(" ,.;")
+            compact = candidate.replace(" ", "")
+            if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", compact):
+                # Likely a thousands-grouped total, not a per-share price.
+                continue
+            return candidate
+    return ""
 
 
 def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str) -> List[Tuple[str, str]]:
@@ -1076,6 +1160,7 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
         return transactions
 
     # Fallback 7: narrative "N shares" with a nearby action keyword but no price.
+    seen_share_only: set[Tuple[str, str]] = set()
     for match in SHARE_COUNT_ONLY_RE.finditer(normalized_text):
         volume = match.group(1)
         if not volume:
@@ -1083,9 +1168,15 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
         window = normalized_text[max(0, match.start() - 80) : match.end() + 40]
         if not any(hint in window for hint in SHARE_COUNT_CONTEXT_HINTS):
             continue
+        if re.search(r"\bhold\w*\b", window) or "following the transaction" in window:
+            continue
         vol_clean = volume.strip(" ,.;")
         if vol_clean:
-            transactions.append((vol_clean, ""))
+            pair = (vol_clean, "")
+            if pair in seen_share_only:
+                continue
+            seen_share_only.add(pair)
+            transactions.append(pair)
     if transactions:
         return transactions
     return transactions
@@ -1368,6 +1459,13 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
     nature = translate_nature(extract_nature(lines))
     side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)
+    total_value_hint = extract_total_value_from_text(normalized_text)
+    total_value_hint_clean = clean_decimal(total_value_hint) if total_value_hint else ""
+    price_hint = extract_price_hint_from_text(normalized_text)
+    price_hint_clean = clean_decimal(price_hint) if price_hint else ""
+    if len(transactions) != 1:
+        total_value_hint_clean = ""
+        price_hint_clean = ""
     if _should_skip_stock_option_notice(lines=lines, normalized_text=normalized_text, nature=nature):
         logging.info("Skipping %s: stock option instruments are ignored.", path.name)
         return []
@@ -1412,6 +1510,15 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
     for volume, price in transactions:
         shares_clean = clean_int(volume)
         price_clean = clean_decimal(price)
+        if not price_clean and price_hint_clean:
+            price_clean = price_hint_clean
+        total_value = compute_total_value(shares_clean, price_clean)
+        if not total_value and total_value_hint_clean and shares_clean:
+            total_value = total_value_hint_clean
+            if not price_clean:
+                derived = derive_price_from_total(shares_clean, total_value_hint_clean)
+                if derived:
+                    price_clean = derived
         rows.append(
             {
                 "date": date,
@@ -1419,7 +1526,7 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
                 "name": name,
                 "shares": shares_clean,
                 "price": price_clean,
-                "total_value": compute_total_value(shares_clean, price_clean),
+                "total_value": total_value,
                 "side": side,
                 "reason": nature,
                 "messageUrl": message_url,
