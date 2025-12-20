@@ -825,7 +825,18 @@ def determine_side_from_text(nature: str, normalized_text: str) -> str:
         return "buy"
     if "disposed" in lowered or "sold" in lowered:
         return "sell"
-    return determine_side(lowered)
+    for keyword in BUY_KEYWORDS:
+        if keyword == "receipt":
+            # Avoid false positives like "receipt of information" unless shares are mentioned.
+            if re.search(r"\breceipt of [^\n]{0,40}share", lowered):
+                return "buy"
+            continue
+        if keyword in lowered:
+            return "buy"
+    for keyword in SELL_KEYWORDS:
+        if keyword in lowered:
+            return "sell"
+    return ""
 
 
 def parse_insider_file(text: str, path: Path) -> List[dict]:
@@ -850,6 +861,12 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
 
     rows: List[dict] = []
     if not transactions:
+        attachment_only = "attached document discloses the data of the transactions" in normalized_text
+        if attachment_only:
+            logging.warning(
+                "Skipping %s: transaction details live only in the attached PDF.", path.name
+            )
+            return []
         if (
             ("henvises til vedh" in normalized_text and "skema" in normalized_text)
             or "see attached form" in normalized_text

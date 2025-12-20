@@ -19,17 +19,9 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
-uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv insider/nasdaq_news_cli.csv --from-date 2025-12-01 --company "AL Sydbank A/S"
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv 
-uv run --with requests,beautifulsoup4,pdfminer.six python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
 
 
+Running this command gives problem:
+uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Ambu_AS_Ledende_medarbejderes_transaktioner_a072c1bd8fdc8d51318df641dca02ee65.txt
 
-uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejderes transaktioner" --out-csv insider/nasdaq_news_cli.csv --from-date 2025-12-01 --company "Asetek A/S"
-uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf python downloadpdf.py --input insider/nasdaq_news_cli.csv --to-text
-uv run python interpret.py --task insider --output insider/insider_summary.csv --collect --input insider/nasdaq_news_cli/
 
-Running this command gives a line with problems:
-uv run python interpret.py --task insider --output test/insider/insider_summary_base.csv --collect --input-dir ./test/insider/nasdaq_news_cli
-
-04/11/2025	Alm Brand AS	Andreas Ruben Madsen	7846	18.37	144131.02		e.	Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a5568d0d278852104fabe696f0157a8d0.txt
