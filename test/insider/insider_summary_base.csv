@@ -52,9 +52,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 ,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
 ,BactiQuant AS,HSK Management og Rådgivning ApS,250000,2,500000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5f26a22079eb70b2cc240b59a82d3caf.txt
 ,BactiQuant AS,MVA og CO Aps,3000000,2,6000000,,Rettet emission tegning af nye aktier,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
-2025-12-16,Better Collective AS,c) Volumne(s),,,,buy,DKK 0,Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt
 2025-11-12,BEWI ASA,RESPONSIBILITIES AND RELATED PARTIES,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
-2025-11-17,BEWI ASA,,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_view_idb737b794c6fa41dd288577819788a516flangensrclisted.txt
 2025-12-03,Biohit Oyj,Liu Feng,200000,3,600000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb39b6b1eb5fc3b1fbb93077bc0bf034edlangensrclisted.txt
 2025-11-28,Biohit Oyj,Osmo Suovaniemi,800000,3,2400000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb5eff3ac8d86ee2fa1044fea81814d679langensrclisted.txt
 2025-11-05,Biohit Oyj,Osmo Suovaniemi,500000,2.77,1385000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb653ff0cedb80f8f85d10ae620f01a065langensrclisted.txt
@@ -71,22 +69,16 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-11,Citycon Oyj,Chaim Katzman,10713,3.987468589564081023056100065,42717.751,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb3d1281524002ee7af06d71c57ceccf77langensrclisted.txt
 2025-11-05,Citycon Oyj,Chaim Katzman,18036,3.978189842537147926369483256,71750.632,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb4bee17f09168ff29f93fa2674f2b4f6alangensrclisted.txt
 2025-11-13,Citycon Oyj,Chaim Katzman,7594,3.977,30201.338,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb50085aae32df69a3cbf894a95c016550langensrclisted.txt
-2025-11-21,Citycon Oyj,Eshel Pesti,149154,0,,buy,ACCEPTANCE OF A STOCK OPTION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb5de412fc5472386170c1bbea883a2d07langensrclisted.txt
 2025-11-07,Citycon Oyj,Chaim Katzman,1941,3.987120556414219474497681607,7739.001,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idb8cf0949f205c09256de0080f26079c6blangensrclisted.txt
 2025-12-03,Citycon Oyj,Chaim Katzman,531,3.98,2113.38,buy,ACQUISITION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idbb98f0af325a2fbd1c0c6af09abdcb515langensrclisted.txt
-2025-11-21,Citycon Oyj,Hilik Attias,149154,0,,buy,ACCEPTANCE OF A STOCK OPTION,Citycon_Oyj_Ledende_medarbejderes_transaktioner_view_idbcb476c3331d4e15b8e0c0291d4109966langensrclisted.txt
 2025-10-31,Cityvarasto Oyj,Ville Stenroos,224151,0,,buy,OTHER,Cityvarasto_Oyj_Ledende_medarbejderes_transaktioner_view_idb9c578d23c6ee36fd7a315790b186d315langensrclisted.txt
 2025-12-01,Collaxio AB,,,,,buy,,Collaxio_AB_Ledende_medarbejderes_transaktioner_af3c2554a768b31d24327e77d25c0e666.txt
 2025-11-26,Columbus AS,,1000000,10.1,10100000,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_a45cf06fde5699a66f3b64e749a94a57c.txt
 2025-11-27,Columbus AS,,1000000,10.05,10050000,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_a5d9c09bb52964c2ad4a2aae0ffe54407.txt
 2025-11-07,Columbus AS,,601522,9.63,5792656.86,buy,Purchase of shares,Columbus_AS_Ledende_medarbejderes_transaktioner_acf72fc4b96364c023524f6a8e0dcb189.txt
-2025-11-27,Componenta Oyj,Pasi Mäkinen,3000,1.8916,5674.8,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb03568cc156ce0ad41f725ecda9398870langensrclisted.txt
 2025-11-25,Componenta Oyj,Harri Suutari,40000,0,,buy,LENDING,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb913e5865d2737b75a83e9b73ee935908langensrclisted.txt
-2025-11-26,Componenta Oyj,Sami Sivuranta,6677,1.8059,12057.9943,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb9c6cd851be76ecae2315b2bfbece1482langensrclisted.txt
 2025-11-27,Componenta Oyj,Marko Karppinen,1950,3.025,5898.75,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idba56814e0fbb7a150d03576949434db3blangensrclisted.txt
 2025-11-28,Componenta Oyj,Pasi Mäkinen,4540,3.025,13733.5,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idba8854b17f7738153858f48488892458blangensrclisted.txt
-2025-11-26,Componenta Oyj,Marko Karppinen,6565,1.8358,12052.027,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbb4f4ce7af846fb6f501113e0f13baf82langensrclisted.txt
-2025-11-26,Componenta Oyj,Hanna Seppänen,6438,1.8228,11735.1864,sell,DISPOSAL,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbbd52550f7b7485711d98d0c3c4fa9562langensrclisted.txt
 2025-11-26,Componenta Oyj,Hanna Seppänen,2208,3.025,6679.2,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbdae10d4c802833146f42750220d162felangensrclisted.txt
 2025-11-27,Componenta Oyj,Sami Sivuranta,1726,3.025,5221.15,buy,SUBSCRIPTION,Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idbec6cc11d4f13fa2465ea01bccc992bcclangensrclisted.txt
 2025-11-10,Danske Bank AS,Lieve Mostrey,1000,293.3,293300,buy,Køb,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a0b8559199335c34be7d143a9a8009c8b.txt
@@ -120,7 +112,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Digitalist Group Oy,Wilhelm Rosenlew,547,3.34,1826.98,sell,DISPOSAL,Digitalist_Group_Plc_Ledende_medarbejderes_transaktioner_view_idbf1e8df8a44790c3c756028434d10b664langensrclisted.txt
 2025-11-28,Djurslands Bank AS,Sigurd Bohlbro Simmelsgaard,177,856,151512,buy,Erhvervelse af aktier i forbindelse med bruttolønsordning,Djurslands_Bank_AS_Ledende_medarbejderes_transaktioner_af24c18eabf80565a70a647612264b8d9.txt
 2025-11-18,DonkeyRepublic Holding AS,DonkeyRepublic Holding,,,,buy,Subscription of new shares,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
-2025-11-14,DSV AS,,1200000,1325,1590000000,sell,Sale of shares – as a result of exercise of share option program,DSV_AS_Ledende_medarbejderes_transaktioner_a82e9a0cd05ec4db7d786fcac437a1ea9.txt
 2025-11-18,Duell Oyj,Jukka Smolander,1355,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb30351be2adacb0d2cba07dadfd9dfc47langensrclisted.txt
 2025-11-18,Duell Oyj,Jarkko Ämmälä,8000,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb627012ff9bff8ee9758b4fa7bec463d8langensrclisted.txt
 2025-11-18,Duell Oyj,Karl Magnus Miemois,3941,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb803bf1e82de83b492bdbfc6cecf347f5langensrclisted.txt
@@ -135,7 +126,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-17,Endomines Finland Oyj,Kyösti Kakkonen,250556,3.36359222165903031657593512,842768.21269,buy,SUBSCRIPTION,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idb106ff35721d4f3d9659d7a259dcf39d5langensrclisted.txt
 2025-11-21,Endomines Finland Oyj,Kyösti Kakkonen,70000,26.4,1848000,sell,DISPOSAL,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idbc025e4c939e6d2392ea686002b48f7d7langensrclisted.txt
 2025-11-21,Endomines Finland Oyj,Jukka-Pekka Joensuu,1100,25.5,28050,sell,DISPOSAL,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idbfb0699ba7d3a5f8492c5c3cc0d13c84alangensrclisted.txt
-2025-12-02,Faron Pharmaceuticals Oy,,180000,2.26,406800,buy,Price(s) and volume(s),Faron_Pharmaceuticals_Oy_Ledende_medarbejderes_transaktioner_view_idb13bc93f28a76a48aac83482ba6f80dfdlangensrclisted.txt
 2025-12-03,FastPassCorp AS,Nicolai Platzer,,,,buy,,FastPassCorp_AS_Ledende_medarbejderes_transaktioner_view_idb65f683bab97b3090d7a3c7728494566dlangdasrclisted.txt
 2025-12-03,FastPassCorp AS,Finn Jensen,,,,buy,,FastPassCorp_AS_Ledende_medarbejderes_transaktioner_view_idb6fc2ebc982dd357206a0b940186cdf88langdasrclisted.txt
 2025-12-01,FirstFarms,Wefri A/S,10830000,150,1624500000,,"DKK 72,20",FirstFarms_Ledende_medarbejderes_transaktioner_a6c37809f03a0602e0b0c51bf48735d16.txt
@@ -301,7 +291,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Norrhydro Group Oyj,"Trög, Yrjö",4000,1.3,5200,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb40d1578e97963ae1088a2a1829c66033langensrclisted.txt
 2025-11-14,Norrhydro Group Oyj,"Trög, Yrjö",43247,1.200230536222165699354868546,51906.37,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb4297d15f5cedbbb8dbeedceea7813fd7langensrclisted.txt
 2025-10-27,Norrhydro Group Oyj,"Trög, Yrjö",21606,1.386523650837730260112931593,29957.23,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb94c83387e6855de6ab1d296b407dc3b9langensrclisted.txt
-2025-12-02,North Media AS,Lasse Ingemann Brodt,10000,44.46,444600,buy,aktieoptionsprogram.,North_Media_AS_Ledende_medarbejderes_transaktioner_ab3ade69bae370190b0a0dbbecb08022b.txt
 2025-11-06,Nova Klbburinn hf,Sylvía Kristín Ólafsdóttir,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a5bd2306360d0ebf7431948266e738b44.txt
 ,Nova Klbburinn hf,,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a90daabc3044f7d8b3668b38df02dd686.txt
 2025-11-06,Nova Klbburinn hf,Ólafur Magnússon,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aad7993ce343318cae7c98b7655aec117.txt
@@ -312,8 +301,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2014-04-16,Novonesis Novozymes AS,(RSU) program.,,,,buy,programs,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
 2014-04-16,Novonesis Novozymes AS,,4012526,397.2907131980203991201552339,1594139316.2656,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
 ,NTR Holding AS,Copenhagen Capital A/S,9678,4.995918578218640214920438107,48350.5,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_a04fbe148ca041b412fc454c4c08e19c2.txt
-,Oculis Holding AG,,,,,buy,Vesting of restricted stock unit (RSU) and subsequent settlement of the transaction.,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_a1cbc10dfe3ee1f0da9aa97d0b5474f12.txt
-,Oculis Holding AG,,19261928,26,500810128,buy,Purchase of ordinary shares on the open market,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_abaa604497ffe8bf27a7ea59aeb1f136c.txt
 2025-11-27,Oma Savings Bank Plc,"Alameri, Karri",1755,10.2537,17995.2435,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb69f1fb3e0f76eb399e644e430bd417a2langensrclisted.txt
 2025-11-27,Oma Savings Bank Plc,"Liiri, Sarianna",322,10.2537,3301.6914,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb7fab7593ba59a58831ba9e64bf73f761langensrclisted.txt
 2025-11-27,Oma Savings Bank Plc,"Sirkiä, Hanna",152,10.2537,1558.5624,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idbfc7660ba1952851819dabe9d72a20a83langensrclisted.txt
@@ -337,13 +324,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-15,Reitir fasteignaflag hf,Elín Árnadóttir,,,,,,Reitir_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a1982e2001247b923ab9353c9dce52fff.txt
 2025-12-12,Reitir fasteignaflag hf,Guðmundur Ingi Jónsson,,,,,,Reitir_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a4c7fa1fcb9c957fb1a37f3e3763a2aaa.txt
 2025-12-12,Reitir fasteignaflag hf,Þórarinn V. Þórarinsson,,,,,,Reitir_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a671e6ba74616b499dc84a18caee3a8b8.txt
-2025-11-24,Relais Group Oyj,Relais Group Oyj Optio-ohjelma 2024B,12000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb01319dad655bcf0e0468e1ecd7928c54langfisrclisted.txt
-2025-11-24,Relais Group Plc,Relais Group Oyj Optio-ohjelma 2025A,20000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb015d5ea128c99faf521dc3b7b1d919c5langensrclisted.txt
-2025-11-24,Relais Group Plc,Relais Group Oyj Optio-ohjelma 2024A,11000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb02b661835dccf8eec14898327e4c66dflangensrclisted.txt
-2025-11-24,Relais Group Oyj,Relais Group Oyj Optio-ohjelma 2025A,8000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb06d397e731b35a198aefaa9e75c81eb3langfisrclisted.txt
-2025-11-24,Relais Group Plc,Relais Group Oyj Optio-ohjelma 2025B,14000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb660682921402441979815f45db6638cclangensrclisted.txt
-2025-11-24,Relais Group Oyj,Relais Group Oyj Optio-ohjelma 2025B,14000,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb7df6b6396af514c839a16d7fb13cbd36langfisrclisted.txt
-2025-11-24,Relais Group Plc,Relais Group Oyj Optio-ohjelma 2023A,1500,0,,buy,ACCEPTANCE OF A STOCK OPTION,Relais_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb8e7ff1edfef5c91f370d1db384b352a8langensrclisted.txt
 2025-12-02,Ringkjbing Landbobank AS,Carl Aage Pedersen,3722870,26,96794620,buy,Anskaffelse,Ringkjbing_Landbobank_AS_Ledende_medarbejderes_transaktioner_a84b279ad7e21a2d494abeb70d73943b6.txt
 2025-12-02,Ringkjbing Landbobank AS,Jørn Nielsen,3722870,26,96794620,buy,Anskaffelse,Ringkjbing_Landbobank_AS_Ledende_medarbejderes_transaktioner_abbb5f35ff92779925b92be8b057e27db.txt
 2025-11-21,rsted AS,Ørsted A/S,12555,4,50220,buy,Transaktionens art (pkt. 4.b) var ikke inkluderet i den,rsted_AS_Ledende_medarbejderes_transaktioner_a109cf6d8595c798c199bbe7cf5b5b6a2.txt

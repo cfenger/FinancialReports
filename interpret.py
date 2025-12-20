@@ -872,6 +872,95 @@ def _mentions_attached_transaction_details(normalized_text: str) -> bool:
     return False
 
 
+STOCK_OPTION_HINTS = (
+    "stock option",
+    "share option",
+    "options over",
+    "option plan",
+    "option program",
+    "option programme",
+    "aktieoption",
+    "aksjeopsjon",
+    "osakeoption",
+)
+
+
+def _extract_instrument_type(lines: Sequence[Tuple[str, str]]) -> str:
+    for raw, norm in lines:
+        if norm.startswith("instrument type"):
+            value = value_after_colon(raw)
+            if value:
+                return normalize_line(value)
+    return ""
+
+
+def _extract_instrument_descriptions(lines: Sequence[Tuple[str, str]]) -> List[str]:
+    candidates: List[str] = []
+
+    for raw, norm in lines:
+        if norm.startswith("name of the instrument") or norm.startswith("instrument name"):
+            value = value_after_colon(raw)
+            if value:
+                candidates.append(value)
+
+    for idx, (_raw, norm) in enumerate(lines):
+        if "description of the financial instrument" not in norm:
+            continue
+        for raw_next, norm_next in lines[idx + 1 : idx + 16]:
+            text = raw_next.strip()
+            if not text or text.endswith(":"):
+                continue
+            if re.fullmatch(r"[a-z][).]?", norm_next) or re.fullmatch(r"[ivxlcdm]+\\.", norm_next):
+                continue
+            if any(
+                token in norm_next
+                for token in ("nature of", "price", "volume", "transaction date", "place of transaction")
+            ):
+                break
+            if re.search(r"[A-Za-z]", text):
+                candidates.append(text)
+                break
+
+    return candidates
+
+
+def _looks_like_share_instrument(norm: str) -> bool:
+    return bool(re.search(r"\\b(shares?|aktier?|aksjer?|osake\\w*)\\b", norm))
+
+
+def _looks_like_stock_option_instrument(norm: str) -> bool:
+    return any(token in norm for token in STOCK_OPTION_HINTS)
+
+
+def _should_skip_stock_option_notice(
+    *,
+    lines: Sequence[Tuple[str, str]],
+    normalized_text: str,
+    nature: str,
+) -> bool:
+    instrument_type = _extract_instrument_type(lines)
+    if instrument_type == "share":
+        return False
+
+    candidates: List[str] = []
+    if nature:
+        candidates.append(nature)
+    candidates.extend(_extract_instrument_descriptions(lines))
+
+    has_share_candidate = False
+    for candidate in candidates:
+        norm = normalize_line(candidate)
+        if _looks_like_stock_option_instrument(norm):
+            return True
+        if _looks_like_share_instrument(norm):
+            has_share_candidate = True
+
+    if has_share_candidate:
+        return False
+
+    return any(token in normalized_text for token in STOCK_OPTION_HINTS)
+
+
 def parse_insider_file(text: str, path: Path) -> List[dict]:
     normalized_text = normalize_text_for_search(text)
     if path.stem.endswith("_portfolio") or (
@@ -889,6 +978,9 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
     date = extract_date(text)
     reference_number = extract_reference_number(text)
     nature = translate_nature(extract_nature(lines))
+    if _should_skip_stock_option_notice(lines=lines, normalized_text=normalized_text, nature=nature):
+        logging.info("Skipping %s: stock option instruments are ignored.", path.name)
+        return []
     side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)
 

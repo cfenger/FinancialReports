@@ -229,6 +229,51 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
             "Notices that only point to attached forms (without transaction data) should be skipped.",
         )
 
+    def test_skip_stock_option_notice_better_collective(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Better Collective option fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(rows, [], "Stock option grants should be ignored.")
+
+    def test_skip_stock_option_notice_componenta(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Componenta_Oyj_Ledende_medarbejderes_transaktioner_view_idb03568cc156ce0ad41f725ecda9398870langensrclisted.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Componenta option fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(rows, [], "Stock option programme instruments should be ignored.")
+
+    def test_keep_share_transaction_linked_to_stock_option_program(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Scanfil_Oyj_Ledende_medarbejderes_transaktioner_aae4a5a18142188691e9cabb209cb35d7.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Scanfil share fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertTrue(
+            rows and rows[0].get("shares"),
+            "Share transactions linked to an option programme should still be kept.",
+        )
+
     def test_insider_cli_matches_snapshot(self):
         input_dir = REPO_ROOT / "test" / "insider" / "nasdaq_news_cli"
         expected_csv = REPO_ROOT / "test" / "insider" / "insider_summary_base.csv"
