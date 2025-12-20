@@ -20,10 +20,9 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-02,Alm Brand AS,Rasmus Werner Nielsen,33879,17.9,606434.1,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a884538e1f892675f643a4c5c94d154af.txt
 2025-12-02,Alm Brand AS,Andreas Ruben Madsen,20704,17.9,370601.6,buy,Tildeling af aktier som aktieløn,Alm_Brand_AS_Ledende_medarbejderes_transaktioner_a97e359871bca74dde03d864473a48369.txt
 2025-12-16,Alma Media Oyj,Elina Kukkonen,3500,12.95,45325,sell,DISPOSAL,Alma_Media_Ledende_medarbejderes_transaktioner_view_idb008a8250776d09675e18ba951b72a017langensrclisted.txt
-2025-12-08,Asetek AS,Lars Kristensen,2141911,1.6,3427057.6,buy,"purchased 2,141,911 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a19be710169f568a4450c9a1e551a6b7d.txt
-2025-12-03,Asetek AS,Lars Kristensen,2483586,1.6,3973737.6,buy,"purchased 2,483,586 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a2086849940c5a27f051efd1ea6161ce3.txt
+2025-12-10,Asetek AS,Lars Kristensen,2141911,1.6,3427057.6,buy,"purchased 2,141,911 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a19be710169f568a4450c9a1e551a6b7d.txt
+2025-12-05,Asetek AS,Lars Kristensen,2483586,1.6,3973737.6,buy,"purchased 2,483,586 shares in the open market at an average price of DKK 1.60 per share.",Asetek_AS_Ledende_medarbejderes_transaktioner_a2086849940c5a27f051efd1ea6161ce3.txt
 2025-11-25,Asetek AS,Jakob Alsted Have,51966,1.59,82625.94,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
-2025-11-25,Asetek AS,Jakob Alsted Have,303734,1.58,479899.72,buy,"November 2025 purchased 303,734 shares in the open market at an average price of DKK 1.58",Asetek_AS_Ledende_medarbejderes_transaktioner_af23455689b0554d415ee8a5d90e05688.txt
 2025-11-25,Asetek AS,Vorup Invest ApS,5780328,1.59769405,9235195.6526484,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_25112025.txt
 2025-11-26,Asetek AS,Vorup Invest ApS,4554822,1.59756928,7276643.70306816,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_26112025.txt
 2025-11-27,Asetek AS,Vorup Invest ApS,5445000,1.59990829,8711500.63905,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Vorup_Invest_insider_notification_27112025.txt
@@ -32,6 +31,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-04,Asetek AS,Vorup Invest ApS,26587,1.6,42539.2,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_04122025.txt
 2025-12-05,Asetek AS,Vorup Invest ApS,2400000,1.6,3840000,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_abc543fd3e78e7b72be2998ed02aea5e0_Vorup_Invest_insider_notification_05122025.txt
 2025-11-28,Asetek AS,Board of Directors of Asetek,2704024,1.6,4326438.4,buy,"Lars Kristensen has 28 November 2025 purchased 2,704,024 shares in the open market at an",Asetek_AS_Ledende_medarbejderes_transaktioner_adad63c5b542261dcb316fe83731d3a32.txt
+2025-11-27,Asetek AS,Jakob Alsted Have,303734,1.58,479899.72,buy,"November 2025 purchased 303,734 shares in the open market at an average price of DKK 1.58",Asetek_AS_Ledende_medarbejderes_transaktioner_af23455689b0554d415ee8a5d90e05688.txt
 2025-11-06,Aspo Oyj,Rolf Jansson,10275,6.812107055961070559610705596,69994.4,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb1cc3242abff439874ab6918629642d31langensrclisted.txt
 2025-11-10,Aspo Oyj,Kaarina Ståhlberg,1418,6.8,9642.4,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb1e0ce8316c581bcf37a4b19dac18f118langensrclisted.txt
 2025-11-05,Aspo Oyj,Mikko Pasanen,8027,6.662942568830198081475021801,53483.44,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb4f75c237fc311485b0cb535742fc5fe0langensrclisted.txt
@@ -46,11 +46,11 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Aspocomp Group Oyj,Mitri Mattila,2,5.2,10.4,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbcad878190ec9fb1b444e1a905bf67d85langensrclisted.txt
 2025-12-08,Aspocomp Group Oyj,Terhi Launis,1000,5.14936,5149.36,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbd089d2f0e88bc3102a2dc8e182c0a492langensrclisted.txt
 2025-11-18,Aspocomp Group Oyj,Terhi Launis,3008,5.2544,15805.2352,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe887ebd3fee001e03f0d74aa821099d6langensrclisted.txt
-2025-11-10,AstraZeneca PLC,Pascal Soriot,136537,0,,sell,Gift of shares to family members for nil consideration,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a15113af1a69c629443a8da1616677a4f.txt
-2025-11-14,AstraZeneca PLC,Aradhana Sarin,15000,88.6345,1329517.5,sell,Sale of AstraZeneca PLC American Depositary Shares,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a7e78c5694d5aa112e0c1ed306c0b054a.txt
-,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
-,BactiQuant AS,HSK Management og Rådgivning ApS,250000,2,500000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5f26a22079eb70b2cc240b59a82d3caf.txt
-,BactiQuant AS,MVA og CO Aps,3000000,2,6000000,,Rettet emission tegning af nye aktier,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
+2025-11-07,AstraZeneca PLC,Pascal Soriot,136537,0,,sell,Gift of shares to family members for nil consideration,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a15113af1a69c629443a8da1616677a4f.txt
+2025-11-12,AstraZeneca PLC,Aradhana Sarin,15000,88.6345,1329517.5,sell,Sale of AstraZeneca PLC American Depositary Shares,AstraZeneca_PLC_Ledende_medarbejderes_transaktioner_a7e78c5694d5aa112e0c1ed306c0b054a.txt
+2025-11-18,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
+2025-11-18,BactiQuant AS,HSK Management og Rådgivning ApS,250000,2,500000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5f26a22079eb70b2cc240b59a82d3caf.txt
+2025-11-18,BactiQuant AS,MVA og CO Aps,3000000,2,6000000,,Rettet emission tegning af nye aktier,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
 2025-11-12,BEWI ASA,GIS AS,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
 2025-12-03,Biohit Oyj,Liu Feng,200000,3,600000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb39b6b1eb5fc3b1fbb93077bc0bf034edlangensrclisted.txt
 2025-11-28,Biohit Oyj,Osmo Suovaniemi,800000,3,2400000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb5eff3ac8d86ee2fa1044fea81814d679langensrclisted.txt
@@ -90,10 +90,10 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-21,Danske Bank AS,APMH Invest A/S,44851,286.04,12829180.04,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_a8a3e1ea698da96ba3f2f3b1550d18e4f.txt
 2025-11-07,Danske Bank AS,Cecile Hillary,21470,293.9,6310033,sell,Salg,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_aac292bd865219549e4848fdc43caa871.txt
 2025-12-08,Danske Bank AS,APMH Invest A/S,16869,304.11,5130031.59,buy,A/S.,Danske_Bank_AS_Ledende_medarbejderes_transaktioner_afb8707dbe1084682f13177e8aec7314b.txt
-,Dantax AS,Peter Bøgh Jensen,33,324.273,10701.009,sell,Salg,Dantax_AS_Ledende_medarbejderes_transaktioner_a29cf6b20cb25f54da457d75889e9cf72.txt
-,Dataproces Group AS,a),7,8,56,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb8fbd92418ed552ff419cf8540f8bff7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
-,Dataproces Group AS,a),7,34,238,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb823f0cb527b2a979a3c30045e0034b7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a8fc135de8507d7408632ed97e0f524fa.txt
-,Dataproces Group AS,a),79,835,65965,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0f7d83dbb88818a28f339743b835a79b&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a9376c66ef67ca32bcf547b60db95c5ff.txt
+2025-10-30,Dantax AS,Peter Bøgh Jensen,33,324.273,10701.009,sell,Salg,Dantax_AS_Ledende_medarbejderes_transaktioner_a29cf6b20cb25f54da457d75889e9cf72.txt
+2018-03-05,Dataproces Group AS,a),7,8,56,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb8fbd92418ed552ff419cf8540f8bff7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt
+2018-03-05,Dataproces Group AS,a),7,34,238,,messageUrl: https://view.news.eu.nasdaq.com/view?id=bb823f0cb527b2a979a3c30045e0034b7&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a8fc135de8507d7408632ed97e0f524fa.txt
+2018-03-05,Dataproces Group AS,a),79,835,65965,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0f7d83dbb88818a28f339743b835a79b&lang=da&src=listed,Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a9376c66ef67ca32bcf547b60db95c5ff.txt
 2025-11-21,Detection Technology Plc,Sari Holopainen,2000,10.4913,20982.6,buy,ACQUISITION,Detection_Technology_Oyj_Ledende_medarbejderes_transaktioner_view_idb2f929564b75fdeaf2363d4dd120baba3langensrclisted.txt
 2025-11-21,Detection Technology Plc,Hannu Martola,2000,10.475,20950,buy,ACQUISITION,Detection_Technology_Oyj_Ledende_medarbejderes_transaktioner_view_idb5efa7c7967c90f8bf85edd712025f236langensrclisted.txt
 2025-11-06,DFDS AS,Kristian Valdemar Mørch,4437,90,399330,buy,Køb af aktier,DFDS_AS_Ledende_medarbejderes_transaktioner_a4bc7ef4ce51fdc450d98cedada1e55de.txt
@@ -112,9 +112,31 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-28,Djurslands Bank AS,Sigurd Bohlbro Simmelsgaard,177,856,151512,buy,Erhvervelse af aktier i forbindelse med bruttolønsordning,Djurslands_Bank_AS_Ledende_medarbejderes_transaktioner_af24c18eabf80565a70a647612264b8d9.txt
 2025-11-18,DonkeyRepublic Holding AS,Bladt Invest ApS,,,,buy,Subscription of new shares,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
 2025-11-18,Duell Oyj,,,,,sell,,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb8f69b244069bbbe187f2bdb846c547b7langensrclisted.txt
-,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,4169,169.2247541376828975773566803,705498,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0072f35779688b8b3fd7488df13098e6.txt
-,EgnsINVEST Ejd Tyskland,EgnsINVEST Ejendomme Tyskland A/S,443,165.7765237020316027088036117,73439,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a2fe1c3607e2adc785343caa245ec201b.txt
-,EgnsINVEST Ejd Tyskland,Egnsinvest Tyske Ejendomme A/S,2070,165.630434782608695652173913,342855,buy,Nasdaq First North Copenhagen,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a622da9f188eb2088c1d9f9c2bb294c6a.txt
+2025-11-11,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,165,66000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0072f35779688b8b3fd7488df13098e6.txt
+2025-11-25,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,50,167,8350,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0eb83ce4519d34e9c4f396ff57cffd1a.txt
+2025-11-19,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,167,66800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a15a89658947366417c2e18bb001c3808.txt
+2025-12-11,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,175,35000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a201569b6d0aa637fb3ba8e011dca3edd.txt
+2025-11-21,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,167,66800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a2f2066f9fa5a58c1ba6623e0135086d6.txt
+2025-12-01,EgnsINVEST Ejd Tyskland,EgnsINVEST Ejendomme Tyskland A/S,43,173,7439,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a2fe1c3607e2adc785343caa245ec201b.txt
+2025-11-17,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,166,66400,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a4a52ae45eb1aab193a6ba877072abe52.txt
+2025-11-26,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,120,172,20640,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a50a95ff10bcb901ea34e064eba81c472.txt
+2025-11-10,EgnsINVEST Ejd Tyskland,Egnsinvest Tyske Ejendomme A/S,400,162,64800,buy,Nasdaq First North Copenhagen,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a622da9f188eb2088c1d9f9c2bb294c6a.txt
+2025-12-10,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,177,35400,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a64355c0bd139b1e5a9ab3a12353e43aa.txt
+2025-11-27,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,120,172,20640,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a7addaff6ef973ecb24e8c25e52d0ad9f.txt
+2025-12-04,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,174,34800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a7ff7f88723284e29dc7522ee0b8d5d37.txt
+2025-11-18,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,166,66400,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a8673d4550dbd69e3380e26a521a37439.txt
+2025-11-12,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,165,66000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a8cc661fd53c3e88c44ab24aa4f919b33.txt
+2025-12-03,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,175,35000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a94d76fa7b84f2396c456e37bf40320b3.txt
+2025-11-14,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,168,67200,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a9a37166b6488e32f4122fc241ae6253e.txt
+2025-11-24,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,166,166,27556,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_aa015afe9affa5c60a146f1efac9fa457.txt
+2025-12-05,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,174,34800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_aad28bc89ece5edef3f933a4e7136a029.txt
+2025-12-08,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,177,70800,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_ab94a33ef72f2810aa75ef88a59c6d6ea.txt
+2025-11-20,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,167.96,67184,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_abbdf88aac6b86c438a8b91784e578693.txt
+2018-03-05,EgnsINVEST Ejd Tyskland,Egnsinvest Tyske Ejendomme A/S,1670,166.5,278055,buy,Nasdaq First North Copenhagen,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_acd2a19a4c6873b4af23026c89fbacd94.txt
+2025-11-12,EgnsINVEST Ejd Tyskland,EgnsINVEST Ejendomme Tyskland A/S,400,165,66000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_ad387eb82079e68a892ca0d68154508f4.txt
+2025-11-13,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,400,166.9,66760,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_ae5afb2268843f57646161a72f91bc7d6.txt
+2025-12-09,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,33,176,5808,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_aebf1e24006660df23e78c2f78659c7d7.txt
+2025-12-02,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,200,175,35000,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_aefb1144b3bc28fdf4b53c3e18bd1b208.txt
 2025-11-05,Eik fasteignaflag hf,Gunnar Þór Gíslason,,,,,,Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
 2025-11-03,Elisa Oyj,Kristian Pullola,1682,38.23940546967895362663495838,64318.68,buy,ACQUISITION,Elisa_Ledende_medarbejderes_transaktioner_view_idb3b97d98ec2a4b0002529876034fefd85langensrclisted.txt
 2025-11-17,Endomines Finland Oyj,Kyösti Kakkonen,250556,3.36359222165903031657593512,842768.21269,buy,SUBSCRIPTION,Endomines_Finland_Oyj_Ledende_medarbejderes_transaktioner_view_idb106ff35721d4f3d9659d7a259dcf39d5langensrclisted.txt
@@ -150,7 +172,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-04,GreenMobility AS,Mie Levi Fenger,340,73.6,25024,buy,Price(s) and volume(s),GreenMobility_AS_Ledende_medarbejderes_transaktioner_a61073d6ad8797ba9927f51064c58de2c.txt
 2025-11-07,Gubra AS,Markus Rohrwild,4300,373.61,1606523,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_a1aa9f7962c86f4bd89e41d11902ba9ff.txt
 2025-12-17,Gubra AS,Niels Vrang,10000,487.9977,4879977,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_a7717140e36da943d7c6c21d2f227d3c3.txt
-2025-11-10,Gubra AS,Monika Lessl,379,392.62,148802.98,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_ab44ac35567e136f88f3077bccfbd1761.txt
+2025-11-07,Gubra AS,Monika Lessl,379,392.62,148802.98,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_ab44ac35567e136f88f3077bccfbd1761.txt
 2025-11-10,Gubra AS,Jacob Jelsing,38500,387.82,14931070,buy,Purchase,Gubra_AS_Ledende_medarbejderes_transaktioner_ae9002480d6b7f0b6e1556038629cfeb4.txt
 2025-12-05,H Lundbeck AS,Barendina (Dianne) Hol,53000,44.82,2375460,sell,Sale of shares,H_Lundbeck_AS_Ledende_medarbejderes_transaktioner_a523b239c48430883410157045d34f53c.txt
 2025-11-11,HKFoods Oyj,"Henriksson, Outi",6916,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb001acc90c6d2dbe0f2b27bdc4c169704langfisrclisted.txt
@@ -209,12 +231,12 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-12,Mandatum Oyj,Markus Aho,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbc349cd8f28278eeaa50e00a494eff507langfisrclisted.txt
 2025-11-12,Mandatum Oyj,Kimmo Laaksonen,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbdfe4457d9c23d2f8ee5382740d237753langfisrclisted.txt
 2025-11-12,Mandatum Oyj,Louise Sander,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbe68789d7b8953b8d0392d57999937129langfisrclisted.txt
-,MT Hjgaard Holding AS,Rasmus Untidt,600,427,256200,sell,Salg,MT_Hjgaard_Holding_AS_Ledende_medarbejderes_transaktioner_a6efe4c3bb66c45d2c808ede5cf035acc.txt
+2025-11-27,MT Hjgaard Holding AS,Rasmus Untidt,600,427,256200,sell,Salg,MT_Hjgaard_Holding_AS_Ledende_medarbejderes_transaktioner_a6efe4c3bb66c45d2c808ede5cf035acc.txt
 2025-12-03,Netum Group Oyj,Olavi Köngäs,4300,1.21,5203,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb5568a6f95bd2e11abb800b2a8e2b6819langensrclisted.txt
 2025-11-05,Netum Group Oyj,Mikko Koistinen,7428,1.165325794291868605277329025,8656.04,sell,DISPOSAL,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbbe2a043222438cf60812b97dbbf88569langensrclisted.txt
 2025-11-19,Netum Group Oyj,Olavi Köngäs,1500,1.2457,1868.55,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbdc3543e3226b9fd5f734d779e6b7740blangensrclisted.txt
 2025-11-04,Netum Group Oyj,Olavi Köngäs,9995,1.174683341670835417708854427,11740.96,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe275601167a89a65ab935140d0260e27langensrclisted.txt
-,Newcap Holding,Nærtstående til bestyrelsesformand Mogens de Linde,2001,28,56028,buy,Køb,Newcap_Holding_Ledende_medarbejderes_transaktioner_a799b468e0e0ec5181aca263ec28c8873.txt
+2025-12-16,Newcap Holding,Nærtstående til bestyrelsesformand Mogens de Linde,2001,28,56028,buy,Køb,Newcap_Holding_Ledende_medarbejderes_transaktioner_a799b468e0e0ec5181aca263ec28c8873.txt
 2025-12-02,NoHo Partners Oyj,Mika Niemi,3191,7.8497,25048.3927,sell,DISPOSAL,NoHo_Partners_Oyj_Ledende_medarbejderes_transaktioner_view_idb27161c149cd1a6dd0b343174e7940521langensrclisted.txt
 2025-11-13,Nokia Corporation,"Fisk, Louise",135,6.0601,818.1135,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idb9c7347d34166d37e575078a931707946langensrclisted.txt
 2025-11-13,Nokia Corporation,"Sahgal, Raghav",2192,6.0601,13283.7392,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idbaad0a7a8e573313b98e4582be73cf670langensrclisted.txt
@@ -286,17 +308,19 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-14,Norrhydro Group Oyj,"Trög, Yrjö",43247,1.200230536222165699354868546,51906.37,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb4297d15f5cedbbb8dbeedceea7813fd7langensrclisted.txt
 2025-10-27,Norrhydro Group Oyj,"Trög, Yrjö",21606,1.386523650837730260112931593,29957.23,sell,DISPOSAL,Norrhydro_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb94c83387e6855de6ab1d296b407dc3b9langensrclisted.txt
 2025-11-06,Nova Klbburinn hf,Sylvía Kristín Ólafsdóttir,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a5bd2306360d0ebf7431948266e738b44.txt
-,Nova Klbburinn hf,,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a90daabc3044f7d8b3668b38df02dd686.txt
+2025-03-27,Nova Klbburinn hf,,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_a90daabc3044f7d8b3668b38df02dd686.txt
 2025-11-06,Nova Klbburinn hf,Ólafur Magnússon,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aad7993ce343318cae7c98b7655aec117.txt
 2025-11-06,Nova Klbburinn hf,Renata Blöndal,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_ad7ae6612abbdb98d77b5b67400132799.txt
 2025-11-06,Nova Klbburinn hf,Þórhallur Jóhannsson,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aebb78de430c748a6fec2fd5bd22b80c4.txt
 2025-11-10,Novo Nordisk AS,,18634,0,,buy,accordance with the recruitment package),Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a15735507e77f60ee0cbe7cb94577b2f6.txt
 2025-11-17,Novo Nordisk AS,,6450,312.5,2015625,buy,Purchase of shares,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a717e973ab6feae857ba5dcff7578e9ca.txt
-2014-04-16,Novonesis Novozymes AS,Henrik Jørck Nielsen,,,,buy,programs,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
-2014-04-16,Novonesis Novozymes AS,Heine Dalsgaard,3970716,397.0716,1576658555.2656,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
-2014-04-16,Novonesis Novozymes AS,Morten Enggaard Rasmussen,41810,418.1,17480761,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_aff0235959e2296e98bc832b8c8495dc0.txt
-,NTR Holding AS,Copenhagen Capital A/S,9678,4.995918578218640214920438107,48350.5,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_a04fbe148ca041b412fc454c4c08e19c2.txt
-,Oculis Holding AG,,19261928,26,500810128,buy,Purchase of ordinary shares on the open market,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_abaa604497ffe8bf27a7ea59aeb1f136c.txt
+2016-03-08,Novonesis Novozymes AS,Henrik Jørck Nielsen,,,,buy,programs,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
+2016-03-08,Novonesis Novozymes AS,Heine Dalsgaard,3970716,397.0716,1576658555.2656,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
+2016-03-08,Novonesis Novozymes AS,Morten Enggaard Rasmussen,41810,418.1,17480761,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_aff0235959e2296e98bc832b8c8495dc0.txt
+2025-11-24,NTR Holding AS,Copenhagen Capital A/S,1000,5,5000,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_a04fbe148ca041b412fc454c4c08e19c2.txt
+2025-11-19,NTR Holding AS,Copenhagen Capital A/S,1975,4.98,9835.5,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_a4afa8236a5d8dd204c0207303ed32d12.txt
+2025-11-20,NTR Holding AS,Copenhagen Capital A/S,6703,5,33515,buy,Køb,NTR_Holding_AS_Ledende_medarbejderes_transaktioner_af79dbcd34d747790342319913d3b7826.txt
+2021-01-04,Oculis Holding AG,,19261928,26,500810128,buy,Purchase of ordinary shares on the open market,Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_abaa604497ffe8bf27a7ea59aeb1f136c.txt
 2025-11-27,Oma Savings Bank Plc,"Alameri, Karri",1755,10.2537,17995.2435,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb69f1fb3e0f76eb399e644e430bd417a2langensrclisted.txt
 2025-11-27,Oma Savings Bank Plc,"Liiri, Sarianna",322,10.2537,3301.6914,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idb7fab7593ba59a58831ba9e64bf73f761langensrclisted.txt
 2025-11-27,Oma Savings Bank Plc,"Sirkiä, Hanna",152,10.2537,1558.5624,buy,SUBSCRIPTION,Oma_Sstpankki_Oyj_Ledende_medarbejderes_transaktioner_view_idbfc7660ba1952851819dabe9d72a20a83langensrclisted.txt
@@ -307,10 +331,10 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-24,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,1000,3.2,3200,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idb673c90c893b141c69d1de6656e6a9160langfisrclisted.txt
 2025-11-28,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,468,3.21,1502.28,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idbae3350f51327e782f8dcb8f08fe926fclangfisrclisted.txt
 2025-11-05,Pandora AS,,425,,,buy,Purchase of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_a39886b732170666acc0b867e861822eb.txt
-2025-12-03,Pandora AS,,25000,,,sell,Selling of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt
+2025-12-02,Pandora AS,,25000,,,sell,Selling of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt
 2025-11-03,Pihlajalinna Oyj,Mika Anders Videman,333,14.95,4978.35,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a5c46321ac77e8f0ee8280dd853d548c7.txt
 2025-11-05,Pihlajalinna Oyj,Seppo Kariniemi,1000,14.7625,14762.5,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a7c550dc7ae2c3a548278f1c1325a7c59.txt
-,Q-Interline AS,Stengård Invest ApS,200000,3,600000,buy,Køb,Q-Interline_AS_Ledende_medarbejderes_transaktioner_aa0c0193ce0ad377f4e8789ebd082c329.txt
+2025-12-15,Q-Interline AS,Stengård Invest ApS,200000,3,600000,buy,Køb,Q-Interline_AS_Ledende_medarbejderes_transaktioner_aa0c0193ce0ad377f4e8789ebd082c329.txt
 2025-11-06,Qt Group Oyj,Erik Rehn,591,33.58,19845.78,buy,ACQUISITION,Qt_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb2aaf09ae06ffdf9912cc3e3b4115b48blangensrclisted.txt
 2025-11-06,Qt Group Plc,Tuukka Turunen,1000,33.35618,33356.18,buy,ACQUISITION,Qt_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb8e2220261870ae618a6682e545412220langfisrclisted.txt
 2025-12-17,Refine Group AB,,,,,,,Refine_Group_AB_Ledende_medarbejderes_transaktioner_a7e04e242c38bdc5434f2b8cb90230f87.txt
@@ -321,9 +345,9 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-02,Ringkjbing Landbobank AS,Jørn Nielsen,3722870,26,96794620,buy,Anskaffelse,Ringkjbing_Landbobank_AS_Ledende_medarbejderes_transaktioner_abbb5f35ff92779925b92be8b057e27db.txt
 2025-11-21,rsted AS,Ørsted A/S,12555,4,50220,buy,Transaktionens art (pkt. 4.b) var ikke inkluderet i den,rsted_AS_Ledende_medarbejderes_transaktioner_a109cf6d8595c798c199bbe7cf5b5b6a2.txt
 2025-11-21,rsted AS,Ørsted A/S,3373,125.55,423480.15,,"DKK 125,55",rsted_AS_Ledende_medarbejderes_transaktioner_a2e024b271226ad656a570b94c68f76f7.txt
-,rsted AS,,,,,,,rsted_AS_Ledende_medarbejderes_transaktioner_a515b18659d5622541f282bcbf1da9a09.txt
+2025-11-21,rsted AS,,,,,,,rsted_AS_Ledende_medarbejderes_transaktioner_a515b18659d5622541f282bcbf1da9a09.txt
 2025-12-01,RTX,Henrik Mørck Mogensen,673,104,69992,buy,Køb af aktier,RTX_Ledende_medarbejderes_transaktioner_a00b10491bdbe4e4c426d841a4f8e4add.txt
-,Scandinavian Investment Group AS,a),4907,3772,18509204,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0ff4389c8618400ed653f6c3772b4907&lang=da&src=listed,Scandinavian_Investment_Group_AS_Ledende_medarbejderes_transaktioner_a5bf9a317d0f70b98fb9c96b24c037575.txt
+2018-03-05,Scandinavian Investment Group AS,a),4907,3772,18509204,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0ff4389c8618400ed653f6c3772b4907&lang=da&src=listed,Scandinavian_Investment_Group_AS_Ledende_medarbejderes_transaktioner_a5bf9a317d0f70b98fb9c96b24c037575.txt
 2025-12-08,Scanfil Oyj,Markku Kosunen,3772,9.734475079533404029692470838,36718.44,sell,DISPOSAL,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_a5efd63c0585b80d72b05ceb854279119.txt
 2025-11-26,Scanfil Plc,"Kosunen, Markku",10000,7.37,73700,buy,SUBSCRIPTION,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_aae4a5a18142188691e9cabb209cb35d7.txt
 2024-12-04,Shape Robotics A/S,"Aurel Nețin, Chairman of the Board of Directors",,,,buy,,Shape_Robotics_AS_Ledende_medarbejderes_transaktioner_a53e20c12c2a8bbd1596aa09cd4808d84.txt
@@ -378,16 +402,16 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-17,Tokmanni Group Oyj,Tapio Arimo,10000,7.0575,70575,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb61da95e9a94ead63bc94de7dd323bd31langfisrclisted.txt
 2025-12-02,Tokmanni Group Oyj,Mika Rautiainen,11015,7.463617793917385383567862006,82211.75,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idba0ee07a06194d45635ad544d14ac6384langfisrclisted.txt
 2025-11-25,Tokmanni Group Oyj,Janne Pihkala,1467,7.124318336741649625085207907,10451.375,buy,ACQUISITION,Tokmanni_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idba4d1df2579225d2e163043c9bfb36cbdlangfisrclisted.txt
-2025-11-12,Torm plc,,1402,0.07,98.14,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0a7d952b7b860a0a9e4955e6974b99d3&lang=en&src=listed,Torm_plc_Ledende_medarbejderes_transaktioner_ad26fc4a3957af0d4aecb8b1d3a381b49.txt
-2025-11-10,Trifork Group AG,Ferd AS,140000,81.6,11424000,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a195d9c7ae12a210ca5729e88af0670c7.txt
-2025-11-03,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
+2025-11-14,Torm plc,,1402,0.07,98.14,buy,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0a7d952b7b860a0a9e4955e6974b99d3&lang=en&src=listed,Torm_plc_Ledende_medarbejderes_transaktioner_ad26fc4a3957af0d4aecb8b1d3a381b49.txt
+2025-11-07,Trifork Group AG,Ferd AS,140000,81.6,11424000,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a195d9c7ae12a210ca5729e88af0670c7.txt
+2025-11-05,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
 2025-11-25,Trifork Group AG,Jørn Larsen,1363,0,,,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt
 2025-11-05,Trifork Group AG,Blackbird II ApS,1424,82.2496,117123.4304,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a935616b7079a3c496ccd9eda1f96ef1d.txt
-2025-11-07,Trifork Group AG,Blackbird II ApS,35960,82.6578,2972374.488,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
+2025-11-06,Trifork Group AG,Blackbird II ApS,35960,82.6578,2972374.488,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
 2025-11-04,Trifork Group AG,Kristian Wulf-Andersen,3000,83.7,251100,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_aac31d919b21fa3315c780b1857bcb903.txt
-2025-11-06,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_afd79bf51341d23ecc7c058ac10842677.txt
-,UIE Plc,Ulrik Juul Østergaard,2021,1,2021,buy,"DKK 363,00",UIE_Plc_Ledende_medarbejderes_transaktioner_a0ad4f20e45137b3cf5d24835dd4e5cb4.txt
-2025-11-26,UIE Plc,Ulrik Juul Østergaard,1831,363,664653,,DKK 363.00,UIE_Plc_Ledende_medarbejderes_transaktioner_a3beba4cc87142341360e7c2a17355067.txt
+2025-11-07,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_afd79bf51341d23ecc7c058ac10842677.txt
+2025-11-25,UIE Plc,Ulrik Juul Østergaard,2021,1,2021,buy,"DKK 363,00",UIE_Plc_Ledende_medarbejderes_transaktioner_a0ad4f20e45137b3cf5d24835dd4e5cb4.txt
+2025-11-25,UIE Plc,Ulrik Juul Østergaard,1831,363,664653,,DKK 363.00,UIE_Plc_Ledende_medarbejderes_transaktioner_a3beba4cc87142341360e7c2a17355067.txt
 2025-11-05,Verkkokauppa.com Oyj,Samuli Seppälä,1254,4,5016,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idb183c55290c62d1808caeb0e691d1f39blangensrclisted.txt
 2025-11-03,Verkkokauppa.com Oyj,Samuli Seppälä,18120,4.000934878587196467991169978,72496.94,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idba5a94249cc07eb25ce4180c1405362felangensrclisted.txt
 2025-11-13,Verkkokauppa.com Oyj,Samuli Seppälä,13770,4.007471314451706608569353667,55182.88,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idbc0e9ccbb8ec00a3307e749271af0a264langensrclisted.txt

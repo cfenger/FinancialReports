@@ -178,6 +178,24 @@ def is_date_like(value: str) -> bool:
     )
 
 
+def _format_ymd(day: str, month: str, year: str) -> str:
+    """Return a YYYY-MM-DD string if the parts look valid; otherwise ''."""
+    day = day.strip()
+    month = month.strip()
+    year_str = year.strip()
+    try:
+        day_i = int(day)
+        month_i = int(month)
+        year_i = int(year_str)
+    except ValueError:
+        return ""
+    if len(year_str) == 2:
+        year_i = year_i + 2000 if year_i < 50 else year_i + 1900
+    if not (1 <= month_i <= 12 and 1 <= day_i <= 31):
+        return ""
+    return f"{year_i:04d}-{month_i:02d}-{day_i:02d}"
+
+
 def parse_company_from_filename(name: str) -> str:
     """Best-effort company inference from the filename."""
     stem = Path(name).stem
@@ -409,10 +427,15 @@ def extract_narrative_name_from_text(text: str) -> str:
 
 def normalize_date_token(date_str: str) -> str:
     date_str = date_str.strip()
-    m = re.match(r"(\d{2})[./-](\d{2})[./-](\d{4})", date_str)
+    iso = re.match(r"(\d{4})-(\d{2})-(\d{2})", date_str)
+    if iso:
+        return date_str
+    spaced_numeric = re.match(r"(\d{1,2})[./-](\d{1,2})(?:[./-]|\s+)(\d{2,4})", date_str)
+    if spaced_numeric:
+        return _format_ymd(*spaced_numeric.groups())
+    m = re.match(r"(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})", date_str)
     if m:
-        day, month, year = m.groups()
-        return f"{year}-{month}-{day}"
+        return _format_ymd(*m.groups())
     return date_str
 
 
@@ -428,24 +451,38 @@ def extract_date(raw_text: str) -> str:
     fallback_eu = re.search(r"\d{2}[./-]\d{2}[./-]\d{4}", raw_text)
     if fallback_eu:
         return normalize_date_token(fallback_eu.group(0))
+    spaced_numeric = re.search(r"\b(\d{1,2})[./-](\d{1,2})(?:[./-]|\s+)(\d{2,4})\b", normalized)
+    if spaced_numeric:
+        candidate = _format_ymd(*spaced_numeric.groups())
+        if candidate:
+            return candidate
     # Fallback: textual dates like "8 December 2025" or "8 December".
     month_pattern = "|".join(sorted(MONTH_NAME_TO_NUM.keys(), key=len, reverse=True))
-    m = re.search(rf"\b(\d{{1,2}})\s+({month_pattern})\b(?:\s+(\d{{4}}))?", normalized)
-    if m:
+    fallback_year_match = re.search(r"\b(\d{4})\b", normalized)
+    fallback_year = fallback_year_match.group(1) if fallback_year_match else ""
+    best_date = ""
+    best_score: tuple[int, int] | None = None
+    for m in re.finditer(rf"\b(\d{{1,2}})[.,]?\s+({month_pattern})\b(?:\s+(\d{{2,4}}))?", normalized):
         day_str, month_name, year = m.groups()
-        # If the first occurrence has no year, fall back to the first year
-        # mentioned anywhere in the text.
-        if not year:
-            year_match = re.search(r"\b(\d{4})\b", normalized)
-            year = year_match.group(1) if year_match else "0000"
-        try:
-            day = int(day_str)
-        except ValueError:
-            return ""
         month = MONTH_NAME_TO_NUM.get(month_name.lower())
         if not month:
-            return ""
-        return f"{year}-{month}-{day:02d}"
+            continue
+        year_str = year or fallback_year
+        if not year_str:
+            continue
+        formatted = _format_ymd(day_str, month, year_str)
+        if not formatted:
+            continue
+        try:
+            year_val = int(year_str)
+        except ValueError:
+            year_val = 0
+        score = (year_val, m.start())
+        if best_score is None or score > best_score:
+            best_score = score
+            best_date = formatted
+    if best_date:
+        return best_date
     return ""
 
 
