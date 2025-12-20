@@ -82,6 +82,11 @@ NARRATIVE_PURCHASE_RE = re.compile(
     re.IGNORECASE,
 )
 
+SHARES_AT_PRICE_RE = re.compile(
+    r"(\d[\d\s.,]*)\s+shares?\s+at(?:\s+(?:an\s+)?(?:average\s+)?price\s+of)?\s+(?:[a-z]{2,6}\s*)?([\d][\d\s.,]*)",
+    re.IGNORECASE,
+)
+
 MONTH_NAME_TO_NUM = {
     # English
     "january": "01",
@@ -923,7 +928,16 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
     if transactions:
         return transactions
 
-    # Fallback 5: narrative summaries such as
+    # Fallback 5: combined "X shares at <currency> <price>" narrative lines.
+    for volume, price in SHARES_AT_PRICE_RE.findall(normalized_text):
+        vol_clean = volume.strip(" ,.;")
+        price_clean = price.strip(" ,.;")
+        if vol_clean and price_clean:
+            transactions.append((vol_clean, price_clean))
+    if transactions:
+        return transactions
+
+    # Fallback 6: narrative summaries such as
     # "purchased 2,141,911 shares ... at an average price of DKK 1.60 per share".
     m = NARRATIVE_PURCHASE_RE.search(normalized_text)
     if m:
@@ -931,6 +945,39 @@ def extract_transactions(lines: Sequence[Tuple[str, str]], normalized_text: str)
         transactions.append((volume, price))
 
     return transactions
+
+
+def _split_into_notices(text: str) -> List[str]:
+    """Split concatenated notices when multiple PDMRs appear in one file."""
+    lowered = text.lower()
+    markers = [
+        m.start()
+        for m in re.finditer(
+            r"notification of transactions carried out by persons discharging managerial responsibilities",
+            lowered,
+        )
+    ]
+    markers += [
+        m.start()
+        for m in re.finditer(
+            r"details of the person discharging managerial responsibilities",
+            lowered,
+        )
+    ]
+    markers = sorted(set(markers))
+    if not markers:
+        return [text]
+    if len(markers) == 1:
+        return [text]
+
+    starts = [0] + markers[1:]
+    chunks: List[str] = []
+    for idx, start in enumerate(starts):
+        end = markers[idx + 1] if idx + 1 < len(markers) else len(text)
+        chunk = text[start:end].strip()
+        if chunk:
+            chunks.append(chunk)
+    return chunks or [text]
 
 
 def build_lines(text: str) -> List[Tuple[str, str]]:
@@ -1117,13 +1164,8 @@ def _should_skip_stock_option_notice(
     return any(token in normalized_text for token in STOCK_OPTION_HINTS)
 
 
-def parse_insider_file(text: str, path: Path) -> List[dict]:
+def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
     normalized_text = normalize_text_for_search(text)
-    if path.stem.endswith("_portfolio") or (
-        "pdf portfolio" in normalized_text and "best experience" in normalized_text
-    ):
-        logging.info("Skipping portfolio placeholder %s", path.name)
-        return []
     lines = build_lines(text)
     company = extract_company(lines, path)
     name = extract_name(lines)
@@ -1197,6 +1239,20 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
             logging.warning(
                 "Incomplete row from %s: missing %s", path.name, ", ".join(missing)
             )
+    return rows
+
+
+def parse_insider_file(text: str, path: Path) -> List[dict]:
+    normalized_full = normalize_text_for_search(text)
+    if path.stem.endswith("_portfolio") or (
+        "pdf portfolio" in normalized_full and "best experience" in normalized_full
+    ):
+        logging.info("Skipping portfolio placeholder %s", path.name)
+        return []
+
+    rows: List[dict] = []
+    for chunk in _split_into_notices(text):
+        rows.extend(_parse_single_insider_notice(chunk, path))
     return rows
 
 

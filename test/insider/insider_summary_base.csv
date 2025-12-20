@@ -51,7 +51,8 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-18,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
 2025-11-18,BactiQuant AS,HSK Management og Rådgivning ApS,250000,2,500000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5f26a22079eb70b2cc240b59a82d3caf.txt
 2025-11-18,BactiQuant AS,MVA og CO Aps,3000000,2,6000000,,Rettet emission tegning af nye aktier,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
-2025-11-12,BEWI ASA,GIS AS,,,,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
+2025-11-12,BEWI ASA,GIS AS,16129,15.5,249999.5,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
+2025-11-12,BEWI ASA,Stein Inge Liasjø,4000,15.93,63720,buy,,BEWI_ASA_Ledende_medarbejderes_transaktioner_a10c6bef9b2a117bd9fd9686660591d4c.txt
 2025-12-03,Biohit Oyj,Liu Feng,200000,3,600000,sell,DISPOSAL,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb39b6b1eb5fc3b1fbb93077bc0bf034edlangensrclisted.txt
 2025-11-28,Biohit Oyj,Osmo Suovaniemi,800000,3,2400000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb5eff3ac8d86ee2fa1044fea81814d679langensrclisted.txt
 2025-11-05,Biohit Oyj,Osmo Suovaniemi,500000,2.77,1385000,buy,ACQUISITION,Biohit_Oyj_Ledende_medarbejderes_transaktioner_view_idb653ff0cedb80f8f85d10ae620f01a065langensrclisted.txt
@@ -313,6 +314,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Nova Klbburinn hf,Renata Blöndal,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_ad7ae6612abbdb98d77b5b67400132799.txt
 2025-11-06,Nova Klbburinn hf,Þórhallur Jóhannsson,,,,,,Nova_Klbburinn_hf_Ledende_medarbejderes_transaktioner_aebb78de430c748a6fec2fd5bd22b80c4.txt
 2025-11-10,Novo Nordisk AS,,18634,0,,buy,accordance with the recruitment package),Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a15735507e77f60ee0cbe7cb94577b2f6.txt
+2025-11-10,Novo Nordisk AS,,8160,297.95,2431272,sell,Sale of shares,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a15735507e77f60ee0cbe7cb94577b2f6.txt
 2025-11-17,Novo Nordisk AS,,6450,312.5,2015625,buy,Purchase of shares,Novo_Nordisk_AS_Ledende_medarbejderes_transaktioner_a717e973ab6feae857ba5dcff7578e9ca.txt
 2016-03-08,Novonesis Novozymes AS,Henrik Jørck Nielsen,,,,buy,programs,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a192a7d4a564682297bce04f5dd20a3b4.txt
 2016-03-08,Novonesis Novozymes AS,Heine Dalsgaard,3970716,397.0716,1576658555.2656,buy,Purchase of shares,Novonesis_Novozymes_AS_Ledende_medarbejderes_transaktioner_a90ef22a9d135247ada4b679de4e5f6c5.txt
@@ -406,8 +408,10 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Trifork Group AG,Ferd AS,140000,81.6,11424000,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a195d9c7ae12a210ca5729e88af0670c7.txt
 2025-11-05,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a2ecc12df7b6754c50c471eb252e1a596.txt
 2025-11-25,Trifork Group AG,Jørn Larsen,1363,0,,,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt
+2025-11-25,Trifork Group AG,Kristian Wulf-Andersen,363,0,,,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a7236861017a0ab73afafa2dd59e53171.txt
 2025-11-05,Trifork Group AG,Blackbird II ApS,1424,82.2496,117123.4304,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a935616b7079a3c496ccd9eda1f96ef1d.txt
-2025-11-06,Trifork Group AG,Blackbird II ApS,35960,82.6578,2972374.488,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
+2025-11-07,Trifork Group AG,Blackbird II ApS,35960,82.6578,2972374.488,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
+2025-11-06,Trifork Group AG,Jørn Larsen,35000,82.7,2894500,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_a99b698fd147620fd794ead24a3afac7b.txt
 2025-11-04,Trifork Group AG,Kristian Wulf-Andersen,3000,83.7,251100,sell,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_aac31d919b21fa3315c780b1857bcb903.txt
 2025-11-07,Trifork Group AG,,,,,buy,,Trifork_Group_AG_Ledende_medarbejderes_transaktioner_afd79bf51341d23ecc7c058ac10842677.txt
 2025-11-25,UIE Plc,Ulrik Juul Østergaard,2021,1,2021,buy,"DKK 363,00",UIE_Plc_Ledende_medarbejderes_transaktioner_a0ad4f20e45137b3cf5d24835dd4e5cb4.txt
