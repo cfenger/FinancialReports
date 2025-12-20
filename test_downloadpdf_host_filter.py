@@ -29,6 +29,14 @@ class PdfHostFilterTest(unittest.TestCase):
         )
         self.assertTrue(allowed)
 
+    def test_multi_label_public_suffix_not_collapsed(self):
+        allowed = _is_pdf_host_allowed(
+            pdf_host="malicious.co.uk",
+            allowed_domain="example.co.uk",
+            allow_external=False,
+        )
+        self.assertFalse(allowed)
+
 
 if __name__ == "__main__":
     unittest.main()

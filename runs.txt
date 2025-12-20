@@ -19,21 +19,12 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
-Good to line 38
-16/12/2025	AspoÂ Oyj	Erkka Antero Repo	5106	0		buy	RECEIPT OF A SHARE-BASED INCENTIVE	Aspo_Ledende_medarbejderes_transaktioner_view_idbb2abca53702288efe248c8f52b78b66flangensrclisted.txt
-
-Good to line 26
-25/11/2025	Asetek AS		51966	1.59	82625.94	buy	Price(s) and volume(s)	Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+Good to line 51
+	BactiQuant AS	Ulstrup Invest ApS	500000	2	1000000	buy	KÅ‚b af Nye aktier ved rettet emission	BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
 
 
-Running this command should not gives any rows in the csv file:
-I want SHARE-BASED INCENTIVE and the like to be ignored in a general way:
-
-
-uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
-
-This can be improved. Eg name is missing. Always make general solutions.
->uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
-WARNING: Incomplete row from Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt: missing name
+Date is missing here. Always make general solutions.
+G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt
+WARNING: Incomplete row from BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt: missing date
 date,company,name,shares,price,total_value,side,reason,filename
-2025-11-25,Asetek AS,,51966,1.59,82625.94,buy,Price(s) and volume(s),Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+,BactiQuant AS,Ulstrup Invest ApS,500000,2,1000000,buy,Kłb af Nye aktier ved rettet emission,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a5622859c0ca819a4f615a1b15c4984bc.txt

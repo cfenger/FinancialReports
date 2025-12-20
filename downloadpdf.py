@@ -70,6 +70,28 @@ TRUSTED_ATTACHMENT_HOSTS = {
     "newsclient.omxgroup.com",
 }
 
+# Common multi-label public suffixes so we don't collapse registrable domains
+# too aggressively (example.co.uk should not accept other *.co.uk hosts).
+PUBLIC_SUFFIX_2L = {
+    "co.uk",
+    "ac.uk",
+    "gov.uk",
+    "ltd.uk",
+    "plc.uk",
+    "co.jp",
+    "ne.jp",
+    "or.jp",
+    "go.jp",
+    "co.kr",
+    "or.kr",
+    "com.au",
+    "net.au",
+    "org.au",
+    "com.br",
+    "net.br",
+    "org.br",
+}
+
 
 def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(description="Download PDFs referenced by messageUrl pages in a Nasdaq results CSV.")
@@ -113,15 +135,22 @@ def sanitize_segment(value: str) -> str:
 
 def get_base_domain(host: str) -> str:
     """
-    Very simple "registrable" domain helper: takes last two labels.
+    Very simple "registrable" domain helper that is aware of a handful of
+    common multi-label public suffixes (co.uk, com.au, ...).
+
     Example: view.news.eu.nasdaq.com -> nasdaq.com
+             foo.bar.example.co.uk -> example.co.uk
     """
     if not host:
         return ""
     parts = host.split(".")
-    if len(parts) >= 2:
-        return ".".join(parts[-2:])
-    return host
+    if len(parts) < 2:
+        return host
+
+    last_two = ".".join(parts[-2:])
+    if last_two in PUBLIC_SUFFIX_2L and len(parts) >= 3:
+        return ".".join(parts[-3:])
+    return last_two
 
 
 def _is_pdf_host_allowed(pdf_host: str, allowed_domain: str, allow_external: bool) -> bool:
@@ -515,6 +544,12 @@ def handle_pdf_bytes(pdf_bytes: bytes, dest: Path, to_text: bool,
                 if save_pdf_bytes_as_text(pdf_bytes, placeholder_dest, message_url=message_url):
                     saved.append(placeholder_dest)
                     print(f"Saved portfolio placeholder text: {placeholder_dest}")
+        else:
+            # Also persist the original portfolio container so reruns can skip it.
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(pdf_bytes)
+            saved.append(dest)
+            print(f"Downloaded: {dest} (original portfolio container)")
         return saved
 
     if portfolio_detected and has_pymupdf and not embedded:

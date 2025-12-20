@@ -83,6 +83,7 @@ NARRATIVE_PURCHASE_RE = re.compile(
 )
 
 MONTH_NAME_TO_NUM = {
+    # English
     "january": "01",
     "february": "02",
     "march": "03",
@@ -93,6 +94,33 @@ MONTH_NAME_TO_NUM = {
     "august": "08",
     "september": "09",
     "october": "10",
+    "november": "11",
+    "december": "12",
+    # Danish / Norwegian
+    "januar": "01",
+    "februar": "02",
+    "marts": "03",
+    "mars": "03",
+    "april": "04",
+    "maj": "05",
+    "juni": "06",
+    "juli": "07",
+    "august": "08",
+    "september": "09",
+    "oktober": "10",
+    "november": "11",
+    "december": "12",
+    # Swedish
+    "januari": "01",
+    "februari": "02",
+    "mars": "03",
+    "april": "04",
+    "maj": "05",
+    "juni": "06",
+    "juli": "07",
+    "augusti": "08",
+    "september": "09",
+    "oktober": "10",
     "november": "11",
     "december": "12",
 }
@@ -401,12 +429,8 @@ def extract_date(raw_text: str) -> str:
     if fallback_eu:
         return normalize_date_token(fallback_eu.group(0))
     # Fallback: textual dates like "8 December 2025" or "8 December".
-    m = re.search(
-        r"\b(\d{1,2})\s+("
-        r"january|february|march|april|may|june|july|august|september|october|november|december"
-        r")\b(?:\s+(\d{4}))?",
-        normalized,
-    )
+    month_pattern = "|".join(sorted(MONTH_NAME_TO_NUM.keys(), key=len, reverse=True))
+    m = re.search(rf"\b(\d{{1,2}})\s+({month_pattern})\b(?:\s+(\d{{4}}))?", normalized)
     if m:
         day_str, month_name, year = m.groups()
         # If the first occurrence has no year, fall back to the first year
