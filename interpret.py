@@ -948,7 +948,7 @@ def _extract_instrument_descriptions(lines: Sequence[Tuple[str, str]]) -> List[s
 
 
 def _looks_like_share_instrument(norm: str) -> bool:
-    return bool(re.search(r"\\b(shares?|aktier?|aksjer?|osake\\w*)\\b", norm))
+    return bool(re.search(r"\b(shares?|aktier?|aksjer?|osake\w*)\b", norm))
 
 
 def _looks_like_stock_option_instrument(norm: str) -> bool:
@@ -965,21 +965,25 @@ def _should_skip_stock_option_notice(
     if instrument_type == "share":
         return False
 
-    candidates: List[str] = []
-    if nature:
-        candidates.append(nature)
-    candidates.extend(_extract_instrument_descriptions(lines))
+    instrument_descriptions = _extract_instrument_descriptions(lines)
+    has_option_instrument = any(
+        _looks_like_stock_option_instrument(normalize_line(desc)) for desc in instrument_descriptions
+    )
+    if has_option_instrument:
+        return True
 
-    has_share_candidate = False
-    for candidate in candidates:
-        norm = normalize_line(candidate)
-        if _looks_like_stock_option_instrument(norm):
-            return True
-        if _looks_like_share_instrument(norm):
-            has_share_candidate = True
-
-    if has_share_candidate:
+    has_share_instrument = any(
+        _looks_like_share_instrument(normalize_line(desc)) for desc in instrument_descriptions
+    )
+    if has_share_instrument:
         return False
+
+    nature_norm = normalize_line(nature) if nature else ""
+    if nature_norm:
+        if _looks_like_stock_option_instrument(nature_norm):
+            return True
+        if _looks_like_share_instrument(nature_norm):
+            return False
 
     return any(token in normalized_text for token in STOCK_OPTION_HINTS)
 

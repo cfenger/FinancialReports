@@ -9,6 +9,7 @@ from pathlib import Path
 
 from interpret import (
     _dedupe_rows,
+    _should_skip_stock_option_notice,
     build_lines,
     determine_side_from_text,
     extract_narrative_name_from_text,
@@ -315,6 +316,27 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
 
         rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
         self.assertTrue(rows and rows[0].get("side") == "sell", "Sale transactions should not be skipped.")
+
+    def test_share_instrument_not_skipped_by_option_hint(self):
+        sample = "\n".join(
+            [
+                "Name of the instrument: Shares",
+                "Nature of transaction: Purchase of shares under stock option programme",
+                "Description of the financial instrument",
+                "Shares",
+            ]
+        )
+        lines = build_lines(sample)
+        nature = extract_nature(lines)
+        should_skip = _should_skip_stock_option_notice(
+            lines=lines,
+            normalized_text=normalize_text_for_search(sample),
+            nature=nature,
+        )
+        self.assertFalse(
+            should_skip,
+            "Share trades that merely mention an option programme should not be skipped as stock options.",
+        )
 
     def test_insider_cli_matches_snapshot(self):
         input_dir = REPO_ROOT / "test" / "insider" / "nasdaq_news_cli"

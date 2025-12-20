@@ -22,6 +22,9 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 Good to line 38
 16/12/2025	AspoÂ Oyj	Erkka Antero Repo	5106	0		buy	RECEIPT OF A SHARE-BASED INCENTIVE	Aspo_Ledende_medarbejderes_transaktioner_view_idbb2abca53702288efe248c8f52b78b66flangensrclisted.txt
 
+Good to line 26
+25/11/2025	Asetek AS		51966	1.59	82625.94	buy	Price(s) and volume(s)	Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+
 
 Running this command should not gives any rows in the csv file:
 I want SHARE-BASED INCENTIVE and the like to be ignored in a general way:
