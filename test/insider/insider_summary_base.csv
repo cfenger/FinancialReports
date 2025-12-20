@@ -35,7 +35,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-06,Aspo Oyj,Rolf Jansson,10275,6.812107055961070559610705596,69994.4,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb1cc3242abff439874ab6918629642d31langensrclisted.txt
 2025-11-10,Aspo Oyj,Kaarina Ståhlberg,1418,6.8,9642.4,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb1e0ce8316c581bcf37a4b19dac18f118langensrclisted.txt
 2025-11-05,Aspo Oyj,Mikko Pasanen,8027,6.662942568830198081475021801,53483.44,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idb4f75c237fc311485b0cb535742fc5fe0langensrclisted.txt
-2025-12-16,Aspo Oyj,Erkka Antero Repo,5106,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Aspo_Ledende_medarbejderes_transaktioner_view_idbb2abca53702288efe248c8f52b78b66flangensrclisted.txt
 2025-11-05,Aspo Oyj,Rolf Jansson,2708,6.573471196454948301329394387,17800.96,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idbb7ff36ddc6b243e591028180232cf2a2langensrclisted.txt
 2025-11-20,Aspo Oyj,Mikael Eino Pekka Laine,9875,6.663846075949367088607594937,65805.48,buy,ACQUISITION,Aspo_Ledende_medarbejderes_transaktioner_view_idbe9e603f19dc72e5e65892a4e04b332fclangensrclisted.txt
 2025-12-04,Aspocomp Group Oyj,Terhi Launis,848,5.12,4341.76,buy,ACQUISITION,Aspocomp_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb40306a9be8dacecf69790b660430316alangensrclisted.txt
@@ -112,12 +111,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-07,Digitalist Group Oy,Wilhelm Rosenlew,547,3.34,1826.98,sell,DISPOSAL,Digitalist_Group_Plc_Ledende_medarbejderes_transaktioner_view_idbf1e8df8a44790c3c756028434d10b664langensrclisted.txt
 2025-11-28,Djurslands Bank AS,Sigurd Bohlbro Simmelsgaard,177,856,151512,buy,Erhvervelse af aktier i forbindelse med bruttolønsordning,Djurslands_Bank_AS_Ledende_medarbejderes_transaktioner_af24c18eabf80565a70a647612264b8d9.txt
 2025-11-18,DonkeyRepublic Holding AS,DonkeyRepublic Holding,,,,buy,Subscription of new shares,DonkeyRepublic_Holding_AS_Ledende_medarbejderes_transaktioner_view_idbd6e67af774e913b196eb048ef0b22080langensrclisted.txt
-2025-11-18,Duell Oyj,Jukka Smolander,1355,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb30351be2adacb0d2cba07dadfd9dfc47langensrclisted.txt
-2025-11-18,Duell Oyj,Jarkko Ämmälä,8000,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb627012ff9bff8ee9758b4fa7bec463d8langensrclisted.txt
-2025-11-18,Duell Oyj,Karl Magnus Miemois,3941,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb803bf1e82de83b492bdbfc6cecf347f5langensrclisted.txt
 2025-11-18,Duell Oyj,,,,,sell,,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idb8f69b244069bbbe187f2bdb846c547b7langensrclisted.txt
-2025-11-18,Duell Oyj,Heidi Markkanen,1355,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idbcb8546ccc45cb737c02db8cdac8bde98langensrclisted.txt
-2025-11-18,Duell Oyj,Pellervo Hämäläinen,1355,0,,buy,Receipt of a share-based incentive,Duell_Oyj_Ledende_medarbejderes_transaktioner_view_idbfb94f61bc62436eb28c92282961b74balangensrclisted.txt
 ,EgnsINVEST Ejd Tyskland,EgnsINVEST Tyske Ejendomme A/S,4169,169.2247541376828975773566803,705498,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a0072f35779688b8b3fd7488df13098e6.txt
 ,EgnsINVEST Ejd Tyskland,EgnsINVEST Ejendomme Tyskland A/S,443,165.7765237020316027088036117,73439,buy,Køb af aktier,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a2fe1c3607e2adc785343caa245ec201b.txt
 ,EgnsINVEST Ejd Tyskland,Egnsinvest Tyske Ejendomme A/S,2070,165.630434782608695652173913,342855,buy,Nasdaq First North Copenhagen,EgnsINVEST_Ejd_Tyskland_Ledende_medarbejderes_transaktioner_a622da9f188eb2088c1d9f9c2bb294c6a.txt
@@ -147,7 +141,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-02,Framery Group Plc,Lauri Isotalo,100657,8,805256,sell,DISPOSAL,Framery_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbf75273d2bb46c3b7f929e76b5ebec99blangensrclisted.txt
 2025-12-05,Gabriel Holding AS,GAB Invest ApS,125,262,32750,buy,Køb af aktier,Gabriel_Holding_AS_Ledende_medarbejderes_transaktioner_ad56b37796207e07b5be44d0d906710f0.txt
 2025-11-19,Genmab AS,,42,1960.5,82341,sell,Sale of shares,Genmab_AS_Ledende_medarbejderes_transaktioner_a13b05ae86596021a9e36dd6017c8befd.txt
-2025-12-01,Genmab AS,,378,2.043,772.254,buy,Acquisition due to vesting of restricted stock units,Genmab_AS_Ledende_medarbejderes_transaktioner_a50bc17429cc098497f3a346878b44b61.txt
 2025-11-28,Glaston Oyj Abp,Veli-Matti Reinikkala,8000,1.12847275,9027.782,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb2209c534dd4cae5c5efe2ed27e9eb417langfisrclisted.txt
 2025-11-19,Glaston Oyj Abp,Veli-Matti Reinikkala,10787,1.13449541114304255121905998,12237.802,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb3fcd32ba4983bd1cb1103e4944838433langfisrclisted.txt
 2025-11-10,Glaston Oyj Abp,Veli-Matti Reinikkala,15679,1.12779860960520441354678232,17682.7544,buy,ACQUISITION,Glaston_Oyj_Abp_Ledende_medarbejderes_transaktioner_view_idb8b7670bc1bb056863dd62eb5b0507db9langfisrclisted.txt
@@ -162,14 +155,14 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-11,HKFoods Oyj,"Henriksson, Outi",6916,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb001acc90c6d2dbe0f2b27bdc4c169704langfisrclisted.txt
 2025-11-13,HKFoods Oyj,Petri Toivola,9000,1.63,14670,buy,ACQUISITION,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb0adf49bd535a9eaeb8a53587be0c9ccclangfisrclisted.txt
 2025-11-11,HKFoods Oyj,"Diesen, Niclas",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb144a30de202c21b782ef7bbd1740021blangfisrclisted.txt
-2025-11-11,HKFoods Plc,"Kiskola, Reijo",12295,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb240232ce63ae4eb77e50b0e7774ab249langensrclisted.txt
 2025-11-11,HKFoods Oyj,"Mäkilä, Jari",5763,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb24cc74ea54e57de457d57a0c584602a6langfisrclisted.txt
 2025-11-11,HKFoods Oyj,"Tuomi, Terhi",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb35578c8dfd1ea8f6397a4e9d545e54e8langfisrclisted.txt
-2025-11-11,HKFoods Plc,"Uusitalo, Ilkka",5379,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb3a6ceb2a7ce1c7cb9d2f8bd2967781e5langensrclisted.txt
+2025-11-11,HKFoods Oyj,"Uusitalo, Ilkka",5379,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb5a3acbb6146dd382d999ef5913088d3elangfisrclisted.txt
 2025-11-06,HKFoods Oyj,Mika Tilli,20000,1.63,32600,buy,ACQUISITION,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb5bff79964b26b44c17a8e43759f23590langfisrclisted.txt
-2025-11-11,HKFoods Plc,"Sipponen, Lauri",4610,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb5de76b244aaf7d23fd205f57c3eddce9langensrclisted.txt
 2025-11-14,HKFoods Oyj,Petri Toivola,3000,1.62,4860,buy,ACQUISITION,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb7164b774fde81fd041ebaa698963425dlangfisrclisted.txt
+2025-11-11,HKFoods Oyj,"Kiskola, Reijo",12295,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idb84dcda40c2b2c87b1b873e75988b16bdlangfisrclisted.txt
 2025-11-11,HKFoods Oyj,"Yski, Sami",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idbb413dc78f455ea477a9f9c53fc7a188alangfisrclisted.txt
+2025-11-11,HKFoods Oyj,"Sipponen, Lauri",4610,0,,buy,RECEIPT,HKFoods_Oyj_Ledende_medarbejderes_transaktioner_view_idbbc1edde732d50d099781e02707415c39langfisrclisted.txt
 2025-11-17,Hove AS,Thomas Cramer,100000,5.53,553000,sell,Salg,Hove_AS_Ledende_medarbejderes_transaktioner_ac48f07067cad3ea0551432d380c027f9.txt
 2025-12-03,Ilkka Oyj,Satu Otala,2511,4.439681401831939466348068499,11148.04,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idb2340a2f873a93ac4d404ed345e1e58b2langfisrclisted.txt
 2025-12-12,Ilkka Oyj,Satu Otala,984,4.48,4408.32,sell,DISPOSAL,Ilkka_Oyj_Ledende_medarbejderes_transaktioner_view_idb35dee2898451e5b66d583cc7faae0860langfisrclisted.txt
@@ -206,14 +199,14 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-12-11,Loihde Oyj,Marko Järvinen,495,12.0737,5976.4815,buy,SUBSCRIPTION,Loihde_Oyj_Ledende_medarbejderes_transaktioner_a608a93316b8937848f23632d20349af7.txt
 2025-12-11,Loihde Oyj,Tuuli Stenbäck,74,12.0737,893.4538,buy,SUBSCRIPTION,Loihde_Oyj_Ledende_medarbejderes_transaktioner_aac8fe017e3a2b25bf1df396bdf4f5ede.txt
 2025-12-11,Loihde Oyj,Jere Teutari,49,12.0737,591.6113,buy,SUBSCRIPTION,Loihde_Oyj_Ledende_medarbejderes_transaktioner_ac795a14ab0f4527ead13d978bce85a92.txt
-2025-11-12,Mandatum Oyj,Jannica Fagerholm,3907,6.4496,25198.5872,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb2ac690b55ca94da4de84cb30a8ea3b72langensrclisted.txt
-2025-11-12,Mandatum Oyj,Jukka Ruuska,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb36178a2b7be5fdd23afde3b3f5415baflangensrclisted.txt
-2025-11-12,Mandatum Oyj,Louise Sander,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb5d33c9cab308f1dda27fb8b37b59ca34langensrclisted.txt
+2025-11-12,Mandatum Oyj,Jukka Ruuska,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb5d71e6bf5274deaa2ffccfb7306fbc9blangfisrclisted.txt
 2025-11-12,Mandatum Oyj,Patrick Lapveteläinen,4558,6.4496,29397.2768,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb71a2c72796beb41ac6ae273184101a75langfisrclisted.txt
 2025-11-12,Mandatum Oyj,Herman Korsgaard,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb84b057807db6594a0e338622e78694celangfisrclisted.txt
-2025-11-12,Mandatum Oyj,Markus Aho,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb925dbb93d52f313419c75abb4a3420aflangensrclisted.txt
-2025-11-12,Mandatum Oyj,Johanna Lamminen,3907,6.4496,25198.5872,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbae38e0612a208a231b756b07ebb21a5blangensrclisted.txt
-2025-11-12,Mandatum Oyj,Kimmo Laaksonen,3069,6.4496,19793.8224,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbcad043bbd53739ae210c69d218ce06eblangensrclisted.txt
+2025-11-12,Mandatum Oyj,Jannica Fagerholm,3907,6.4496,25198.5872,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idb97cc2c98d9bd0a1306681f1ab115ae89langfisrclisted.txt
+2025-11-12,Mandatum Oyj,Johanna Lamminen,3907,6.4496,25198.5872,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbafdd06f0c64414a138b43b9d81720ad0langfisrclisted.txt
+2025-11-12,Mandatum Oyj,Markus Aho,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbc349cd8f28278eeaa50e00a494eff507langfisrclisted.txt
+2025-11-12,Mandatum Oyj,Kimmo Laaksonen,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbdfe4457d9c23d2f8ee5382740d237753langfisrclisted.txt
+2025-11-12,Mandatum Oyj,Louise Sander,3069,6.4496,19793.8224,buy,RECEIPT,Mandatum_Oyj_Ledende_medarbejderes_transaktioner_view_idbe68789d7b8953b8d0392d57999937129langfisrclisted.txt
 ,MT Hjgaard Holding AS,Rasmus Untidt,600,427,256200,sell,Salg,MT_Hjgaard_Holding_AS_Ledende_medarbejderes_transaktioner_a6efe4c3bb66c45d2c808ede5cf035acc.txt
 2025-12-03,Netum Group Oyj,Olavi Köngäs,4300,1.21,5203,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb5568a6f95bd2e11abb800b2a8e2b6819langensrclisted.txt
 2025-11-05,Netum Group Oyj,Mikko Koistinen,7428,1.165325794291868605277329025,8656.04,sell,DISPOSAL,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbbe2a043222438cf60812b97dbbf88569langensrclisted.txt
@@ -221,7 +214,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-04,Netum Group Oyj,Olavi Köngäs,9995,1.174683341670835417708854427,11740.96,buy,ACQUISITION,Netum_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idbe275601167a89a65ab935140d0260e27langensrclisted.txt
 ,Newcap Holding,Nærtstående til bestyrelsesformand Mogens de Linde,2001,28,56028,buy,Køb,Newcap_Holding_Ledende_medarbejderes_transaktioner_a799b468e0e0ec5181aca263ec28c8873.txt
 2025-12-02,NoHo Partners Oyj,Mika Niemi,3191,7.8497,25048.3927,sell,DISPOSAL,NoHo_Partners_Oyj_Ledende_medarbejderes_transaktioner_view_idb27161c149cd1a6dd0b343174e7940521langensrclisted.txt
-2025-10-07,Nokia Corporation,"Heard, David",65122,,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Nokia_Ledende_medarbejderes_transaktioner_view_idb605aae50cdc3de7270eee75500fd0123langensrclisted.txt
 2025-11-13,Nokia Corporation,"Fisk, Louise",135,6.0601,818.1135,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idb9c7347d34166d37e575078a931707946langensrclisted.txt
 2025-11-13,Nokia Corporation,"Sahgal, Raghav",2192,6.0601,13283.7392,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idbaad0a7a8e573313b98e4582be73cf670langensrclisted.txt
 2025-11-13,Nokia Corporation,"Uitto, Tommi",5,6.0572,30.286,buy,ACQUISITION,Nokia_Ledende_medarbejderes_transaktioner_view_idbd57f9966f47de210d33746526d8400a4langensrclisted.txt
@@ -312,9 +304,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-28,Ovaro Kiinteistösijoitus Oyj,Pekka Ollikainen,468,3.21,1502.28,buy,ACQUISITION,Ovaro_Kiinteistsijoitus_Oyj_Ledende_medarbejderes_transaktioner_view_idbae3350f51327e782f8dcb8f08fe926fclangfisrclisted.txt
 2025-11-05,Pandora AS,,425,,,buy,Purchase of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_a39886b732170666acc0b867e861822eb.txt
 2025-12-03,Pandora AS,,25000,,,sell,Selling of shares,Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt
-2025-12-15,Panostaja Oyj,Saga Forss,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_a9aa322a5377504ade44b51d46a74c339.txt
-2025-12-15,Panostaja Oyj,Tarja Pääkkönen,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_acb52cb05780f514b459c88e739076d3e.txt
-2025-12-15,Panostaja Oyj,Tommi Juusela,10000,0.4,4000,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Panostaja_Oyj_Ledende_medarbejderes_transaktioner_acbe9e950b72f1754b8703b974a46de14.txt
 2025-11-03,Pihlajalinna Oyj,Mika Anders Videman,333,14.95,4978.35,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a5c46321ac77e8f0ee8280dd853d548c7.txt
 2025-11-05,Pihlajalinna Oyj,Seppo Kariniemi,1000,14.7625,14762.5,buy,ACQUISITION,Pihlajalinna_Oyj_Ledende_medarbejderes_transaktioner_a7c550dc7ae2c3a548278f1c1325a7c59.txt
 ,Q-Interline AS,Stengård Invest ApS,200000,3,600000,buy,Køb,Q-Interline_AS_Ledende_medarbejderes_transaktioner_aa0c0193ce0ad377f4e8789ebd082c329.txt
@@ -330,13 +319,6 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-21,rsted AS,Ørsted A/S,3373,125.55,423480.15,,"DKK 125,55",rsted_AS_Ledende_medarbejderes_transaktioner_a2e024b271226ad656a570b94c68f76f7.txt
 ,rsted AS,,,,,,,rsted_AS_Ledende_medarbejderes_transaktioner_a515b18659d5622541f282bcbf1da9a09.txt
 2025-12-01,RTX,Henrik Mørck Mogensen,673,104,69992,buy,Køb af aktier,RTX_Ledende_medarbejderes_transaktioner_a00b10491bdbe4e4c426d841a4f8e4add.txt
-2025-11-06,Sampo plc,Antti Mäkinen,5914,9.84,58193.76,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb353783729a519e521fb00136061b20e7langensrclisted.txt
-2025-11-06,Sampo plc,Annica Witschard,3493,9.84,34371.12,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb52bc5e2e552294b3724704158cf6a34flangensrclisted.txt
-2025-11-06,Sampo plc,Markus Rauramo,3779,9.84,37185.36,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb83c016f65eb64ae680233fa8e994b7a6langensrclisted.txt
-2025-11-06,Sampo plc,Astrid Stange,7568,9.84,74469.12,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idb94c6d827d1563e2e66452926285017dblangensrclisted.txt
-2025-11-06,Sampo plc,Steve Langan,3551,9.84,34941.84,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idbb9420a1398b40f808ca0f6fbe51327fflangensrclisted.txt
-2025-11-06,Sampo plc,Risto Murto,3833,9.84,37716.72,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idbec46831effb98aa0b21f37302635c19blangensrclisted.txt
-2025-11-06,Sampo plc,Sara Mella,6287,9.84,61864.08,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Sampo_Ledende_medarbejderes_transaktioner_view_idbf558d9412b19764aa19d8706f8ec5d19langensrclisted.txt
 ,Scandinavian Investment Group AS,a),4907,3772,18509204,,messageUrl: https://view.news.eu.nasdaq.com/view?id=b0ff4389c8618400ed653f6c3772b4907&lang=da&src=listed,Scandinavian_Investment_Group_AS_Ledende_medarbejderes_transaktioner_a5bf9a317d0f70b98fb9c96b24c037575.txt
 2025-12-08,Scanfil Oyj,Markku Kosunen,3772,9.734475079533404029692470838,36718.44,sell,DISPOSAL,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_a5efd63c0585b80d72b05ceb854279119.txt
 2025-11-26,Scanfil Plc,"Kosunen, Markku",10000,7.37,73700,buy,SUBSCRIPTION,Scanfil_Oyj_Ledende_medarbejderes_transaktioner_aae4a5a18142188691e9cabb209cb35d7.txt
@@ -371,7 +353,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-25,SRV Yhtiöt Oyj,Tuomas Kokkila,2098,4.774380362249761677788369876,10016.65,sell,DISPOSAL,SRV_Yhtit_Oyj_Ledende_medarbejderes_transaktioner_view_idb5bc5e302ecfa7dbc0732201ca97a7b4flangensrclisted.txt
 2025-11-26,SSH Communications Security Oyj,Henri Österlund,2500,2.8,7000,buy,ACQUISITION,SSH_Communications_Security_Oyj_Ledende_medarbejderes_transaktioner_view_idb745de386df4e4cfbd16c5c43a85be5d6langensrclisted.txt
 2025-11-21,SSH Communications Security Oyj,Michael Kommonen,10000,2.24,22400,buy,SUBSCRIPTION,SSH_Communications_Security_Oyj_Ledende_medarbejderes_transaktioner_view_idb8b6aeca5a3e86140b91e04c9415ff0aflangensrclisted.txt
-2025-11-19,Stora Enso Oyj,Hans Sohlström,49073,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Stora_Enso_Oyj_Ledende_medarbejderes_transaktioner_view_idb2a5f7b0039c7455801c6807749ad9064langensrclisted.txt
+2025-11-19,Stora Enso Oyj,Hans Sohlström,,,,buy,RECEIPT,Stora_Enso_Oyj_Ledende_medarbejderes_transaktioner_view_idbdc08cb2d31ccd9b5bb78df21b1a3ab82langfisrclisted.txt
 2025-11-13,Talenom Oyj,Harri Tahkola,50000,0,,,"GIFT, DONATION OR INHERITANCE (MADE)",Talenom_Oyj_Ledende_medarbejderes_transaktioner_view_idb71d377f1e33658dae31c1a612d55665dlangensrclisted.txt
 2025-11-24,AS Tallink Grupp,"Hanschmidt, Ain",40602,0.566,22980.732,buy,Acquisition,Tallink_Grupp_Ledende_medarbejderes_transaktioner_view_idb0d1f76cffe99205297bb5a8d518ffab4langensrclisted.txt
 2025-11-25,Tamtron Group Oyj,Pentti Asikainen,77000,5.2,400400,buy,ACQUISITION,Tamtron_Group_Oyj_Ledende_medarbejderes_transaktioner_view_idb078e131f19eacd2ccc51fbea279de384langfisrclisted.txt
@@ -406,11 +388,7 @@ date,company,name,shares,price,total_value,side,reason,filename
 2025-11-03,Verkkokauppa.com Oyj,Samuli Seppälä,18120,4.000934878587196467991169978,72496.94,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idba5a94249cc07eb25ce4180c1405362felangensrclisted.txt
 2025-11-13,Verkkokauppa.com Oyj,Samuli Seppälä,13770,4.007471314451706608569353667,55182.88,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idbc0e9ccbb8ec00a3307e749271af0a264langensrclisted.txt
 2025-11-11,Verkkokauppa.com Oyj,Samuli Seppälä,31962,4.003047368750391089418684688,127945.4,sell,DISPOSAL,Verkkokauppacom_Oyj_Ledende_medarbejderes_transaktioner_view_idbf9205d3a03cc333e0f5cf2eac44f74f4langensrclisted.txt
-2025-12-16,Vincit Plc,"Sintonen, Enel",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idb02b7e4acc426fe2cd1cc3ccb5e76e42alangensrclisted.txt
 2025-11-24,Vincit Oyj,Mikko Kuitunen,171000,1.263421052631578947368421053,216045,buy,ACQUISITION,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idb11dffca8b1f0fbb7bfa8c82e26fe1d57langensrclisted.txt
-2025-12-16,Vincit Plc,"Martonen, Arto",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idb1baff843e54bf538091f14022219e5fflangensrclisted.txt
 2025-11-21,Vincit Oyj,Mikko Kuitunen,4000,1.28,5120,buy,ACQUISITION,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idb56a69f9d646dbd6fb9e99ec670e92300langensrclisted.txt
-2025-12-16,Vincit Plc,"Siivonen, Veera",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idbc62b9b3fb87280326b8a882f0c4e1713langensrclisted.txt
-2025-12-16,Vincit Plc,"Copeland, Matti",9305,0,,buy,RECEIPT OF A SHARE-BASED INCENTIVE,Vincit_Oyj_Ledende_medarbejderes_transaktioner_view_idbce479d2919b80eb3df2cfc2165cef467langensrclisted.txt
 2025-10-24,Wetteri Oyj,Aarne Simula,23471,0.1907403178390354053938903328,4476.866,sell,DISPOSAL,Wetteri_Plc_Ledende_medarbejderes_transaktioner_view_idb6742729f841029250141ae95e12bafd1langensrclisted.txt
 2025-12-02,Zealand Pharma AS,,15442,487.6,7529519.2,buy,context.,Zealand_Pharma_AS_Ledende_medarbejderes_transaktioner_ad8e338f821b5e8762287861700a32c11.txt

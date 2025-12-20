@@ -884,6 +884,29 @@ STOCK_OPTION_HINTS = (
     "osakeoption",
 )
 
+SHARE_BASED_INCENTIVE_HINTS = (
+    "share-based incentive",
+    "share based incentive",
+    "restricted stock unit",
+    "restricted stock units",
+    "rsu",
+    "matching share",
+    "matching shares",
+)
+
+
+def _should_skip_share_based_incentive_notice(nature: str) -> bool:
+    norm = normalize_line(nature)
+    if not norm:
+        return False
+    if any(token in norm for token in SHARE_BASED_INCENTIVE_HINTS):
+        return True
+    if "incentive" in norm and ("share" in norm or "shares" in norm) and (
+        "receipt" in norm or "receive" in norm or "received" in norm
+    ):
+        return True
+    return False
+
 
 def _extract_instrument_type(lines: Sequence[Tuple[str, str]]) -> str:
     for raw, norm in lines:
@@ -980,6 +1003,12 @@ def parse_insider_file(text: str, path: Path) -> List[dict]:
     nature = translate_nature(extract_nature(lines))
     if _should_skip_stock_option_notice(lines=lines, normalized_text=normalized_text, nature=nature):
         logging.info("Skipping %s: stock option instruments are ignored.", path.name)
+        return []
+    if _should_skip_share_based_incentive_notice(nature):
+        logging.info(
+            "Skipping %s: share-based incentive / RSU-related transactions are ignored.",
+            path.name,
+        )
         return []
     side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)

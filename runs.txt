@@ -19,10 +19,14 @@ uv run --with requests python nasdaq_news_cli.py --category "Ledende medarbejder
 
 
 
+Good to line 38
+16/12/2025	AspoÂ Oyj	Erkka Antero Repo	5106	0		buy	RECEIPT OF A SHARE-BASED INCENTIVE	Aspo_Ledende_medarbejderes_transaktioner_view_idbb2abca53702288efe248c8f52b78b66flangensrclisted.txt
 
 
 Running this command should not gives any rows in the csv file:
-I want stock options to be ignored in a general way
-uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Better_Collective_AS_Ledende_medarbejderes_transaktioner_af82bf2db67fe44b2b7740ed3da9ba567.txt
+I want SHARE-BASED INCENTIVE and the like to be ignored in a general way:
+uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Asetek_AS_Ledende_medarbejderes_transaktioner_a2af337147894ca07d4b48aa69b9097d8_Jakob_Have_insider_notification_25112025.txt
+
+
 
 Can you generalized such that this message is ignored?

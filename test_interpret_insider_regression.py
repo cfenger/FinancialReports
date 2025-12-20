@@ -274,6 +274,48 @@ class InterpretInsiderRegressionTest(unittest.TestCase):
             "Share transactions linked to an option programme should still be kept.",
         )
 
+    def test_skip_share_based_incentive_receipt_aspo(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Aspo_Ledende_medarbejderes_transaktioner_view_idbb2abca53702288efe248c8f52b78b66flangensrclisted.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Aspo share-based incentive fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(rows, [], "Share-based incentive receipts should be ignored.")
+
+    def test_skip_rsu_vesting_notice(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Oculis_Holding_AG_Ledende_medarbejderes_transaktioner_a645960f1aad528847e47c1653f755a26.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Oculis RSU vesting fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(rows, [], "RSU vesting transactions should be ignored.")
+
+    def test_keep_sale_motivated_by_incentive_plan_taxes(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Pandora_AS_Ledende_medarbejderes_transaktioner_af00e637211abeda71630155fdfac5c9e.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Pandora sale fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertTrue(rows and rows[0].get("side") == "sell", "Sale transactions should not be skipped.")
+
     def test_insider_cli_matches_snapshot(self):
         input_dir = REPO_ROOT / "test" / "insider" / "nasdaq_news_cli"
         expected_csv = REPO_ROOT / "test" / "insider" / "insider_summary_base.csv"
