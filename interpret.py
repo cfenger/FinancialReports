@@ -25,7 +25,18 @@ try:
 except Exception:  # pragma: no cover - optional dependency
     load_dotenv = None
 
-FIELDNAMES = ["date", "company", "name", "shares", "price", "total_value", "side", "reason", "filename"]
+FIELDNAMES = [
+    "date",
+    "company",
+    "name",
+    "shares",
+    "price",
+    "total_value",
+    "side",
+    "reason",
+    "messageUrl",
+    "filename",
+]
 REQUIRED_FIELDS = ["date", "company", "name", "shares", "price", "total_value", "side"]
 
 BUY_KEYWORDS = (
@@ -187,6 +198,8 @@ REFERENCE_NUMBER_RE = re.compile(
     re.IGNORECASE,
 )
 
+MESSAGE_URL_RE = re.compile(r"^\s*messageurl\s*:\s*(\S+)\s*$", re.IGNORECASE | re.MULTILINE)
+
 
 def normalize_line(line: str) -> str:
     """Lowercase, strip diacritics, and collapse whitespace for easier matching."""
@@ -280,6 +293,17 @@ def looks_like_person_name(text: str) -> bool:
 def should_skip_numeric_line(raw: str) -> bool:
     """Filter out alphanumeric codes/dates that shouldn't be treated as prices or volumes."""
     return looks_like_alphanumeric_code(raw) or is_date_like(raw)
+
+
+def extract_message_url(text: str) -> str:
+    match = MESSAGE_URL_RE.search(text)
+    if not match:
+        return ""
+    return match.group(1).strip().strip(").,;")
+
+
+def strip_message_url_lines(text: str) -> str:
+    return MESSAGE_URL_RE.sub("", text)
 
 
 def extract_name(lines: Sequence[Tuple[str, str]]) -> str:
@@ -1268,16 +1292,18 @@ def _should_skip_stock_option_notice(
 
 
 def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
-    normalized_text = normalize_text_for_search(text)
-    lines = build_lines(text)
+    message_url = extract_message_url(text)
+    sanitized = strip_message_url_lines(text)
+    normalized_text = normalize_text_for_search(sanitized)
+    lines = build_lines(sanitized)
     company = extract_company(lines, path)
     name = extract_name(lines)
     if not name:
         # Narrative-style notices may not follow the ESMA tabular layout
         # and only mention the person in free text.
-        name = extract_narrative_name_from_text(text)
-    date = extract_date(text)
-    reference_number = extract_reference_number(text)
+        name = extract_narrative_name_from_text(sanitized)
+    date = extract_date(sanitized)
+    reference_number = extract_reference_number(sanitized)
     nature = translate_nature(extract_nature(lines))
     side = determine_side_from_text(nature, normalized_text)
     transactions = extract_transactions(lines, normalized_text)
@@ -1315,6 +1341,7 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
                 "total_value": "",
                 "side": side,
                 "reason": nature,
+                "messageUrl": message_url,
                 "filename": path.name,
                 "_reference_number": reference_number,
             }
@@ -1334,6 +1361,7 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
                 "total_value": compute_total_value(shares_clean, price_clean),
                 "side": side,
                 "reason": nature,
+                "messageUrl": message_url,
                 "filename": path.name,
                 "_reference_number": reference_number,
             }

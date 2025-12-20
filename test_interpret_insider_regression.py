@@ -29,6 +29,24 @@ def _read_csv(path: Path):
 
 
 class InterpretInsiderRegressionTest(unittest.TestCase):
+    def test_message_url_extracted_and_not_parsed_as_transaction(self):
+        stub = (
+            REPO_ROOT
+            / "test"
+            / "insider"
+            / "nasdaq_news_cli"
+            / "Dataproces_Group_AS_Ledende_medarbejderes_transaktioner_a54439d33b456e8df38f447aa3ca651d9.txt"
+        )
+        if not stub.exists():
+            self.skipTest("Dataproces messageUrl fixture missing")
+
+        rows = parse_insider_file(stub.read_text(encoding="utf-8", errors="ignore"), stub)
+        self.assertEqual(len(rows), 1, "Template-only notices should yield a single placeholder row.")
+        row = rows[0]
+        self.assertEqual(row.get("messageUrl") or "", "https://view.news.eu.nasdaq.com/view?id=bb8fbd92418ed552ff419cf8540f8bff7&lang=da&src=listed")
+        self.assertEqual(row.get("shares") or "", "")
+        self.assertEqual(row.get("price") or "", "")
+
     def test_merge_placeholder_into_transactional_ref(self):
         rows = [
             {
