@@ -35,7 +35,11 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
-from pdfminer.high_level import extract_text as pdf_extract_text
+try:
+    # Optional dependency; only needed when extracting text.
+    from pdfminer.high_level import extract_text as pdf_extract_text
+except Exception:  # pragma: no cover - handled lazily
+    pdf_extract_text = None  # type: ignore[assignment]
 
 
 PDF_HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+?\.pdf)["']""", re.IGNORECASE)
@@ -53,6 +57,17 @@ BROWSER_HEADERS = {
         "Chrome/120.0.0.0 Safari/537.36"
     ),
     "Accept": "*/*",
+}
+
+# Nasdaq attachment hosts occasionally differ from the messageUrl host
+# (e.g. newsclient.omxgroup.com -> attachment.news.eu.nasdaq.com).
+# Allow-list their registrable domains so valid PDFs are not skipped.
+TRUSTED_NASDAQ_BASES = {"nasdaq.com", "nasdaqomx.com", "omxgroup.com"}
+TRUSTED_ATTACHMENT_HOSTS = {
+    "attachment.news.eu.nasdaq.com",
+    "cache.nasdaqomx.com",
+    "view.news.eu.nasdaq.com",
+    "newsclient.omxgroup.com",
 }
 
 
@@ -107,6 +122,42 @@ def get_base_domain(host: str) -> str:
     if len(parts) >= 2:
         return ".".join(parts[-2:])
     return host
+
+
+def _is_pdf_host_allowed(pdf_host: str, allowed_domain: str, allow_external: bool) -> bool:
+    """
+    Decide whether a PDF host should be fetched, honoring allow_external and
+    Nasdaq's known cross-domain attachment hosts.
+    """
+    if allow_external or not allowed_domain:
+        return True
+
+    pdf_base = get_base_domain(pdf_host)
+    if pdf_base == allowed_domain:
+        return True
+
+    # Cross-domain Nasdaq flows (e.g. omxgroup.com -> nasdaq.com attachments).
+    if pdf_base in TRUSTED_NASDAQ_BASES and allowed_domain in TRUSTED_NASDAQ_BASES:
+        return True
+    if pdf_host in TRUSTED_ATTACHMENT_HOSTS:
+        return True
+
+    return False
+
+
+def _get_pdfminer_extract_text():
+    """
+    Lazy loader for pdfminer.six to avoid hard dependency when not using --to-text.
+    """
+    global pdf_extract_text  # type: ignore[assignment]
+    if pdf_extract_text is not None:
+        return pdf_extract_text
+    try:
+        from pdfminer.high_level import extract_text as _extract_text
+    except Exception:
+        return None
+    pdf_extract_text = _extract_text  # type: ignore[assignment]
+    return pdf_extract_text
 
 
 def extract_pdf_urls(html: str, base_url: str) -> List[str]:
@@ -276,7 +327,19 @@ def save_pdf_bytes_as_text(pdf_bytes: bytes, dest: Path, message_url: Optional[s
             text = None
 
         if not text:
-            text = pdf_extract_text(BytesIO(pdf_bytes))
+            extractor = _get_pdfminer_extract_text()
+            if extractor is None:
+                print(
+                    "pdfminer.six is not installed; rerun with "
+                    "uv run --with requests,beautifulsoup4,pdfminer.six,pymupdf "
+                    "python downloadpdf.py --input <file> --to-text"
+                )
+                return False
+            try:
+                text = extractor(BytesIO(pdf_bytes))
+            except Exception as exc:
+                print(f"pdfminer text extraction failed for {dest}: {exc}")
+                return False
         if not text or not text.strip():
             print(f"No text extracted from PDF; skipping save: {dest}")
             return False
@@ -547,11 +610,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
                 ):
                     pdf_url = resp.url or message_url
                     pdf_host = urlparse(pdf_url).hostname or ""
-                    if (
-                        allowed_domain
-                        and get_base_domain(pdf_host) != allowed_domain
-                        and not allow_external
-                    ):
+                    if not _is_pdf_host_allowed(pdf_host, allowed_domain, allow_external):
                         print(
                             f"Skipping direct PDF on external domain: {pdf_url} "
                             f"(host {pdf_host!r} not under {allowed_domain!r})"
@@ -598,11 +657,7 @@ def process_csv(input_csv: Path, output_dir: Path, timeout: float,
         filtered_urls: List[str] = []
         for pdf_url in pdf_urls:
             pdf_host = urlparse(pdf_url).hostname or ""
-            if (
-                allowed_domain
-                and get_base_domain(pdf_host) != allowed_domain
-                and not allow_external
-            ):
+            if not _is_pdf_host_allowed(pdf_host, allowed_domain, allow_external):
                 print(
                     f"Skipping external PDF URL: {pdf_url} "
                     f"(host {pdf_host!r} not under {allowed_domain!r})"

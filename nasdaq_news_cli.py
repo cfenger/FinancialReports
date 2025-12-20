@@ -530,7 +530,15 @@ def _parse_item_datetime(value: str) -> Optional[datetime]:
     value = (value or "").strip()
     if not value:
         return None
-    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
+    for fmt in (
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d %H:%M:%S.%f",
+        "%Y-%m-%d %H:%M",
+        "%d/%m/%Y %H:%M:%S",
+        "%d/%m/%Y %H:%M",
+        "%d/%m/%Y",
+        "%Y-%m-%d",
+    ):
         try:
             return datetime.strptime(value, fmt)
         except ValueError:
