@@ -47,6 +47,8 @@ BUY_KEYWORDS = (
     "grant",
     "receipt",
     "subscription",
+    "tegning",
+    "emission",
     "incentive",
     "acceptance",
     "anskaffelse",
@@ -78,6 +80,10 @@ NATURE_TRANSLATIONS = {
     "osakeoption hyvaksyminen": "ACCEPTANCE OF A STOCK OPTION",
     # Swedish -> English
     "teckning": "SUBSCRIPTION",
+    # Danish/Norwegian -> English
+    "tegning": "SUBSCRIPTION",
+    "emission": "SUBSCRIPTION",
+    "nyemission": "SUBSCRIPTION",
     # Icelandic -> English
     "kaup": "ACQUISITION",
 }
@@ -705,6 +711,9 @@ def determine_side(nature: str) -> str:
 
 def clean_int(value: str) -> str:
     compact = value.replace(" ", "")
+    # Treat repeated 3-digit groups separated by the same delimiter as thousands separators.
+    if re.fullmatch(r"-?\d{1,3}(?:[.,]\d{3})+", compact):
+        return re.sub(r"[.,]", "", compact)
     if re.search(r"[.,]", compact):
         cleaned = clean_decimal(value)
         if cleaned:
