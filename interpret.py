@@ -1363,6 +1363,82 @@ def _should_skip_share_based_incentive_notice(
     return False
 
 
+NON_TRADE_TRANSFER_HINTS = (
+    "gift",
+    "donation",
+    "donated",
+    "inheritance",
+    "inherit",
+    "inherited",
+    "bequest",
+)
+
+ZERO_CONSIDERATION_HINTS = (
+    "without consideration",
+    "without compensation",
+    "without payment",
+    "without remuneration",
+    "free of charge",
+    "at no cost",
+    "no consideration",
+    "no payment",
+    "non cash",
+    "non-cash",
+)
+
+
+def _has_zero_consideration_price(
+    transactions: Sequence[Tuple[str, str]],
+    price_hint: str,
+    total_value_hint: str,
+) -> bool:
+    for _volume, price in transactions:
+        price_clean = clean_decimal(price)
+        if not price_clean:
+            continue
+        try:
+            if Decimal(price_clean) == 0:
+                return True
+        except (InvalidOperation, ValueError):
+            continue
+
+    for hint in (price_hint, total_value_hint):
+        if not hint:
+            continue
+        try:
+            if Decimal(hint) == 0:
+                return True
+        except (InvalidOperation, ValueError):
+            continue
+
+    return False
+
+
+def _should_skip_non_trade_transfer(
+    *,
+    nature: str,
+    normalized_text: str,
+    side: str,
+    transactions: Sequence[Tuple[str, str]],
+    price_hint: str,
+    total_value_hint: str,
+) -> bool:
+    nature_norm = normalize_line(nature) if nature else ""
+    has_transfer_cue = any(token in nature_norm for token in NON_TRADE_TRANSFER_HINTS) or any(
+        token in normalized_text for token in NON_TRADE_TRANSFER_HINTS
+    )
+    has_zero_consideration = _has_zero_consideration_price(transactions, price_hint, total_value_hint)
+    has_no_consideration_language = any(
+        token in normalized_text or token in nature_norm for token in ZERO_CONSIDERATION_HINTS
+    )
+
+    if has_transfer_cue and (side == "" or has_zero_consideration or has_no_consideration_language):
+        return True
+    if has_no_consideration_language and side == "" and (has_zero_consideration or not transactions):
+        return True
+    return False
+
+
 def _extract_instrument_type(lines: Sequence[Tuple[str, str]]) -> str:
     for raw, norm in lines:
         if norm.startswith("instrument type"):
@@ -1479,6 +1555,16 @@ def _parse_single_insider_notice(text: str, path: Path) -> List[dict]:
             "Skipping %s: share-based incentive / RSU-related transactions are ignored.",
             path.name,
         )
+        return []
+    if _should_skip_non_trade_transfer(
+        nature=nature,
+        normalized_text=normalized_text,
+        side=side,
+        transactions=transactions,
+        price_hint=price_hint_clean,
+        total_value_hint=total_value_hint_clean,
+    ):
+        logging.info("Skipping %s: non-monetary transfer (gift/donation/inheritance) is ignored.", path.name)
         return []
 
     rows: List[dict] = []

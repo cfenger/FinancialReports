@@ -39,9 +39,10 @@ date,company,name,shares,price,total_value,side,reason,messageUrl,filename
 2025-11-05,Eik fasteignaflag hf,Gunnar Þór Gíslason,16184400,13.74268184177355972417883888,222417060,,,https://view.news.eu.nasdaq.com/view?id=b242310598cc8be00095e50ec881cbb4d&lang=is&src=listed,Eik_fasteignaflag_hf_Ledende_medarbejderes_transaktioner_a76ce1e3203cd379adef21d4958e87269.txt
 
 
-# Future task
-No trade info here. It is found in the linked pdfs. Always make general solutions. 
-G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
-WARNING: Incomplete row from BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt: missing side
+
+This kind of trade should be ignored. Always make general solutions. 
+G:\My Drive\FinancialReports>uv run python interpret.py --task insider --collect --input-dir ./test/insider/nasdaq_news_cli/Talenom_Oyj_Ledende_medarbejderes_transaktioner_view_idb71d377f1e33658dae31c1a612d55665dlangensrclisted.txt
+WARNING: Incomplete row from Talenom_Oyj_Ledende_medarbejderes_transaktioner_view_idb71d377f1e33658dae31c1a612d55665dlangensrclisted.txt: missing side
+WARNING: Incomplete row from Talenom_Oyj_Ledende_medarbejderes_transaktioner_view_idb71d377f1e33658dae31c1a612d55665dlangensrclisted.txt: missing side
 date,company,name,shares,price,total_value,side,reason,messageUrl,filename
-2025-11-18,BactiQuant AS,MVA og CO Aps,3,2,6,,Rettet emission tegning af nye aktier,https://view.news.eu.nasdaq.com/view?id=bbb77740986d4ad395735921dd07a9ce8&lang=en&src=listed,BactiQuant_AS_Ledende_medarbejderes_transaktioner_a9c4d2f4e348ecb023c5ef543216bf3b6.txt
+2025-11-13,Talenom Oyj,Harri Tahkola,50000,0,,,"GIFT, DONATION OR INHERITANCE (MADE)",,Talenom_Oyj_Ledende_medarbejderes_transaktioner_view_idb71d377f1e33658dae31c1a612d55665dlangensrclisted.txt
