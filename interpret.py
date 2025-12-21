@@ -273,10 +273,19 @@ def looks_like_alphanumeric_code(value: str) -> bool:
 
 
 def is_date_like(value: str) -> bool:
-    return bool(
-        re.search(r"\b\d{4}-\d{2}-\d{2}\b", value)
-        or re.search(r"\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b", value)
-    )
+    normalized = normalize_text_for_search(value)
+    if re.search(r"\b\d{4}-\d{2}-\d{2}\b", normalized) or re.search(
+        r"\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b", normalized
+    ):
+        return True
+
+    # Textual date formats, e.g. "25. november 2025" or "november 25, 2025".
+    month_pattern = "|".join(sorted(MONTH_NAME_TO_NUM.keys(), key=len, reverse=True))
+    if re.search(rf"\b\d{{1,2}}[.\-]?\s*(?:{month_pattern})\s+\d{{2,4}}\b", normalized):
+        return True
+    if re.search(rf"\b(?:{month_pattern})\s+\d{{1,2}}[.,]?\s+\d{{2,4}}\b", normalized):
+        return True
+    return False
 
 
 def _format_ymd(day: str, month: str, year: str) -> str:
