@@ -1620,11 +1620,13 @@ def _dedupe_rows(rows: List[dict]) -> List[dict]:
     deduped: List[dict | None] = []
     key_to_index: dict[tuple, int] = {}
     placeholder_indices_by_ref: dict[str, List[int]] = {}
-    refs_with_transactions: set[str] = set()
+    placeholder_indices_by_url: dict[str, List[int]] = {}
     ref_to_tx_index: dict[str, int] = {}
+    url_to_tx_index: dict[str, int] = {}
 
     for row in rows:
         ref = (row.get("_reference_number") or "").strip()
+        url = (row.get("messageUrl") or "").strip().lower()
         sig = signature(row)
 
         if ref:
@@ -1653,6 +1655,32 @@ def _dedupe_rows(rows: List[dict]) -> List[dict]:
                         merged_row = _merge_sparse_dict(merged_row, placeholder)
                 row = merged_row
             key = ("ref", ref, *sig)
+        elif url:
+            if sig is None:
+                existing_tx_idx = url_to_tx_index.get(url)
+                if existing_tx_idx is not None:
+                    existing_tx = deduped[existing_tx_idx]
+                    deduped[existing_tx_idx] = _merge_sparse_dict(existing_tx or {}, row)
+                    continue
+                existing_idxs = placeholder_indices_by_url.get(url, [])
+                if existing_idxs:
+                    idx = existing_idxs[0]
+                    existing = deduped[idx]
+                    deduped[idx] = _merge_sparse_dict(existing or {}, row)
+                    continue
+                idx = len(deduped)
+                deduped.append(dict(row))
+                placeholder_indices_by_url.setdefault(url, []).append(idx)
+                continue
+            placeholders = placeholder_indices_by_url.get(url, [])
+            if placeholders:
+                merged_row = dict(row)
+                for idx in placeholders:
+                    placeholder = deduped[idx]
+                    if placeholder is not None:
+                        merged_row = _merge_sparse_dict(merged_row, placeholder)
+                row = merged_row
+            key = ("url", url, *sig)
         else:
             key = (
                 "content",
@@ -1675,11 +1703,15 @@ def _dedupe_rows(rows: List[dict]) -> List[dict]:
                 deduped[existing_idx] = _merge_sparse_dict(existing, row)
 
         if ref and sig is not None:
-            refs_with_transactions.add(ref)
             ref_to_tx_index[ref] = key_to_index.get(key, len(deduped) - 1)
             for idx in placeholder_indices_by_ref.get(ref, []):
                 deduped[idx] = None
             placeholder_indices_by_ref[ref] = []
+        if url and sig is not None:
+            url_to_tx_index[url] = key_to_index.get(key, len(deduped) - 1)
+            for idx in placeholder_indices_by_url.get(url, []):
+                deduped[idx] = None
+            placeholder_indices_by_url[url] = []
 
     return [row for row in deduped if row is not None]
 
